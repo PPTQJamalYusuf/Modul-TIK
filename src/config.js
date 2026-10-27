@@ -9,6 +9,7 @@ const DB_PATH = path.join(DATABASE_DIR, 'lab.db');
 const BACKUP_DIR = path.join(DATABASE_DIR, 'backups');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
 const CSV_DEFAULT_PATH = path.join(DATABASE_DIR, 'santri.csv');
+const PID_FILE = path.join(DATABASE_DIR, 'server.pid');
 
 // Aturan XP resmi terpusat (Server-Side Source of Truth)
 const ATURAN_XP = {
@@ -69,6 +70,7 @@ module.exports = {
   BACKUP_DIR,
   PUBLIC_DIR,
   CSV_DEFAULT_PATH,
+  PID_FILE,
   ATURAN_XP,
   LEVEL_THRESHOLDS,
   hitungLevel,

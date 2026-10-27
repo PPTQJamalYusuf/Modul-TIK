@@ -1,6 +1,7 @@
-# SQLite runtime WAL & SHM
+# SQLite runtime WAL & SHM & PID
 *.db-wal
 *.db-shm
+*.pid
 
 # Backup database otomatis
 backups/
@@ -10,3 +11,8 @@ database/backups/
 Thumbs.db
 .DS_Store
 .vscode/
+
+# Environment & Dependencies
+.env*
+node_modules/
+

@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Heebo:wght@400;500;600;700&family=Lobster+Two:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
 
   <!-- Modular CSS Design System -->
-  <link rel="stylesheet" href="/css/main.css?v=20261027_03">
-  <link rel="stylesheet" href="/css/components.css?v=20261027_03">
-  <link rel="stylesheet" href="/css/games.css?v=20261027_03">
+  <link rel="stylesheet" href="/css/main.css?v=20261027_06">
+  <link rel="stylesheet" href="/css/components.css?v=20261027_06">
+  <link rel="stylesheet" href="/css/games.css?v=20261027_06">
 </head>
 <body>
 
@@ -57,10 +57,6 @@
         🏆 Papan Juara
       </button>
 
-      <button id="btn-panel-guru" class="btn btn-secondary btn-sm" onclick="navigasiKeGuru()">
-        👨‍🏫 Panel Guru
-      </button>
-
       <button id="btn-logout" class="btn btn-outline btn-sm" style="display: none;" onclick="lakukanLogout()">
         Keluar
       </button>
@@ -73,7 +69,7 @@
   <div class="main-layout">
 
     <!-- SIDEBAR NAVIGASI SANTRI (EDCLUB STYLE) -->
-    <aside id="app-sidebar" class="sidebar">
+    <aside id="app-sidebar" class="sidebar" style="display: none;">
       <!-- Kartu Profil Santri / Tamu -->
       <div class="profile-card">
         <div class="profile-header">
@@ -148,29 +144,176 @@
              VIEW DASHBOARD (EDCLUB STYLE CATCHY LANDING)
              ================================================================== -->
         <section id="view-dashboard">
-          <!-- Hero Banner Ceria -->
-          <div class="hero-banner">
-            <div>
-              <h2 class="hero-title">Ahlan wa Sahlan di Lab Komputer! 🚀</h2>
-              <p class="hero-subtitle">
-                Jelajahi petualangan komputer interaktif, taklukkan tantangan mengetik 10 jari, dan raih ribuan poin XP bersama 104 santriwati hebat!
+          <!-- ==============================================================
+               HERO LANDING WORKSTATION: TECH VIBES + 2D TYPING + HERO LOGIN
+               ============================================================== -->
+          <div class="tech-hero-container">
+            <!-- Left Column: Tech Branding & 2D Typing Showcase -->
+            <div class="tech-hero-left">
+              <!-- Top Tech Pills -->
+              <div class="tech-pill-badge">
+                <span class="tech-dot-pulse"></span>
+                <span>LAB KOMPUTER TIK v2.0 • JARINGAN LOKAL OFFLINE</span>
+              </div>
+
+              <h1 class="tech-hero-heading">
+                Eksplorasi Dunia Digital &amp;<br>
+                <span class="tech-typing-text" id="tech-typing-target">Latihan Mengetik 10 Jari...</span><span class="tech-typing-cursor">|</span>
+              </h1>
+
+              <p class="tech-hero-lead">
+                Platform interaktif resmi Lab Komputer Santriwati. Belajar hardware, menaklukkan tantangan kecepatan mengetik keyboard, menguasai berkas Windows, dan raih ribuan poin XP!
               </p>
-              <div class="hero-stats-row">
-                <div class="hero-stat-pill">🎒 <strong>104</strong> Santriwati</div>
-                <div class="hero-stat-pill">⭐ <strong>1.000+</strong> XP Menanti</div>
-                <div class="hero-stat-pill">🎮 <strong>4</strong> Petualangan</div>
-                <div class="hero-stat-pill">📜 <strong>Sertifikat</strong> Resmi Lab</div>
+
+              <!-- 2D Terminal Tech Code Card (Clean White Tech Vibes) -->
+              <div class="tech-terminal-box">
+                <div class="tech-terminal-header">
+                  <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <div class="terminal-title">lab-tik@telaga-sunnah:~/modul-1$</div>
+                  <div class="terminal-badge-live">● LIVE LAB</div>
+                </div>
+                <div class="tech-terminal-body">
+                  <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">init-lab-session</span> <span class="t-flag">--class=ALL</span> <span class="t-flag">--mode=INTERACTIVE</span></div>
+                  <div class="terminal-line t-out"><span class="t-check">✔</span> Database: <strong>104 Santriwati</strong> terdaftar aktif</div>
+                  <div class="terminal-line t-out"><span class="t-check">✔</span> Modules: <strong>4 Petualangan</strong> siap diuji</div>
+                  <div class="terminal-line t-out"><span class="t-check">✔</span> Target: <strong>40+ WPM</strong> &amp; Sertifikat Emas Master TIK</div>
+                  <div class="terminal-line t-prompt-line"><span class="t-prompt">&gt;</span> <span class="t-typing-prompt" id="terminal-subtext">Menunggu santri masuk lab... Siap belajar! 🚀</span></div>
+                </div>
+              </div>
+
+              <!-- Quick Metric Pills -->
+              <div class="tech-hero-stats">
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">🎒</span>
+                  <div>
+                    <strong>104</strong>
+                    <span>Santriwati</span>
+                  </div>
+                </div>
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">⭐</span>
+                  <div>
+                    <strong>1.000+</strong>
+                    <span>Poin XP</span>
+                  </div>
+                </div>
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">⌨️</span>
+                  <div>
+                    <strong>10 Jari</strong>
+                    <span>Typing Game</span>
+                  </div>
+                </div>
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">🛡️</span>
+                  <div>
+                    <strong>100%</strong>
+                    <span>Lokal Offline</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <button class="btn btn-primary" onclick="navigasiLanjutBelajar()" style="padding: 12px 28px; font-size: 15px; box-shadow: 0 8px 24px rgba(254, 93, 55, 0.35); white-space: nowrap;">
-                ▶ Mulai Petualangan
-              </button>
+
+            <!-- Right Column: Hero Direct Login Card (Sleek White Card) -->
+            <div class="tech-hero-right">
+              <!-- STATE A: Jika Tamu / Belum Login -->
+              <div id="hero-login-card" class="tech-login-card">
+                <div class="tech-card-header">
+                  <div class="tech-card-icon">🔐</div>
+                  <div>
+                    <h3 class="tech-card-title">Masuk Akun Santri</h3>
+                    <p class="tech-card-subtitle">Pilih nama Anda untuk mulai belajar</p>
+                  </div>
+                </div>
+
+                <form id="hero-auth-form" onsubmit="handleHeroAuthSubmit(event)">
+                  <div class="form-group-tech">
+                    <label class="tech-label">1. Pilih Kelas Anda:</label>
+                    <div class="tech-select-wrap">
+                      <select id="hero-kelas-filter" class="tech-input" onchange="muatDaftarSantriHero()">
+                        <option value="">-- Pilih Kelas --</option>
+                        <option value="7">Kelas 7 SMP</option>
+                        <option value="8">Kelas 8 SMP</option>
+                        <option value="9">Kelas 9 SMP</option>
+                        <option value="10">Kelas 10 SMA</option>
+                        <option value="11">Kelas 11 SMA</option>
+                        <option value="12">Kelas 12 SMA</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group-tech">
+                    <label class="tech-label">2. Pilih Nama Santri:</label>
+                    <div class="tech-select-wrap">
+                      <select id="hero-santri-select" class="tech-input" onchange="cekStatusSantriHero()" required>
+                        <option value="">-- Pilih Nama Anda --</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Banner info dinamis -->
+                  <div id="hero-auth-banner" class="tech-auth-banner" style="display: none;"></div>
+
+                  <div id="hero-pin-container" class="form-group-tech" style="display: none;">
+                    <label id="hero-lbl-pin" class="tech-label">Password / PIN:</label>
+                    <input type="password" id="hero-pin-input" class="tech-input tech-pin-input" placeholder="Minimal 4 karakter" required>
+                  </div>
+
+                  <button type="submit" id="hero-btn-submit" class="btn btn-primary tech-btn-login" style="display: none;">
+                    🚀 Buka Lab & Mulai Belajar
+                  </button>
+
+                  <div id="hero-auth-alert" class="tech-auth-alert" style="display: none;"></div>
+                </form>
+
+                <div class="tech-card-footer">
+                  <span>🌸 Belum punya PIN? Buat PIN baru Anda saat memilih nama!</span>
+                </div>
+              </div>
+
+              <!-- STATE B: Jika Sudah Login -->
+              <div id="hero-profile-card" class="tech-profile-card" style="display: none;">
+                <div class="profile-card-top">
+                  <div class="profile-avatar-large">🌸</div>
+                  <div class="profile-meta">
+                    <span class="user-status-online">● Sedang Aktif</span>
+                    <h3 id="hero-profile-nama" class="user-display-name">Santriwati</h3>
+                    <p id="hero-profile-kelas" class="user-display-class">Kelas 7 SMP</p>
+                  </div>
+                </div>
+
+                <div class="hero-xp-widget">
+                  <div class="xp-widget-row">
+                    <span id="hero-profile-level" class="badge-level-tech">Level 1 • Pemula</span>
+                    <span id="hero-profile-xp" class="xp-val-tech">0 XP</span>
+                  </div>
+                  <div class="tech-progress-track">
+                    <div id="hero-profile-bar" class="tech-progress-bar" style="width: 0%;"></div>
+                  </div>
+                </div>
+
+                <div class="hero-action-buttons">
+                  <button class="btn btn-primary" onclick="navigasiLanjutBelajar()" style="flex: 1; padding: 12px;">
+                    ▶ Lanjut Belajar Misi
+                  </button>
+                  <button class="btn btn-outline" onclick="lakukanLogout()" style="padding: 12px 16px;">
+                    Keluar
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Section Rekomendasi Modul (EdClub Course Cards) -->
-          <div class="section-header-row">
+          <!-- ==============================================================
+               KONTEN PEMBELAJARAN SANTRI (HANYA MUNCUL SETELAH LOGIN)
+               ============================================================== -->
+          <div id="dashboard-learning-content" style="display: none;">
+            <!-- Section Rekomendasi Modul (EdClub Course Cards) -->
+            <div class="section-header-row">
             <h3 class="section-title">✨ Rekomendasi Petualangan Belajar</h3>
             <span style="font-size: 13px; font-weight: 600; color: var(--primary);">4 Modul Praktikum Santri</span>
           </div>
@@ -284,7 +427,8 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         <!-- ==================================================================
              MODAL POP-UP LOGIN / AKTIVASI SANTRI (SEAMLESS AUTH)
@@ -300,15 +444,10 @@
               Pilih kelas dan nama Anda dari 104 santriwati untuk melanjutkan misi belajar & menyimpan skor XP Anda.
             </p>
 
-            <div style="display: flex; gap: 8px; margin-bottom: 18px;">
-              <button id="tab-btn-login" class="btn btn-primary" style="flex: 1;" onclick="gantiTabAuth('login')">Masuk (Login)</button>
-              <button id="tab-btn-aktivasi" class="btn btn-outline" style="flex: 1;" onclick="gantiTabAuth('aktivasi')">Aktivasi Akun Baru</button>
-            </div>
-
-            <!-- Form Login -->
-            <form id="form-login" onsubmit="handleLoginSubmit(event)">
+            <!-- Form Masuk / Buat Password Santri Terpadu -->
+            <form id="form-login" onsubmit="handleAuthSubmit(event)">
               <div style="margin-bottom: 14px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Filter Kelas:</label>
+                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">1. Pilih Kelas Anda:</label>
                 <select id="login-kelas-filter" style="width: 100%; padding: 10px;" onchange="muatDaftarSantriAuth()">
                   <option value="">-- Pilih Kelas --</option>
                   <option value="7">Kelas 7 SMP</option>
@@ -321,59 +460,21 @@
               </div>
 
               <div style="margin-bottom: 14px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Pilih Nama Santri:</label>
-                <select id="login-santri-select" style="width: 100%; padding: 10px;" required>
+                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">2. Pilih Nama Santri:</label>
+                <select id="login-santri-select" style="width: 100%; padding: 10px;" onchange="cekStatusSantriDipilih()" required>
                   <option value="">-- Pilih Nama Anda --</option>
                 </select>
               </div>
 
-              <div style="margin-bottom: 18px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">PIN 4 Digit Rahasia:</label>
-                <input type="password" id="login-pin-input" maxlength="4" placeholder="••••" style="width: 100%; padding: 10px; font-size: 18px; text-align: center; letter-spacing: 4px;" required>
+              <!-- Banner Status Akun Dinamis -->
+              <div id="auth-status-banner" class="callout-box" style="display: none; margin-bottom: 14px; font-size: 13px; padding: 12px;"></div>
+
+              <div id="pin-field-container" style="margin-bottom: 18px; display: none;">
+                <label id="lbl-pin-input" style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Password / PIN:</label>
+                <input type="password" id="login-pin-input" placeholder="Masukkan 4 digit PIN / Password" style="width: 100%; padding: 10px; font-size: 16px; text-align: center; letter-spacing: 2px;" required>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 15px;">Buka Lab & Mulai Belajar 🚀</button>
-            </form>
-
-            <!-- Form Aktivasi Akun Baru -->
-            <form id="form-aktivasi" onsubmit="handleAktivasiSubmit(event)" style="display: none;">
-              <div class="callout-box callout-adab" style="margin-top: 0;">
-                <div>
-                  <strong>Petunjuk:</strong> Pilih nama Anda, masukkan Kode Aktivasi yang dibagikan oleh Guru di kelas, lalu buat PIN 4-angka rahasia Anda.
-                </div>
-              </div>
-
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Filter Kelas:</label>
-                <select id="aktivasi-kelas-filter" style="width: 100%; padding: 10px;" onchange="muatDaftarSantriAktivasi()">
-                  <option value="">-- Pilih Kelas --</option>
-                  <option value="7">Kelas 7 SMP</option>
-                  <option value="8">Kelas 8 SMP</option>
-                  <option value="9">Kelas 9 SMP</option>
-                  <option value="10">Kelas 10 SMA</option>
-                  <option value="11">Kelas 11 SMA</option>
-                  <option value="12">Kelas 12 SMA</option>
-                </select>
-              </div>
-
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Pilih Nama Santri:</label>
-                <select id="aktivasi-santri-select" style="width: 100%; padding: 10px;" required>
-                  <option value="">-- Pilih Nama Anda --</option>
-                </select>
-              </div>
-
-              <div style="margin-bottom: 14px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Kode Aktivasi Guru (Contoh: AKT-X7Y):</label>
-                <input type="text" id="aktivasi-kode-input" placeholder="AKT-..." style="width: 100%; padding: 10px; text-transform: uppercase; font-weight: bold;" required>
-              </div>
-
-              <div style="margin-bottom: 18px;">
-                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Buat PIN 4-Angka:</label>
-                <input type="password" id="aktivasi-pin-input" maxlength="4" placeholder="••••" style="width: 100%; padding: 10px; font-size: 18px; text-align: center; letter-spacing: 4px;" required>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 15px;">Aktifkan Akun Saya ✨</button>
+              <button type="submit" id="btn-submit-auth" class="btn btn-primary" style="width: 100%; padding: 12px; font-size: 15px; display: none;">Buka Lab & Mulai Belajar 🚀</button>
             </form>
 
             <div id="auth-alert-box" style="margin-top: 14px; display: none;" class="callout-box"></div>
@@ -1237,104 +1338,197 @@
         <!-- ==================================================================
              VIEW 5: HALAMAN PANEL GURU (/guru)
              ================================================================== -->
-        <section id="view-guru" class="card" style="display: none;">
-          <div class="card-header">
-            <div>
-              <h2 class="card-title">👨‍🏫 Panel Pengelolaan Guru Lab TIK</h2>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Pantau progres santri, kelola kode aktivasi/PIN, buka kunci pertemuan per kelas, dan ekspor data nilai.
+        <section id="view-guru" style="display: none;">
+          <!-- ==============================================================
+               1. TAMPILAN AWAL INTRO LOGIN GURU (HANYA LAYAR LOGIN SAJA)
+               ============================================================== -->
+          <div id="guru-intro-screen" class="tech-hero-container">
+            <!-- Left Column: Tech Guru Branding -->
+            <div class="tech-hero-left">
+              <div class="tech-pill-badge" style="background: #fdf2f8; border-color: #fbcfe8; color: #be185d;">
+                <span class="tech-dot-pulse" style="background: #db2777; box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7);"></span>
+                <span>PUSAT KONTROL &amp; PENGAWAS LAB TIK</span>
+              </div>
+
+              <h1 class="tech-hero-heading">
+                Portal Otentikasi Instruktur Lab<br>
+                <span class="tech-typing-text" style="background: linear-gradient(135deg, #0284c7, #103741); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Manajemen Lab Terintegrasi</span>
+              </h1>
+
+              <p class="tech-hero-lead">
+                Akses khusus pengajar dan pembina Lab Komputer TIK. Buka-kunci pertemuan, pantau skor kuis real-time, reset PIN santri, serta ekspor rekap nilai santriwati.
               </p>
+
+              <!-- Terminal Box Guru -->
+              <div class="tech-terminal-box">
+                <div class="tech-terminal-header">
+                  <div class="terminal-dots">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                  </div>
+                  <div class="terminal-title">lab-auth@guru-console:~/security$</div>
+                  <div class="terminal-badge-live">● SECURE GATEWAY</div>
+                </div>
+                <div class="tech-terminal-body">
+                  <div class="terminal-line"><span class="t-prompt">#</span> <span class="t-cmd">verify-security-layer</span> <span class="t-flag">--role=TEACHER</span></div>
+                  <div class="terminal-line t-out"><span class="t-check">✔</span> Database: <strong>SQLite (WAL Mode) Aktif</strong></div>
+                  <div class="terminal-line t-out"><span class="t-check">✔</span> Akses: <strong>104 Santriwati Terkelola</strong></div>
+                  <div class="terminal-line t-out"><span class="t-check">✔</span> Enkripsi PIN: <strong>SHA-256 Terlindungi</strong></div>
+                  <div class="terminal-line t-prompt-line"><span class="t-prompt">&gt;</span> Silakan masukkan PIN Guru untuk mengakses panel kontrol...</div>
+                </div>
+              </div>
+
+              <!-- Quick Metric Chips Guru -->
+              <div class="tech-hero-stats">
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">🎒</span>
+                  <div>
+                    <strong>104</strong>
+                    <span>Santriwati Terdaftar</span>
+                  </div>
+                </div>
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">🔐</span>
+                  <div>
+                    <strong>Kontrol Kunci</strong>
+                    <span>P1 – P4 per Kelas</span>
+                  </div>
+                </div>
+                <div class="tech-stat-chip">
+                  <span class="stat-icon">📊</span>
+                  <div>
+                    <strong>Ekspor Nilai</strong>
+                    <span>Format CSV Excel</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div>
-              <button class="btn btn-secondary btn-sm" onclick="navigasiKeSantri()">Kembali ke Halaman Santri</button>
+
+            <!-- Right Column: Dedicated Teacher Login Card -->
+            <div class="tech-hero-right">
+              <div class="tech-login-card">
+                <div class="tech-card-header">
+                  <div class="tech-card-icon" style="background: linear-gradient(135deg, #fdf2f8, #fce7f3); color: #db2777;">👨‍🏫</div>
+                  <div>
+                    <h3 class="tech-card-title">Masuk Panel Guru</h3>
+                    <p class="tech-card-subtitle">Otentikasi Pengawas Lab Komputer</p>
+                  </div>
+                </div>
+
+                <form onsubmit="handleGuruLoginSubmit(event)">
+                  <div class="form-group-tech">
+                    <label class="tech-label">PIN Keamanan Guru:</label>
+                    <input type="password" id="guru-pin-input" class="tech-input tech-pin-input" placeholder="Masukkan PIN Guru" required>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary tech-btn-login">
+                    🚀 Masuk ke Kontrol Lab
+                  </button>
+
+                  <div id="guru-login-alert" class="tech-auth-alert" style="display: none;"></div>
+                </form>
+
+                <div style="margin-top: 16px; border-top: 1px solid #f1f5f9; padding-top: 14px;">
+                  <button type="button" class="btn btn-outline btn-sm" style="width: 100%;" onclick="navigasiKeSantri()">
+                    ← Kembali ke Layar Santri
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Form Login Guru jika belum login -->
-          <div id="guru-login-box" style="max-width: 400px; margin: 30px auto; text-align: center;">
-            <h3 style="font-size: 16px; margin-bottom: 12px;">Autentikasi Guru</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
-              Masukkan PIN Guru Anda untuk mengakses kontrol lab:
-            </p>
-            <form onsubmit="handleGuruLoginSubmit(event)">
-              <input type="password" id="guru-pin-input" placeholder="PIN Guru (Default: guru1234)" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 12px;" required>
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Masuk ke Panel Guru</button>
-            </form>
-          </div>
-
-          <!-- Konten Dashboard Guru (Tampil setelah terautentikasi) -->
-          <div id="guru-dashboard-content" style="display: none;">
-            <!-- Grid Statistik Server -->
-            <div class="stats-grid">
-              <div class="stat-card">
-                <div id="stat-total-santri" class="stat-val">0</div>
-                <div class="stat-lbl">Total Akun Santri</div>
+          <!-- ==============================================================
+               2. KONTEN DASHBOARD GURU (HANYA MUNCUL SETELAH LOGIN GURU)
+               ============================================================== -->
+          <div id="guru-panel-main" class="card" style="display: none;">
+            <div class="card-header">
+              <div>
+                <h2 class="card-title">👨‍🏫 Panel Pengelolaan Guru Lab TIK</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+                  Pantau progres santri, kelola kode aktivasi/PIN, buka kunci pertemuan per kelas, dan ekspor data nilai.
+                </p>
               </div>
-              <div class="stat-card">
-                <div id="stat-santri-aktif" class="stat-val">0</div>
-                <div class="stat-lbl">Akun Aktif</div>
-              </div>
-              <div class="stat-card">
-                <div id="stat-sesi-aktif" class="stat-val">0</div>
-                <div class="stat-lbl">Sesi Sedang Terhubung</div>
-              </div>
-              <div class="stat-card">
-                <div id="stat-db-size" class="stat-val">0 KB</div>
-                <div class="stat-lbl">Ukuran Database SQLite</div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn btn-outline btn-sm" onclick="lakukanLogoutGuru()">🔒 Keluar Panel Guru</button>
+                <button class="btn btn-secondary btn-sm" onclick="navigasiKeSantri()">Ke Halaman Santri</button>
               </div>
             </div>
 
-            <!-- Matriks Buka / Kunci Pertemuan per Kelas -->
-            <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 24px;">
-              <h3 style="font-size: 15px; margin-bottom: 8px;">Kontrol Pembukaan Pertemuan per Kelas (1–6)</h3>
-              <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
-                Klik tombol toggle untuk mengizinkan santri di kelas tersebut membuka materi dan kuis pertemuan yang relevan:
-              </p>
-              <div id="guru-locks-container" class="lock-grid">
-                <!-- Render Matriks oleh JS -->
+            <!-- Konten Dashboard Guru (Tampil setelah terautentikasi) -->
+            <div id="guru-dashboard-content">
+              <!-- Grid Statistik Server -->
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div id="stat-total-santri" class="stat-val">0</div>
+                  <div class="stat-lbl">Total Akun Santri</div>
+                </div>
+                <div class="stat-card">
+                  <div id="stat-santri-aktif" class="stat-val">0</div>
+                  <div class="stat-lbl">Akun Aktif</div>
+                </div>
+                <div class="stat-card">
+                  <div id="stat-sesi-aktif" class="stat-val">0</div>
+                  <div class="stat-lbl">Sesi Sedang Terhubung</div>
+                </div>
+                <div class="stat-card">
+                  <div id="stat-db-size" class="stat-val">0 KB</div>
+                  <div class="stat-lbl">Ukuran Database SQLite</div>
+                </div>
               </div>
-            </div>
 
-            <!-- Toolbar Aksi Guru: Impor CSV, Ekspor, Leaderboard Proyektor -->
-            <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
-              <button class="btn btn-primary btn-sm" onclick="bukaModalImporCsv()">📥 Impor Santri (santri.csv)</button>
-              <a href="/api/guru/ekspor-csv" class="btn btn-secondary btn-sm" download>📊 Ekspor Rekap Nilai CSV</a>
-              <button class="btn btn-outline btn-sm" onclick="bukaLeaderboardProyektor()">📺 Tampilan Layar Proyektor</button>
-            </div>
+              <!-- Matriks Buka / Kunci Pertemuan per Kelas -->
+              <div style="background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 24px;">
+                <h3 style="font-size: 15px; margin-bottom: 8px;">Kontrol Pembukaan Pertemuan per Kelas (7–12)</h3>
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                  Klik tombol toggle untuk mengizinkan santri di kelas tersebut membuka materi dan kuis pertemuan yang relevan:
+                </p>
+                <div id="guru-locks-container" class="lock-grid">
+                  <!-- Render Matriks oleh JS -->
+                </div>
+              </div>
 
-            <!-- Filter dan Tabel Data Santri -->
-            <div style="display: flex; gap: 12px; margin-bottom: 12px;">
-              <select id="guru-filter-kelas" class="btn-outline" style="padding: 6px 12px;" onchange="muatDataSantriGuru()">
-                <option value="">-- Semua Kelas (7–12) --</option>
-                <option value="7">Kelas 7 SMP</option>
-                <option value="8">Kelas 8 SMP</option>
-                <option value="9">Kelas 9 SMP</option>
-                <option value="10">Kelas 10 SMA</option>
-                <option value="11">Kelas 11 SMA</option>
-                <option value="12">Kelas 12 SMA</option>
-              </select>
+              <!-- Toolbar Aksi Guru: Impor CSV, Ekspor, Leaderboard Proyektor -->
+              <div style="display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+                <button class="btn btn-primary btn-sm" onclick="bukaModalImporCsv()">📥 Impor Santri (santri.csv)</button>
+                <a href="/api/guru/ekspor-csv" class="btn btn-secondary btn-sm" download>📊 Ekspor Rekap Nilai CSV</a>
+                <button class="btn btn-outline btn-sm" onclick="bukaLeaderboardProyektor()">📺 Tampilan Layar Proyektor</button>
+              </div>
 
-              <input type="text" id="guru-search-nama" placeholder="Cari nama santri..." style="flex: 1; padding: 6px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);" onkeyup="muatDataSantriGuru()">
-            </div>
+              <!-- Filter dan Tabel Data Santri -->
+              <div style="display: flex; gap: 12px; margin-bottom: 12px;">
+                <select id="guru-filter-kelas" class="btn-outline" style="padding: 6px 12px;" onchange="muatDataSantriGuru()">
+                  <option value="">-- Semua Kelas (7–12) --</option>
+                  <option value="7">Kelas 7 SMP</option>
+                  <option value="8">Kelas 8 SMP</option>
+                  <option value="9">Kelas 9 SMP</option>
+                  <option value="10">Kelas 10 SMA</option>
+                  <option value="11">Kelas 11 SMA</option>
+                  <option value="12">Kelas 12 SMA</option>
+                </select>
 
-            <div style="overflow-x: auto;">
-              <table class="data-table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Kelas</th>
-                    <th>Nama Santri</th>
-                    <th>Status / Kode Aktivasi</th>
-                    <th>XP & Level</th>
-                    <th>Skor Kuis P4</th>
-                    <th>Checklist</th>
-                    <th>Aksi Guru</th>
-                  </tr>
-                </thead>
-                <tbody id="guru-santri-tbody">
-                  <!-- Render Baris Santri oleh JS -->
-                </tbody>
-              </table>
+                <input type="text" id="guru-search-nama" placeholder="Cari nama santri..." style="flex: 1; padding: 6px 12px; border: 1px solid var(--border); border-radius: var(--radius-sm);" onkeyup="muatDataSantriGuru()">
+              </div>
+
+              <div style="overflow-x: auto;">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Kelas</th>
+                      <th>Nama Santri</th>
+                      <th>Status / Kode Aktivasi</th>
+                      <th>XP & Level</th>
+                      <th>Skor Kuis P4</th>
+                      <th>Checklist</th>
+                      <th>Aksi Guru</th>
+                    </tr>
+                  </thead>
+                  <tbody id="guru-santri-tbody">
+                    <!-- Render Baris Santri oleh JS -->
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </section>
@@ -1459,13 +1653,13 @@
        ======================================================================== -->
 
   <!-- Modular Application Scripts (Vanilla JS - Zero Dependencies) -->
-  <script src="/js/state.js?v=20261027_03"></script>
-  <script src="/js/api.js?v=20261027_03"></script>
-  <script src="/js/auth.js?v=20261027_03"></script>
-  <script src="/js/games/mouse_typing.js?v=20261027_03"></script>
-  <script src="/js/games/explorer.js?v=20261027_03"></script>
-  <script src="/js/quiz.js?v=20261027_03"></script>
-  <script src="/js/guru.js?v=20261027_03"></script>
-  <script src="/js/app.js?v=20261027_03"></script>
+  <script src="/js/state.js?v=20261027_07"></script>
+  <script src="/js/api.js?v=20261027_07"></script>
+  <script src="/js/auth.js?v=20261027_07"></script>
+  <script src="/js/games/mouse_typing.js?v=20261027_07"></script>
+  <script src="/js/games/explorer.js?v=20261027_07"></script>
+  <script src="/js/quiz.js?v=20261027_07"></script>
+  <script src="/js/guru.js?v=20261027_07"></script>
+  <script src="/js/app.js?v=20261027_07"></script>
 </body>
 </html>

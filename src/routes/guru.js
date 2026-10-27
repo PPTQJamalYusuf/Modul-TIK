@@ -149,11 +149,12 @@ async function handleGuruRoutes(req, res, pathname, method, urlObj, clientIp) {
     return sendJson(res, 200, { status: 'sukses', santri: list });
   }
 
-  // Status Kunci Pertemuan per Kelas
+  // Status Kunci Pertemuan per Kelas (Hanya Kelas 7–12)
   if (method === 'GET' && pathname === '/api/guru/pertemuan-status') {
     const rows = db.prepare(`
       SELECT kelas, modul, pertemuan, terbuka
       FROM pembukaan_pertemuan
+      WHERE kelas >= 7 AND kelas <= 12
       ORDER BY kelas ASC, pertemuan ASC
     `).all();
 
@@ -222,24 +223,22 @@ async function handleGuruRoutes(req, res, pathname, method, urlObj, clientIp) {
 
       if (!santri_id) return sendError(res, 400, 'ID Santri wajib disertakan');
 
-      const kodeBaru = buatKodeAktivasi();
       db.prepare(`
         UPDATE santri
-        SET pin_aktif = 0, pin_hash = NULL, pin_salt = NULL, kode_aktivasi = ?
+        SET pin_aktif = 0, pin_hash = NULL, pin_salt = NULL, kode_aktivasi = NULL
         WHERE id = ?
-      `).run(kodeBaru, santri_id);
+      `).run(santri_id);
 
       db.prepare('UPDATE sesi SET aktif = 0 WHERE santri_id = ?').run(santri_id);
 
       db.prepare(`
         INSERT INTO audit_guru (tindakan, target_santri_id, keterangan, waktu)
         VALUES ('RESET_PIN', ?, ?, ?)
-      `).run(santri_id, `PIN di-reset, kode baru: ${kodeBaru}`, Date.now());
+      `).run(santri_id, 'PIN santri di-reset', Date.now());
 
       return sendJson(res, 200, {
         status: 'sukses',
-        pesan: 'PIN berhasil di-reset. Berikan kode aktivasi baru kepada santri.',
-        kode_aktivasi_baru: kodeBaru
+        pesan: 'PIN berhasil di-reset. Santri dapat langsung membuat Password/PIN baru saat masuk.'
       });
     } catch (err) {
       return sendError(res, 500, err.message);

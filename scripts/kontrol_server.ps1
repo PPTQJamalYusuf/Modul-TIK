@@ -3,16 +3,47 @@ Add-Type -AssemblyName PresentationFramework, PresentationCore, WindowsBase, Sys
 # Tentukan path direktori proyek
 $scriptDir = $PSScriptRoot
 $rootDir = (Get-Item $scriptDir).Parent.FullName
+$pidFile = Join-Path $rootDir "database\server.pid"
 
-# Fungsi Deteksi Status Server
+# Fungsi Deteksi Status Server Super Cepat (<2ms via PID file)
 function Get-ServerPID {
-    $p = netstat -ano | findstr ":8000" | findstr "LISTENING"
-    if ($p) {
-        $parts = $p.Trim() -split "\s+"
-        if ($parts.Length -ge 5) {
-            return $parts[4]
+    if (Test-Path $pidFile) {
+        try {
+            $raw = [System.IO.File]::ReadAllText($pidFile).Trim()
+            if ($raw -match '^\d+$') {
+                $pidNum = [int]$raw
+                $proc = [System.Diagnostics.Process]::GetProcessById($pidNum)
+                if ($proc -and (-not $proc.HasExited) -and ($proc.ProcessName -ieq "node")) {
+                    return $raw
+                }
+            }
+        } catch {
+            try { [System.IO.File]::Delete($pidFile) } catch {}
         }
     }
+
+    # Jalur Cadangan: Cek apakah port 8000 aktif via TCP probe kilat (30ms)
+    try {
+        $tcp = New-Object System.Net.Sockets.TcpClient
+        $connect = $tcp.BeginConnect("127.0.0.1", 8000, $null, $null)
+        $ready = $connect.AsyncWaitHandle.WaitOne(30)
+        if ($ready -and $tcp.Connected) {
+            $tcp.EndConnect($connect)
+            $tcp.Close()
+            # Port terbuka, cari PID sekali dan simpan ke pidFile agar panggilan berikutnya instan
+            $p = netstat -ano | findstr ":8000" | findstr "LISTENING"
+            if ($p) {
+                $parts = ($p.Trim() -split "\s+")
+                if ($parts.Length -ge 5) {
+                    $foundPid = $parts[4]
+                    try { [System.IO.File]::WriteAllText($pidFile, $foundPid) } catch {}
+                    return $foundPid
+                }
+            }
+        }
+        $tcp.Close()
+    } catch {}
+
     return $null
 }
 
@@ -176,7 +207,7 @@ $wifiIp = Get-WifiIP
             <StackPanel>
                 <Grid Margin="0,0,0,6">
                     <TextBlock Text="LOG AKTIVITAS KONTROL:" FontSize="11" FontWeight="Bold" Foreground="#64748B"/>
-                    <TextBlock Name="TxtLastUpdate" Text="Update otomatis tiap 2 detik" FontSize="11" Foreground="#94A3B8" HorizontalAlignment="Right"/>
+                    <TextBlock Name="TxtLastUpdate" Text="Update responsif (500ms)" FontSize="11" Foreground="#94A3B8" HorizontalAlignment="Right"/>
                 </Grid>
                 <TextBox Name="TxtLog" Height="100" Background="#0F172A" Foreground="#F8FAFC" FontFamily="Consolas" FontSize="11" 
                          IsReadOnly="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Padding="8" BorderThickness="0"/>
@@ -220,7 +251,7 @@ function Log-Message($msg) {
     }
 }
 
-# Fungsi Update Tampilan UI Status
+# Fungsi Update Tampilan UI Status (Super Ringan <2ms)
 function Update-UIStatus {
     $pidNow = Get-ServerPID
     if ($pidNow) {
@@ -233,6 +264,7 @@ function Update-UIStatus {
         $btnStop.IsEnabled = $true
         $btnStop.Opacity = 1.0
         $btnRestart.IsEnabled = $true
+        $btnRestart.Opacity = 1.0
     } else {
         $badgeStatus.Background = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#FEE2E2")
         $txtStatus.Foreground = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#B91C1C")
@@ -243,55 +275,121 @@ function Update-UIStatus {
         $btnStop.IsEnabled = $false
         $btnStop.Opacity = 0.5
         $btnRestart.IsEnabled = $false
+        $btnRestart.Opacity = 0.5
     }
 }
 
-# Event Tombol Start
+# Event Tombol Start (Instan 0ms Feedback)
 $btnStart.Add_Click({
+    # 1. Feedback Visual Langsung Tanpa Tunggu
+    $badgeStatus.Background = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#FEF3C7")
+    $txtStatus.Foreground = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#B45309")
+    $txtStatus.Text = "[⏳] MEMULAI SERVER..."
+    $btnStart.IsEnabled = $false
+    $btnStart.Opacity = 0.5
     Log-Message "Memulai server Node.js di port 8000..."
+
     $serverScript = Join-Path $rootDir "src\server.js"
     if (-not (Test-Path $serverScript)) {
         [System.Windows.Forms.MessageBox]::Show("Berkas src\server.js tidak ditemukan!", "Error", 0, [System.Windows.Forms.MessageBoxIcon]::Error)
+        Update-UIStatus
         return
     }
-    
-    Start-Process -FilePath "node" -ArgumentList "`"$serverScript`"" -WorkingDirectory $rootDir -WindowStyle Hidden
-    Start-Sleep -Seconds 2
-    Update-UIStatus
-    $curPid = Get-ServerPID
-    if ($curPid) {
-        Log-Message ("Server BERHASIL DINYALAKAN (PID: " + $curPid + ").")
-    } else {
-        Log-Message "Server sedang melakukan booting awal..."
+
+    # 2. Start Process dengan -PassThru agar langsung dapat PID tanpa delay
+    $proc = Start-Process -FilePath "node" -ArgumentList "`"$serverScript`"" -WorkingDirectory $rootDir -WindowStyle Hidden -PassThru
+    if ($proc) {
+        try { [System.IO.File]::WriteAllText($pidFile, $proc.Id) } catch {}
+        Log-Message ("Proses Node.js diluncurkan (PID: " + $proc.Id + "). Menyiapkan jaringan...")
     }
+
+    # 3. Non-blocking Timer Cepat (cek tiap 150ms, tanpa freeze)
+    $fastCount = 0
+    $startWatch = New-Object System.Windows.Threading.DispatcherTimer
+    $startWatch.Interval = [TimeSpan]::FromMilliseconds(150)
+    $startWatch.Add_Tick({
+        $fastCount++
+        $curPid = Get-ServerPID
+        if ($curPid) {
+            Update-UIStatus
+            Log-Message ("Server BERHASIL AKTIF (PID: " + $curPid + ") di port 8000.")
+            $startWatch.Stop()
+        } elseif ($fastCount -ge 20) { # timeout 3 detik
+            Update-UIStatus
+            $startWatch.Stop()
+        }
+    })
+    $startWatch.Start()
 })
 
-# Event Tombol Stop
+# Event Tombol Stop (Instan .Kill() 5ms)
 $btnStop.Add_Click({
+    # Feedback Visual Langsung
+    $badgeStatus.Background = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#FEF3C7")
+    $txtStatus.Foreground = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#B45309")
+    $txtStatus.Text = "[⏳] MEMATIKAN SERVER..."
+    $btnStop.IsEnabled = $false
+    $btnStop.Opacity = 0.5
+
     $curPid = Get-ServerPID
     if ($curPid) {
         Log-Message ("Menghentikan server (PID: " + $curPid + ")...")
-        taskkill /F /PID $curPid | Out-Null
-        Start-Sleep -Seconds 1
-        Update-UIStatus
-        Log-Message "Server BERHASIL DIMATIKAN. Port 8000 bebas."
+        # Native .NET process kill: super cepat (5ms)
+        try {
+            $p = [System.Diagnostics.Process]::GetProcessById([int]$curPid)
+            if ($p) { $p.Kill() }
+        } catch {}
+        # Fallback taskkill
+        taskkill /F /PID $curPid 2>$null | Out-Null
     }
+
+    try { [System.IO.File]::Delete($pidFile) } catch {}
+    Update-UIStatus
+    Log-Message "Server BERHASIL DIMATIKAN. Port 8000 bebas dan aman."
 })
 
-# Event Tombol Restart
+# Event Tombol Restart (Cepat & Non-Blocking)
 $btnRestart.Add_Click({
+    $badgeStatus.Background = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#FEF3C7")
+    $txtStatus.Foreground = [System.Windows.Media.BrushConverter]::new().ConvertFromString("#B45309")
+    $txtStatus.Text = "[⏳] MERESTART SERVER..."
+    $btnStart.IsEnabled = $false
+    $btnStop.IsEnabled = $false
+    $btnRestart.IsEnabled = $false
     Log-Message "Memulai ulang server..."
+
     $curPid = Get-ServerPID
     if ($curPid) {
-        taskkill /F /PID $curPid | Out-Null
-        Start-Sleep -Seconds 1
+        try {
+            $p = [System.Diagnostics.Process]::GetProcessById([int]$curPid)
+            if ($p) { $p.Kill() }
+        } catch {}
+        taskkill /F /PID $curPid 2>$null | Out-Null
     }
+    try { [System.IO.File]::Delete($pidFile) } catch {}
+
     $serverScript = Join-Path $rootDir "src\server.js"
-    Start-Process -FilePath "node" -ArgumentList "`"$serverScript`"" -WorkingDirectory $rootDir -WindowStyle Hidden
-    Start-Sleep -Seconds 2
-    Update-UIStatus
-    $newPid = Get-ServerPID
-    Log-Message ("Server berhasil di-restart (PID: " + $newPid + ").")
+    $proc = Start-Process -FilePath "node" -ArgumentList "`"$serverScript`"" -WorkingDirectory $rootDir -WindowStyle Hidden -PassThru
+    if ($proc) {
+        try { [System.IO.File]::WriteAllText($pidFile, $proc.Id) } catch {}
+    }
+
+    $restartCount = 0
+    $restartWatch = New-Object System.Windows.Threading.DispatcherTimer
+    $restartWatch.Interval = [TimeSpan]::FromMilliseconds(150)
+    $restartWatch.Add_Tick({
+        $restartCount++
+        $newPid = Get-ServerPID
+        if ($newPid) {
+            Update-UIStatus
+            Log-Message ("Server BERHASIL DI-RESTART (PID: " + $newPid + ").")
+            $restartWatch.Stop()
+        } elseif ($restartCount -ge 20) {
+            Update-UIStatus
+            $restartWatch.Stop()
+        }
+    })
+    $restartWatch.Start()
 })
 
 # Event Buka Browser
@@ -343,9 +441,9 @@ $btnRefreshShortcut.Add_Click({
     }
 })
 
-# Timer Polling 2 Detik
+# Timer Polling 500 ms (Super Cepat, Tanpa Beban CPU, Zero Freeze)
 $timer = New-Object System.Windows.Threading.DispatcherTimer
-$timer.Interval = [TimeSpan]::FromSeconds(2)
+$timer.Interval = [TimeSpan]::FromMilliseconds(500)
 $timer.Add_Tick({
     Update-UIStatus
 })
@@ -353,7 +451,7 @@ $timer.Start()
 
 # Inisialisasi awal
 Update-UIStatus
-Log-Message "Aplikasi Kontrol Server Lab TIK siap digunakan."
+Log-Message "Aplikasi Kontrol Server Lab TIK siap digunakan (Mode Cepat 500ms)."
 
 # Tampilkan Window
 [void]$window.ShowDialog()

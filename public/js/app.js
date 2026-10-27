@@ -3,6 +3,9 @@
 // 14. INITIAL BOOTSTRAP PADA SAAT HALAMAN SELESAI DIMUAT
 // ------------------------------------------------------------------------
 window.addEventListener('DOMContentLoaded', async () => {
+  if (typeof initTypewriterAnimation === 'function') {
+    initTypewriterAnimation();
+  }
   muatAntreanOfflineDariStorage();
 
   // Cek apakah sudah ada sesi santri aktif

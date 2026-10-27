@@ -7,56 +7,84 @@ function navigasiKeGuru() {
   const vg = document.getElementById('view-guru');
   if (vg) vg.style.display = 'block';
 
-  const navGuru = document.getElementById('nav-guru');
-  if (navGuru) navGuru.classList.add('active');
+  // Sembunyikan sidebar siswa saat berada di portal guru
+  const sidebar = document.getElementById('app-sidebar');
+  if (sidebar) sidebar.style.display = 'none';
+
+  const intro = document.getElementById('guru-intro-screen');
+  const panel = document.getElementById('guru-panel-main');
 
   if (STATE.guruToken) {
+    if (intro) intro.style.display = 'none';
+    if (panel) panel.style.display = 'block';
     tampilkanDashboardGuru();
   } else {
-    const glb = document.getElementById('guru-login-box');
-    const gdc = document.getElementById('guru-dashboard-content');
-    if (glb) glb.style.display = 'block';
-    if (gdc) gdc.style.display = 'none';
+    // TAMPILKAN HANYA LAYAR INTRO LOGIN GURU (TANPA KONTEN DASHBOARD)
+    if (intro) intro.style.display = 'grid';
+    if (panel) panel.style.display = 'none';
+    const pinInput = document.getElementById('guru-pin-input');
+    if (pinInput) pinInput.value = '';
+    const alertBox = document.getElementById('guru-login-alert');
+    if (alertBox) alertBox.style.display = 'none';
   }
 }
 
 function navigasiKeSantri() {
+  window.location.hash = '';
+  if (window.history && window.history.pushState) {
+    window.history.pushState(null, '', '/');
+  }
   sembunyikanSemuaView();
   if (STATE.santri) {
     bukaPertemuan(STATE.pertemuanAktif || 1);
   } else {
+    perbaruiTampilanGuest();
     bukaDashboard();
   }
+}
+
+function lakukanLogoutGuru() {
+  STATE.guruToken = null;
+  navigasiKeGuru();
 }
 
 async function handleGuruLoginSubmit(e) {
   e.preventDefault();
   const pinInput = document.getElementById('guru-pin-input');
+  const alertBox = document.getElementById('guru-login-alert');
+  if (alertBox) alertBox.style.display = 'none';
+
   if (!pinInput) return;
-  const pin = pinInput.value;
+  const pin = pinInput.value.trim();
   if (!pin) return;
 
   try {
     const res = await apiFetch('/api/guru/login', 'POST', { pin });
     if (res.status === 'sukses') {
       STATE.guruToken = res.token;
+      pinInput.value = '';
       tampilkanDashboardGuru();
     }
   } catch (err) {
-    alert(err.message);
+    if (alertBox) {
+      alertBox.textContent = err.message || 'PIN Guru tidak valid.';
+      alertBox.style.display = 'block';
+    } else {
+      alert(err.message);
+    }
   }
 }
 
 async function tampilkanDashboardGuru() {
-  const glb = document.getElementById('guru-login-box');
-  const gdc = document.getElementById('guru-dashboard-content');
-  if (glb) glb.style.display = 'none';
-  if (gdc) gdc.style.display = 'block';
+  const intro = document.getElementById('guru-intro-screen');
+  const panel = document.getElementById('guru-panel-main');
+  if (intro) intro.style.display = 'none';
+  if (panel) panel.style.display = 'block';
 
   await segarkanStatusServerGuru();
-      await segarkanMatriksKunciGuru();
-      await muatDataSantriGuru();
-    }
+  await segarkanMatriksKunciGuru();
+  await muatDataSantriGuru();
+}
 
     async function segarkanStatusServerGuru() {
       try {
@@ -85,21 +113,24 @@ async function tampilkanDashboardGuru() {
 
     function renderMatriksKunciGuru(list) {
       const container = document.getElementById('guru-locks-container');
+      if (!container) return;
       container.innerHTML = '';
 
-      // Kelompokkan per kelas yang tersedia dalam sistem
-      const kelasSet = new Set(list.map(item => item.kelas));
-      if (kelasSet.size === 0) kelasSet.add(7);
+      // Filter hanya kelas 7-12 (SMP dan SMA)
+      const kelasValid = (list || []).filter(item => item.kelas >= 7 && item.kelas <= 12);
+      const kelasSet = new Set(kelasValid.map(item => item.kelas));
+      if (kelasSet.size === 0) [7, 8, 9, 10, 11, 12].forEach(k => kelasSet.add(k));
       const daftarKelas = Array.from(kelasSet).sort((a, b) => a - b);
 
       for (const k of daftarKelas) {
         const card = document.createElement('div');
         card.className = 'lock-class-card';
-        const labelKelas = k >= 7 ? `Kelas ${k} (SMP)` : `Kelas ${k}`;
-        card.innerHTML = `<strong style="display: block; margin-bottom: 8px;">${labelKelas}</strong>`;
+        const labelKelas = k <= 9 ? `Kelas ${k} SMP` : `Kelas ${k} SMA`;
+        card.innerHTML = `<strong style="display: block; margin-bottom: 8px; color: var(--dark); font-weight: 700;">${labelKelas}</strong>`;
 
-        const rows = list.filter(item => item.kelas === k);
-        rows.forEach(r => {
+        const rows = kelasValid.filter(item => item.kelas === k);
+        for (let p = 1; p <= 4; p++) {
+          const r = rows.find(item => item.pertemuan === p) || { pertemuan: p, terbuka: p === 1 ? 1 : 0 };
           const btn = document.createElement('button');
           btn.className = `btn btn-sm ${r.terbuka ? 'btn-primary' : 'btn-outline'}`;
           btn.style.width = '100%';
@@ -108,7 +139,7 @@ async function tampilkanDashboardGuru() {
           btn.textContent = `P${r.pertemuan}: ${r.terbuka ? '🔓 Terbuka' : '🔒 Dikunci'}`;
           btn.onclick = () => toggleKunciPertemuanGuru(k, r.pertemuan, !r.terbuka);
           card.appendChild(btn);
-        });
+        }
         container.appendChild(card);
       }
     }
@@ -155,13 +186,13 @@ async function tampilkanDashboardGuru() {
 
       list.forEach(s => {
         const tr = document.createElement('tr');
-        const kodeAktivasi = s.kode_aktivasi ? `<strong style="color: var(--secondary);">${s.kode_aktivasi}</strong>` : '<span style="color: #16a34a;">PIN Aktif</span>';
+        const statusPin = s.pin_aktif ? '<span style="color: #16a34a; font-weight: bold;">🟢 Aktif</span>' : '<span style="color: var(--secondary); font-weight: bold;">🟡 Belum Buat PIN</span>';
 
         tr.innerHTML = `
           <td><code>${s.id}</code></td>
           <td>${formatNamaKelas(s.kelas)}</td>
           <td><strong>${s.nama}</strong></td>
-          <td>${kodeAktivasi}</td>
+          <td>${statusPin}</td>
           <td>${s.total_xp || 0} XP (Lv.${s.level || 1})</td>
           <td>${s.skor_evaluasi !== null && s.skor_evaluasi !== undefined ? `${s.skor_evaluasi}/100` : '-'}</td>
           <td>${s.checklist_selesai || 0}/8 Tugas</td>
@@ -175,11 +206,11 @@ async function tampilkanDashboardGuru() {
     }
 
     async function resetPinSantriGuru(santriId) {
-      if (!confirm(`Yakin ingin me-reset PIN santri ${santriId}? Santri akan membutuhkan kode aktivasi baru untuk membuat PIN.`)) return;
+      if (!confirm(`Yakin ingin me-reset PIN santri ${santriId}? Santri dapat langsung membuat Password/PIN baru sendiri saat login.`)) return;
       try {
         const res = await apiFetch('/api/guru/reset-pin', 'POST', { santri_id: santriId });
         if (res.status === 'sukses') {
-          alert(`PIN berhasil di-reset!\nKode Aktivasi Baru: ${res.kode_aktivasi_baru}\nBerikan kode ini kepada santri.`);
+          alert('Alhamdulillah! PIN berhasil di-reset. Santri dapat langsung membuat Password/PIN baru.');
           muatDataSantriGuru();
         }
       } catch (err) {

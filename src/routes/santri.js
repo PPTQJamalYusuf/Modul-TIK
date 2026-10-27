@@ -46,18 +46,19 @@ async function handleSantriRoutes(req, res, pathname, method, urlObj, clientIp) 
     return sendJson(res, 200, { status: 'sukses', santri: list });
   }
 
-  // 3. Aktivasi Akun Santri Baru
-  if (method === 'POST' && pathname === '/api/santri/aktivasi') {
+  // 3. Buat Password/PIN Baru Santri (Langsung tanpa kode aktivasi)
+  if (method === 'POST' && (pathname === '/api/santri/buat-pin' || pathname === '/api/santri/aktivasi')) {
     try {
       const body = await readBodyJson(req);
-      const { santri_id, kode_aktivasi, pin } = body;
+      const { santri_id, pin } = body;
 
-      if (!santri_id || !kode_aktivasi || !pin) {
-        return sendError(res, 400, 'ID Santri, kode aktivasi, dan PIN 4-digit wajib diisi');
+      if (!santri_id || !pin) {
+        return sendError(res, 400, 'Pilih nama santri dan tentukan Password/PIN');
       }
 
-      if (!/^\d{4}$/.test(pin)) {
-        return sendError(res, 400, 'PIN harus berupa 4 angka numerik');
+      const pinStr = String(pin).trim();
+      if (pinStr.length < 4) {
+        return sendError(res, 400, 'Password/PIN minimal 4 karakter/angka');
       }
 
       const santri = db.prepare('SELECT * FROM santri WHERE id = ?').get(santri_id);
@@ -65,16 +66,12 @@ async function handleSantriRoutes(req, res, pathname, method, urlObj, clientIp) 
         return sendError(res, 404, 'Akun santri tidak ditemukan');
       }
 
-      if (santri.pin_aktif === 1) {
-        return sendError(res, 400, 'Akun ini sudah aktif. Silakan langsung login dengan PIN');
-      }
-
-      if (santri.kode_aktivasi !== kode_aktivasi.trim().toUpperCase()) {
-        return sendError(res, 401, 'Kode aktivasi tidak sesuai. Minta kode aktivasi resmi dari Guru');
+      if (santri.pin_aktif === 1 && santri.pin_hash) {
+        return sendError(res, 400, 'Akun ini sudah memiliki Password/PIN. Silakan langsung login');
       }
 
       const salt = buatSalt();
-      const hash = hashPin(pin, salt);
+      const hash = hashPin(pinStr, salt);
       const sekarang = Date.now();
 
       db.prepare(`
@@ -93,15 +90,21 @@ async function handleSantriRoutes(req, res, pathname, method, urlObj, clientIp) 
       `).run(tHash, santri_id, req.headers['user-agent'] || 'Browser Santri', sekarang, kedaluwarsa);
 
       const cookieHeader = `session_token=${rawToken}; Path=/; HttpOnly; SameSite=Strict; Max-Age=86400`;
+      const sb = db.prepare('SELECT total_xp, level, gelar, pertemuan_terakhir, aktivitas_terakhir FROM status_belajar WHERE santri_id = ?').get(santri.id);
 
       return sendJson(res, 200, {
         status: 'sukses',
-        pesan: 'Aktivasi akun berhasil! Selamat datang di Lab Komputer TIK.',
+        pesan: 'Password/PIN berhasil dibuat! Selamat datang di Lab Komputer TIK.',
         token: rawToken,
         santri: {
           id: santri.id,
           nama: santri.nama,
-          kelas: santri.kelas
+          kelas: santri.kelas,
+          total_xp: sb ? sb.total_xp : 0,
+          level: sb ? sb.level : 1,
+          gelar: sb ? sb.gelar : 'Pemula Komputer',
+          pertemuan_terakhir: sb ? sb.pertemuan_terakhir : 1,
+          aktivitas_terakhir: sb ? sb.aktivitas_terakhir : ''
         }
       }, { 'Set-Cookie': cookieHeader });
     } catch (err) {

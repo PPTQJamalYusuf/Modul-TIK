@@ -22,9 +22,10 @@ if (majorVer < 22 || (majorVer === 22 && minorVer < 5)) {
   process.exit(1);
 }
 
+const fs = require('node:fs');
 const http = require('node:http');
 const os = require('node:os');
-const { PORT, DB_PATH, BACKUP_DIR } = require('./config');
+const { PORT, DB_PATH, BACKUP_DIR, PID_FILE } = require('./config');
 const { serveStaticFile, sendError } = require('./utils/http');
 const { handleSantriRoutes } = require('./routes/santri');
 const { handleGuruRoutes } = require('./routes/guru');
@@ -66,6 +67,20 @@ const server = http.createServer(async (req, res) => {
 
 // 3. MENJALANKAN SERVER DAN PENGUMUMAN JARINGAN LOKAL
 server.listen(PORT, '0.0.0.0', () => {
+  try {
+    fs.writeFileSync(PID_FILE, String(process.pid), 'utf8');
+  } catch (err) {
+    console.warn('[PID WARNING] Gagal menulis PID file:', err.message);
+  }
+
+  const hapusPid = () => {
+    try {
+      if (fs.existsSync(PID_FILE)) fs.unlinkSync(PID_FILE);
+    } catch {}
+  };
+  process.on('exit', hapusPid);
+  process.on('SIGINT', () => { hapusPid(); process.exit(0); });
+  process.on('SIGTERM', () => { hapusPid(); process.exit(0); });
   const ifaces = os.networkInterfaces();
   const alamatIp = [];
 

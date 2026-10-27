@@ -155,15 +155,18 @@ function initDatabaseSchema() {
   }
 
   // Inisialisasi kunci pembukaan pertemuan:
-  // Pertemuan 1 terbuka secara default untuk kelas 1-12. Pertemuan 2-4 terkunci.
-  const stmtCheck = db.prepare('SELECT COUNT(*) as count FROM pembukaan_pertemuan');
+  // Pertemuan 1 terbuka secara default untuk kelas 7-12. Pertemuan 2-4 terkunci.
+  // Hapus sisa konfigurasi kelas 1-6 lama jika ada
+  db.prepare('DELETE FROM pembukaan_pertemuan WHERE kelas < 7').run();
+
+  const stmtCheck = db.prepare('SELECT COUNT(*) as count FROM pembukaan_pertemuan WHERE kelas >= 7 AND kelas <= 12');
   const countRow = stmtCheck.get();
   if (countRow.count === 0) {
     const stmtInsert = db.prepare(`
       INSERT OR IGNORE INTO pembukaan_pertemuan (kelas, modul, pertemuan, terbuka)
       VALUES (?, 1, ?, ?)
     `);
-    for (let k = 1; k <= 12; k++) {
+    for (let k = 7; k <= 12; k++) {
       stmtInsert.run(k, 1, 1); // Pertemuan 1 Terbuka
       stmtInsert.run(k, 2, 0); // Pertemuan 2 Terkunci
       stmtInsert.run(k, 3, 0); // Pertemuan 3 Terkunci
