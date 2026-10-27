@@ -1,0 +1,667 @@
+/* ==========================================================================
+   DESIGN SYSTEM & CSS TOKENS (Tema Kider - Ceria, Ramah, & Edukatif)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Lobster+Two:ital,wght@0,700;1,700&family=Fredoka:wght@500;600;700&display=swap');
+
+:root {
+  --primary: #FE5D37;        /* Kider Signature Coral-Orange */
+  --primary-hover: #e04824;
+  --primary-light: #FFF5F3;   /* Kider Light Warm Peach */
+  --primary-dark: #cf3d19;
+  --dark: #103741;           /* Kider Deep Oceanic Teal */
+  --secondary: #198754;      /* Cheerful Green */
+  --secondary-hover: #157347;
+  --secondary-light: #e8f5e9;
+  --sky: #0284c7;            /* Technology Sky Blue */
+  --sky-light: #e0f2fe;
+  --accent: #FFC107;         /* Golden Star / XP Amber */
+  --accent-light: #fff8e1;
+  --danger: #ef4444;
+  --danger-light: #fee2e2;
+  --success: #198754;
+  --bg-page: #FFF5F3;        /* Kider warm page background */
+  --bg-card: #ffffff;
+  --text-main: #103741;      /* Kider high-contrast dark text */
+  --text-muted: #627b82;
+  --border: #f5dfda;
+  --border-focus: #FE5D37;
+  --shadow-sm: 0 2px 8px rgba(16, 55, 65, 0.05);
+  --shadow: 0 8px 24px rgba(254, 93, 55, 0.08), 0 2px 8px rgba(16, 55, 65, 0.05);
+  --shadow-lg: 0 16px 40px rgba(16, 55, 65, 0.12);
+  --radius: 18px;            /* Kider friendly curved corners */
+  --radius-sm: 10px;
+  --radius-pill: 50px;
+  --font-family: 'Heebo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Lobster Two', 'Fredoka', cursive, var(--font-family);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Aksesibilitas Fokus Keyboard */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   HEADER & NAVIGATION BAR (KIDER STYLE)
+   ========================================================================== */
+.app-header {
+  background: #ffffff;
+  border-bottom: 2px solid var(--border);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 4px 15px rgba(254, 93, 55, 0.07);
+}
+
+.app-header::after {
+  content: "";
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  width: 100%;
+  height: 19px;
+  background: url('/img/bg-header-bottom.png') center bottom repeat-x;
+  pointer-events: none;
+  z-index: 52;
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--primary), #ff8a65);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(254, 93, 55, 0.3);
+  border: 2px solid #ffffff;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: block;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Indikator Status Jaringan / Offline */
+.net-badge {
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+.net-online {
+  background: var(--secondary-light);
+  color: var(--secondary);
+  border: 1px solid #c8e6c9;
+}
+.net-offline {
+  background: var(--danger-light);
+  color: var(--danger);
+  border: 1px solid #ffcdd2;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* User Profile Chip di Header */
+.user-chip {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 4px 12px 4px 16px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+}
+.xp-pill {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+}
+
+/* ==========================================================================
+   LAYOUT UTAMA: SIDEBAR & WORKSPACE (EDCLUB FRESH STYLE)
+   ========================================================================== */
+.main-layout {
+  display: flex;
+  flex: 1;
+  min-height: calc(100vh - 70px);
+}
+
+/* Sidebar Navigasi EdClub Minimalis */
+.sidebar {
+  width: 240px;
+  background: #ffffff;
+  border-right: 1.5px solid #ede8e6;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+.profile-card {
+  padding: 16px 14px;
+  border-bottom: 1.5px solid #f2e4e0;
+  background: linear-gradient(180deg, #FFF5F3 0%, #ffffff 100%);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), #ff8a65);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(254, 93, 55, 0.25);
+  border: 2px solid #ffffff;
+}
+
+.profile-info h4 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.profile-info p {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.progress-bar-container {
+  background: #f1dfda;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin: 8px 0 4px 0;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--primary), #ff8a65);
+  height: 100%;
+  width: 0%;
+  border-radius: var(--radius-pill);
+  transition: width 0.4s ease;
+}
+
+.level-badge-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Daftar Menu EdClub dengan Active Indicator Kanan */
+.sidebar-menu {
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-radius: 12px;
+  color: #4b6369;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13.5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:hover {
+  background: #FFF5F3;
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.menu-item.active {
+  background: #FFF5F3;
+  color: var(--primary);
+  font-weight: 700;
+}
+.menu-item.active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 4px;
+  background: var(--primary);
+  border-radius: 4px 0 0 4px;
+}
+
+.menu-item.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: #f8fafc;
+  color: var(--text-muted);
+  transform: none;
+}
+
+.item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.badge-status {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 10px;
+  font-weight: 700;
+}
+.badge-selesai {
+  background: #dcfce7;
+  color: #15803d;
+}
+.badge-terkunci {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Area Konten Utama */
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px 36px;
+  background: var(--bg-page);
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   EDCLUB STYLE HERO BANNER & COURSE CARDS
+   ========================================================================== */
+.hero-banner {
+  background: linear-gradient(135deg, #ffffff 0%, #FFF5F3 100%);
+  border: 1.5px solid #fce8e4;
+  border-radius: 24px;
+  padding: 30px 34px;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  box-shadow: 0 10px 30px rgba(254, 93, 55, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(254, 93, 55, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--dark);
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.hero-subtitle {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 580px;
+  line-height: 1.6;
+}
+.hero-stats-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.hero-stat-pill {
+  background: #ffffff;
+  border: 1px solid #fce8e4;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 6px rgba(16, 55, 65, 0.04);
+}
+
+.section-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.course-card {
+  background: #ffffff;
+  border: 1.5px solid #f2e4e0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(16, 55, 65, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+}
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(254, 93, 55, 0.15);
+  border-color: var(--primary);
+}
+
+.course-thumb-wrap {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+.course-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.course-card:hover .course-thumb {
+  transform: scale(1.06);
+}
+
+.course-badge-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(16, 55, 65, 0.88);
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.course-body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.course-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.course-name {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.course-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+/* ==========================================================================
+   MICRO-MISSION & GAMIFIED VISUAL COMPONENTS (ANTI AI-SLOP)
+   ========================================================================== */
+.mission-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.mission-step-card {
+  background: #ffffff;
+  border: 1.5px solid #fce8e4;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(16, 55, 65, 0.03);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+.mission-step-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(254, 93, 55, 0.08);
+}
+.mission-step-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+.mission-step-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.mission-step-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Duel Card RAM vs SSD */
+.duel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+.duel-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 14px rgba(16, 55, 65, 0.04);
+}
+.duel-ram {
+  border-color: #ffd8cf;
+  background: linear-gradient(180deg, #fff9f8 0%, #ffffff 100%);
+}
+.duel-ssd {
+  border-color: #bbf7d0;
+  background: linear-gradient(180deg, #f2fcf6 0%, #ffffff 100%);
+}
+.duel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.duel-emoji {
+  font-size: 36px;
+}
+.duel-header h4 {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  color: var(--dark);
+}
+.duel-tag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  margin-top: 2px;
+}
+.duel-ram .duel-tag {
+  background: #fee2e2;
+  color: #dc2626;
+}
+.duel-ssd .duel-tag {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* Golden Rules Adab Lab */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.rule-card {
+  background: #ffffff;
+  border: 1.5px solid #e2f2e9;
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(25, 135, 84, 0.04);
+}
+.rule-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.rule-card strong {
+  color: var(--dark);
+  font-size: 14px;
+}
+.rule-card p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+

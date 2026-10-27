@@ -1,0 +1,548 @@
+/* ==========================================================================
+   TOMBOL & INTERAKSI DASAR (KIDER PILL STYLE)
+   ========================================================================== */
+.btn {
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(16, 55, 65, 0.06);
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 55, 65, 0.12);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn-primary {
+  background: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(254, 93, 55, 0.28);
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 6px 20px rgba(254, 93, 55, 0.38);
+}
+.btn-secondary {
+  background: var(--secondary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(25, 135, 84, 0.22);
+}
+.btn-secondary:hover {
+  background: var(--secondary-hover);
+  box-shadow: 0 6px 18px rgba(25, 135, 84, 0.32);
+}
+.btn-outline {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  color: var(--dark);
+}
+.btn-outline:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.btn-danger {
+  background: var(--danger);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+.btn-danger:hover {
+  background: #dc2626;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35);
+}
+.btn-sm {
+  padding: 6px 16px;
+  font-size: 13px;
+  border-radius: var(--radius-pill);
+}
+
+/* Form Controls (Inputs, Selects, Dropdowns) */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  font-family: var(--font-family);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--dark);
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  outline: none;
+}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(254, 93, 55, 0.16);
+}
+
+/* ==========================================================================
+   CARD & MODUL MATERI LAYOUT (KIDER ROUNDED CARD)
+   ========================================================================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid #fce4de;
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 30px rgba(254, 93, 55, 0.06), 0 2px 10px rgba(16, 55, 65, 0.04);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 14px 38px rgba(254, 93, 55, 0.1), 0 4px 12px rgba(16, 55, 65, 0.06);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #FFF5F3;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.3px;
+}
+
+.time-badge {
+  font-size: 12px;
+  background: var(--primary-light);
+  color: var(--primary);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  border: 1px solid #ffdcd4;
+  box-shadow: 0 2px 6px rgba(254, 93, 55, 0.08);
+}
+
+/* Box Info, Analogi & Adab */
+.callout-box {
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 18px 0;
+  font-size: 14px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  line-height: 1.6;
+}
+.callout-adab {
+  background: #f0fdf4;
+  border-left: 5px solid var(--secondary);
+  color: #14532d;
+  box-shadow: 0 2px 8px rgba(25, 135, 84, 0.08);
+}
+.callout-analogi {
+  background: #f0f9ff;
+  border-left: 5px solid #0284c7;
+  color: #0c4a6e;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+}
+.callout-istilah {
+  background: #fffbeb;
+  border-left: 5px solid #f59e0b;
+  color: #78350f;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.08);
+}
+
+/* Elemen Tipografi Tambahan Materi */
+kbd {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-bottom: 3px solid #94a3b8;
+  border-radius: 6px;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--dark);
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(16, 55, 65, 0.08);
+}
+
+.materi-sub-card {
+  background: #ffffff;
+  border: 1.5px solid #fce8e4;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  box-shadow: 0 4px 14px rgba(16, 55, 65, 0.03);
+}
+
+.materi-sub-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glosarium-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.glosarium-item {
+  background: #fffdfc;
+  border: 1.5px solid #fcdad2;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 13px;
+  box-shadow: 0 2px 8px rgba(254, 93, 55, 0.04);
+}
+.glosarium-item strong {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+.step-list {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.step-list li {
+  margin-bottom: 8px;
+}
+
+/* Tabel Data & Format File */
+.file-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 16px 0;
+  font-size: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.file-table th, .file-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.file-table th {
+  background: #FFF5F3;
+  font-weight: 700;
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-size: 15px;
+}
+.file-table tr:last-child td {
+  border-bottom: none;
+}
+.file-table tr:hover td {
+  background: #fffcfb;
+}
+
+/* ==========================================================================
+   KUIS & CHECKLIST (INTERAKTIF & CERIA)
+   ========================================================================== */
+.quiz-question-box {
+  border: 1.5px solid #fce8e4;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(16, 55, 65, 0.02);
+}
+
+.quiz-options {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quiz-option-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 1.5px solid #fce8e4;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+.quiz-option-label:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  transform: translateX(3px);
+}
+
+.quiz-explanation-box {
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.exp-correct {
+  background: #f0fdf4;
+  color: #166534;
+  border-left: 4px solid var(--secondary);
+}
+.exp-wrong {
+  background: #fef2f2;
+  color: #991b1b;
+  border-left: 4px solid var(--danger);
+}
+
+/* Checklist Item */
+.checklist-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #fce8e4;
+  transition: background 0.15s ease;
+}
+.checklist-row:hover {
+  background: #fffcfb;
+}
+.checklist-row:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   PANEL GURU & LEADERBOARD (KIDER DASHBOARD)
+   ========================================================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  background: #ffffff;
+  border: 1.5px solid #fce8e4;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(254, 93, 55, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(254, 93, 55, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.stat-val {
+  font-size: 30px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+.stat-lbl {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+  margin-top: 16px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #fce8e4;
+}
+.data-table th, .data-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #fce8e4;
+}
+.data-table th {
+  background: var(--dark);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+.data-table tr:hover {
+  background: #FFF5F3;
+}
+
+/* Kunci Pertemuan Matriks */
+.lock-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+.lock-class-card {
+  background: #fffcfb;
+  border: 1.5px solid #fce8e4;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 2px 6px rgba(16, 55, 65, 0.03);
+}
+
+/* ==========================================================================
+   SERTIFIKAT CETAK (KIDER ORNAMENTAL STYLE)
+   ========================================================================== */
+.certificate-container {
+  background: #ffffff;
+  border: 10px double var(--primary);
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+  box-shadow: 0 20px 50px rgba(16, 55, 65, 0.15);
+}
+.certificate-container::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px dashed #fcdad2;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #view-sertifikat, #view-sertifikat * {
+    visibility: visible;
+  }
+  #view-sertifikat {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   MODAL DIALOG (KIDER POPUP STYLE)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(16, 55, 65, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+.modal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 28px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 60px rgba(16, 55, 65, 0.25);
+  border: 2px solid #fce8e4;
+  position: relative;
+  animation: modalPop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   BADGES & TROPHY SHOWCASE
+   ========================================================================== */
+.badges-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+.badge-item-card {
+  background: #ffffff;
+  border: 1.5px solid #f2e4e0;
+  border-radius: 18px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(16, 55, 65, 0.04);
+  transition: all 0.2s ease;
+}
+.badge-item-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 8px 20px rgba(254, 93, 55, 0.15);
+}
+.badge-item-icon {
+  font-size: 38px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 4px 8px rgba(16, 55, 65, 0.1));
+}
+.badge-item-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+}
+.badge-item-desc {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+

@@ -4,6 +4,7 @@
 
 # Backup database otomatis
 backups/
+database/backups/
 
 # OS / Editor
 Thumbs.db

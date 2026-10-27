@@ -8,8 +8,8 @@ echo          LAB KOMPUTER: MODUL 1 DASAR TIK — SERVER GURU
 echo =======================================================================
 echo.
 
-:: Memastikan working directory selalu berada di folder file bat ini
-cd /d "%~dp0"
+:: Memastikan working directory selalu berada di folder root project
+cd /d "%~dp0.."
 
 :: 1. Memeriksa keberadaan Node.js
 where node >nul 2>&1
@@ -24,9 +24,9 @@ if %errorlevel% neq 0 (
 )
 
 :: 2. Memeriksa file server.js
-if not exist "server.js" (
-    echo [ERROR] Berkas server.js tidak ditemukan di direktori ini!
-    echo Pastikan file bat ini berada di dalam folder yang sama dengan server.js.
+if not exist "src\server.js" (
+    echo [ERROR] Berkas src\server.js tidak ditemukan!
+    echo Pastikan folder src berada di direktori yang sama dengan file bat ini.
     echo.
     pause
     exit /b 1
@@ -39,7 +39,7 @@ echo.
 start "" /b cmd /c "timeout /t 2 /nobreak >nul && start http://localhost:8000/guru"
 
 :: 4. Menjalankan server Node.js
-node server.js
+node src\server.js
 
 :: Jika server dihentikan atau terjadi error, cegah jendela tertutup otomatis
 echo.
