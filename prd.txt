@@ -1,0 +1,880 @@
+# FINAL PROMPT — LAB KOMPUTER: MODUL 1 DASAR TIK
+
+## 1. PERAN DAN MISI
+
+Bertindaklah sebagai **Senior Full-Stack Web Developer, Software Architect, Security Engineer, dan Perancang Media Pembelajaran Informatika**.
+
+Bangun aplikasi web pembelajaran interaktif bernama **“Lab Komputer: Modul 1 Dasar TIK”** untuk santri putri kelas 1–6 setara SMP–SMA yang masih awam komputer.
+
+Aplikasi harus benar-benar berfungsi, bukan sekadar mockup, prototype visual, atau kumpulan halaman statis. Seluruh tombol, formulir, permainan, kuis, autentikasi, penyimpanan progres, panel guru, ekspor data, dan fitur gamifikasi harus terhubung dengan logika yang sesuai.
+
+Prioritas pengembangan:
+
+1. Keamanan dan integritas data.
+2. Kebenaran materi pembelajaran.
+3. Fungsi yang lengkap dan dapat diuji.
+4. Kemudahan penggunaan oleh pemula.
+5. Performa ringan pada laptop spesifikasi rendah.
+6. Kemudahan pemeliharaan dan penambahan modul.
+
+Jangan mengklaim suatu fitur sudah berfungsi atau sudah diuji jika belum benar-benar diverifikasi.
+
+---
+
+## 2. KONTEKS PENGGUNAAN
+
+- Pengguna: sekitar 60 santri, terdiri dari 6 kelas dengan sekitar 10 santri per kelas.
+- Setiap santri menggunakan laptop masing-masing.
+- Sistem operasi campuran Windows 10 dan Windows 11.
+- Resolusi utama 1366 × 768.
+- Browser Chrome atau Edge.
+- Seluruh perangkat terhubung ke satu jaringan Wi-Fi lokal.
+- Laptop guru menggunakan Windows dan sudah memiliki Node.js.
+- Laptop guru menjalankan server lokal pada port 8000.
+- Santri mengakses aplikasi melalui `http://IP-LAPTOP-GURU:8000`.
+- Aplikasi harus tetap berfungsi tanpa koneksi internet.
+- Tidak boleh memerlukan akun cloud, CDN, font online, atau aset eksternal.
+
+Seluruh data akun dan progres berada di laptop guru, bukan di masing-masing browser santri.
+
+---
+
+## 3. ARSITEKTUR DAN BATASAN TEKNOLOGI
+
+Gunakan:
+
+- Backend: Node.js murni dengan modul bawaan.
+- Modul server: `http`, `fs`, `path`, `crypto`, `os`, dan `node:sqlite`.
+- Database: SQLite dalam file `lab.db`.
+- Frontend: satu file `index.html` yang berisi HTML5, CSS, dan Vanilla JavaScript.
+- Ilustrasi: SVG inline dan CSS.
+- Penyimpanan utama: SQLite di server.
+- Penyimpanan sementara offline: `localStorage`, hanya sebagai antrean aktivitas yang belum tersinkronisasi.
+- Komunikasi frontend-backend: API HTTP dengan JSON.
+- Leaderboard: polling setiap 5 detik, tanpa WebSocket.
+
+Tidak boleh menggunakan React, Vue, Angular, Express, Vite, Bootstrap, Tailwind, jQuery, CDN, atau paket npm.
+
+### Kompatibilitas Node.js
+
+Letakkan komentar berbahasa Indonesia di bagian atas `server.js` yang menjelaskan:
+
+- `node:sqlite` tersedia mulai Node.js 22.5.0.
+- API tersebut bersifat eksperimental pada rilis awalnya.
+- Versi Node.js yang direkomendasikan adalah versi LTS yang mendukung API SQLite tersebut.
+- Jika versi yang terpasang terlalu rendah, perbarui Node.js. Jangan diam-diam mengganti teknologi atau memasang paket tambahan.
+
+Periksa versi Node.js dan dukungan API SQLite saat startup. Jika tidak kompatibel, tampilkan pesan kesalahan yang jelas.
+
+### Struktur proyek
+
+Buat struktur berikut:
+
+- `server.js`
+- `index.html`
+- `santri.csv`
+- `lab.db` — dibuat otomatis.
+- `backups/` — untuk backup database.
+- `README.txt` — petunjuk instalasi, penggunaan, dan pemulihan data.
+
+File database, backup, CSV sensitif, dan berkas internal server tidak boleh dapat diunduh melalui HTTP publik aplikasi.
+
+Arsitektur materi harus modular. Pisahkan definisi konten, soal, aturan XP, dan konfigurasi dari logika rendering sejauh memungkinkan dalam satu file HTML.
+
+Gunakan struktur seperti:
+
+`const MATERI = {...}`
+
+`const BANK_SOAL = {...}`
+
+`const KONFIGURASI = {...}`
+
+Gunakan fungsi render bersama agar Modul 2, Modul 3, dan seterusnya dapat ditambahkan tanpa menulis ulang seluruh aplikasi.
+
+---
+
+## 4. SERVER, JARINGAN, DAN DATABASE
+
+### Server lokal
+
+Buat server HTTP yang:
+
+- Mendengarkan pada port 8000.
+- Menampilkan alamat IPv4 lokal laptop guru ketika dijalankan.
+- Menyajikan `index.html` dan endpoint API yang diperlukan.
+- Memeriksa path file agar tidak terjadi path traversal.
+- Menetapkan MIME type dengan benar.
+- Membatasi ukuran request body.
+- Menangani JSON tidak valid dan metode HTTP yang tidak diizinkan.
+- Mengirim respons kesalahan yang aman tanpa membocorkan stack trace, PIN, hash, atau token.
+- Tidak menyediakan file arbitrer dari direktori proyek.
+- Memvalidasi seluruh data dari browser.
+- Menggunakan timeout yang wajar untuk request.
+- Menutup database dan server secara tertib saat shutdown.
+
+Jelaskan dalam komentar atau README cara menjalankan:
+
+`node server.js`
+
+Sertakan petunjuk Windows Firewall untuk mengizinkan Node.js pada jaringan Private saja jika diperlukan. Ingatkan bahwa AP isolation/client isolation pada router dapat menghalangi koneksi antarlaptop.
+
+Jangan membuka server ke internet atau melakukan port forwarding otomatis.
+
+### Database SQLite
+
+Buat tabel minimal:
+
+1. `santri`
+   - `id`
+   - `kelas`
+   - `nama`
+   - `pin_hash`
+   - `pin_salt`
+   - `pin_aktif`
+   - `dibuat`
+
+2. `progres`
+   - `id`
+   - `santri_id`
+   - `modul`
+   - `pertemuan`
+   - `aktivitas`
+   - `status`
+   - `skor`
+   - `xp`
+   - `waktu`
+
+3. `sesi`
+   - `token_hash`
+   - `santri_id`
+   - `perangkat`
+   - `dibuat`
+   - `kedaluwarsa`
+   - `aktif`
+
+4. `pembukaan_pertemuan`
+   - `kelas`
+   - `modul`
+   - `pertemuan`
+   - `terbuka`
+
+5. `status_belajar`
+   - `santri_id`
+   - `modul`
+   - `pertemuan_terakhir`
+   - `aktivitas_terakhir`
+   - `diperbarui`
+
+6. `aktivitas_terverifikasi`
+   - ID aktivitas unik.
+   - ID santri.
+   - Modul, pertemuan, dan jenis aktivitas.
+   - XP yang diberikan.
+   - Waktu penyelesaian.
+
+7. `checklist_praktik`
+   - ID santri.
+   - Modul dan pertemuan.
+   - ID tugas checklist.
+   - Status.
+   - Waktu pembaruan.
+
+8. `hasil_kuis`
+   - ID santri.
+   - Modul dan pertemuan.
+   - Skor percobaan.
+   - Skor terbaik.
+   - Jumlah percobaan.
+   - Waktu pengerjaan.
+
+Tambahkan tabel atau kolom lain apabila diperlukan untuk konfigurasi, badge, atau audit tindakan guru.
+
+Ketentuan database:
+
+- Aktifkan foreign key.
+- Aktifkan WAL.
+- Gunakan prepared statement.
+- Tambahkan indeks yang sesuai.
+- Gunakan transaksi untuk operasi yang mengubah beberapa tabel.
+- Tambahkan constraint unik yang mencegah aktivitas selesai atau XP tercatat berulang.
+- Terapkan migrasi skema sederhana agar pembaruan aplikasi tidak merusak database lama.
+- Gunakan `busy_timeout` atau mekanisme penanganan database sibuk yang sesuai.
+- Pastikan operasi tulis aman ketika banyak perangkat mengirim permintaan bersamaan.
+
+### Backup dan pemulihan
+
+Ketika server dimulai:
+
+- Buat direktori backup jika belum tersedia.
+- Buat backup database secara konsisten menggunakan mekanisme backup SQLite yang sesuai, termasuk kondisi WAL.
+- Jangan hanya menyalin `lab.db` secara sembarangan ketika database sedang aktif.
+- Beri nama backup dengan tanggal dan waktu.
+- Batasi jumlah backup yang disimpan.
+- Jangan menghapus backup terbaru yang masih diperlukan.
+- Catat kegagalan backup tanpa membocorkan informasi sensitif.
+
+Sediakan petunjuk pemulihan database dalam README. Uji bahwa database hasil backup benar-benar dapat dibuka dan berisi data yang konsisten.
+
+---
+
+## 5. KEAMANAN DAN AUTENTIKASI
+
+### Akun santri
+
+Guru mengimpor `santri.csv` dengan kolom:
+
+`kelas,nama`
+
+Format contoh:
+
+`kelas,nama`
+`1,Aisyah`
+`1,Fatimah`
+`2,Zahra`
+
+Impor harus mendukung UTF-8, menangani BOM bila ada, memvalidasi kolom, dan menolak baris tidak valid dengan laporan yang jelas.
+
+Jangan menganggap nama santri sebagai identitas unik. Buat ID internal yang stabil dan tangani nama duplikat melalui pemilihan kelas, nama, serta identitas akun yang tidak ambigu.
+
+### Aktivasi PIN
+
+Santri memilih kelas dan nama, kemudian menetapkan PIN empat digit pada aktivasi pertama.
+
+Jangan mengizinkan siapa pun menguasai akun hanya dengan memilih nama santri. Gunakan kode aktivasi awal unik yang dibuat atau dibagikan guru secara aman, atau proses aktivasi yang hanya dapat diselesaikan dengan otorisasi guru.
+
+Setelah aktivasi, santri dapat login menggunakan kelas, identitas akun, dan PIN.
+
+### Hash PIN
+
+- Gunakan `crypto.scryptSync` dengan salt acak per akun.
+- Simpan salt dan hash, bukan PIN asli.
+- Jangan pernah mencatat PIN ke log.
+- Gunakan pembandingan yang aman, seperti `crypto.timingSafeEqual` dengan buffer berukuran sesuai.
+- Batasi percobaan login per akun dan sumber koneksi.
+- Tambahkan penundaan atau penguncian sementara setelah kegagalan berulang.
+- Berikan pesan kesalahan login yang tidak mengungkap apakah PIN atau identitas yang salah.
+
+### Sesi
+
+- Gunakan token acak kriptografis yang memadai.
+- Simpan hash token di database; jangan simpan token mentah.
+- Token mentah hanya dikirim ke klien melalui mekanisme sesi yang sesuai.
+- Gunakan cookie `HttpOnly`, `SameSite=Strict` jika sesuai dengan implementasi HTTP lokal, dan masa berlaku sesi.
+- Karena aplikasi memakai HTTP lokal, jelaskan keterbatasan perlindungan cookie tanpa HTTPS dan jangan mengklaim koneksi terenkripsi.
+- Cegah akses API tanpa sesi valid.
+- Terapkan autentikasi dan otorisasi terpisah untuk guru dan santri.
+- Terapkan perlindungan CSRF yang sesuai dengan model autentikasi.
+- Logout harus mencabut sesi di server.
+- Satu akun hanya boleh memiliki satu sesi aktif. Login pada perangkat baru harus mencabut sesi sebelumnya secara atomik.
+- Tombol Logout selalu terlihat.
+
+### Panel guru
+
+PIN guru ditetapkan di konfigurasi `server.js`, tetapi jangan menyimpannya sebagai hash atau PIN yang bisa dibocorkan melalui endpoint konfigurasi. Sediakan konfigurasi awal dan panduan penggantian yang aman.
+
+Gunakan hash dan salt untuk kredensial guru, bukan teks biasa. Terapkan pembatasan percobaan login, sesi guru terpisah, dan pemeriksaan hak akses pada setiap endpoint sensitif.
+
+Jangan mengandalkan penyembunyian tombol atau pemeriksaan JavaScript di browser sebagai pengamanan.
+
+---
+
+## 6. PENYIMPANAN PROGRES DAN SINKRONISASI
+
+Seluruh progres resmi harus tersimpan di SQLite, termasuk:
+
+- Pertemuan terakhir yang dibuka.
+- Aktivitas yang selesai.
+- XP dan level.
+- Badge.
+- Skor kuis dan skor terbaik.
+- Checklist praktik.
+- Status setiap pertemuan.
+- Riwayat aktivitas yang diperlukan untuk rekap.
+
+Setelah logout dan login kembali, termasuk dari laptop berbeda, tampilkan tombol **“Lanjutkan belajar”** yang mengarahkan santri ke posisi terakhir.
+
+Simpan progres otomatis setelah aktivitas tervalidasi dan berhasil dicatat oleh server.
+
+### Mekanisme offline
+
+Jika server tidak terjangkau:
+
+- Simpan antrean aktivitas sementara di `localStorage`.
+- Gunakan ID aktivitas unik yang dihasilkan dengan aman.
+- Tandai aktivitas sebagai belum tersinkronisasi.
+- Jangan menampilkan aktivitas sebagai tersimpan permanen di server.
+- Ketika koneksi pulih, kirim antrean secara berurutan.
+- Server memvalidasi ulang identitas, aktivitas, status pertemuan, jawaban, dan XP.
+- Aktivitas yang sudah diproses tidak boleh memberikan XP lagi.
+- Tangani konflik dengan menjadikan database server sebagai sumber kebenaran.
+- Berikan indikator status koneksi dan jumlah aktivitas yang belum tersinkronisasi.
+
+Jangan menyimpan PIN, token autentikasi, atau data rahasia dalam antrean offline.
+
+---
+
+## 7. XP, LEVEL, BADGE, DAN ANTI-CHEAT
+
+Tentukan aturan XP terpusat dalam konfigurasi.
+
+Contoh rancangan:
+
+- Membaca materi: XP diberikan satu kali per aktivitas.
+- Menyelesaikan mini-game: XP diberikan satu kali per tingkat atau aktivitas sesuai aturan.
+- Menyelesaikan kuis: XP diberikan satu kali untuk penyelesaian yang sah, bukan setiap kali tombol diklik.
+- Checklist praktik: XP diberikan satu kali setelah status tugas diterima.
+- Level: dihitung dari total XP resmi.
+- Badge: diberikan berdasarkan pencapaian yang dapat diverifikasi.
+
+Ketentuan:
+
+- XP maksimal setiap aktivitas ditentukan server.
+- Server tidak menerima nominal XP bebas dari browser.
+- Aktivitas unik hanya dapat memberi XP satu kali.
+- Server memeriksa apakah pertemuan terbuka.
+- Skor kuis divalidasi server.
+- Skor terbaik disimpan, bukan ditimpa oleh skor yang lebih rendah.
+- Percobaan ulang kuis diperbolehkan.
+- Gunakan transaksi agar dua request bersamaan tidak memberikan XP ganda.
+- Hindari memberikan XP hanya karena membuka ulang halaman.
+- Aktivitas membaca materi harus memiliki mekanisme penyelesaian yang jelas, bukan hanya request buatan.
+- Jangan menganggap bukti klik checklist sebagai bukti mutlak bahwa tugas di laptop asli telah dilakukan.
+
+Untuk mini-game, lakukan validasi terhadap hasil dan batas aktivitas di server. Jelaskan bahwa permainan pada browser tidak sepenuhnya kebal manipulasi; fokus pada pencegahan manipulasi progres dan XP, bukan klaim anti-cheat sempurna.
+
+---
+
+## 8. STRUKTUR PEMBELAJARAN
+
+Buat empat pertemuan untuk Modul 1. Materi sama untuk kelas 1–6.
+
+Setiap pertemuan memiliki alokasi waktu:
+
+- Pembuka: 5 menit.
+- Materi: 15 menit.
+- Praktik: 15 menit.
+- Kuis dan penutup: 5 menit.
+
+Tampilkan alokasi waktu dengan jelas. Jangan memaksa semua aktivitas harus diselesaikan dalam 40 menit apabila kegiatan membutuhkan waktu tambahan; sediakan penanda kegiatan inti dan kegiatan lanjutan.
+
+Tingkat kesulitan mudah, sedang, dan sulit hanya berlaku pada mini-game dan latihan mengetik.
+
+Pertemuan 1 terbuka secara default. Pertemuan berikutnya dibuka oleh guru untuk masing-masing kelas.
+
+Periksa status kunci di server, bukan hanya di browser.
+
+---
+
+## 9. KONTEN PERTEMUAN 1 — KENAL PERANGKAT DAN NAVIGASI DESKTOP
+
+Materi:
+
+1. Alur kerja komputer:
+   - Input.
+   - Proses.
+   - Output.
+   - Penyimpanan.
+
+2. Hardware dan fungsinya:
+   - Monitor.
+   - CPU/prosesor.
+   - RAM.
+   - Storage/penyimpanan.
+   - Keyboard.
+   - Mouse.
+
+3. Ilustrasi komputer menggunakan SVG inline yang dapat diklik. Setiap komponen menampilkan nama, fungsi, dan analogi sehari-hari.
+
+4. Tombol power dan port:
+   - USB.
+   - HDMI.
+   - Audio.
+   - LAN/Ethernet.
+
+5. Navigasi desktop:
+   - Desktop.
+   - Ikon.
+   - Taskbar (bilah tugas).
+   - Start Menu (menu Mulai).
+   - System tray/notification area.
+   - Tombol Windows.
+   - `Win + D`.
+
+6. Jelaskan perbedaan tampilan Windows 10 dan Windows 11 tanpa menyatakan bahwa semua perangkat memiliki tampilan identik.
+
+7. Mematikan komputer:
+   - Shut Down.
+   - Restart.
+   - Sleep.
+   - Langkah Shut Down yang benar.
+   - Risiko memutus daya paksa.
+   - Penanganan apabila komputer benar-benar tidak merespons sesuai arahan guru.
+
+8. Mini-kuis tiga soal dengan penjelasan jawaban.
+
+9. Kotak “Istilah Penting”.
+
+10. Kotak “Adab Menggunakan Komputer” tentang menjaga amanah fasilitas, tidak mengubah pengaturan sembarangan, dan jujur saat kuis.
+
+---
+
+## 10. KONTEN PERTEMUAN 2 — MOUSE DAN HOME ROW KEYBOARD
+
+### Mini-game mouse
+
+Buat permainan interaktif untuk melatih:
+
+- Klik kiri.
+- Klik kanan.
+- Double click.
+- Scroll.
+- Drag-and-drop ke kotak target.
+
+Sediakan tiga tingkat kesulitan, timer, skor, petunjuk, dan umpan balik positif.
+
+Permainan harus menggunakan event browser yang benar dan tidak mengandalkan hover sebagai pengganti klik.
+
+### Home row
+
+Ajarkan:
+
+`A S D F` dan `J K L ;`
+
+Jelaskan posisi jari, tonjolan pada F dan J, warna jari, serta postur duduk yang nyaman dan ergonomis.
+
+Buat keyboard virtual interaktif dengan tombol yang menyala ketika ditekan. Sediakan latihan bertahap dengan indikator target huruf.
+
+### Pengukuran mengetik
+
+- Hitung akurasi.
+- Hitung WPM secara konsisten.
+- Jelaskan rumus yang digunakan.
+- Gunakan durasi pengukuran yang memadai.
+- Abaikan atau tangani input yang tidak sesuai secara konsisten.
+- Berikan latihan mudah, sedang, dan sulit.
+- Jangan mempermalukan pengguna dengan skor rendah.
+- Pastikan pengukuran benar-benar menghitung input, bukan angka acak.
+
+Tambahkan mini-kuis tiga soal dan kotak istilah penting.
+
+---
+
+## 11. KONTEN PERTEMUAN 3 — FOLDER DAN FORMAT FILE
+
+Materi:
+
+1. Hierarki penyimpanan.
+2. Drive C: dan D:.
+3. Flashdisk dan cara melepasnya dengan aman melalui fitur Eject/Safely Remove bila tersedia.
+4. File Explorer.
+5. Konsep path dengan contoh:
+   `C:\Users\Nama\Documents`
+6. Simulasi pohon folder yang mendukung expand/collapse bertingkat.
+7. Penjelasan ekstensi dan program pembuka.
+
+Buat tabel dengan contoh:
+
+- `.docx`
+- `.xlsx`
+- `.pptx`
+- `.pdf`
+- `.jpg`
+- `.png`
+- `.mp3`
+- `.mp4`
+- `.txt`
+- `.zip`
+
+Jelaskan fungsi setiap format dan contoh aplikasi pembukanya. Tegaskan bahwa ketersediaan aplikasi bergantung pada perangkat dan format tidak selalu menentukan satu aplikasi tertentu.
+
+Ajarkan cara menampilkan ekstensi file di Windows 10 dan Windows 11 melalui pengaturan File Explorer yang sesuai.
+
+Jelaskan aturan penamaan file dan folder:
+
+- Nama yang deskriptif.
+- Penggunaan tanggal bila diperlukan.
+- Hindari nama terlalu umum seperti `baru` atau `finalfix`.
+- Karakter yang tidak diperbolehkan di Windows.
+- Perbedaan nama file dan ekstensi.
+
+Tambahkan mini-kuis tiga soal dan kotak istilah penting.
+
+---
+
+## 12. KONTEN PERTEMUAN 4 — OPERASI FILE DAN EVALUASI
+
+### Tabel perbandingan
+
+Jelaskan:
+
+- Cut.
+- Copy.
+- Paste.
+- Rename.
+- Delete.
+- Shift+Delete.
+- Recycle Bin.
+- Restore.
+
+Terangkan bahwa Shift+Delete biasanya melewati Recycle Bin dan pemulihan tidak dijamin. Jangan menyamakan tindakan tersebut dengan penghapusan permanen yang pasti tidak dapat dipulihkan dalam semua kondisi.
+
+### Shortcut
+
+Ajarkan:
+
+- `Ctrl + C`
+- `Ctrl + X`
+- `Ctrl + V`
+- `Ctrl + Z`
+- `Ctrl + A`
+- `F2`
+- `Ctrl + Shift + N`
+- `Delete`
+
+### Simulasi File Explorer
+
+Buat simulasi yang benar-benar interaktif dengan data virtual:
+
+- Membuat folder.
+- Membuat file.
+- Menyalin.
+- Memindahkan.
+- Mengganti nama.
+- Menghapus.
+- Memulihkan file dari Recycle Bin.
+
+Tampilkan struktur folder, lokasi file, perubahan status, dan umpan balik. Jangan mengklaim bahwa operasi pada simulasi mengubah file asli di Windows.
+
+### Kuis evaluasi
+
+- Bank soal terdiri dari 10 soal.
+- Pilih lima soal secara acak pada setiap percobaan.
+- Hindari soal duplikat dalam satu percobaan.
+- Tampilkan tombol “Cek Jawaban”.
+- Setelah pemeriksaan, tampilkan jawaban benar dan penjelasan setiap soal.
+- Skor dihitung dan divalidasi oleh server.
+- Simpan skor terbaik.
+- Santri boleh mengulang.
+- Skor adalah alat latihan, bukan penentu nilai resmi.
+
+Jangan mengirim kunci jawaban lengkap bank soal kepada browser sebelum diperlukan untuk penjelasan hasil. Implementasikan validasi jawaban di server.
+
+### Checklist praktik di laptop asli
+
+Buat 6–8 tugas, misalnya:
+
+1. Membuka File Explorer.
+2. Membuka folder Documents.
+3. Membuat folder dengan nama `Nama_Kelas`.
+4. Membuat file `.txt`.
+5. Menyalin file.
+6. Memindahkan file.
+7. Mengganti nama file.
+8. Menghapus dan memulihkan file melalui Recycle Bin.
+
+Tampilkan instruksi jelas bahwa tugas dilakukan di laptop asli. Checklist disimpan di server.
+
+Untuk kegiatan yang memerlukan verifikasi guru, sediakan status “Menunggu pemeriksaan” dan “Terverifikasi guru”. Bedakan status pengakuan mandiri dengan pemeriksaan langsung.
+
+Jangan memberikan XP tambahan berkali-kali akibat mengubah centang atau mengulang tugas.
+
+---
+
+## 13. SUMBER BELAJAR
+
+Gunakan referensi tepercaya:
+
+- Microsoft Support untuk Windows 10 dan Windows 11.
+- Buku Informatika Kemendikbud/Kurikulum Merdeka yang relevan.
+- Dokumentasi resmi Node.js untuk API SQLite.
+- Dokumentasi resmi SQLite untuk transaksi, WAL, dan backup.
+
+Cantumkan nama sumber pada setiap pertemuan.
+
+Jangan mengarang URL, kutipan, nomor halaman, atau klaim yang tidak diverifikasi. Jika memungkinkan, verifikasi referensi selama tahap penyusunan materi, kemudian simpan daftar sumber dalam kode atau README.
+
+Aplikasi tetap offline saat digunakan; referensi tidak boleh diambil secara online pada saat pembelajaran berlangsung.
+
+---
+
+## 14. HALAMAN GURU — `/guru`
+
+Buat dashboard guru yang terlindungi autentikasi khusus.
+
+Fitur:
+
+1. Ringkasan jumlah akun santri dan status aktivitas.
+2. Impor `santri.csv`.
+3. Pratinjau hasil impor dan laporan baris gagal.
+4. Filter kelas 1–6.
+5. Pencarian nama santri.
+6. Progres per santri.
+7. Skor kuis dan skor terbaik.
+8. Total XP, level, badge, dan checklist.
+9. Buka/kunci pertemuan per kelas.
+10. Reset PIN dengan mekanisme aktivasi ulang yang aman.
+11. Reset progres dengan konfirmasi eksplisit.
+12. Ekspor rekap CSV.
+13. Tampilan leaderboard besar untuk proyektor.
+14. Indikator status server dan database.
+
+Ekspor CSV minimal mencakup:
+
+- ID akun.
+- Nama.
+- Kelas.
+- Skor kuis.
+- XP.
+- Level.
+- Status checklist.
+- Status setiap pertemuan.
+
+Tambahkan BOM UTF-8 bila diperlukan untuk kompatibilitas Excel. Amankan ekspor terhadap CSV/formula injection, misalnya pada nilai yang diawali `=`, `+`, `-`, atau `@`.
+
+Operasi reset harus meminta konfirmasi, menjelaskan dampaknya, dan mencatat audit tindakan guru tanpa mencatat rahasia.
+
+### Leaderboard
+
+Leaderboard terbuka untuk semua santri yang sudah login.
+
+Sediakan tab:
+
+- Kelas Saya.
+- Semua Kelas.
+
+Tampilkan peringkat, nama, kelas, XP, level, dan posisi akun sendiri yang disorot.
+
+Gunakan query efisien, batas jumlah data yang wajar, dan polling lima detik. Jangan menampilkan PIN, hash, token, atau informasi pribadi yang tidak dibutuhkan.
+
+---
+
+## 15. DESAIN UI/UX
+
+Gunakan desain modern, bersih, ringan, dan ramah pemula.
+
+Palet:
+
+- Hijau dan biru sebagai warna utama.
+- Latar terang.
+- Kontras teks yang baik.
+- Warna status yang mudah dipahami.
+- Animasi minimal.
+
+Gunakan font sistem seperti Segoe UI atau Arial. Jangan mengunduh font dari internet.
+
+### Sidebar
+
+Tampilkan:
+
+- “Lab Komputer: Modul 1 Dasar TIK”.
+- Empat pertemuan.
+- Progress bar.
+- Ikon gembok jika terkunci.
+- Status selesai.
+- Nama santri.
+- Kelas.
+- Level.
+- Total XP.
+
+### Konten
+
+Setiap pertemuan memiliki:
+
+- Judul dan tujuan pembelajaran.
+- Alokasi waktu.
+- Materi dalam bagian pendek.
+- Analogi sehari-hari.
+- Ilustrasi interaktif.
+- Kotak istilah penting.
+- Adab menggunakan komputer.
+- Praktik.
+- Kuis.
+- Status progres.
+- Tombol lanjut belajar.
+
+Pastikan nyaman pada layar 1366 × 768, tidak ada konten penting yang terpotong, dan dapat digunakan dengan keyboard.
+
+Sediakan fokus keyboard yang jelas, label aksesibel, teks yang mudah dibaca, serta alternatif selain warna untuk membedakan status.
+
+Hindari terlalu banyak modal, efek visual, animasi, suara otomatis, atau elemen dekoratif yang mengganggu.
+
+Semua tombol harus mempunyai aksi nyata. Jangan membuat tombol placeholder yang terlihat aktif tetapi tidak berfungsi.
+
+---
+
+## 16. SERTIFIKAT DAN PENYELESAIAN MODUL
+
+Setelah seluruh pertemuan dan aktivitas wajib dinyatakan selesai, sediakan sertifikat digital yang dapat dicetak.
+
+Sertifikat berisi:
+
+- Nama santri.
+- Kelas.
+- Judul modul.
+- Tanggal penyelesaian.
+- Identitas aplikasi atau pondok yang dapat dikonfigurasi.
+- Ringkasan pencapaian.
+
+Gunakan HTML/CSS dan print stylesheet agar dapat dicetak tanpa library eksternal.
+
+Sertifikat harus menggunakan status penyelesaian yang dihitung server. Jangan mengizinkan browser membuat sertifikat valid hanya dengan memodifikasi tampilan.
+
+---
+
+## 17. VALIDASI INPUT DAN API
+
+Validasi semua data di server, termasuk:
+
+- Kelas dan ID santri.
+- PIN dan kode aktivasi.
+- Token sesi.
+- Modul dan pertemuan.
+- ID aktivitas.
+- Status checklist.
+- Jawaban kuis.
+- Batas XP.
+- Impor CSV.
+- Parameter pencarian.
+- Data ekspor.
+
+Terapkan:
+
+- Batas ukuran request body.
+- Penolakan JSON tidak valid.
+- Prepared statement.
+- Constraint database.
+- Rate limiting untuk login dan endpoint sensitif.
+- Pemeriksaan autentikasi pada setiap API terlindungi.
+- Otorisasi guru dan santri secara terpisah.
+- Pencegahan path traversal.
+- Penanganan kesalahan tanpa membocorkan data internal.
+- Validasi status pertemuan di server.
+- Transaksi untuk operasi yang harus konsisten.
+- Idempotensi untuk sinkronisasi dan pemberian XP.
+
+Hindari penggunaan `innerHTML` untuk memasukkan data santri yang tidak tepercaya. Gunakan `textContent` atau mekanisme rendering yang aman. Jangan menjalankan kode yang berasal dari input pengguna.
+
+---
+
+## 18. UJI WAJIB SEBELUM DINYATAKAN SELESAI
+
+Buat checklist pengujian dan jalankan setiap pengujian yang memungkinkan.
+
+### Server dan database
+
+- Server mulai dengan versi Node.js yang didukung.
+- Pesan versi yang tidak didukung jelas.
+- Database dibuat otomatis.
+- WAL dan foreign key aktif.
+- Backup berhasil dibuat.
+- Backup dapat dipulihkan.
+- Database tetap konsisten setelah server dimulai ulang.
+- Request invalid ditolak.
+
+### Akun dan keamanan
+
+- Impor CSV berhasil.
+- CSV dengan nama duplikat ditangani.
+- Aktivasi akun membutuhkan otorisasi.
+- PIN tersimpan sebagai hash dan salt.
+- Login valid berhasil.
+- Login gagal dibatasi.
+- Satu akun tidak dapat memiliki dua sesi aktif.
+- Logout mencabut sesi.
+- API santri tidak dapat menjalankan operasi guru.
+- API terlindungi menolak token invalid.
+
+### Progres
+
+- Aktivitas tersimpan di server.
+- Login dari perangkat lain melanjutkan progres.
+- Aktivitas yang sama tidak memberikan XP dua kali.
+- Dua request bersamaan tidak menggandakan XP.
+- Skor terbaik tetap tersimpan.
+- Pertemuan terkunci tidak dapat diselesaikan melalui API.
+- Checklist dan badge konsisten.
+
+### Offline dan jaringan
+
+- Antrean aktivitas tersimpan ketika server mati.
+- Antrean dikirim kembali saat server aktif.
+- Aktivitas yang terkirim ulang tidak memberikan XP ganda.
+- Indikator sinkronisasi bekerja.
+- Aplikasi dapat diakses melalui IP laptop guru.
+- Berikan instruksi pemeriksaan Firewall dan AP isolation.
+
+### Pembelajaran
+
+- Semua ilustrasi dapat digunakan.
+- Mini-game mouse bekerja.
+- Keyboard virtual bekerja.
+- WPM dan akurasi dihitung secara konsisten.
+- Pohon folder dapat dibuka dan ditutup.
+- Simulasi file menjalankan seluruh operasi yang dijanjikan.
+- Kuis mengacak lima soal dari bank sepuluh soal.
+- Jawaban dan penjelasan tampil setelah pemeriksaan.
+- Ekspor CSV dapat dibuka.
+- Sertifikat dapat dicetak.
+- Tidak ada tombol yang tidak berfungsi.
+
+### Uji beban
+
+Lakukan simulasi atau pengujian hingga sekitar 60 klien aktif jika alat yang tersedia memungkinkan. Uji polling leaderboard, login bersamaan, transaksi progres, dan operasi database.
+
+Jika pengujian 60 klien tidak benar-benar dilakukan, nyatakan dengan jujur bahwa performa skala penuh belum diverifikasi.
+
+Mulai penerapan nyata dengan satu kelas berisi sekitar 10 santri. Setelah stabil, lanjutkan secara bertahap ke seluruh enam kelas.
+
+---
+
+## 19. FORMAT OUTPUT DAN CARA KERJA
+
+Saya ingin kode yang benar-benar siap disalin dan dijalankan, bukan hanya contoh konseptual.
+
+Urutan pengerjaan:
+
+**Bagian 1/N — `server.js`**
+- Kode lengkap.
+- Komentar berbahasa Indonesia.
+- Database, keamanan, sesi, API, impor/ekspor, progres, dan panel guru.
+- Berhenti pada batas blok kode yang lengkap.
+
+**Bagian 2/N dan seterusnya — `index.html`**
+- Kode lengkap dalam bagian yang urut dan tidak tumpang tindih.
+- Bagian antarmuka umum.
+- Pertemuan 1.
+- Pertemuan 2.
+- Pertemuan 3.
+- Pertemuan 4.
+- Panel guru, leaderboard, dan sertifikat.
+- Integrasi seluruh fungsi JavaScript.
+
+Jangan mengulang atau mengganti kode bagian sebelumnya tanpa alasan yang jelas. Berikan penanda bagian dan lokasi penyambungan yang tepat jika sebuah file harus dibagi ke beberapa pesan.
+
+Jangan memotong fungsi di tengah. Setiap bagian harus berakhir pada batas fungsi atau blok yang lengkap. Pastikan hasil penggabungan menjadi file valid.
+
+Setelah setiap bagian, berhenti dan tunggu saya mengetik **“lanjut”** sebelum mengeluarkan bagian berikutnya.
+
+Jangan mengganti implementasi dengan pseudocode, komentar TODO, atau tombol dummy. Jika suatu fitur tidak dapat diselesaikan dalam bagian yang sedang dikerjakan, jelaskan statusnya secara jujur dan lanjutkan pada bagian berikutnya.
+
+Sebelum mengirim kode, periksa konsistensi nama endpoint, struktur tabel, ID elemen, fungsi JavaScript, format request/response, dan alur autentikasi antarbagiannya.
+
+Jika memiliki akses terminal, jalankan pemeriksaan sintaks, uji API, dan pengujian dasar. Jika tidak memiliki akses pengujian, nyatakan bahwa kode belum diverifikasi melalui eksekusi.
+
+Jangan menambahkan penjelasan panjang di luar kode.
+
+### Langkah menjalankan pada akhir proyek
+
+Sertakan instruksi singkat:
+
+1. Instal versi Node.js yang kompatibel.
+2. Letakkan `server.js`, `index.html`, dan `santri.csv` dalam direktori proyek.
+3. Jalankan `node server.js`.
+4. Izinkan Node.js pada jaringan Private di Windows Firewall jika diperlukan.
+5. Buka alamat IP laptop guru yang ditampilkan server.
+6. Santri membuka `http://IP-LAPTOP-GURU:8000`.
+7. Uji satu kelas terlebih dahulu sebelum digunakan oleh seluruh santri.
+
+**Mulai sekarang dengan Bagian 1/N: `server.js` lengkap. Setelah selesai, berhenti dan tunggu perintah “lanjut”.**
+
+Saran saya, jalankan prompt ini bertahap. Setelah server.js selesai, minta AI berhenti sesuai instruksi, lalu lanjutkan per bagian. Dengan begitu, lebih mudah mengecek konsistensi kode dan menghindari satu jawaban yang terlalu panjang sehingga terpotong.

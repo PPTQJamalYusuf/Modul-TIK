@@ -1,0 +1,11 @@
+# SQLite runtime WAL & SHM
+*.db-wal
+*.db-shm
+
+# Backup database otomatis
+backups/
+
+# OS / Editor
+Thumbs.db
+.DS_Store
+.vscode/
