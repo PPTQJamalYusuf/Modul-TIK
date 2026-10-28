@@ -84,8 +84,18 @@
       }
     }
 
-// 11. PAPAN JUARA (LEADERBOARD) POLING 5 DETIK
+// 11. PAPAN JUARA (LEADERBOARD) POLING 5 DETIK & DIAGRAM BATANG (BAR CHART)
     // ------------------------------------------------------------------------
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
     function bukaModalLeaderboard() {
       document.getElementById('modal-leaderboard').style.display = 'flex';
       segarkanDataLeaderboard();
@@ -102,19 +112,130 @@
       segarkanDataLeaderboard();
     }
 
+    function gantiTampilanLeaderboard(mode) {
+      STATE.leaderboardView = mode;
+      const chartEl = document.getElementById('leaderboard-chart-container');
+      const tableEl = document.getElementById('leaderboard-table-container');
+      const btnChart = document.getElementById('btn-lb-view-chart');
+      const btnTable = document.getElementById('btn-lb-view-table');
+
+      if (mode === 'chart') {
+        if (chartEl) chartEl.style.display = 'flex';
+        if (tableEl) tableEl.style.display = 'none';
+        if (btnChart) {
+          btnChart.className = 'btn btn-sm btn-primary';
+          btnChart.style.background = '';
+          btnChart.style.border = '';
+        }
+        if (btnTable) {
+          btnTable.className = 'btn btn-sm btn-outline';
+          btnTable.style.background = 'transparent';
+          btnTable.style.border = 'none';
+        }
+      } else {
+        if (chartEl) chartEl.style.display = 'none';
+        if (tableEl) tableEl.style.display = 'block';
+        if (btnTable) {
+          btnTable.className = 'btn btn-sm btn-primary';
+          btnTable.style.background = '';
+          btnTable.style.border = '';
+        }
+        if (btnChart) {
+          btnChart.className = 'btn btn-sm btn-outline';
+          btnChart.style.background = 'transparent';
+          btnChart.style.border = 'none';
+        }
+      }
+    }
+
     async function segarkanDataLeaderboard() {
       if (!STATE.santri) return;
       try {
         const res = await apiFetch('/api/leaderboard');
         if (res.status === 'sukses') {
           const list = STATE.leaderboardTab === 'kelas' ? res.kelas_saya : res.semua_kelas;
-          renderLeaderboardTable(list, res.santri_aktif_id);
+          const myId = res.santri_aktif_id || (STATE.santri ? STATE.santri.id : null);
+          renderLeaderboardChart(list, myId);
+          renderLeaderboardTable(list, myId);
         }
       } catch {}
     }
 
+    function renderLeaderboardChart(list, myId) {
+      const container = document.getElementById('leaderboard-chart-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (!list || list.length === 0) {
+        container.innerHTML = `
+          <div style="text-align: center; padding: 36px 16px; color: var(--text-muted);">
+            <div style="font-size: 40px; margin-bottom: 8px;">🌟</div>
+            <p style="font-weight: 700; font-size: 15px; color: var(--dark);">Belum ada data skor santri</p>
+            <p style="font-size: 13px;">Selesaikan modul atau latihan mengetik untuk mengumpulkan skor XP pertama!</p>
+          </div>
+        `;
+        return;
+      }
+
+      // Hitung skor maksimum untuk skala bar (minimal 100 XP agar bar awal proporsional)
+      const maxXP = Math.max(...list.map(s => s.total_xp || 0), 100);
+
+      list.forEach((item, idx) => {
+        const xp = item.total_xp || 0;
+        // Skala persentase dengan ambang minimal 6% jika memiliki XP
+        const pct = Math.max(Math.round((xp / maxXP) * 100), xp > 0 ? 6 : 0);
+        const isMe = myId && item.id === myId;
+
+        let rankBadgeClass = '';
+        let barClass = '';
+        let medali = `${idx + 1}`;
+
+        if (idx === 0) {
+          medali = '🥇';
+          rankBadgeClass = 'lb-rank-gold';
+          barClass = 'lb-bar-gold';
+        } else if (idx === 1) {
+          medali = '🥈';
+          rankBadgeClass = 'lb-rank-silver';
+          barClass = 'lb-bar-silver';
+        } else if (idx === 2) {
+          medali = '🥉';
+          rankBadgeClass = 'lb-rank-bronze';
+          barClass = 'lb-bar-bronze';
+        }
+
+        const initial = (item.nama || '?').trim().charAt(0).toUpperCase();
+
+        const div = document.createElement('div');
+        div.className = `lb-chart-item ${isMe ? 'is-me' : ''}`;
+        div.innerHTML = `
+          <div class="lb-item-header">
+            <div class="lb-user-meta">
+              <div class="lb-rank-badge ${rankBadgeClass}">${medali}</div>
+              <div class="lb-avatar">${escapeHtml(initial)}</div>
+              <div class="lb-name-group">
+                <span class="lb-name">
+                  ${escapeHtml(item.nama)}
+                  ${isMe ? '<span class="lb-me-tag">👑 Anda</span>' : ''}
+                </span>
+                <span class="lb-sub">Kelas ${escapeHtml(item.kelas || '-')} • Lv.${item.level || 1} (${escapeHtml(item.gelar || 'Santri Pemula')})</span>
+              </div>
+            </div>
+            <div class="lb-xp-tag">
+              <strong>${xp}</strong> <small>XP</small>
+            </div>
+          </div>
+          <div class="lb-bar-track">
+            <div class="lb-bar-fill ${barClass}" style="width: ${pct}%;"></div>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
     function renderLeaderboardTable(list, myId) {
       const tbody = document.getElementById('leaderboard-tbody');
+      if (!tbody) return;
       tbody.innerHTML = '';
 
       if (!list || list.length === 0) {
@@ -136,10 +257,10 @@
 
         tr.innerHTML = `
           <td>${medali}</td>
-          <td>${item.nama} ${item.id === myId ? '(Anda)' : ''}</td>
-          <td>Kelas ${item.kelas}</td>
-          <td>Lv.${item.level} - ${item.gelar || 'Pemula'}</td>
-          <td><strong>${item.total_xp} XP</strong></td>
+          <td>${escapeHtml(item.nama)} ${item.id === myId ? '(Anda)' : ''}</td>
+          <td>Kelas ${escapeHtml(item.kelas || '-')}</td>
+          <td>Lv.${item.level || 1} - ${escapeHtml(item.gelar || 'Pemula')}</td>
+          <td><strong>${item.total_xp || 0} XP</strong></td>
         `;
         tbody.appendChild(tr);
       });

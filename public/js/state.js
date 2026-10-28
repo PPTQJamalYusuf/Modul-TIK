@@ -10,6 +10,7 @@
       offlineQueue: [],     // Antrean aktivitas yang belum disinkronkan ke server
       isOnline: true,
       leaderboardTab: 'kelas',
+      leaderboardView: 'chart',
       leaderboardTimer: null,
       typingEngine: null,
       mouseGame: null,

@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lab Komputer: Modul 1 Dasar TIK — Santri Putri</title>
+  <title>Lab Komputer TIK SMP: Modul 1 Dasar Informatika</title>
+  <meta name="description" content="Modul praktikum resmi Laboratorium Komputer SMP: Pengenalan perangkat keras, navigasi mouse, pengetikan 10 jari, dan manajemen berkas.">
+  <meta property="og:title" content="Lab Komputer TIK SMP: Modul 1 Dasar Informatika">
+  <meta property="og:description" content="Modul praktikum interaktif siswa SMP: perangkat keras, interaksi mouse & keyboard, serta manajemen berkas.">
+  <meta property="og:image" content="/img/thumbnail-modul1-smp.jpg">
+  <meta property="og:type" content="website">
   <!-- Google Fonts: Fredoka & Nunito (Modern Ceria, Ramah, Sangat Mudah Dibaca) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +32,7 @@
       <div class="brand-icon">💻</div>
       <div>
         <h1 class="brand-title">Lab TIK <span style="font-size: 14px; color: var(--secondary); background: #e8f5e9; padding: 2px 8px; border-radius: var(--radius-pill); vertical-align: middle; margin-left: 6px;">Santri Putri</span></h1>
-        <span class="brand-subtitle">Modul 1 Dasar Komputer & Keahlian 10 Jari • Kelas 7–12</span>
+        <span class="brand-subtitle">Modul 1: Dasar Informatika &amp; Keterampilan Komputer SMP</span>
       </div>
     </div>
 
@@ -103,7 +108,7 @@
         </div>
 
         <button id="nav-p1" class="menu-item" onclick="bukaPertemuan(1)">
-          <span>1. Sahabat Komputer</span>
+          <span>1. Pengenalan Perangkat Keras</span>
           <span id="status-p1" class="badge-status badge-selesai">Buka</span>
         </button>
 
@@ -113,7 +118,7 @@
         </button>
 
         <button id="nav-p3" class="menu-item locked" onclick="bukaPertemuan(3)">
-          <span>3. Rumah Berkas</span>
+          <span>3. Manajemen Berkas &amp; Folder</span>
           <span id="status-p3" class="item-meta">🔒 Dikunci</span>
         </button>
 
@@ -162,7 +167,7 @@
               </h1>
 
               <p class="tech-hero-lead">
-                Platform interaktif resmi Lab Komputer Santriwati. Belajar hardware, menaklukkan tantangan kecepatan mengetik keyboard, menguasai berkas Windows, dan raih ribuan poin XP!
+                Modul praktikum resmi Laboratorium Komputer SMP. Mempelajari pengenalan sistem perangkat keras, keterampilan navigasi mouse, pengetikan sepuluh jari, manajemen struktur direktori, dan operasi pengelolaan berkas secara mandiri.
               </p>
 
               <!-- 2D Terminal Tech Code Card (Clean White Tech Vibes) -->
@@ -312,26 +317,35 @@
                KONTEN PEMBELAJARAN SANTRI (HANYA MUNCUL SETELAH LOGIN)
                ============================================================== -->
           <div id="dashboard-learning-content" style="display: none;">
+            <!-- Banner Thumbnail Resmi Modul 1 SMP -->
+            <div id="modul-banner-showcase" style="margin-bottom: 24px; border-radius: 20px; overflow: hidden; border: 1.5px solid var(--border); box-shadow: 0 4px 18px rgba(16, 55, 65, 0.05); position: relative; background: #ffffff;">
+              <img src="/img/thumbnail-modul1-smp.jpg" alt="Thumbnail Modul 1 Informatika SMP" style="width: 100%; max-height: 240px; object-fit: cover; display: block;">
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(0deg, rgba(16, 55, 65, 0.92) 0%, rgba(16, 55, 65, 0.6) 60%, transparent 100%); padding: 18px 24px; color: white;">
+                <span style="background: var(--primary); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: var(--radius-pill); text-transform: uppercase; letter-spacing: 0.5px;">Modul Resmi Praktikum SMP</span>
+                <h3 style="font-family: var(--font-heading); font-size: 21px; margin-top: 6px; margin-bottom: 4px; font-weight: 700;">Modul 1: Dasar Informatika &amp; Keterampilan Komputer SMP</h3>
+                <p style="font-size: 13px; opacity: 0.92; margin: 0; max-width: 650px;">Panduan praktikum lengkap: pemahaman perangkat keras, navigasi mouse &amp; gestur touchpad, pengetikan 10 jari, manajemen direktori, dan proyek file mandiri.</p>
+              </div>
+            </div>
             <!-- Section Rekomendasi Modul (EdClub Course Cards) -->
             <div class="section-header-row">
-            <h3 class="section-title">✨ Rekomendasi Petualangan Belajar</h3>
-            <span style="font-size: 13px; font-weight: 600; color: var(--primary);">4 Modul Praktikum Santri</span>
+            <h3 class="section-title">📚 Kurikulum Praktikum Modul 1</h3>
+            <span style="font-size: 13px; font-weight: 600; color: var(--primary);">4 Sesi Pembelajaran Bertahap Siswa SMP</span>
           </div>
 
           <div class="course-grid">
             <!-- Card 1: Kenal Sahabat Komputer -->
             <div class="course-card" onclick="bukaPertemuan(1)">
               <div class="course-thumb-wrap">
-                <img src="/img/classes-1.jpg" alt="Petualangan 1" class="course-thumb">
-                <div class="course-badge-overlay">Level 1 • Dasar</div>
+                <img src="/img/thumbnail-modul1-smp.jpg" alt="Modul 1 Dasar Informatika SMP" class="course-thumb">
+                <div class="course-badge-overlay">Sesi 1 • Fondasi Sistem</div>
               </div>
               <div class="course-body">
                 <div class="course-meta-row">
-                  <span>📖 4 Misi Singkat</span>
+                  <span>📖 4 Misi Pembelajaran</span>
                   <span>⭐ 150 XP</span>
                 </div>
-                <h4 class="course-name">Kenal Sahabat Komputer</h4>
-                <p class="course-desc">Bongkar 4 jurus komputer, bedakan RAM vs Lemari SSD, dan sentuh hardware interaktif.</p>
+                <h4 class="course-name">Pengenalan Sistem Komputer</h4>
+                <p class="course-desc">Mempelajari perangkat keras (hardware), software, alur pemrosesan data, serta klarifikasi komponen casing vs prosesor.</p>
                 <button class="btn btn-primary course-btn">Mulai Misi 1 ▶</button>
               </div>
             </div>
@@ -340,15 +354,15 @@
             <div class="course-card" onclick="bukaPertemuan(2)">
               <div class="course-thumb-wrap">
                 <img src="/img/classes-2.jpg" alt="Petualangan 2" class="course-thumb">
-                <div class="course-badge-overlay" style="background: rgba(25, 135, 84, 0.9);">Level 2 • Mengetik</div>
+                <div class="course-badge-overlay" style="background: rgba(25, 135, 84, 0.9);">Sesi 2 • Antarmuka Pengguna</div>
               </div>
               <div class="course-body">
                 <div class="course-meta-row">
-                  <span>🎯 Balon Mouse & 10 Jari</span>
+                  <span>🎯 Navigasi &amp; 10 Jari</span>
                   <span>⚡ 200 XP</span>
                 </div>
-                <h4 class="course-name">Typing Jungle: Jari Sakti</h4>
-                <p class="course-desc">Latih refleks balon mouse dan ketik cepat tanpa melihat keyboard seperti pro!</p>
+                <h4 class="course-name">Navigasi Mouse &amp; Pengetikan 10 Jari</h4>
+                <p class="course-desc">Menguasai teknik klik, drag &amp; drop, scroll wheel, gestur touchpad, serta pengetikan sepuluh jari pada baris Home Row.</p>
                 <button class="btn btn-secondary course-btn">Mulai Mengetik ⌨️</button>
               </div>
             </div>
@@ -494,7 +508,7 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static;">Level 1</span>
               </div>
-              <h2 class="card-title">📖 Sesi 1: Kenal Sahabat Komputer</h2>
+              <h2 class="card-title">💻 Sesi 1: Pengenalan Perangkat Keras dan Sistem Komputer</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
                 Tujuan: Memahami 4 pilar sistem komputer, alur input-proses-output-storage, membedakan casing vs CPU, RAM vs SSD/HDD, navigasi Windows, dan adab laboratorium.
               </p>
@@ -776,7 +790,18 @@
                 Mulai Kuis Sesi 1 ▶
               </button>
             </div>
+            
             <div id="kuis-container-p1" style="margin-top: 16px;"></div>
+
+            <!-- Bilah Navigasi Antar Sesi: Sesi 1 -->
+            <div class="session-nav-bar">
+              <button class="btn btn-outline session-nav-btn" onclick="bukaDashboard()" title="Kembali ke Halaman Beranda">
+                <span>🏠</span> Beranda
+              </button>
+              <button class="btn btn-primary session-nav-btn" onclick="bukaPertemuan(2)" title="Lanjut ke Sesi 2">
+                Lanjut ke Sesi 2: Jari Sakti & Mouse <span>➔</span>
+              </button>
+            </div>
           </div>
         </section>
 
@@ -793,7 +818,7 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static; background: var(--secondary);">Level 2</span>
               </div>
-              <h2 class="card-title">⌨️ Sesi 2: Jari Sakti dan Mouse</h2>
+              <h2 class="card-title">🖱️ Sesi 2: Keterampilan Antarmuka: Mouse, Touchpad, dan Keyboard</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
                 Tujuan: Menguasai kendali mouse & gestur touchpad, mengenali tombol penting keyboard, posisi istirahat Home Row (ASDF JKL;), ergonomi postur, dan melatih akurasi sebelum kecepatan.
               </p>
@@ -1035,7 +1060,18 @@
                 Mulai Kuis Sesi 2 ▶
               </button>
             </div>
+            
             <div id="kuis-container-p2" style="margin-top: 16px;"></div>
+
+            <!-- Bilah Navigasi Antar Sesi: Sesi 2 -->
+            <div class="session-nav-bar">
+              <button class="btn btn-outline session-nav-btn" onclick="bukaPertemuan(1)" title="Kembali ke Sesi 1">
+                <span>⬅</span> Sesi 1: Pengenalan Perangkat Keras
+              </button>
+              <button class="btn btn-primary session-nav-btn" onclick="bukaPertemuan(3)" title="Lanjut ke Sesi 3">
+                Lanjut ke Sesi 3: Manajemen Berkas <span>➔</span>
+              </button>
+            </div>
           </div>
         </section>
 
@@ -1052,7 +1088,7 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static; background: #3b82f6;">Level 3</span>
               </div>
-              <h2 class="card-title">📁 Sesi 3: Rumah Berkas</h2>
+              <h2 class="card-title">📁 Sesi 3: Manajemen Berkas dan Struktur Direktori Komputer</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
                 Tujuan: Memahami perbedaan file, folder, drive, dan path direktori; mengenali ekstensi berkas; aturan penamaan tertib santri; prosedur simpan (Save vs Save As); pencarian dan pengurutan berkas.
               </p>
@@ -1299,7 +1335,18 @@
                 Mulai Kuis Sesi 3 ▶
               </button>
             </div>
+            
             <div id="kuis-container-p3" style="margin-top: 16px;"></div>
+
+            <!-- Bilah Navigasi Antar Sesi: Sesi 3 -->
+            <div class="session-nav-bar">
+              <button class="btn btn-outline session-nav-btn" onclick="bukaPertemuan(2)" title="Kembali ke Sesi 2">
+                <span>⬅</span> Sesi 2: Jari Sakti & Mouse
+              </button>
+              <button class="btn btn-primary session-nav-btn" onclick="bukaPertemuan(4)" title="Lanjut ke Sesi 4">
+                Lanjut ke Sesi 4: Operasi Berkas & Proyek Akhir <span>➔</span>
+              </button>
+            </div>
           </div>
         </section>
 
@@ -1593,7 +1640,18 @@
               </button>
             </div>
 
+            
             <div id="kuis-container-p4" style="margin-top: 16px;"></div>
+
+            <!-- Bilah Navigasi Antar Sesi: Sesi 4 -->
+            <div class="session-nav-bar">
+              <button class="btn btn-outline session-nav-btn" onclick="bukaPertemuan(3)" title="Kembali ke Sesi 3">
+                <span>⬅</span> Sesi 3: Manajemen Berkas
+              </button>
+              <button class="btn btn-secondary session-nav-btn" onclick="bukaDashboard()" title="Selesai dan Kembali ke Beranda">
+                <span>🏆</span> Selesai Modul 1 & Beranda
+              </button>
+            </div>
           </div>
         </section>
 
@@ -1851,22 +1909,38 @@
     </main>
   </div>
 
-  <!-- ========================================================================
+    <!-- ========================================================================
        MODAL 1: PAPAN JUARA (LEADERBOARD) SANTRI
        ======================================================================== -->
   <div id="modal-leaderboard" class="modal-overlay" style="display: none;">
-    <div class="modal-card">
+    <div class="modal-card" style="max-width: 640px; width: 95%;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-        <h3 style="font-size: 18px; color: var(--primary-dark);">🏆 Papan Juara Lab TIK</h3>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 22px;">🏆</span>
+          <h3 style="font-size: 18px; color: var(--primary-dark); margin: 0;">Papan Juara Lab TIK</h3>
+        </div>
         <button class="btn btn-outline btn-sm" onclick="tutupModalLeaderboard()">✕</button>
       </div>
 
-      <div style="display: flex; gap: 8px; margin-bottom: 12px;">
-        <button id="tab-lb-kelas" class="btn btn-primary btn-sm" style="flex: 1;" onclick="gantiTabLeaderboard('kelas')">Kelas Saya</button>
-        <button id="tab-lb-semua" class="btn btn-outline btn-sm" style="flex: 1;" onclick="gantiTabLeaderboard('semua')">Semua Kelas</button>
+      <!-- Tab Filter & Mode Tampilan (Bar Chart / Tabel) -->
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
+        <div style="display: flex; gap: 8px; flex: 1; min-width: 200px;">
+          <button id="tab-lb-kelas" class="btn btn-primary btn-sm" style="flex: 1;" onclick="gantiTabLeaderboard('kelas')">Kelas Saya</button>
+          <button id="tab-lb-semua" class="btn btn-outline btn-sm" style="flex: 1;" onclick="gantiTabLeaderboard('semua')">Semua Kelas</button>
+        </div>
+        <div style="display: flex; gap: 4px; background: #f1f5f9; padding: 4px; border-radius: var(--radius-pill);">
+          <button id="btn-lb-view-chart" class="btn btn-sm btn-primary" style="padding: 4px 12px; font-size: 12px;" onclick="gantiTampilanLeaderboard('chart')">📊 Diagram</button>
+          <button id="btn-lb-view-table" class="btn btn-sm btn-outline" style="padding: 4px 12px; font-size: 12px; background: transparent; border: none;" onclick="gantiTampilanLeaderboard('table')">📋 Tabel</button>
+        </div>
       </div>
 
-      <div style="max-height: 380px; overflow-y: auto;">
+      <!-- Container Diagram Batang (Bar Chart) -->
+      <div id="leaderboard-chart-container" class="lb-chart-container" style="max-height: 420px; overflow-y: auto; padding-right: 4px;">
+        <!-- Render Bar Chart oleh JS -->
+      </div>
+
+      <!-- Container Tabel Detail (Opsional) -->
+      <div id="leaderboard-table-container" style="max-height: 420px; overflow-y: auto; display: none;">
         <table class="data-table">
           <thead>
             <tr>
@@ -1883,6 +1957,7 @@
         </table>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- ========================================================================

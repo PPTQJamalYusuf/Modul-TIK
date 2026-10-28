@@ -6,7 +6,7 @@
 :root {
   --primary: #FE5D37;        /* Kider Signature Coral-Orange */
   --primary-hover: #e04824;
-  --primary-light: #FFF5F3;   /* Kider Light Warm Peach */
+  --primary-light: #fff1ee;   /* Kider Light Warm Peach */
   --primary-dark: #cf3d19;
   --dark: #103741;           /* Kider Deep Oceanic Teal */
   --secondary: #198754;      /* Cheerful Green */
@@ -19,11 +19,11 @@
   --danger: #ef4444;
   --danger-light: #fee2e2;
   --success: #198754;
-  --bg-page: #FFF5F3;        /* Kider warm page background */
+  --bg-page: #f8fafc;        /* Kider warm page background */
   --bg-card: #ffffff;
-  --text-main: #103741;      /* Kider high-contrast dark text */
-  --text-muted: #627b82;
-  --border: #f5dfda;
+  --text-main: #0f2e35;      /* Kider high-contrast dark text */
+  --text-muted: #47636a;
+  --border: #e2e8f0;
   --border-focus: #FE5D37;
   --shadow-sm: 0 2px 8px rgba(16, 55, 65, 0.05);
   --shadow: 0 8px 24px rgba(254, 93, 55, 0.08), 0 2px 8px rgba(16, 55, 65, 0.05);
@@ -48,8 +48,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 /* Aksesibilitas Fokus Keyboard */
@@ -76,15 +76,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .app-header::after {
-  content: "";
-  position: absolute;
-  bottom: -18px;
-  left: 0;
-  width: 100%;
-  height: 19px;
-  background: url('/img/bg-header-bottom.png') center bottom repeat-x;
-  pointer-events: none;
-  z-index: 52;
+  display: none;
 }
 
 .brand-area {
@@ -150,7 +142,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   background: var(--danger-light);
   color: var(--danger);
   border: 1px solid #ffcdd2;
-  animation: pulse 2s infinite;
+  animation: none;
 }
 
 @keyframes pulse {
@@ -360,7 +352,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 }
 
 .container {
-  max-width: 1160px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
@@ -1044,3 +1036,41 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
   line-height: 1.4;
 }
 
+
+
+/* ==========================================================================
+   BILAH NAVIGASI SESI PEMBELAJARAN (TENANG, JELAS, & AKSESIBEL)
+   ========================================================================== */
+.session-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1.5px solid var(--border);
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.session-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+/* Dukungan Preferensi Gerak Berkurang (Reduced Motion) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
