@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lab Komputer: Modul 1 Dasar TIK — Santri Putri</title>
-  <!-- Google Fonts: Heebo, Lobster Two, Fredoka (Kider Theme) -->
+  <!-- Google Fonts: Fredoka & Nunito (Modern Ceria, Ramah, Sangat Mudah Dibaca) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Heebo:wght@400;500;600;700&family=Lobster+Two:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Modular CSS Design System -->
   <link rel="stylesheet" href="/css/main.css?v=20261027_06">
@@ -484,6 +484,9 @@
         <!-- ==================================================================
              VIEW 1: PERTEMUAN 1 — KENAL SAHABAT KOMPUTER (MICRO-MISSIONS)
              ================================================================== -->
+        <!-- ==================================================================
+             VIEW 1: PERTEMUAN 1 — KENAL SAHABAT KOMPUTER (MICRO-MISSIONS)
+             ================================================================== -->
         <section id="view-p1" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -491,56 +494,78 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static;">Level 1</span>
               </div>
-              <h2 class="card-title">📖 Petualangan 1: Kenal Sahabat Komputer</h2>
+              <h2 class="card-title">📖 Sesi 1: Kenal Sahabat Komputer</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Misi: Memahami 4 jurus kerja komputer, membedakan RAM vs SSD, menyentuh hardware interaktif, dan menerapkan adab lab.
+                Tujuan: Memahami 4 pilar sistem komputer, alur input-proses-output-storage, membedakan casing vs CPU, RAM vs SSD/HDD, navigasi Windows, dan adab laboratorium.
               </p>
             </div>
-            <span class="time-badge">⏱ 40 Menit • 4 Misi Kilat</span>
+            <span class="time-badge">⏱ 45 Menit • 5 Misi Bertahap</span>
           </div>
 
           <!-- Niat & Adab Belajar -->
           <div class="callout-box callout-adab">
             <div style="font-size: 24px;">🌸</div>
             <div>
-              <strong>Niat Tholabul 'Ilmi:</strong><br>
+              <strong>Niat Tholabul 'Ilmi & Adab Fasilitas Bersama:</strong><br>
               <em>"Bismillaahir-rohmaanir-rohiim. Robbi zidnii 'ilman warzuqnii fahman."</em><br>
-              Gunakan waktu praktikum di lab pesantren dengan niat ibadah, melatih ketertiban, dan menjaga amanah fasilitas pondok.
+              Komputer adalah sarana penunjang ilmu. Niatkan praktikum di lab untuk ibadah, melatih ketelitian, dan menjaga amanah fasilitas pondok dengan tidak makan/minum di dekat komputer.
             </div>
           </div>
 
-          <!-- Misi 1: 4 Jurus Kerja Komputer -->
+          <!-- Misi 1: 4 Pilar Sistem & Alur Kerja Komputer -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🎯 Misi 1: Empat Jurus Alur Kerja Komputer</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Komputer selalu bekerja dalam 4 tahapan kilat yang berkesinambungan:</p>
+            <h3 class="materi-sub-title">🎯 Misi 1: Empat Pilar Sistem & Alur Kerja Komputer</h3>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              Komputer bukan hanya benda mati, melainkan sebuah sistem yang terdiri dari 4 unsur yang saling bekerja sama:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 12px 0;">
+              <div style="background: white; border: 1.5px solid #fed7aa; padding: 12px; border-radius: 12px;">
+                <strong>1. Perangkat Keras (Hardware)</strong>
+                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Bagian fisik yang dapat dilihat dan disentuh (monitor, keyboard, mouse, chip prosesor, SSD).</p>
+              </div>
+              <div style="background: white; border: 1.5px solid #bfdbfe; padding: 12px; border-radius: 12px;">
+                <strong>2. Perangkat Lunak (Software)</strong>
+                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Program dan instruksi yang mengendalikan kerja komputer (sistem operasi Windows, peramban, pengolah kata).</p>
+              </div>
+              <div style="background: white; border: 1.5px solid #bbf7d0; padding: 12px; border-radius: 12px;">
+                <strong>3. Data & Informasi</strong>
+                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Informasi yang diolah atau disimpan (teks tugas, rekaman audio murottal, foto, dokumen PDF).</p>
+              </div>
+              <div style="background: white; border: 1.5px solid #e9d5ff; padding: 12px; border-radius: 12px;">
+                <strong>4. Pengguna (User / Brainware)</strong>
+                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Manusia (santriwati dan ustadzah) yang memberi instruksi dan menentukan arah kerja komputer.</p>
+              </div>
+            </div>
+
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">Alur kerja pemrosesan data selalu berputar dalam 4 tahap berkesinambungan:</p>
             <div class="mission-flow-grid">
               <div class="mission-step-card">
                 <div class="mission-step-icon">📥</div>
                 <div class="mission-step-title">1. Input (Masukan)</div>
-                <div class="mission-step-desc">Jari menekan keyboard atau menggerakkan mouse untuk memberikan perintah.</div>
+                <div class="mission-step-desc">Jari menekan keyboard atau menggerakkan mouse untuk memberikan instruksi data masuk.</div>
               </div>
               <div class="mission-step-card">
                 <div class="mission-step-icon">⚙️</div>
-                <div class="mission-step-title">2. Proses (Otak CPU)</div>
-                <div class="mission-step-desc">Prosesor berpikir secepat kilat (miliaran kalkulasi per detik) mengolah data.</div>
+                <div class="mission-step-title">2. Process (Pemrosesan)</div>
+                <div class="mission-step-desc">Chip Processor (CPU) mengolah instruksi tombol secepat kilat (miliaran kalkulasi per detik).</div>
               </div>
               <div class="mission-step-card">
                 <div class="mission-step-icon">📺</div>
                 <div class="mission-step-title">3. Output (Keluaran)</div>
-                <div class="mission-step-desc">Hasil tampil di layar monitor jernih atau keluar lewat suara speaker.</div>
+                <div class="mission-step-desc">Hasil teks langsung tampil di layar monitor atau bersuara melalui speaker.</div>
               </div>
               <div class="mission-step-card">
                 <div class="mission-step-icon">💾</div>
-                <div class="mission-step-title">4. Simpan (Storage)</div>
-                <div class="mission-step-desc">SSD menyimpan file aman selamanya tanpa hilang saat laptop dimatikan.</div>
+                <div class="mission-step-title">4. Storage (Penyimpanan)</div>
+                <div class="mission-step-desc">SSD/HDD menyimpan berkas secara non-volatile agar bisa dibuka kembali saat komputer dimatikan.</div>
               </div>
             </div>
           </div>
 
-          <!-- Misi 2: Duel RAM vs SSD -->
+          <!-- Misi 2: Duel Konsep: RAM vs SSD -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚔️ Misi 2: Duel Konsep: RAM vs SSD</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Banyak yang keliru menyamakan keduanya. Yuk pahami perbedaannya lewat analogi sederhana:</p>
+            <h3 class="materi-sub-title">⚔️ Misi 2: Duel Konsep: RAM (Meja Kerja) vs SSD (Lemari Arsip)</h3>
+            <p style="font-size: 13px; color: var(--text-muted);">Jangan samakan RAM dengan SSD/Harddisk! Pahami fungsinya lewat analogi kontekstual:</p>
             <div class="duel-grid">
               <div class="duel-card duel-ram">
                 <div class="duel-header">
@@ -551,130 +576,191 @@
                   </div>
                 </div>
                 <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Kitab dan buku catatan yang <strong>sedang dibuka di atas meja saat ini</strong>. Bekerja sangat cepat. Namun begitu laptop dimatikan atau listrik padam, mejanya bersih kembali!
+                  Seperti kitab dan buku catatan yang <strong>sedang dibuka di atas meja belajar saat ini</strong>. Bekerja sangat cepat membantu aplikasi yang sedang aktif. Namun begitu laptop dimatikan atau listrik padam, meja otomatis bersih kembali!
                 </p>
               </div>
               <div class="duel-card duel-ssd">
                 <div class="duel-header">
                   <span class="duel-emoji">🗄️</span>
                   <div>
-                    <h4>SSD: Lemari Arsip</h4>
-                    <span class="duel-tag">Penyimpanan Permanen (Non-Volatile)</span>
+                    <h4>SSD / HDD: Lemari Arsip</h4>
+                    <span class="duel-tag">Penyimpanan Tetap (Non-Volatile)</span>
                   </div>
                 </div>
                 <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Lemari besi besar di sudut ruangan tempat menyimpan <strong>semua kitab & dokumen selamanya</strong>. Data tetap aman dan tidak akan hilang meskipun laptop mati berbulan-bulan.
+                  Seperti lemari arsip tempat menyimpan berkas tugas agar tidak hilang saat komputer dimatikan. <strong>Catatan Penting:</strong> SSD/HDD tetap bisa aus atau rusak secara fisik; karena itu menyimpan di SSD <em>tidak menjamin aman selamanya</em> dan backup berkala tetap wajib!
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Misi 3: Sentuh Hardware Interaktif -->
+          <!-- Misi 3: Sentuh Hardware Interaktif & Pembeda Casing vs CPU -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🔍 Misi 3: Eksplorasi Hardware Interaktif</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Sentuh atau klik salah satu komponen di bawah ini untuk membongkar rahasianya:</p>
+            <h3 class="materi-sub-title">🔍 Misi 3: Eksplorasi Hardware & Koreksi "Casing vs CPU"</h3>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              Klik komponen pada bagan komputer berikut untuk membedakan fungsi perangkat masukan, keluaran, unit sistem (casing), prosesor (CPU), dan memori:
+            </p>
+
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('monitor')">📺 Layar Monitor</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('casing')">🔲 Casing (Unit Sistem)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('cpu')">🧠 Processor (CPU Inti)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('ram')">⚡ RAM (Memori Sementara)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('storage')">💾 Storage (SSD/HDD)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('keyboard')">⌨️ Keyboard</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('mouse')">🖱️ Mouse</button>
+            </div>
 
             <div class="pc-visualizer-container">
-              <svg class="interactive-svg-pc" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+              <svg class="interactive-svg-pc" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="background: #0f172a; border-radius: 12px; cursor: pointer;">
                 <!-- Monitor -->
                 <g id="svg-monitor" class="svg-part" onclick="klikKomponenPc('monitor')">
-                  <rect x="50" y="20" width="220" height="150" rx="8" fill="#1e293b" />
-                  <rect x="62" y="32" width="196" height="126" rx="4" fill="#0284c7" opacity="0.85" />
-                  <polygon points="145,170 175,170 185,210 135,210" fill="#334155" />
-                  <rect x="120" y="210" width="80" height="8" rx="3" fill="#0f172a" />
-                  <text x="160" y="100" fill="white" font-size="14" font-weight="bold" text-anchor="middle">Layar Monitor</text>
+                  <rect x="40" y="20" width="220" height="150" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+                  <rect x="52" y="32" width="196" height="126" rx="4" fill="#0284c7" opacity="0.85" />
+                  <polygon points="135,170 165,170 175,205 125,205" fill="#334155" />
+                  <rect x="110" y="205" width="80" height="8" rx="3" fill="#64748b" />
+                  <text x="150" y="100" fill="white" font-size="14" font-weight="bold" text-anchor="middle">Layar Monitor (Output)</text>
                 </g>
 
-                <!-- CPU / System Case -->
+                <!-- Casing / Unit Sistem -->
+                <g id="svg-casing" class="svg-part" onclick="klikKomponenPc('casing')">
+                  <rect x="290" y="20" width="140" height="200" rx="6" fill="#1e293b" stroke="#f97316" stroke-width="1.5" />
+                  <rect x="305" y="35" width="110" height="20" rx="2" fill="#334155" />
+                  <circle cx="360" cy="75" r="8" fill="#FE5D37" />
+                  <text x="360" y="195" fill="#fdba74" font-size="11" font-weight="bold" text-anchor="middle">Casing (Unit Sistem)</text>
+                  <text x="360" y="210" fill="#94a3b8" font-size="9" text-anchor="middle">(Bukan CPU!)</text>
+                </g>
+
+                <!-- CPU Chip di dalam Casing -->
                 <g id="svg-cpu" class="svg-part" onclick="klikKomponenPc('cpu')">
-                  <rect x="310" y="20" width="110" height="200" rx="6" fill="#0f172a" />
-                  <rect x="325" y="40" width="80" height="18" rx="2" fill="#334155" />
-                  <circle cx="365" cy="80" r="10" fill="#FE5D37" />
-                  <rect x="330" y="110" width="70" height="70" rx="4" fill="#1e293b" />
-                  <text x="365" y="150" fill="#94a3b8" font-size="11" text-anchor="middle">CPU & RAM</text>
-                  <text x="365" y="210" fill="white" font-size="12" font-weight="bold" text-anchor="middle">System Case</text>
+                  <rect x="320" y="95" width="80" height="40" rx="4" fill="#0f172a" stroke="#22c55e" stroke-width="1.5" />
+                  <text x="360" y="115" fill="#4ade80" font-size="11" font-weight="bold" text-anchor="middle">Chip CPU</text>
+                  <text x="360" y="128" fill="#94a3b8" font-size="8" text-anchor="middle">(Otak Prosesor)</text>
+                </g>
+
+                <!-- RAM & Storage di dalam Casing -->
+                <g id="svg-ram" class="svg-part" onclick="klikKomponenPc('ram')">
+                  <rect x="320" y="145" width="38" height="28" rx="3" fill="#0f172a" stroke="#eab308" stroke-width="1" />
+                  <text x="339" y="162" fill="#facc15" font-size="9" font-weight="bold" text-anchor="middle">RAM</text>
+                </g>
+                <g id="svg-storage" class="svg-part" onclick="klikKomponenPc('storage')">
+                  <rect x="362" y="145" width="38" height="28" rx="3" fill="#0f172a" stroke="#a855f7" stroke-width="1" />
+                  <text x="381" y="162" fill="#c084fc" font-size="9" font-weight="bold" text-anchor="middle">SSD</text>
                 </g>
 
                 <!-- Keyboard -->
                 <g id="svg-keyboard" class="svg-part" onclick="klikKomponenPc('keyboard')">
-                  <rect x="50" y="225" width="220" height="25" rx="4" fill="#334155" />
-                  <rect x="60" y="229" width="200" height="17" rx="2" fill="#475569" />
-                  <text x="160" y="242" fill="white" font-size="11" font-weight="bold" text-anchor="middle">Keyboard</text>
+                  <rect x="40" y="222" width="220" height="26" rx="4" fill="#334155" stroke="#94a3b8" stroke-width="1" />
+                  <text x="150" y="239" fill="white" font-size="11" font-weight="bold" text-anchor="middle">Papan Ketik (Keyboard - Input)</text>
                 </g>
 
                 <!-- Mouse -->
                 <g id="svg-mouse" class="svg-part" onclick="klikKomponenPc('mouse')">
-                  <ellipse cx="460" cy="235" rx="18" ry="14" fill="#198754" />
-                  <line x1="460" y1="221" x2="460" y2="235" stroke="#ffffff" stroke-width="2" />
-                  <text x="460" y="240" fill="white" font-size="9" text-anchor="middle">Mouse</text>
+                  <ellipse cx="490" cy="235" rx="20" ry="15" fill="#166534" stroke="#4ade80" stroke-width="1.5" />
+                  <line x1="490" y1="220" x2="490" y2="235" stroke="#ffffff" stroke-width="1.5" />
+                  <text x="490" y="240" fill="white" font-size="9" text-anchor="middle">Mouse</text>
                 </g>
               </svg>
 
               <!-- Box Keterangan Komponen Interaktif -->
-              <div id="pc-detail-box" class="part-detail-box">
-                <strong id="pc-detail-nama" style="color: var(--primary); font-size: 16px;">Klik salah satu perangkat pada gambar di atas</strong>
-                <p id="pc-detail-fungsi" style="font-size: 13px; color: var(--dark); margin-top: 4px;">Pilih Monitor, CPU, Keyboard, atau Mouse untuk melihat ulasan teknisnya.</p>
+              <div id="pc-detail-box" class="part-detail-box" style="margin-top: 12px;">
+                <strong id="pc-detail-nama" style="color: var(--primary); font-size: 16px;">Klik salah satu perangkat di atas</strong>
+                <p id="pc-detail-fungsi" style="font-size: 13px; color: var(--dark); margin-top: 4px;">Pilih Monitor, Casing, Chip CPU, RAM, SSD, Keyboard, atau Mouse untuk melihat ulasan teknisnya.</p>
                 <div id="pc-detail-analogi" class="callout-box callout-analogi" style="display: none; margin-top: 8px; padding: 10px 14px;"></div>
               </div>
             </div>
           </div>
 
-          <!-- Misi 4: 4 Tombol Pintasan Sakti -->
+          <!-- Misi 4: Antarmuka Windows & 4 Pintasan Sakti Navigasi -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚡ Misi 4: Empat Pintasan Sakti Desktop Windows</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Gunakan kombinasi keyboard ini untuk bergerak secepat kilat di depan komputer:</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px;">
+            <h3 class="materi-sub-title">⚡ Misi 4: Navigasi Antarmuka Windows & Pintasan Sakti</h3>
+            <p style="font-size: 13px; color: var(--text-muted);">
+              Sistem operasi (seperti Windows) adalah pengelola lingkungan komputer. Kenali bagian penting antarmukanya:
+            </p>
+            <ul style="font-size: 13px; color: #475569; padding-left: 20px; line-height: 1.6; margin: 8px 0;">
+              <li><strong>Desktop:</strong> Ruang kerja utama yang muncul setelah login.</li>
+              <li><strong>Tombol Start:</strong> Pintu gerbang mencari aplikasi dan menu pengaturan.</li>
+              <li><strong>Taskbar:</strong> Bilah bawah layar untuk memantau dan berpindah aplikasi yang sedang aktif.</li>
+              <li><strong>Kontrol Jendela:</strong> Tombol <em>Minimize</em> (sembunyikan jendela tanpa menutup), <em>Maximize/Restore</em> (perbesar layar penuh), dan <em>Close</em> (tutup program).</li>
+            </ul>
+
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Gunakan 4 kombinasi tombol sakti ini untuk bergerak cepat dan sigap di lab:</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 8px;">
               <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Win + D</kbd> : Kembali ke Desktop Instan
+                <kbd>Win + D</kbd> : Tampilkan Desktop Instan
               </div>
               <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Win + E</kbd> : Membuka File Explorer
+                <kbd>Win + E</kbd> : Buka File Explorer
               </div>
               <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Alt + Tab</kbd> : Pindah Aplikasi Terbuka
+                <kbd>Alt + Tab</kbd> : Pindah Antarjendela Cepat
               </div>
               <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Win + L</kbd> : Mengunci Layar saat Izin
+                <kbd>Win + L</kbd> : Kunci Layar saat Izin Keluar
               </div>
             </div>
           </div>
 
-          <!-- Misi 5: 3 Aturan Emas Adab Lab -->
+          <!-- Misi 5: Miskonsepsi Kritis & Adab SOP Lab -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🛡️ Misi 5: Tiga Aturan Emas Adab Lab Komputer</h3>
+            <h3 class="materi-sub-title">🛡️ Misi 5: Koreksi Miskonsepsi Kritis & SOP Adab Lab</h3>
+            
+            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a; margin-bottom: 14px;">
+              <div style="font-size: 24px;">⚠️</div>
+              <div>
+                <strong style="color: #92400e;">Koreksi Miskonsepsi Umum Sesi 1:</strong>
+                <ul style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
+                  <li><strong>Casing komputer BUKAN CPU:</strong> Casing adalah wadah unit sistem; CPU adalah chip pemroses inti di dalamnya.</li>
+                  <li><strong>SSD tidak menjamin data aman selamanya:</strong> Media elektronik bisa rusak fisik atau korup; cadangan (backup) ke media lain tetap penting.</li>
+                  <li><strong>Tutup aplikasi tanpa simpan = data hilang:</strong> Program yang belum disimpan hanya berada di RAM; simpan berkas sebelum menutup aplikasi.</li>
+                </ul>
+              </div>
+            </div>
+
             <div class="rules-grid">
               <div class="rule-card">
                 <span class="rule-num">1</span>
                 <div>
-                  <strong>Tangan Bersih & Rapi</strong>
-                  <p>Bebas makanan & minuman manis di meja lab agar keyboard dan perangkat tidak lengket atau korsleting.</p>
+                  <strong>Tangan Bersih & Meja Kering</strong>
+                  <p>Dilarang membawa makanan dan minuman di meja lab agar keyboard tidak lengket dan terhindar dari korsleting.</p>
                 </div>
               </div>
               <div class="rule-card">
                 <span class="rule-num">2</span>
                 <div>
                   <strong>Matikan Lewat Shut Down Resmi</strong>
-                  <p>Klik menu Start -> Power -> Shut Down. Dilarang keras mencabut stopkontak atau mematikan paksa.</p>
+                  <p>Klik menu Start -> Power -> Shut Down. Dilarang mencabut kabel listrik atau mematikan paksa saat komputer sedang menulis data.</p>
                 </div>
               </div>
               <div class="rule-card">
                 <span class="rule-num">3</span>
                 <div>
-                  <strong>Jaga Kebersihan & Tutup Rapi</strong>
-                  <p>Tutup layar laptop perlahan dengan memegang bagian tengah atas. Rapikan kursi sebelum keluar lab.</p>
+                  <strong>Tutup Rapi & Jaga Privasi</strong>
+                  <p>Tutup layar laptop perlahan dengan memegang tengah atas. Jangan membuka atau mengubah file milik teman tanpa izin.</p>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Ringkasan Inti Sesi 1 -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 1:</strong>
+            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
+              <li>Komputer adalah sistem yang menghubungkan Hardware, Software, Data, dan User dalam siklus Input-Proses-Output-Penyimpanan.</li>
+              <li>Casing adalah wadah pelindung, sedangkan CPU adalah chip pemroses inti.</li>
+              <li>RAM adalah memori kerja sementara (volatile); SSD adalah penyimpanan permanen (non-volatile) yang tetap memerlukan cadangan data berkala.</li>
+              <li>Pintasan keyboard (<kbd>Win+D</kbd>, <kbd>Win+E</kbd>, <kbd>Alt+Tab</kbd>) membantu navigasi Windows secara sigap dan percaya diri.</li>
+            </ul>
+          </div>
+
           <!-- Tombol Penyelesaian Materi P1 -->
-          <div style="margin: 24px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px 22px; border-radius: 18px; border: 1.5px solid #ffdcd4;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px 22px; border-radius: 18px; border: 1.5px solid #ffdcd4;">
             <div>
-              <strong style="color: var(--primary); font-size: 16px;">Tuntaskan Misi 1 & Dapatkan Poin!</strong>
+              <strong style="color: var(--primary); font-size: 16px;">Tuntaskan Sesi 1 & Klaim Poin!</strong>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klik tombol di samping untuk mencatatkan poin XP resmi Anda ke server.</p>
             </div>
             <button id="btn-selesai-baca-p1" class="btn btn-primary" onclick="catatAktivitasBaca(1)">
-              ✓ Klaim XP Petualangan 1 (+25 XP)
+              ✓ Klaim XP Sesi 1 (+25 XP)
             </button>
             <span id="p1-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
           </div>
@@ -683,11 +769,11 @@
           <div style="margin-top: 24px; border-top: 2px solid #FFF5F3; padding-top: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Petualangan 1</h3>
-                <p style="font-size: 13px; color: var(--text-muted);">Kerjakan 3 soal latihan pemahaman berikut untuk menguji pemahaman Anda:</p>
+                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Sesi 1 (Penalaran Konsep)</h3>
+                <p style="font-size: 13px; color: var(--text-muted);">Kerjakan 4 soal skenario penalaran berikut untuk menguji pemahaman konsep komputer Anda:</p>
               </div>
               <button id="btn-muat-kuis-p1" class="btn btn-secondary" onclick="muatKuisPertemuan(1)">
-                Mulai Kuis Petualangan 1 ▶
+                Mulai Kuis Sesi 1 ▶
               </button>
             </div>
             <div id="kuis-container-p1" style="margin-top: 16px;"></div>
@@ -697,6 +783,9 @@
         <!-- ==================================================================
              VIEW 2: PERTEMUAN 2 — TYPING JUNGLE & JARI SAKTI (MICRO-MISSIONS)
              ================================================================== -->
+        <!-- ==================================================================
+             VIEW 2: PERTEMUAN 2 — JARI SAKTI DAN MOUSE (MICRO-MISSIONS)
+             ================================================================== -->
         <section id="view-p2" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -704,60 +793,60 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static; background: var(--secondary);">Level 2</span>
               </div>
-              <h2 class="card-title">⌨️ Petualangan 2: Typing Jungle & Jari Sakti 10 Jari</h2>
+              <h2 class="card-title">⌨️ Sesi 2: Jari Sakti dan Mouse</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Misi: Menguasai 3 aksi mouse, refleks game balon, dan menaklukkan baris Home Row tanpa melihat keyboard!
+                Tujuan: Menguasai kendali mouse & gestur touchpad, mengenali tombol penting keyboard, posisi istirahat Home Row (ASDF JKL;), ergonomi postur, dan melatih akurasi sebelum kecepatan.
               </p>
             </div>
-            <span class="time-badge">⏱ 40 Menit • Game & Latihan</span>
+            <span class="time-badge">⏱ 45 Menit • 5 Misi Bertahap</span>
           </div>
 
           <!-- Niat & Adab Berlatih -->
           <div class="callout-box callout-adab">
             <div style="font-size: 24px;">🎯</div>
             <div>
-              <strong>Adab Ketelitian (Itqan) & Kesabaran Melatih Motorik:</strong><br>
-              Mengetik 10 jari buta membutuhkan pembentukan memori otot. Jangan terburu-buru, utamakan <strong>akurasi ketukan</strong> terlebih dahulu sebelum memacu kecepatan!
+              <strong>Adab Ketelitian (Itqan) & Kesabaran Membangun Memori Otot:</strong><br>
+              Mengetik 10 jari tanpa melihat keyboard membutuhkan pembentukan memori otot secara bertahap. Jangan terburu-buru mengejar kecepatan; utamakan <strong>akurasi ketukan</strong> terlebih dahulu sebelum memacu kecepatan!
             </div>
           </div>
 
-          <!-- Misi 1: Tiga Aksi Sakti Mouse & Touchpad -->
+          <!-- Misi 1: Tiga Aksi Sakti Mouse & Touchpad Laptop -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🖱️ Misi 1: Tiga Aksi Sakti Mouse & Touchpad</h3>
+            <h3 class="materi-sub-title">🖱️ Misi 1: Operasi Mouse, Touchpad, & Efek Konteks Seret-Lepas</h3>
             <p style="font-size: 13px; color: var(--text-muted);">Kendalikan panah kursor di layar dengan jari-jari tanganmu:</p>
             <div class="mission-flow-grid">
               <div class="mission-step-card">
                 <div class="mission-step-icon">👆</div>
                 <div class="mission-step-title">Klik Kiri (Pilih & Buka)</div>
-                <div class="mission-step-desc">Tekan 1x untuk memilih tombol, atau 2x cepat untuk membuka folder dan aplikasi.</div>
+                <div class="mission-step-desc">Tekan 1x untuk memilih tombol/ikon, atau 2x cepat untuk membuka folder dan aplikasi.</div>
               </div>
               <div class="mission-step-card">
                 <div class="mission-step-icon">✌️</div>
-                <div class="mission-step-title">Klik Kanan (Menu Rahasia)</div>
-                <div class="mission-step-desc">Memunculkan menu pilihan aksi tersembunyi: Salin, Tempel, Ganti Nama, atau Hapus.</div>
+                <div class="mission-step-title">Klik Kanan (Menu Konteks)</div>
+                <div class="mission-step-desc">Membuka menu pilihan aksi tersembunyi (Buka, Salin, Ganti Nama, Hapus). <em>Bukan otomatis menghapus!</em></div>
               </div>
               <div class="mission-step-card">
                 <div class="mission-step-icon">🎡</div>
                 <div class="mission-step-title">Scroll Wheel (Meluncur)</div>
-                <div class="mission-step-desc">Putar roda tengah ke depan/belakang untuk meluncur di dokumen panjang & PDF.</div>
+                <div class="mission-step-desc">Putar roda tengah ke depan/belakang untuk meluncur di dokumen panjang & lembar PDF.</div>
               </div>
               <div class="mission-step-card">
                 <div class="mission-step-icon">✊</div>
-                <div class="mission-step-title">Drag & Drop (Seret & Lepas)</div>
-                <div class="mission-step-desc">Klik dan tahan berkas, geser kursor ke folder baru, lalu lepas tombolnya.</div>
+                <div class="mission-step-title">Drag & Drop (Seret-Lepas)</div>
+                <div class="mission-step-desc">Klik tahan objek, geser kursor ke tujuan, lalu lepas. <em>Efeknya tergantung konteks: dalam drive sama = memindahkan, beda drive = menyalin.</em></div>
               </div>
             </div>
 
             <!-- Touchpad Tips -->
-            <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; margin-top: 10px; font-size: 13px;">
+            <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; margin-top: 12px; font-size: 13px;">
               <strong>💡 Khusus Pengguna Touchpad Laptop:</strong>
-              Ketuk 1 jari = Klik Kiri • Ketuk 2 jari bersamaan = Klik Kanan • Geser 2 jari naik-turun = Scroll Layar.
+              Ketuk 1 jari = Klik Kiri • Ketuk 2 jari bersamaan = Klik Kanan (Menu Konteks) • Geser 2 jari naik-turun = Scroll Layar.
             </div>
           </div>
 
-          <!-- Misi 2: Mini Game Mouse Interaktif -->
+          <!-- Misi 2: Mini Game Mouse Interaktif (Aksesibilitas) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🎮 Misi 2: Arena Balon Mouse (Tangkas & Refleks)</h3>
+            <h3 class="materi-sub-title">🎮 Misi 2: Arena Balon Mouse (Tangkas, Refleks & Aksesibilitas)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
               Pilih tingkat kecepatan, klik "Mulai Latihan Mouse", lalu tangkap balon target oranye secepat mungkin sebelum waktu habis!
             </p>
@@ -778,15 +867,16 @@
             <div id="mouse-arena" class="mouse-game-arena">
               <div style="padding: 40px 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
                 🎈 Tekan tombol <strong>"Mulai Latihan Mouse"</strong> di atas untuk memunculkan balon target!
+                <div style="font-size: 12px; color: #94a3b8; margin-top: 6px;">(Mendukung klik mouse, klik kanan, double click, dan seret-lepas dengan alternatif klik untuk kemudahan touchpad laptop)</div>
               </div>
             </div>
           </div>
 
           <!-- Misi 3: Home Row Keyboard & Garis Sakti F & J -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⌨️ Misi 3: Rahasia 10 Jari: Baris Beranda (Home Row)</h3>
+            <h3 class="materi-sub-title">⌨️ Misi 3: Rahasia 10 Jari: Baris Beranda (Home Row) & Tombol Penting</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Katakan selamat tinggal pada metode "mengetik 2 telunjuk"! Letakkan 10 jarimu di baris tengah agar bisa mengetik tanpa melirik keyboard:
+              Letakkan 10 jarimu di baris pangkal (Home Row) agar bisa mengetik tanpa melirik keyboard:
             </p>
 
             <div class="duel-grid">
@@ -799,7 +889,7 @@
                   </div>
                 </div>
                 <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Kelingking di <kbd>A</kbd>, Manis di <kbd>S</kbd>, Tengah di <kbd>D</kbd>, dan Telunjuk bersandar tepat di tonjolan <kbd class="bump">F</kbd>!
+                  Kelingking di <kbd>A</kbd>, Manis di <kbd>S</kbd>, Tengah di <kbd>D</kbd>, dan Telunjuk bersandar tepat di tonjolan raba <kbd class="bump">F</kbd>!
                 </p>
               </div>
               <div class="duel-card duel-ssd">
@@ -811,7 +901,7 @@
                   </div>
                 </div>
                 <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Telunjuk bersandar di tonjolan <kbd class="bump">J</kbd>, Tengah di <kbd>K</kbd>, Manis di <kbd>L</kbd>, dan Kelingking di <kbd>;</kbd>!
+                  Telunjuk bersandar di tonjolan raba <kbd class="bump">J</kbd>, Tengah di <kbd>K</kbd>, Manis di <kbd>L</kbd>, dan Kelingking di <kbd>;</kbd>!
                 </p>
               </div>
             </div>
@@ -819,12 +909,12 @@
             <div class="callout-box callout-istilah" style="margin: 14px 0;">
               <div style="font-size: 24px;">💡</div>
               <div>
-                <strong>Rahasia Tonjolan Raba di Tombol F & J:</strong><br>
-                Di tombol <strong>F</strong> dan <strong>J</strong> ada garis timbul kecil. Cukup rasakan tonjolan tersebut dengan kedua ujung jari telunjukmu, maka seluruh jemari otomatis berada di posisi Home Row tanpa mata perlu melirik ke bawah!
+                <strong>Rahasia Tonjolan Taktil di Tombol F & J:</strong><br>
+                Di tombol <strong>F</strong> dan <strong>J</strong> ada garis timbul kecil. Rasakan tonjolan tersebut dengan kedua ujung jari telunjukmu, maka seluruh jemari otomatis berada di posisi Home Row tanpa mata perlu menunduk melirik ke bawah!
               </div>
             </div>
 
-            <!-- Keyboard Virtual Interaktif -->
+            <!-- Virtual Keyboard -->
             <div class="virtual-keyboard">
               <div class="kb-row">
                 <div class="kb-key" id="k-Q">Q</div><div class="kb-key" id="k-W">W</div><div class="kb-key" id="k-E">E</div><div class="kb-key" id="k-R">R</div>
@@ -851,7 +941,7 @@
             <div class="rules-grid" style="margin-top: 16px;">
               <div class="rule-card">
                 <span class="rule-icon">🪑</span>
-                <h4>Punggung Tegak</h4>
+                <h4>Punggung Tegak & Rileks</h4>
                 <p>Bersandar nyaman pada kursi lab; hindari membungkuk agar tidak cepat lelah.</p>
               </div>
               <div class="rule-card">
@@ -862,25 +952,25 @@
               <div class="rule-card">
                 <span class="rule-icon">👀</span>
                 <h4>Jarak Pandang Aman</h4>
-                <p>Mata berjarak 45-60 cm dari monitor (sepanjang jangkauan satu lengan).</p>
+                <p>Mata berjarak 45-60 cm dari monitor (sepanjang jangkauan satu lengan santri).</p>
               </div>
             </div>
           </div>
 
-          <!-- Misi 4: Kecepatan & Akurasi (Arena Mengetik) -->
+          <!-- Misi 4: Arena Latihan Mengetik Bertahap -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚡ Misi 4: Latihan Mengetik Cepat & Uji Akurasi</h3>
+            <h3 class="materi-sub-title">⚡ Misi 4: Latihan Mengetik Bertahap (Akurasi & WPM)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Diukur dengan <strong>WPM</strong> (Kata Per Menit) dan <strong>Akurasi (%)</strong>. Pilih tingkat latihan, lalu ketik tanpa melihat keyboard:
+              Latihan dirancang bertahap: pola Home Row pendek $ightarrow$ kata-kata pendek $ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> sebelum memacu <strong>WPM</strong>!
             </p>
 
             <div class="typing-box-container" style="margin-top: 14px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-                <strong style="font-size: 13px; color: var(--primary-dark);">Tingkat Kesulitan:</strong>
+                <strong style="font-size: 13px; color: var(--primary-dark);">Tahap Latihan:</strong>
                 <select id="typing-diff-select" class="btn-outline" style="padding: 6px 12px; border-radius: 20px; font-weight: 600;" onchange="gantiTeksLatihanMengetik()">
-                  <option value="easy">Level 1: Kombinasi Baris Beranda (asdf jkl;)</option>
-                  <option value="medium">Level 2: Kalimat Santri Teratur</option>
-                  <option value="hard">Level 3: Kalimat Kapital & Simbol Tanda Baca</option>
+                  <option value="easy">Tahap 1: Pola Pangkal Home Row (asdf jkl;)</option>
+                  <option value="medium">Tahap 2: Kata Pendek Teratur (buku file data rapi...)</option>
+                  <option value="hard">Tahap 3: Kalimat Bermakna Tugas Lab TIK</option>
                 </select>
               </div>
 
@@ -895,14 +985,41 @@
             </div>
           </div>
 
+          <!-- Misi 5: Miskonsepsi Kritis Sesi 2 -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">🛡️ Misi 5: Miskonsepsi Kritis Sesi 2 yang Harus Dihindari</h3>
+            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a;">
+              <div style="font-size: 24px;">⚠️</div>
+              <div>
+                <strong style="color: #92400e;">Catatan Kritis Pengendalian Komputer:</strong>
+                <ul style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
+                  <li><strong>Mengetik cepat belum tentu mahir:</strong> Mengetik terburu-buru dengan banyak salah ketik membuang waktu menghapus; itqan (ketelitian) jauh lebih utama.</li>
+                  <li><strong>Klik kanan BUKAN jalan pintas menghapus:</strong> Klik kanan membuka menu pilihan perintah (konteks).</li>
+                  <li><strong>Seret-lepas (drag-drop) tidak selalu memindahkan:</strong> Jika menyeret antar-drive (misal laptop ke flashdisk), berkas disalin (Copy), bukan dipindah (Move).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ringkasan Inti Sesi 2 -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 2:</strong>
+            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
+              <li>Klik kiri memilih/membuka; klik kanan memunculkan menu konteks; seret-lepas efeknya bergantung konteks lokasi.</li>
+              <li>Home Row (ASDF JKL;) adalah baris pangkal acuan jari dengan tonjolan taktil di F dan J.</li>
+              <li>Posisi duduk ergonomis menjaga stamina tubuh selama praktikum di lab pesantren.</li>
+              <li>Latihan mengetik 10 jari mengutamakan ketepatan memori otot sebelum memacu kecepatan kata per menit (WPM).</li>
+            </ul>
+          </div>
+
           <!-- Tombol Penyelesaian Materi P2 -->
-          <div style="margin: 24px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
             <div>
-              <strong style="color: var(--primary-dark); font-size: 16px;">🎉 Tuntas Petualangan 2?</strong>
+              <strong style="color: var(--primary-dark); font-size: 16px;">Tuntaskan Sesi 2 & Klaim Poin!</strong>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim poin XP membaca materi ini ke akun santrimu sekarang!</p>
             </div>
             <button id="btn-selesai-baca-p2" class="btn btn-primary" onclick="catatAktivitasBaca(2)">
-              ✓ Klaim XP Petualangan 2 (+25 XP)
+              ✓ Klaim XP Sesi 2 (+25 XP)
             </button>
             <span id="p2-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
           </div>
@@ -911,11 +1028,11 @@
           <div style="margin-top: 24px; border-top: 2px solid #FFF5F3; padding-top: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Petualangan 2</h3>
-                <p style="font-size: 13px; color: var(--text-muted);">Uji kemampuan mouse, posisi tombol Home Row, dan metrik pengetikan:</p>
+                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Sesi 2 (Penalaran Praktik)</h3>
+                <p style="font-size: 13px; color: var(--text-muted);">Uji kemampuan mouse, gestur touchpad, dan baris Home Row keyboard:</p>
               </div>
               <button id="btn-muat-kuis-p2" class="btn btn-secondary" onclick="muatKuisPertemuan(2)">
-                Mulai Kuis Petualangan 2 ▶
+                Mulai Kuis Sesi 2 ▶
               </button>
             </div>
             <div id="kuis-container-p2" style="margin-top: 16px;"></div>
@@ -925,6 +1042,9 @@
         <!-- ==================================================================
              VIEW 3: PERTEMUAN 3 — FOLDER, PATH & RAGAM FORMAT FILE (MICRO-MISSIONS)
              ================================================================== -->
+        <!-- ==================================================================
+             VIEW 3: PERTEMUAN 3 — RUMAH BERKAS (MICRO-MISSIONS)
+             ================================================================== -->
         <section id="view-p3" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -932,12 +1052,12 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static; background: #3b82f6;">Level 3</span>
               </div>
-              <h2 class="card-title">📁 Petualangan 3: Rahasia Lemari File & Ekstensi Berkas</h2>
+              <h2 class="card-title">📁 Sesi 3: Rumah Berkas</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Misi: Memahami pembagian kamar drive (C:, D:, USB), menelusuri pohon folder, dan mengenali format file rahasia!
+                Tujuan: Memahami perbedaan file, folder, drive, dan path direktori; mengenali ekstensi berkas; aturan penamaan tertib santri; prosedur simpan (Save vs Save As); pencarian dan pengurutan berkas.
               </p>
             </div>
-            <span class="time-badge">⏱ 40 Menit • Petualangan Folder</span>
+            <span class="time-badge">⏱ 45 Menit • 5 Misi Bertahap</span>
           </div>
 
           <!-- Niat & Adab Menata Arsip -->
@@ -945,32 +1065,32 @@
             <div style="font-size: 24px;">🗂️</div>
             <div>
               <strong>Adab Kerapian, Manajemen Waktu & Menjaga Arsip:</strong><br>
-              Rasulullah ﷺ bersabda: <em>"Sesungguhnya Allah menyukai orang yang apabila mengerjakan suatu pekerjaan, ia melakukannya dengan rapi dan sempurna (itqan)."</em> Menata folder dan menamai berkas dengan teratur akan menghemat waktu belajar Anda, mencegah tugas hilang, dan memudahkan Ustazah memeriksa karya Anda.
+              Rasulullah ﷺ bersabda: <em>"Sesungguhnya Allah menyukai orang yang apabila mengerjakan suatu pekerjaan, ia melakukannya dengan rapi dan sempurna (itqan)."</em> Menata folder dan menamai berkas dengan teratur akan menghemat waktu belajar Anda, mencegah tugas hilang, dan memudahkan Ustadzah memeriksa karya Anda.
             </div>
           </div>
 
-          <!-- Misi 1: Tiga Kamar Penyimpanan Komputer -->
+          <!-- Misi 1: Tiga Kamar Penyimpanan Komputer yang Akurat -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🚪 Misi 1: Kenali Tiga Kamar Penyimpanan (Drive C, D, & USB)</h3>
+            <h3 class="materi-sub-title">🚪 Misi 1: Kenali Tiga Kamar Penyimpanan (Drive C, D, & Flashdisk USB)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Di dalam laptop, ruang penyimpanan dibagi menjadi beberapa kamar dengan tugas khusus masing-masing:
+              Di dalam komputer atau laptop, ruang penyimpanan dibagi menjadi beberapa kamar dengan fungsi yang berbeda:
             </p>
 
             <div class="mission-flow-grid">
               <div class="mission-step-card" style="border-top-color: #ef4444;">
                 <div class="mission-step-icon">⚙️</div>
-                <div class="mission-step-title">Drive C: (Kamar Mesin)</div>
-                <div class="mission-step-desc">Rumah sistem Windows dan aplikasi. <strong>Pantangan:</strong> Jangan simpan tugas di sini agar jika Windows error, tugas santri tidak ikut hilang!</div>
+                <div class="mission-step-title">Drive C: (Sistem & Dokumen Pengguna)</div>
+                <div class="mission-step-desc">Rumah sistem Windows dan folder kerja pengguna (Documents). <em>Lokasi kerja yang sah; yang dilarang adalah mengutak-atik folder sistem C:\Windows.</em></div>
               </div>
               <div class="mission-step-card" style="border-top-color: var(--primary);">
                 <div class="mission-step-icon">📚</div>
-                <div class="mission-step-title">Drive D: (Lemari Santri)</div>
-                <div class="mission-step-desc">Kamar aman khusus data santri: tugas TIK, naskah makalah, rekaman murottal, dan materi pelajaran pondok.</div>
+                <div class="mission-step-title">Drive D: (Partisi Data Tambahan)</div>
+                <div class="mission-step-desc">Kamar khusus data santri jika tersedia. <em>Perhatian: Drive D: TIDAK selalu tersedia di semua laptop atau komputer lab!</em></div>
               </div>
               <div class="mission-step-card" style="border-top-color: var(--secondary);">
                 <div class="mission-step-icon">🎒</div>
-                <div class="mission-step-title">Flashdisk USB (Koper Jinjing)</div>
-                <div class="mission-step-desc">Media portabel untuk memindahkan tugas antarlaptop atau dibawa ke rental printer pondok.</div>
+                <div class="mission-step-title">Flashdisk USB (Media Portabel)</div>
+                <div class="mission-step-desc">Media penyimpanan jinjing untuk membawa file antar-laptop lab. <em>Wajib gunakan fitur Safely Remove / Eject sebelum dicabut!</em></div>
               </div>
             </div>
 
@@ -994,7 +1114,7 @@
             <div class="folder-tree" style="margin: 14px 0;">
               <div class="tree-node">
                 <div class="tree-header" onclick="toggleTreeNode('c-drive')">
-                  <span>💻</span> <strong>Drive C:\ (Sistem Windows)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
+                  <span>💻</span> <strong>Drive C:\ (Sistem Windows & Profil Santri)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
                 </div>
                 <div id="c-drive" style="display: block; padding-left: 20px;">
                   <div class="tree-node">
@@ -1004,10 +1124,10 @@
                     <div id="users-dir" style="display: block; padding-left: 20px;">
                       <div class="tree-node">
                         <div class="tree-header" onclick="toggleTreeNode('santri-dir')">
-                          <span>📁</span> <strong>Santri\</strong>
+                          <span>📁</span> <strong>Santri\Documents\</strong>
                         </div>
                         <div id="santri-dir" style="display: block; padding-left: 20px;">
-                          <div class="tree-header"><span>📄</span> Catatan_TIK.docx</div>
+                          <div class="tree-header"><span>📄</span> Laporan_TIK.docx</div>
                           <div class="tree-header"><span>📁</span> Modul_Lab/</div>
                         </div>
                       </div>
@@ -1018,7 +1138,7 @@
 
               <div class="tree-node" style="margin-top: 8px;">
                 <div class="tree-header" onclick="toggleTreeNode('d-drive')">
-                  <span>📂</span> <strong>Drive D:\ (Data Santri & Dokumen Besar)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
+                  <span>📂</span> <strong>Drive D:\ (Data Tambahan — Jika Tersedia di Komputer)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
                 </div>
                 <div id="d-drive" style="display: none; padding-left: 20px;">
                   <div class="tree-header"><span>📁</span> Tugas_Pesantren/</div>
@@ -1047,11 +1167,11 @@
             </div>
           </div>
 
-          <!-- Misi 3: 5 Kartu Ekstensi Berkas Populer -->
+          <!-- Misi 3: Mengenal Ekstensi Berkas Populer -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🏷️ Misi 3: Mengenal Ekstensi Berkas (.docx, .xlsx, .pdf, dll)</h3>
+            <h3 class="materi-sub-title">🏷️ Misi 3: Mengenal Ekstensi Berkas & Peringatan Format</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Ekstensi adalah 3-4 huruf di ujung nama file setelah tanda titik yang memberi tahu komputer jenis aplikasinya:
+              Ekstensi adalah 3-4 huruf di ujung nama file setelah tanda titik yang membantu mengenali format berkas:
             </p>
 
             <div class="rules-grid" style="margin: 14px 0;">
@@ -1087,7 +1207,19 @@
               </div>
             </div>
 
-            <div class="callout-box callout-adab" style="margin-top: 14px;">
+            <!-- Callout PENTING Ekstensi -->
+            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a; margin-top: 14px;">
+              <div style="font-size: 24px;">🛡️</div>
+              <div>
+                <strong style="color: #92400e;">Dua Peringatan Kritis tentang Ekstensi Berkas:</strong>
+                <ol style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
+                  <li><strong>Ekstensi BUKAN jaminan keamanan:</strong> Nama berkas bisa disamarkan oleh orang yang tidak bertanggung jawab; jangan membuka berkas tak dikenal hanya karena namanya meyakinkan.</li>
+                  <li><strong>Mengganti ekstensi BUKAN mengonversi format:</strong> Mengubah nama dari <code>laporan.docx</code> menjadi <code>laporan.pdf</code> tidak membuat file menjadi PDF asli, melainkan hanya merusak asosiasi aplikasi sehingga berkas gagal dibuka! Konversi resmi harus lewat <em>Save As</em> atau <em>Ekspor</em>.</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="callout-box callout-adab" style="margin-top: 12px;">
               <div style="font-size: 24px;">👀</div>
               <div>
                 <strong>Cara Menampilkan Ekstensi File yang Tersembunyi di Windows:</strong><br>
@@ -1105,8 +1237,8 @@
 
             <div style="background: #FFF5F3; border: 2px dashed var(--primary); padding: 14px 18px; border-radius: var(--radius-sm); margin: 12px 0; text-align: center;">
               <div style="font-size: 13px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.5px;">Rumus Penamaan Berkas Tertib:</div>
-              <code style="display: inline-block; font-size: 16px; font-weight: 800; color: var(--primary); margin-top: 6px; background: white; padding: 6px 14px; border-radius: 8px;">[NamaTugas]_[NamaSantri]_[Kelas]_[Tanggal].docx</code>
-              <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Contoh: <code>TugasTIK_AisyahHumaira_Kelas7A_20261027.docx</code></div>
+              <code style="display: inline-block; font-size: 15px; font-weight: 800; color: var(--primary); margin-top: 6px; background: white; padding: 6px 14px; border-radius: 8px;">[NamaTugas]_[NamaSantri]_[Kelas]_[TanggalYYYY-MM-DD].docx</code>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Contoh: <code>Tugas1_TIK_AisyahHumaira_Kelas7_2026-10-28.docx</code></div>
             </div>
 
             <div class="callout-box callout-istilah" style="margin-top: 14px;">
@@ -1122,14 +1254,36 @@
             </div>
           </div>
 
+          <!-- Misi 5: Prosedur Simpan, Cari, dan Mengurutkan -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">🔍 Misi 5: Prosedur Simpan (Save vs Save As), Pencarian & Pengurutan Berkas</h3>
+            <ul style="font-size: 13px; color: #475569; padding-left: 20px; line-height: 1.6; margin: 8px 0;">
+              <li><strong>Save As (Simpan Sebagai):</strong> Digunakan pertama kali saat membuat file untuk menentukan nama dan lokasi folder yang dituju.</li>
+              <li><strong>Save (Simpan / <kbd>Ctrl+S</kbd>):</strong> Memperbarui perubahan pada berkas yang sudah memiliki lokasi.</li>
+              <li><strong>Pencarian Pintar:</strong> Jika berkas lupa disimpan di mana, gunakan kotak cari di pojok kanan atas File Explorer dengan mengetikkan bagian kata atau ekstensinya (contoh: <code>.docx</code>).</li>
+              <li><strong>Koreksi Miskonsepsi Pengurutan (Sorting):</strong> Mengurutkan berkas berdasarkan tanggal atau nama hanya mengubah susunan tampilan di layar; <em>lokasi fisik berkas sama sekali tidak berpindah!</em></li>
+            </ul>
+          </div>
+
+          <!-- Ringkasan Inti Sesi 3 -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 3:</strong>
+            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
+              <li>Drive C: memuat sistem dan folder Documents; Drive D: tidak selalu ada di semua komputer; flashdisk USB wajib di-eject dengan aman.</li>
+              <li>Ekstensi menandai jenis berkas, bukan jaminan keamanan; mengganti ekstensi bukan mengonversi format file.</li>
+              <li>Hindari 9 karakter terlarang Windows saat menamai file.</li>
+              <li>Struktur folder yang rapi memudahkan pencarian dan mencegah kepanikan saat mengumpulkan tugas.</li>
+            </ul>
+          </div>
+
           <!-- Tombol Penyelesaian Materi P3 -->
-          <div style="margin: 24px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
             <div>
-              <strong style="color: var(--primary-dark); font-size: 16px;">🎉 Tuntas Petualangan 3?</strong>
+              <strong style="color: var(--primary-dark); font-size: 16px;">Tuntaskan Sesi 3 & Klaim Poin!</strong>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim poin XP membaca materi ini ke akun santrimu sekarang!</p>
             </div>
             <button id="btn-selesai-baca-p3" class="btn btn-primary" onclick="catatAktivitasBaca(3)">
-              ✓ Klaim XP Petualangan 3 (+25 XP)
+              ✓ Klaim XP Sesi 3 (+25 XP)
             </button>
             <span id="p3-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
           </div>
@@ -1138,11 +1292,11 @@
           <div style="margin-top: 24px; border-top: 2px solid #FFF5F3; padding-top: 20px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Petualangan 3</h3>
+                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Sesi 3 (Penalaran Manajemen Berkas)</h3>
                 <p style="font-size: 13px; color: var(--text-muted);">Uji pemahaman tentang partisi drive, format ekstensi, dan aturan path:</p>
               </div>
               <button id="btn-muat-kuis-p3" class="btn btn-secondary" onclick="muatKuisPertemuan(3)">
-                Mulai Kuis Petualangan 3 ▶
+                Mulai Kuis Sesi 3 ▶
               </button>
             </div>
             <div id="kuis-container-p3" style="margin-top: 16px;"></div>
@@ -1152,6 +1306,12 @@
         <!-- ==================================================================
              VIEW 4: PERTEMUAN 4 — OPERASI BERKAS & BOSS LEVEL (MICRO-MISSIONS)
              ================================================================== -->
+        <!-- ==================================================================
+             VIEW 4: PERTEMUAN 4 — OPERASI BERKAS & PROYEK AKHIR "TUGAS TIK RAPI"
+             ================================================================== -->
+        <!-- ==================================================================
+             VIEW 4: PERTEMUAN 4 — OPERASI BERKAS & PROYEK AKHIR "TUGAS TIK RAPI"
+             ================================================================== -->
         <section id="view-p4" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -1159,12 +1319,12 @@
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
                 <span class="course-badge-overlay" style="position: static; background: #8b5cf6;">Level 4</span>
               </div>
-              <h2 class="card-title">⚡ Petualangan 4: Operasi Berkas & Boss Quiz Evaluasi</h2>
+              <h2 class="card-title">⚡ Sesi 4: Operasi Berkas & Proyek Akhir "Tugas TIK Rapi"</h2>
               <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Misi: Menguasai Copy, Cut, Paste, Rename, memulihkan file dari Recycle Bin, simulasi Explorer virtual, dan evaluasi kelulusan modul!
+                Tujuan: Menguasai operasi Copy, Cut, Paste, Rename, Delete, dan pemulihan Recycle Bin; memahami batas Ctrl+Z dan konflik file; menuntaskan Proyek Akhir terpadu berbasis data dummy; dan evaluasi akhir modul.
               </p>
             </div>
-            <span class="time-badge">⏱ 40 Menit • Boss Level</span>
+            <span class="time-badge">⏱ 50 Menit • Boss Level & Proyek</span>
           </div>
 
           <!-- Niat & Adab Kejujuran -->
@@ -1178,24 +1338,24 @@
 
           <!-- Misi 1: Tiga Jurus Utama (Copy vs Cut vs Paste) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">✂️ Misi 1: Duel Tiga Jurus: Copy vs Cut vs Paste</h3>
+            <h3 class="materi-sub-title">✂️ Misi 1: Duel Tiga Jurus: Copy vs Cut vs Paste di Clipboard</h3>
             <p style="font-size: 13px; color: var(--text-muted);">Pahami cara kerja pemindahan berkas di memori sementara (Clipboard):</p>
 
             <div class="mission-flow-grid">
               <div class="mission-step-card" style="border-top-color: var(--primary);">
                 <div class="mission-step-icon">📋</div>
                 <div class="mission-step-title">Copy (<kbd>Ctrl+C</kbd>) — Gandakan</div>
-                <div class="mission-step-desc">Menduplikasi file. File di tempat asli <strong>tetap ada</strong>, dan salinan baru dibuat di tempat tujuan.</div>
+                <div class="mission-step-desc">Menduplikasi file. File di tempat asli <strong>tetap ada</strong>, dan salinan baru tercipta di tempat tujuan.</div>
               </div>
               <div class="mission-step-card" style="border-top-color: #ef4444;">
                 <div class="mission-step-icon">✂️</div>
                 <div class="mission-step-title">Cut (<kbd>Ctrl+X</kbd>) — Pindahkan</div>
-                <div class="mission-step-desc">Memindahkan seutuhnya. File di tempat asli akan <strong>hilang/berpindah</strong> ke tujuan baru.</div>
+                <div class="mission-step-desc">Menyiapkan pemindahan. File di tempat asli akan <strong>dipindahkan seutuhnya</strong> ke tempat tujuan.</div>
               </div>
               <div class="mission-step-card" style="border-top-color: var(--secondary);">
                 <div class="mission-step-icon">📥</div>
                 <div class="mission-step-title">Paste (<kbd>Ctrl+V</kbd>) — Tempelkan</div>
-                <div class="mission-step-desc">Mengambil file dari nampan memori sementara (<em>Clipboard</em>) dan menaruhnya di folder aktif.</div>
+                <div class="mission-step-desc">Mengambil berkas dari nampan memori sementara (<em>Clipboard</em>) dan menaruhnya di folder aktif.</div>
               </div>
             </div>
 
@@ -1210,7 +1370,7 @@
                   </div>
                 </div>
                 <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Klik file sekali, tekan tombol <kbd>F2</kbd>, ketik nama baru lalu tekan <kbd>Enter</kbd>. Ingat: jangan hapus tanda titik dan ekstensinya ya!
+                  Pilih berkas, tekan tombol <kbd>F2</kbd>, ketik nama baru lalu tekan <kbd>Enter</kbd>. <strong>Ingat:</strong> jangan hapus tanda titik dan ekstensinya agar format berkas tidak rusak!
                 </p>
               </div>
               <div class="duel-card duel-ssd">
@@ -1222,17 +1382,28 @@
                   </div>
                 </div>
                 <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Menekan tombol <kbd>Delete</kbd> hanya memindahkan file ke tong sampah sementara. Buka Recycle Bin, klik kanan file, lalu klik <strong>Restore</strong> untuk menyelamatkannya!
+                  Menekan tombol <kbd>Delete</kbd> pada drive laptop akan memindahkan file ke tong sampah sementara. Buka Recycle Bin, klik kanan file, lalu klik <strong>Restore</strong> untuk menyelamatkannya!
+                </p>
+              </div>
+            </div>
+
+            <!-- Peringatan Kritis Recycle Bin Flashdisk -->
+            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a; margin-top: 14px;">
+              <div style="font-size: 24px;">⚠️</div>
+              <div>
+                <strong style="color: #92400e;">Peringatan Kritis Penghapusan Berkas:</strong>
+                <p style="font-size: 12px; color: #78350f; margin-top: 4px; line-height: 1.5;">
+                  Recycle Bin <strong>TIDAK menjamin semua berkas bisa dipulihkan!</strong> Berkas yang dihapus dari media flashdisk USB atau dihapus dengan pintasan <kbd>Shift + Delete</kbd> akan dihapus permanen seketika tanpa masuk tong sampah Recycle Bin.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Misi 2: Kumpulan Shortcut Sakti -->
+          <!-- Misi 2: Kumpulan Shortcut Sakti & Batas Ctrl+Z -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚡ Misi 2: Kumpulan Tombol Pintasan (Shortcut) Sakti</h3>
+            <h3 class="materi-sub-title">⚡ Misi 2: Pintasan Keyboard Sakti & Batasan Batal (<kbd>Ctrl+Z</kbd>)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Santri jago komputer tidak bergantung terus pada mouse. Hafalkan kombinasi sakti ini:
+              Kombinasi sakti keyboard mempercepat pengelolaan file di File Explorer:
             </p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 12px 0;">
@@ -1249,10 +1420,10 @@
                 <kbd>Ctrl+Z</kbd> <span>Batal (Undo)</span>
               </div>
               <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
-                <kbd>Ctrl+A</kbd> <span>Pilih Semua</span>
+                <kbd>Ctrl+A</kbd> <span>Pilih Semua Berkas</span>
               </div>
               <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
-                <kbd>F2</kbd> <span>Ganti Nama (Rename)</span>
+                <kbd>F2</kbd> <span>Ubah Nama (Rename)</span>
               </div>
               <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
                 <kbd>Ctrl+Shift+N</kbd> <span>Folder Baru Instan</span>
@@ -1261,17 +1432,40 @@
                 <kbd>Delete</kbd> <span>Hapus ke Sampah</span>
               </div>
             </div>
+
+            <div class="callout-box callout-istilah" style="margin-top: 12px;">
+              <div style="font-size: 24px;">🛡️</div>
+              <div>
+                <strong>Batas Perlindungan <kbd>Ctrl + Z</kbd> & Konflik Nama File:</strong><br>
+                1. <em>Ctrl + Z tidak membatalkan semua hal:</em> Aksi pembatalan sangat bergantung pada aplikasi yang sedang aktif dan tidak bisa membatalkan berkas yang sudah ditutup atau dihapus permanen.<br>
+                2. <em>Peringatan Replace (File Kembar):</em> Jika muncul pesan <em>"The destination already has a file named..."</em>, jangan langsung tekan Replace! Teliti tanggal dan isinya agar karya sebelumnya tidak tertimpa tanpa sengaja.
+              </div>
+            </div>
           </div>
 
-          <!-- Misi 3: Simulator Interaktif File Explorer -->
+          <!-- Misi 3: PROYEK AKHIR TERPADU "TUGAS TIK RAPI" (SIMULATOR VIRTUAL DUMMY) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🎮 Misi 3: Simulator Interaktif File Explorer Windows</h3>
+            <h3 class="materi-sub-title">🏆 Misi 3: Proyek Akhir Terpadu: "Tugas TIK Rapi" (Data Dummy Aman)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Coba langsung operasi file secara virtual di arena simulator ini sebelum mempraktikkannya di laptop aslimu:
+              Selesaikan proyek autentik ini menggunakan data dummy virtual di bawah. Jangan khawatir, latihan ini 100% aman dan tidak menyentuh dokumen asli laptopmu!
             </p>
 
-            <div class="explorer-window" style="margin-top: 12px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06);">
-              <div class="explorer-toolbar" style="background: #FFF5F3; padding: 10px 12px; gap: 6px;">
+            <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 12px; padding: 14px 18px; margin: 12px 0;">
+              <strong style="color: #166534; font-size: 14px;">🎯 Skenario Tugas Proyek Akhir:</strong>
+              <p style="font-size: 12px; color: #15803d; margin: 4px 0 10px;">Anda menerima berkas tugas praktikum yang berserakan. Susunlah menjadi arsip teratur dengan langkah berikut:</p>
+              <ol style="font-size: 12px; color: #14532d; padding-left: 20px; line-height: 1.6;">
+                <li>Klik tombol <strong>"📁 Folder Baru"</strong>, buat folder induk proyek bernama <code>Kelas7_Nama_Modul1</code> (contoh: <code>Kelas7_Aisyah_Modul1</code>).</li>
+                <li>Klik ganda folder tersebut untuk membukanya, lalu buat 3 subfolder: <code>Dokumen</code>, <code>Bacaan</code>, dan <code>Gambar</code>.</li>
+                <li>Pindahkan berkas dummy sesuai jenisnya: <code>Laporan_Praktikum.docx</code> & <code>Catatan_Tambahan.txt</code> ke folder <code>Dokumen</code>, <code>Panduan_Lab.pdf</code> ke folder <code>Bacaan</code>, dan <code>Bagan_Komputer.png</code> ke folder <code>Gambar</code>.</li>
+                <li>Pilih berkas dummy sampah <code>File_Sampah_Latihan.tmp</code> lalu klik tombol <strong>"🗑️ Delete"</strong> untuk memindahkannya ke Recycle Bin virtual.</li>
+                <li>Setelah selesai, klik tombol besar hijau <strong>"🔍 Periksa Hasil Pekerjaan Proyek Akhir"</strong> di bawah simulator untuk dinilai otomatis!</li>
+              </ol>
+            </div>
+
+            <!-- Simulator File Explorer Virtual -->
+            <div class="explorer-window" style="margin-top: 14px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border: 1.5px solid var(--border);">
+              <div class="explorer-toolbar" style="background: #FFF5F3; padding: 10px 12px; gap: 6px; display: flex; flex-wrap: wrap; align-items: center;">
+                <button id="btn-sim-up" class="btn btn-outline btn-sm" style="display: none; font-weight: bold;" onclick="simulasiKembaliKeFolderAtas()">⬆ Folder Atas</button>
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerBuatFolder()">📁 Folder Baru</button>
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerBuatFile()">📄 File Baru</button>
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerSalin()">📋 Copy</button>
@@ -1279,25 +1473,36 @@
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerTempel()">📥 Paste</button>
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerUbahNama()">✏️ Rename</button>
                 <button class="btn btn-danger btn-sm" onclick="simulasiExplorerHapus()">🗑️ Delete</button>
-                <button class="btn btn-secondary btn-sm" style="margin-left: auto;" onclick="simulasiBukaRecycleBin()">♻️ Recycle Bin</button>
+                <button class="btn btn-secondary btn-sm" onclick="simulasiBukaRecycleBin()">♻️ Recycle Bin</button>
+                <button class="btn btn-outline btn-sm" style="margin-left: auto;" onclick="resetSimulasiExplorer()">🔄 Ulangi dari Awal</button>
               </div>
 
-              <div class="explorer-path-bar" style="background: #fafaf9; border-bottom: 1px solid var(--border); padding: 8px 14px;">
-                <span style="font-size: 12px; color: var(--text-muted);">Alamat Direktori:</span>
-                <strong id="sim-path-text" style="color: var(--primary-dark); font-family: monospace;">C:\Users\Santri\Documents</strong>
+              <div class="explorer-path-bar" style="background: #fafaf9; border-bottom: 1px solid var(--border); padding: 8px 14px; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; color: var(--text-muted);">Alamat Direktori Aktif:</span>
+                <strong id="sim-path-text" style="color: var(--primary-dark); font-family: monospace; font-size: 13px;">C:\Users\Santri\Documents</strong>
               </div>
 
-              <div id="sim-explorer-grid" class="explorer-grid" style="min-height: 180px; padding: 16px; background: white;">
-                <!-- Item Virtual Akan Dirender oleh JavaScript -->
+              <div id="sim-explorer-grid" class="explorer-grid" style="min-height: 200px; padding: 16px; background: white;">
+                <!-- Item Virtual Dirender oleh explorer.js -->
               </div>
             </div>
+
+            <!-- Tombol Verifikasi Mandiri Hasil Proyek -->
+            <div style="margin-top: 14px; text-align: center;">
+              <button class="btn btn-primary" style="padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 30px; box-shadow: 0 4px 10px rgba(5,150,105,0.25);" onclick="verifikasiProyekAkhirTugasRapi()">
+                🔍 Periksa Hasil Pekerjaan Proyek Akhir
+              </button>
+            </div>
+
+            <!-- Kotak Feedback Verifikasi Otomatis -->
+            <div id="proyek-verifikasi-feedback" style="display: none; margin-top: 16px;"></div>
           </div>
 
           <!-- Misi 4: Checklist Praktik di Laptop Asli -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">💻 Misi 4: Checklist Praktik di Laptop Asli Santri (8 Tugas)</h3>
+            <h3 class="materi-sub-title">💻 Misi 4: Checklist Praktik di Laptop Asli Santri (8 Tugas Verifikasi Guru)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Lakukan 8 tantangan terstruktur ini langsung di Windows laptopmu, beri centang, lalu tunjukkan pada Ustazah untuk dinilai:
+              Lakukan 8 tantangan terstruktur ini langsung di Windows laptopmu, beri tanda centang, lalu tunjukkan pada Ustadzah untuk diverifikasi langsung di panel guru:
             </p>
 
             <div id="checklist-container" style="background: white; border: 1.5px solid #F2DCD6; border-radius: var(--radius-sm); margin: 14px 0;">
@@ -1305,14 +1510,71 @@
             </div>
           </div>
 
+          <!-- Misi 5: Koreksi Miskonsepsi Kritis Operasi Berkas -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">🛡️ Misi 5: Koreksi Miskonsepsi Kritis Operasi Berkas</h3>
+            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a;">
+              <div style="font-size: 24px;">⚠️</div>
+              <div>
+                <strong style="color: #92400e;">Lima Miskonsepsi Operasi Berkas yang Wajib Dihindari:</strong>
+                <ul style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
+                  <li><strong>Copy dan Cut BUKAN hal yang sama:</strong> Copy membuat salinan baru (asli tetap utuh); Cut menyiapkan pemindahan berkas asli.</li>
+                  <li><strong>Mengubah ekstensi BUKAN mengonversi format:</strong> Mengganti akhiran .docx menjadi .pdf tidak mengubah format dokumen Word menjadi PDF asli.</li>
+                  <li><strong>Delete TIDAK selalu bisa dipulihkan:</strong> Berkas dari flashdisk USB atau berkas yang dihapus lewat Shift+Delete langsung musnah tanpa masuk Recycle Bin.</li>
+                  <li><strong>Ctrl + Z TIDAK membatalkan semua kesalahan:</strong> Tindakan Undo terbatas pada aplikasi aktif tertentu dan tidak membatalkan semua operasi sistem.</li>
+                  <li><strong>Jangan asal klik Replace:</strong> Memilih Replace akan menimpa file tujuan; selalu periksa apakah file lama masih dibutuhkan.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Misi 6: SOP Mematikan Komputer (Shut Down) -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">🚪 Misi 6: SOP Mematikan Komputer & Adab Mengakhiri Sesi Lab</h3>
+            <div class="rules-grid">
+              <div class="rule-card">
+                <span class="rule-num">1</span>
+                <div>
+                  <strong>Simpan Semua Dokumen</strong>
+                  <p>Tekan <kbd>Ctrl + S</kbd> pada dokumen yang sedang dikerjakan dan tutup jendela aplikasi sebelum keluar.</p>
+                </div>
+              </div>
+              <div class="rule-card">
+                <span class="rule-num">2</span>
+                <div>
+                  <strong>Eject Flashdisk USB</strong>
+                  <p>Lakukan prosedur Safely Remove sebelum mencabut media USB penyimpanan santri.</p>
+                </div>
+              </div>
+              <div class="rule-card">
+                <span class="rule-num">3</span>
+                <div>
+                  <strong>Shut Down Resmi</strong>
+                  <p>Klik tombol Start ➔ Power ➔ Shut Down. Tunggu hingga layar dan lampu indikator padam sempurna. Rapikan kursi sebelum meninggalkan lab.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ringkasan Inti Sesi 4 -->
+          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 4:</strong>
+            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
+              <li>Copy menggandakan file, Cut menyiapkan pemindahan; keduanya menggunakan Paste untuk menaruh file di tujuan.</li>
+              <li>Rename (<kbd>F2</kbd>) harus mempertahankan ekstensi; Delete memindahkan ke Recycle Bin laptop.</li>
+              <li>Berkas flashdisk USB yang dihapus tidak ditampung di Recycle Bin; hapus dengan hati-hati.</li>
+              <li>Ctrl+Z tidak membatalkan semua kesalahan; periksa kembali folder dan berkas sebelum mengakhiri pekerjaan.</li>
+            </ul>
+          </div>
+
           <!-- Tombol Penyelesaian Materi P4 -->
-          <div style="margin: 24px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
             <div>
-              <strong style="color: var(--primary-dark); font-size: 16px;">🎉 Selesai Mempelajari Misi 4?</strong>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim XP materi Pertemuan 4 sebelum menghadapi Boss Quiz Evaluasi Akhir!</p>
+              <strong style="color: var(--primary-dark); font-size: 16px;">Tuntaskan Sesi 4 & Siap Evaluasi?</strong>
+              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim XP materi Sesi 4 sebelum menempuh Boss Quiz Evaluasi Akhir Modul 1!</p>
             </div>
             <button id="btn-selesai-baca-p4" class="btn btn-primary" onclick="catatAktivitasBaca(4)">
-              ✓ Klaim XP Petualangan 4 (+25 XP)
+              ✓ Klaim XP Sesi 4 (+25 XP)
             </button>
             <span id="p4-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
           </div>
@@ -1323,7 +1585,7 @@
               <div>
                 <h3 style="font-family: var(--font-heading); font-size: 22px; color: var(--dark);">🏆 Boss Quiz: Evaluasi Akhir Modul 1</h3>
                 <p style="font-size: 13px; color: var(--text-muted);">
-                  Tuntaskan 5 soal evaluasi acak untuk menuntaskan modul dan membuka Sertifikat Emas Santri TIK!
+                  Tuntaskan 5 soal evaluasi penalaran acak untuk menguji pemahaman menyeluruh dan membuka Sertifikat Emas Santri TIK!
                 </p>
               </div>
               <button id="btn-muat-evaluasi" class="btn btn-primary" onclick="muatKuisPertemuan(4)">
