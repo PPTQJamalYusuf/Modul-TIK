@@ -568,12 +568,22 @@ function sembunyikanSemuaView() {
     const el = document.getElementById(n);
     if (el) el.classList.remove('active');
   });
+
+  if (typeof gulirKeAtas === 'function') {
+    gulirKeAtas();
+  }
 }
 
 function bukaDashboard() {
   sembunyikanSemuaView();
   const el = document.getElementById('view-dashboard');
-  if (el) el.style.display = 'block';
+  if (el) {
+    el.style.display = 'block';
+    if (typeof gulirKeAtas === 'function') {
+      gulirKeAtas(el);
+      setTimeout(() => gulirKeAtas(el), 10);
+    }
+  }
 
   const sidebar = document.getElementById('app-sidebar');
   const learningContent = document.getElementById('dashboard-learning-content');
@@ -607,7 +617,13 @@ function bukaPertemuan(pNum) {
   sembunyikanSemuaView();
   STATE.pertemuanAktif = pNum;
   const viewEl = document.getElementById(`view-p${pNum}`);
-  if (viewEl) viewEl.style.display = 'block';
+  if (viewEl) {
+    viewEl.style.display = 'block';
+    if (typeof gulirKeAtas === 'function') {
+      gulirKeAtas(viewEl);
+      setTimeout(() => gulirKeAtas(viewEl), 10);
+    }
+  }
 
   const navEl = document.getElementById(`nav-p${pNum}`);
   if (navEl) navEl.classList.add('active');

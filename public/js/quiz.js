@@ -102,7 +102,13 @@
 function tampilkanSertifikat() {
   sembunyikanSemuaView();
   const certView = document.getElementById('view-sertifikat');
-  if (certView) certView.style.display = 'block';
+  if (certView) {
+    certView.style.display = 'block';
+    if (typeof gulirKeAtas === 'function') {
+      gulirKeAtas(certView);
+      setTimeout(() => gulirKeAtas(certView), 10);
+    }
+  }
 
   if (STATE.santri) {
     const certNama = document.getElementById('cert-nama');

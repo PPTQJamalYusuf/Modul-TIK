@@ -5,7 +5,13 @@
 function navigasiKeGuru() {
   sembunyikanSemuaView();
   const vg = document.getElementById('view-guru');
-  if (vg) vg.style.display = 'block';
+  if (vg) {
+    vg.style.display = 'block';
+    if (typeof gulirKeAtas === 'function') {
+      gulirKeAtas(vg);
+      setTimeout(() => gulirKeAtas(vg), 10);
+    }
+  }
 
   // Sembunyikan sidebar siswa saat berada di portal guru
   const sidebar = document.getElementById('app-sidebar');

@@ -15,7 +15,7 @@ const PID_FILE = path.join(DATABASE_DIR, 'server.pid');
 const ATURAN_XP = {
   // Pertemuan 1
   'p1_baca_materi': 25,
-  'p1_kuis': 30, // 3 soal x 10 XP
+  'p1_kuis': 30, // Maks 30 XP dari mini kuis Sesi 1
   // Pertemuan 2
   'p2_baca_materi': 25,
   'p2_game_mouse_easy': 20,
