@@ -174,7 +174,7 @@ function serveStaticFile(req, res, pathname) {
     'Content-Length': stat.size,
     'X-Content-Type-Options': 'nosniff',
     'X-Frame-Options': 'DENY',
-    'Cache-Control': isCode ? 'no-cache, no-store, must-revalidate' : 'public, max-age=86400'
+    'Cache-Control': 'no-cache, no-store, must-revalidate'
   });
 
   fs.createReadStream(filePath).pipe(res);
