@@ -42,6 +42,11 @@
         <span>●</span> <span id="net-status-text">Tersambung ke Server</span>
       </div>
 
+      <!-- Tombol Toggle Sidebar Navigasi -->
+      <button id="btn-toggle-sidebar" class="btn btn-outline btn-sm btn-toggle-sidebar-header" onclick="toggleSidebar()" title="Buka/Tutup Sidebar Navigasi" style="display: none;">
+        <span id="icon-toggle-sidebar">☰</span> <span id="text-toggle-sidebar">Menu Navigasi</span>
+      </button>
+
       <!-- Tombol Masuk Akun untuk Tamu -->
       <button id="btn-auth-trigger" class="btn btn-primary btn-sm" onclick="bukaModalAuth()">
         🎒 Masuk Santri
@@ -508,6 +513,9 @@
             <div>
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
+                <button class="btn btn-outline btn-sm btn-toggle-sidebar-view" onclick="toggleSidebar()" title="Tampilkan / Sembunyikan Sidebar Navigasi">
+                  <span>☰ Buka Navigasi</span>
+                </button>
                 <span class="course-badge-overlay" style="position: static;">Level 1</span>
               </div>
               <h2 class="card-title">💻 Sesi 1: Pengenalan Perangkat Keras dan Sistem Komputer</h2>
@@ -978,6 +986,9 @@
             <div>
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
+                <button class="btn btn-outline btn-sm btn-toggle-sidebar-view" onclick="toggleSidebar()" title="Tampilkan / Sembunyikan Sidebar Navigasi">
+                  <span>☰ Buka Navigasi</span>
+                </button>
                 <span class="course-badge-overlay" style="position: static; background: var(--secondary);">Level 2</span>
               </div>
               <h2 class="card-title">🖱️ Sesi 2: Keterampilan Antarmuka: Mouse, Touchpad, dan Keyboard</h2>
@@ -1248,6 +1259,9 @@
             <div>
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
+                <button class="btn btn-outline btn-sm btn-toggle-sidebar-view" onclick="toggleSidebar()" title="Tampilkan / Sembunyikan Sidebar Navigasi">
+                  <span>☰ Buka Navigasi</span>
+                </button>
                 <span class="course-badge-overlay" style="position: static; background: #3b82f6;">Level 3</span>
               </div>
               <h2 class="card-title">📁 Sesi 3: Manajemen Berkas dan Struktur Direktori Komputer</h2>
@@ -1526,6 +1540,9 @@
             <div>
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                 <button class="btn btn-outline btn-sm" onclick="bukaDashboard()">← Kembali ke Beranda</button>
+                <button class="btn btn-outline btn-sm btn-toggle-sidebar-view" onclick="toggleSidebar()" title="Tampilkan / Sembunyikan Sidebar Navigasi">
+                  <span>☰ Buka Navigasi</span>
+                </button>
                 <span class="course-badge-overlay" style="position: static; background: #8b5cf6;">Level 4</span>
               </div>
               <h2 class="card-title">⚡ Sesi 4: Operasi Berkas & Proyek Akhir "Tugas TIK Rapi"</h2>
@@ -2184,7 +2201,6 @@
       </div>
     </div>
   </div>
-  </div>
 
   <!-- ========================================================================
        MODAL 2: IMPOR CSV OLEH GURU
@@ -2218,7 +2234,7 @@
   <!-- Modular Application Scripts (Vanilla JS - Zero Dependencies) -->
   <script src="/js/state.js?v=20261028_01"></script>
   <script src="/js/api.js?v=20261028_01"></script>
-  <script src="/js/auth.js?v=20261028_01"></script>
+  <script src="/js/auth.js?v=20261028_06"></script>
   <script src="/js/games/mouse_typing.js?v=20261028_01"></script>
   <script src="/js/games/explorer.js?v=20261028_01"></script>
   <script src="/js/quiz.js?v=20261028_01"></script>

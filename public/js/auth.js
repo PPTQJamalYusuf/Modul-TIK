@@ -1,4 +1,62 @@
+
 'use strict';
+
+// ----------------------------------------------------------------------------
+// PENGENDALIAN SIDEBAR OTOMATIS & TOGGLE NAVIGASI
+// ----------------------------------------------------------------------------
+function sembunyikanSidebar() {
+  const sidebar = document.getElementById('app-sidebar');
+  if (sidebar) {
+    sidebar.style.display = 'none';
+  }
+  perbaruiTombolToggleSidebar(false);
+}
+
+function tampilkanSidebar() {
+  const sidebar = document.getElementById('app-sidebar');
+  if (sidebar) {
+    sidebar.style.display = 'flex';
+  }
+  perbaruiTombolToggleSidebar(true);
+}
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('app-sidebar');
+  if (!sidebar) return;
+  const isHidden = (sidebar.style.display === 'none' || getComputedStyle(sidebar).display === 'none');
+  if (isHidden) {
+    tampilkanSidebar();
+  } else {
+    sembunyikanSidebar();
+  }
+}
+
+function perbaruiTombolToggleSidebar(isTerbuka) {
+  const btnToggle = document.getElementById('btn-toggle-sidebar');
+  if (btnToggle) {
+    btnToggle.style.display = 'inline-flex';
+    if (true) {
+      const iconSpan = document.getElementById('icon-toggle-sidebar');
+      const textSpan = document.getElementById('text-toggle-sidebar');
+      if (iconSpan) iconSpan.textContent = isTerbuka ? '✕' : '☰';
+      if (textSpan) textSpan.textContent = isTerbuka ? 'Tutup Menu' : 'Menu Navigasi';
+      btnToggle.title = isTerbuka ? 'Sembunyikan Sidebar Navigasi' : 'Tampilkan Sidebar Navigasi';
+      if (isTerbuka) {
+        btnToggle.classList.add('btn-sidebar-open');
+      } else {
+        btnToggle.classList.remove('btn-sidebar-open');
+      }
+    } else {
+      btnToggle.style.display = 'none';
+    }
+  }
+
+  document.querySelectorAll('.btn-toggle-sidebar-view').forEach(btn => {
+    btn.innerHTML = isTerbuka ? '<span>✕ Tutup Navigasi</span>' : '<span>☰ Buka Navigasi</span>';
+    btn.title = isTerbuka ? 'Sembunyikan Sidebar Navigasi' : 'Tampilkan Sidebar Navigasi';
+  });
+}
+
 
 // 4. AUTENTIKASI: LOGIN, BUAT PASSWORD & LOGOUT SANTRI
 // ------------------------------------------------------------------------
@@ -391,6 +449,7 @@ function perbaruiTampilanGuest() {
   const btnLogout = document.getElementById('btn-logout');
   const btnAuth = document.getElementById('btn-auth-trigger');
   const btnLanjut = document.getElementById('btn-lanjut-belajar');
+  perbaruiTombolToggleSidebar(false);
 
   if (userChip) userChip.style.display = 'none';
   if (btnLogout) btnLogout.style.display = 'none';
@@ -448,7 +507,8 @@ async function inisialisasiSesiSantri() {
   const sidebar = document.getElementById('app-sidebar');
   const learningContent = document.getElementById('dashboard-learning-content');
 
-  if (sidebar) sidebar.style.display = 'flex';
+  if (sidebar) sidebar.style.display = STATE.pertemuanAktif ? 'none' : 'flex';
+  perbaruiTombolToggleSidebar(!STATE.pertemuanAktif);
   if (learningContent) learningContent.style.display = 'block';
 
   // Toggle hero workstation cards
@@ -589,10 +649,10 @@ function bukaDashboard() {
   const learningContent = document.getElementById('dashboard-learning-content');
 
   if (STATE.santri) {
-    if (sidebar) sidebar.style.display = 'flex';
+    tampilkanSidebar();
     if (learningContent) learningContent.style.display = 'block';
   } else {
-    if (sidebar) sidebar.style.display = 'none';
+    sembunyikanSidebar();
     if (learningContent) learningContent.style.display = 'none';
   }
 
@@ -624,6 +684,9 @@ function bukaPertemuan(pNum) {
       setTimeout(() => gulirKeAtas(viewEl), 10);
     }
   }
+
+  // Otomatis sembunyikan sidebar saat membuka modul agar ruang belajar lapang & fokus
+  sembunyikanSidebar();
 
   const navEl = document.getElementById(`nav-p${pNum}`);
   if (navEl) navEl.classList.add('active');
