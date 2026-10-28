@@ -54,6 +54,78 @@ const BANK_SOAL_MINI = {
       ],
       kunci: 0,
       penjelasan: 'Tombol Windows (Win) + D berfungsi meminimalkan sementara semua jendela dan menampilkan Desktop secara instan tanpa menutup aplikasi yang sedang bekerja.'
+        },
+    {
+      id: 'p1_q5',
+      pertanyaan: 'Di kantor sekolah, seorang pegawai telah menyelesaikan penulisan surat di komputer dan perlu mencetaknya ke lembaran kertas fisik. Perangkat keras keluaran (output) yang tepat digunakan adalah...',
+      pilihan: [
+        'Scanner',
+        'Printer',
+        'Mikrofon',
+        'Proyektor'
+      ],
+      kunci: 1,
+      penjelasan: 'Printer adalah perangkat output yang mengubah berkas digital di komputer menjadi salinan fisik (hard copy) di atas kertas.'
+    },
+    {
+      id: 'p1_q6',
+      pertanyaan: 'Surat dinas yang telah ditandatangani basah oleh pimpinan perlu dikirimkan melalui email sebagai file PDF digital. Perangkat masukan (input) yang harus digunakan adalah...',
+      pilihan: [
+        'Scanner (Pemindai)',
+        'Speaker',
+        'Monitor',
+        'Router'
+      ],
+      kunci: 0,
+      penjelasan: 'Scanner adalah perangkat input yang menangkap gambar/tulisan dari kertas fisik dan mengubahnya menjadi berkas digital (seperti PDF atau JPG) di komputer.'
+    },
+    {
+      id: 'p1_q7',
+      pertanyaan: 'Saat menghubungkan laptop ke proyektor di aula untuk presentasi, kombinasi tombol pintasan Windows yang paling cepat untuk memilih mode tampilan layar (Duplicate / Extend) adalah...',
+      pilihan: [
+        'Win + E',
+        'Ctrl + C',
+        'Win + P',
+        'Alt + F4'
+      ],
+      kunci: 2,
+      penjelasan: 'Tombol Windows (Win) + P membuka panel Project di sisi kanan Windows untuk memilih mode tampilan proyektor (seperti Duplicate atau Extend).'
+    },
+    {
+      id: 'p1_q8',
+      pertanyaan: 'Ketika sedang mencetak lembar ujian, tiba-tiba printer berhenti bekerja dan kertas tersangkut di dalam (paper jam). Tindakan paling tepat dan aman yang harus dilakukan siswa adalah...',
+      pilihan: [
+        'Menarik paksa kertas sekuat tenaga agar cepat terlepas',
+        'Membongkar seluruh bagian dalam printer sendiri',
+        'Mengikuti instruksi di layar printer secara hati-hati atau segera meminta bantuan guru/petugas lab',
+        'Memukul bodi printer'
+      ],
+      kunci: 2,
+      penjelasan: 'Menarik paksa kertas macet dapat merusak rol penggerak printer dan merobek kertas di dalam. Tindakan aman adalah mengikuti panduan resmi perangkat atau melapor ke petugas lab.'
+    },
+    {
+      id: 'p1_q9',
+      pertanyaan: 'Perangkat keras yang bertugas mengelola lalu lintas data dan menghubungkan beberapa komputer di laboratorium ke printer bersama serta jaringan internet adalah...',
+      pilihan: [
+        'Router, Access Point, dan Switch',
+        'Speaker dan Headphone',
+        'Scanner dan Webcam',
+        'Mouse dan Keyboard'
+      ],
+      kunci: 0,
+      penjelasan: 'Router, Access Point, dan Switch adalah kelompok perangkat komunikasi jaringan (networking) yang mengelola konektivitas antar-perangkat komputer.'
+    },
+    {
+      id: 'p1_q10',
+      pertanyaan: 'Mengapa komputer server laboratorium atau komputer kantor penting dihubungkan ke perangkat UPS (Uninterruptible Power Supply)?',
+      pilihan: [
+        'Agar komputer bisa mencetak dokumen tanpa kertas',
+        'Untuk memberikan cadangan daya baterai sementara saat listrik padam mendadak sehingga pengguna sempat menyimpan data dan mematikan komputer dengan aman',
+        'Agar kecepatan internet otomatis naik menjadi dua kali lipat',
+        'Agar monitor komputer bisa memutar musik sendiri'
+      ],
+      kunci: 1,
+      penjelasan: 'UPS menyediakan daya listrik baterai darurat sejenak saat PLN padam mendadak, memberi jeda waktu krusial untuk menyimpan berkas yang sedang dibuka dan melakukan prosedur shut down secara normal.'
     }
   ],
 
