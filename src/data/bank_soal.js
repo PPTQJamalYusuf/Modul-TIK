@@ -45,7 +45,7 @@ const BANK_SOAL_MINI = {
     },
     {
       id: 'p1_q4',
-      pertanyaan: 'Santriwati sedang mengetik di aplikasi catatan dan ingin segera kembali ke tampilan Desktop Windows tanpa menutup aplikasinya. Tindakan pintasan yang tepat adalah...',
+      pertanyaan: 'Seorang siswa sedang mengetik di aplikasi catatan dan ingin segera kembali ke tampilan Desktop Windows tanpa menutup aplikasinya. Tindakan pintasan yang tepat adalah...',
       pilihan: [
         'Menekan kombinasi tombol Win + D',
         'Menekan kombinasi tombol Alt + F4',
@@ -322,7 +322,7 @@ const BANK_SOAL_EVALUASI = [
   },
   {
     id: 'eval_8',
-    pertanyaan: 'Jika santriwati tidak sengaja menekan tombol Delete pada file latihan di folder Dokumen komputer laptop, langkah pertama yang paling tepat untuk menyelamatkannya adalah...',
+    pertanyaan: 'Jika seorang siswa tidak sengaja menekan tombol Delete pada file latihan di folder Dokumen komputer laptop, langkah pertama yang paling tepat untuk menyelamatkannya adalah...',
     pilihan: [
       'Membeli laptop baru di toko komputer',
       'Membuka Recycle Bin di Desktop, klik kanan pada file yang terhapus, lalu pilih perintah "Restore"',
@@ -342,7 +342,7 @@ const BANK_SOAL_EVALUASI = [
       'Tidak, karena semua file di komputer pada dasarnya adalah virus'
     ],
     kunci: 1,
-    penjelasan: 'Ekstensi berkas bukan jaminan keamanan. Nama berkas bisa disamarkan atau mengandung program berbahaya. Santriwati harus berhati-hati dan tidak membuka lampiran mencurigakan.'
+    penjelasan: 'Ekstensi berkas bukan jaminan keamanan. Nama berkas bisa disamarkan atau mengandung program berbahaya. Siswa harus berhati-hati dan tidak membuka lampiran mencurigakan.'
   },
   {
     id: 'eval_10',

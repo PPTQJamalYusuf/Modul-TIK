@@ -9,7 +9,7 @@ const KOMPONEN_PC_DATA = {
   monitor: {
     nama: 'Layar Monitor (Perangkat Keluaran / Output)',
     fungsi: 'Menampilkan antarmuka grafis sistem operasi Windows, teks dokumen tugas, gambar, dan video yang sedang diproses komputer.',
-    analogi: 'Analogi Kontekstual: Seperti papan tulis di kelas pesantren yang menampilkan materi kajian yang sedang dibahas oleh guru.',
+    analogi: 'Analogi Kontekstual: Seperti papan tulis di ruang kelas yang menampilkan materi pelajaran yang sedang dibahas oleh guru.',
     miskonsepsi: 'Perhatian: Yang tampak di layar adalah tampilan perangkat lunak (software), sedangkan monitor itu sendiri adalah perangkat keras fisiknya (hardware).'
   },
   casing: {
@@ -21,7 +21,7 @@ const KOMPONEN_PC_DATA = {
   cpu: {
     nama: 'Processor / CPU (Central Processing Unit — Otak Komputer)',
     fungsi: 'Chip mikroprosesor inti yang bertugas mengeksekusi instruksi program, melakukan perhitungan matematika logis, dan mengoordinasikan seluruh kinerja sistem komputer.',
-    analogi: 'Analogi Kontekstual: Seperti akal pikiran santriwati yang menghafal bait kaidah, mencerna masalah, dan memikirkan jawaban.',
+    analogi: 'Analogi Kontekstual: Seperti daya pikir siswa yang mencerna masalah, menganalisis data, dan memikirkan jawaban.',
     miskonsepsi: 'Koreksi Miskonsepsi: CPU berukuran kecil dan terpasang di atas motherboard di bawah pendingin (heatsink), bukan kotak komputer besar luarnya.'
   },
   ram: {
@@ -39,7 +39,7 @@ const KOMPONEN_PC_DATA = {
   keyboard: {
     nama: 'Papan Ketik (Keyboard — Perangkat Masukan / Input)',
     fungsi: 'Memasukkan karakter huruf, angka, tanda baca, simbol, serta kombinasi tombol pintasan sistem untuk memberi perintah ke komputer.',
-    analogi: 'Analogi Kontekstual: Seperti pena dan tinta yang digunakan santriwati untuk menuliskan ilmu dan catatan faedah.',
+    analogi: 'Analogi Kontekstual: Seperti buku catatan dan pulpen yang digunakan siswa untuk menuliskan rangkuman pelajaran.',
     miskonsepsi: 'Tips: Jari harus dilatih bertumpu di baris pangkal (Home Row: ASDF JKL;) dengan memanfaatkan tonjolan taktil di tombol F dan J.'
   },
   mouse: {

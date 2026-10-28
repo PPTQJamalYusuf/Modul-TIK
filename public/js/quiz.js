@@ -117,7 +117,7 @@ function tampilkanSertifikat() {
     const certDate = document.getElementById('cert-date');
 
     if (certNama) certNama.textContent = STATE.santri.nama;
-    if (certKelas) certKelas.textContent = `Santriwati ${typeof formatNamaKelas === 'function' ? formatNamaKelas(STATE.santri.kelas) : 'Kelas ' + STATE.santri.kelas}`;
+    if (certKelas) certKelas.textContent = `Siswa ${typeof formatNamaKelas === 'function' ? formatNamaKelas(STATE.santri.kelas) : 'Kelas ' + STATE.santri.kelas}`;
     if (certXp) certXp.textContent = `Total Capaian: ${STATE.santri.total_xp} XP (Level ${STATE.santri.level} • ${STATE.santri.gelar || 'Santri Terpelajar'})`;
 
     const now = new Date();
