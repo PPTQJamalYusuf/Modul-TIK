@@ -302,6 +302,55 @@ async function handleSantriRoutes(req, res, pathname, method, urlObj, clientIp) 
     });
   }
 
+  // Ambil Biodata Komputer Santri
+  if (method === 'GET' && pathname === '/api/santri/biodata-komputer') {
+    const row = db.prepare('SELECT * FROM biodata_komputer WHERE santri_id = ?').get(santriId);
+    return sendJson(res, 200, {
+      status: 'sukses',
+      biodata: row || null
+    });
+  }
+
+  // Simpan Biodata Komputer Santri & Beri Reward XP
+  if (method === 'POST' && pathname === '/api/santri/biodata-komputer') {
+    try {
+      const body = await readBodyJson(req);
+      const { nama_perangkat, prosesor, ram, sistem_operasi, penyimpanan } = body;
+      const sekarang = Date.now();
+
+      db.prepare(`
+        INSERT INTO biodata_komputer (santri_id, nama_perangkat, prosesor, ram, sistem_operasi, penyimpanan, diperbarui)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        ON CONFLICT(santri_id)
+        DO UPDATE SET
+          nama_perangkat = excluded.nama_perangkat,
+          prosesor = excluded.prosesor,
+          ram = excluded.ram,
+          sistem_operasi = excluded.sistem_operasi,
+          penyimpanan = COALESCE(NULLIF(excluded.penyimpanan, ''), biodata_komputer.penyimpanan),
+          diperbarui = excluded.diperbarui
+      `).run(
+        santriId,
+        (nama_perangkat || '').trim(),
+        (prosesor || '').trim(),
+        (ram || '').trim(),
+        (sistem_operasi || '').trim(),
+        (penyimpanan || '').trim(),
+        sekarang
+      );
+
+      const xpRes = beriXpSantriAtomik(santriId, 1, 1, 'biodata_komputer', ATURAN_XP['biodata_komputer'] || 15, 'Misi Biodata Komputerku');
+
+      return sendJson(res, 200, {
+        status: 'sukses',
+        pesan: 'Biodata Komputer berhasil disimpan!',
+        xp: xpRes
+      });
+    } catch (err) {
+      return sendError(res, 500, err.message);
+    }
+  }
+
   // Pencatatan Aktivitas & Pemberian XP
   if (method === 'POST' && pathname === '/api/santri/progres/aktivitas') {
     try {

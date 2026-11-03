@@ -358,6 +358,14 @@ const BANK_SOAL_EVALUASI = [
   }
 ];
 
+// ----------------------------------------------------------------------------
+// INTEGRASI BANK SOAL TAMBAHAN (PENGAYAAN SESI 2, SESI 3, & EVALUASI AKHIR)
+// ----------------------------------------------------------------------------
+const { TAMBAHAN_MINI, TAMBAHAN_EVALUASI } = require('./bank_soal_tambahan');
+if (TAMBAHAN_MINI && TAMBAHAN_MINI[2]) BANK_SOAL_MINI[2].push(...TAMBAHAN_MINI[2]);
+if (TAMBAHAN_MINI && TAMBAHAN_MINI[3]) BANK_SOAL_MINI[3].push(...TAMBAHAN_MINI[3]);
+if (TAMBAHAN_EVALUASI) BANK_SOAL_EVALUASI.push(...TAMBAHAN_EVALUASI);
+
 module.exports = {
   BANK_SOAL_MINI,
   BANK_SOAL_EVALUASI

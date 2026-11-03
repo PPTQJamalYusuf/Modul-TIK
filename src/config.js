@@ -16,6 +16,7 @@ const ATURAN_XP = {
   // Pertemuan 1
   'p1_baca_materi': 25,
   'p1_kuis': 30, // Maks 30 XP dari mini kuis Sesi 1
+  'biodata_komputer': 15, // Misi Praktik Biodata Komputerku (catat identitas PC)
   // Pertemuan 2
   'p2_baca_materi': 25,
   'p2_game_mouse_easy': 20,

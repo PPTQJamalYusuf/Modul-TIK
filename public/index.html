@@ -925,7 +925,90 @@
             </div>
           </div>
 
-          <!-- Ringkasan Inti Sesi 1 -->
+                    <!-- Panduan Komparasi: Windows 10 vs Windows 11 di Lab -->
+          <details style="background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 12px 16px; margin: 16px 0;">
+            <summary style="font-weight: 700; color: #1e293b; cursor: pointer; font-size: 13.5px; user-select: none;">
+              🖥️ Tips Praktik: Perbedaan Tampilan &amp; Tombol Windows 10 vs Windows 11 (Klik Buka/Tutup)
+            </summary>
+            <p style="font-size: 12.5px; color: #475569; margin: 8px 0 10px 0;">
+              Komputer di lab sekolah sering bercampur antara Windows 10 dan 11. Jangan bingung jika tombol di layarmu berbeda dengan temanmu:
+            </p>
+            <div style="overflow-x: auto;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 12px; background: white; border-radius: 8px; overflow: hidden;">
+                <thead>
+                  <tr style="background: #e2e8f0; color: #0f172a; text-align: left;">
+                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Aksi Kerja</th>
+                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Windows 10</th>
+                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Windows 11</th>
+                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Pintasan Sama</th>
+                  </tr>
+                </thead>
+                <tbody style="color: #334155;">
+                  <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Lihat Spesifikasi</strong></td><td style="padding: 6px 10px;">Settings &gt; System &gt; About</td><td style="padding: 6px 10px;">Settings &gt; System &gt; About</td><td style="padding: 6px 10px;"><kbd>Win + I</kbd></td></tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;"><td style="padding: 6px 10px;"><strong>Folder Baru</strong></td><td style="padding: 6px 10px;">Tab Home &gt; New folder</td><td style="padding: 6px 10px;">Tombol New &gt; Folder</td><td style="padding: 6px 10px;"><kbd>Ctrl+Shift+N</kbd></td></tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Ganti Nama (Rename)</strong></td><td style="padding: 6px 10px;">Tab Home &gt; Rename</td><td style="padding: 6px 10px;">Ikon Rename di bilah atas</td><td style="padding: 6px 10px;"><kbd>F2</kbd></td></tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;"><td style="padding: 6px 10px;"><strong>Copy / Paste</strong></td><td style="padding: 6px 10px;">Tombol Copy/Paste bertulis teks</td><td style="padding: 6px 10px;">Ikon dua kertas di atas</td><td style="padding: 6px 10px;"><kbd>Ctrl+C</kbd> / <kbd>Ctrl+V</kbd></td></tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Hapus Berkas</strong></td><td style="padding: 6px 10px;">Tab Home &gt; Delete</td><td style="padding: 6px 10px;">Ikon tempat sampah</td><td style="padding: 6px 10px;"><kbd>Delete</kbd></td></tr>
+                  <tr><td style="padding: 6px 10px;"><strong>Menu Klik Kanan</strong></td><td style="padding: 6px 10px;">Menu lengkap langsung muncul</td><td style="padding: 6px 10px;">Pilih <em>Show more options</em></td><td style="padding: 6px 10px;"><kbd>Shift + F10</kbd></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size: 11.5px; color: #64748b; margin-top: 8px;"><em>Tips: Pintasan keyboard (<kbd>Ctrl+C</kbd>, <kbd>F2</kbd>, <kbd>Ctrl+Shift+N</kbd>) bekerja persis sama di semua versi Windows!</em></p>
+          </details>
+
+          <!-- Benang Merah: Biodata Komputerku - Bagian 1 -->
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 20px;">📋</span>
+              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 1: Detektif Hardware)</strong>
+            </div>
+            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
+              Jangan cuma dengar teori! Buka menu <strong>Settings &gt; System &gt; About</strong> (atau klik kanan tombol Start lalu pilih <strong>System</strong>). Catat 4 data identitas komputermu di buku/kertas:
+            </p>
+            <!-- FORMULIR INTERAKTIF BIODATA KOMPUTERKU -->
+            <div id="form-biodata-container" style="background: white; border: 1.5px solid #dbeafe; border-radius: 10px; padding: 14px; margin-top: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px;">
+                <div>
+                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">1. Nama Perangkat (Device Name):</label>
+                  <input type="text" data-biodata="nama_perangkat" placeholder="Misal: LAB-PC-01" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">2. Otak (Prosesor / CPU):</label>
+                  <input type="text" data-biodata="prosesor" placeholder="Misal: Intel Core i3 / Ryzen 3" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">3. Meja Kerja (RAM):</label>
+                  <input type="text" data-biodata="ram" placeholder="Misal: 8.00 GB" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div>
+                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">4. Sistem Operasi (OS):</label>
+                  <input type="text" data-biodata="sistem_operasi" placeholder="Misal: Windows 10 Pro / Windows 11" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                </div>
+              </div>
+
+              <div style="margin-top: 10px;">
+                <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">
+                  5. Lemari Simpan (Drive C: File Explorer): <span style="font-size: 11px; font-weight: normal; color: #64748b;">(Boleh dilengkapi sekarang atau di Sesi 3)</span>
+                </label>
+                <input type="text" data-biodata="penyimpanan" placeholder="Misal: Total 120 GB (Sisa Bebas 45 GB)" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+              </div>
+
+              <div style="display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-primary btn-sm" onclick="simpanBiodataKomputer()" style="display: inline-flex; align-items: center; gap: 6px;">
+                  <span>💾</span> Simpan Biodata (+15 XP)
+                </button>
+                <button type="button" class="btn btn-outline btn-sm" onclick="unduhBiodataTxt()" style="display: inline-flex; align-items: center; gap: 6px;">
+                  <span>📥</span> Unduh Berkas .txt
+                </button>
+                <span class="biodata-status-label" style="font-size: 12px; font-weight: 600; color: #15803d; margin-left: 4px;"></span>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: #3b82f6; margin-top: 6px; font-style: italic;">
+              👉 Jembatan Sesi 2: "Datamu sudah terkumpul. Di Sesi 2, kita akan melatih kelincahan jari mengetik data ini di Notepad!"
+            </p>
+          </div>
+
+<!-- Ringkasan Inti Sesi 1 -->
           <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
             <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 1:</strong>
             <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
@@ -1158,7 +1241,9 @@
           <div class="materi-sub-card">
             <h3 class="materi-sub-title">⚡ Misi 4: Latihan Mengetik Bertahap (Akurasi & WPM)</h3>
             <p style="font-size: 13px; color: var(--text-muted);">
-              Latihan dirancang bertahap: pola Home Row pendek $ightarrow$ kata-kata pendek $ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> sebelum memacu <strong>WPM</strong>!
+              Latihan dirancang bertahap: pola Home Row pendek $
+ightarrow$ kata-kata pendek $
+ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> sebelum memacu <strong>WPM</strong>!
             </p>
 
             <div class="typing-box-container" style="margin-top: 14px;">
@@ -1198,7 +1283,38 @@
             </div>
           </div>
 
-          <!-- Ringkasan Inti Sesi 2 -->
+                    <!-- Benang Merah: Biodata Komputerku - Bagian 2 -->
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 20px;">📋</span>
+              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 2: Mengetik di Notepad)</strong>
+            </div>
+            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
+              Buka aplikasi <strong>Notepad</strong> (klik Start ➔ ketik <em>Notepad</em> ➔ Enter). Ketik data yang kemarin kamu catat dengan posisi jari Home Row. Gunakan tombol Shift untuk huruf kapital:
+            </p>
+            <div style="background: white; border: 1px solid #dbeafe; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 12.5px; color: #1e293b;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
+                <div><strong>1. Nama Perangkat:</strong> <span id="review-biodata-nama">-</span></div>
+                <div><strong>2. Otak (Prosesor):</strong> <span id="review-biodata-cpu">-</span></div>
+                <div><strong>3. Meja Kerja (RAM):</strong> <span id="review-biodata-ram">-</span></div>
+                <div><strong>4. Sistem Operasi:</strong> <span id="review-biodata-os">-</span></div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="unduhBiodataTxt()" style="display: inline-flex; align-items: center; gap: 5px;">
+                <span>📥</span> Unduh Berkas <code>biodata_komputer.txt</code>
+              </button>
+              <span class="biodata-status-label" style="font-size: 12px; font-weight: 600; color: #15803d;"></span>
+            </div>
+            <p style="font-size: 12.5px; color: #1e40af; margin-top: 6px;">
+              Tekan <kbd>Ctrl + S</kbd>, simpan sementara di <strong>Desktop</strong> dengan nama: <code>biodata_komputer.txt</code>.
+            </p>
+            <p style="font-size: 12px; color: #3b82f6; margin-top: 4px; font-style: italic;">
+              👉 Jembatan Sesi 3: "Berkasmu sudah jadi di Desktop. Di Sesi 3, kita akan membuatkan 'rumah folder' yang rapi agar tidak tercecer!"
+            </p>
+          </div>
+
+<!-- Ringkasan Inti Sesi 2 -->
           <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
             <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 2:</strong>
             <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
@@ -1476,7 +1592,27 @@
             </ul>
           </div>
 
-          <!-- Ringkasan Inti Sesi 3 -->
+                    <!-- Benang Merah: Biodata Komputerku - Bagian 3 -->
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 20px;">📋</span>
+              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 3: Memberi Rumah Berkas)</strong>
+            </div>
+            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
+              Ayo pindahkan berkasmu ke rumah yang benar!
+            </p>
+            <ol style="font-size: 12.5px; color: #1e293b; padding-left: 18px; margin: 6px 0; line-height: 1.6;">
+              <li>Buat folder baru bernama <code>TIK</code>, lalu di dalamnya buat subfolder <code>Modul_1</code> (<kbd>Ctrl+Shift+N</kbd>).</li>
+              <li>Buka berkas <code>biodata_komputer.txt</code> dari Desktop, pilih menu <strong>File ➔ Save As</strong>.</li>
+              <li>Arahkan ke folder <code>TIK\Modul_1</code>, simpan dengan nama rapi: <code>Biodata_Komputer_[Nama]_[Kelas].txt</code>.</li>
+              <li>Buka <strong>This PC</strong> di File Explorer, cek kapasitas Drive C:, lalu tambahkan baris baru di berkasmu: <em>Lemari Simpan (C:) : [Kapasitas GB]</em>.</li>
+            </ol>
+            <p style="font-size: 12px; color: #3b82f6; margin-top: 4px; font-style: italic;">
+              👉 Jembatan Sesi 4: "Berkasmu sudah punya alamat path yang rapi. Di Sesi 4, kita akan belajar menyalin dan merawatnya!"
+            </p>
+          </div>
+
+<!-- Ringkasan Inti Sesi 3 -->
           <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
             <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 3:</strong>
             <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
@@ -1809,7 +1945,26 @@
             </div>
           </div>
 
-          <!-- Ringkasan Inti Sesi 4 -->
+                    <!-- Benang Merah: Biodata Komputerku - Bagian 4 -->
+          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-size: 20px;">📋</span>
+              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 4: Mengamankan &amp; Merawat Berkas)</strong>
+            </div>
+            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
+              Lengkapi proyek "Tugas TIK Rapi" dengan merawat berkas Biodata Komputermu:
+            </p>
+            <ul style="font-size: 12.5px; color: #1e293b; padding-left: 18px; margin: 6px 0; line-height: 1.6;">
+              <li><strong>Salin untuk Cadangan:</strong> Salin (<kbd>Ctrl+C</kbd> ➔ <kbd>Ctrl+V</kbd>) berkas Biodata Komputer ke subfolder <code>Dokumen</code>.</li>
+              <li><strong>Cari Berkas:</strong> Coba cari berkasmu lewat kotak pencarian File Explorer dengan hanya mengetik kata <em>"Biodata"</em>.</li>
+              <li><strong>Simulasi Restore:</strong> Buat satu salinan percobaan bernama <code>hapus_biodata_dummy.txt</code>, tekan <kbd>Delete</kbd>, lalu buka <strong>Recycle Bin</strong> dan klik kanan ➔ <strong>Restore</strong> untuk mengembalikannya!</li>
+            </ul>
+            <div style="background: white; border: 1px solid #dbeafe; border-radius: 8px; padding: 8px 12px; margin-top: 8px; font-size: 12px; color: #1e40af;">
+              🎉 <strong>Alhamdulillah!</strong> Kamu telah menuntaskan seluruh siklus: mengenali hardware, mengetik data, menata folder, hingga mengamankan berkas seperti Admin Lab sejati!
+            </div>
+          </div>
+
+<!-- Ringkasan Inti Sesi 4 -->
           <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
             <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 4:</strong>
             <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
@@ -2045,6 +2200,7 @@
                       <th>Nama Santri</th>
                       <th>Status / Kode Aktivasi</th>
                       <th>XP & Level</th>
+                      <th>Biodata PC</th>
                       <th>Skor Kuis P4</th>
                       <th>Checklist</th>
                       <th>Aksi Guru</th>
@@ -2204,6 +2360,28 @@
   <!-- ========================================================================
        MODAL 2: IMPOR CSV OLEH GURU
        ======================================================================== -->
+    <!-- ========================================================================
+       MODAL: DETAIL BIODATA KOMPUTER SANTRI (UNTUK GURU)
+       ======================================================================== -->
+  <div id="modal-detail-biodata" class="modal-overlay" style="display: none;">
+    <div class="modal-card" style="max-width: 500px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid var(--border); padding-bottom: 10px;">
+        <h3 style="font-size: 16px; margin: 0; color: #1e40af; display: flex; align-items: center; gap: 8px;">
+          <span>💻</span> Detail Biodata Komputer Santri
+        </h3>
+        <button class="btn btn-outline btn-sm" onclick="tutupModalDetailBiodata()">✕</button>
+      </div>
+
+      <div id="modal-detail-biodata-content">
+        <!-- Konten diisi dinamis oleh JS -->
+      </div>
+
+      <div style="margin-top: 16px; text-align: right;">
+        <button class="btn btn-primary btn-sm" onclick="tutupModalDetailBiodata()">Tutup</button>
+      </div>
+    </div>
+  </div>
+
   <div id="modal-impor-csv" class="modal-overlay" style="display: none;">
     <div class="modal-card" style="max-width: 560px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
@@ -2234,6 +2412,7 @@
   <script src="/js/state.js?v=20261028_01"></script>
   <script src="/js/api.js?v=20261028_01"></script>
   <script src="/js/auth.js?v=20261028_06"></script>
+  <script src="/js/biodata.js?v=20261103_01"></script>
   <script src="/js/games/mouse_typing.js?v=20261028_01"></script>
   <script src="/js/games/explorer.js?v=20261028_01"></script>
   <script src="/js/quiz.js?v=20261028_01"></script>

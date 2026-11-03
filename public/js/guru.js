@@ -181,7 +181,10 @@ async function tampilkanDashboardGuru() {
       }
     }
 
+    let currentSantriList = [];
+
     function renderTabelSantriGuru(list) {
+      currentSantriList = list || [];
       const tbody = document.getElementById('guru-santri-tbody');
       tbody.innerHTML = '';
 
@@ -200,6 +203,18 @@ async function tampilkanDashboardGuru() {
           <td><strong>${s.nama}</strong></td>
           <td>${statusPin}</td>
           <td>${s.total_xp || 0} XP (Lv.${s.level || 1})</td>
+          <td>
+            ${s.nama_perangkat ? `
+              <div onclick="tampilkanDetailBiodataSantri('${s.id}')" style="cursor: pointer; display: inline-block;" title="Klik untuk rincian lengkap">
+                <span class="badge" style="background: #e0f2fe; color: #0369a1; font-size: 11.5px; padding: 3px 8px; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
+                  💻 ${s.nama_perangkat} 🔍
+                </span>
+                <div style="font-size: 10px; color: #64748b; margin-top: 2px; max-width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                  ${s.prosesor ? s.prosesor : '-'}
+                </div>
+              </div>
+            ` : '<span style="color: #94a3b8; font-size: 11px; font-style: italic;">Belum mengisi</span>'}
+          </td>
           <td>${s.skor_evaluasi !== null && s.skor_evaluasi !== undefined ? `${s.skor_evaluasi}/100` : '-'}</td>
           <td>${s.checklist_selesai || 0}/8 Tugas</td>
           <td>
@@ -291,3 +306,49 @@ async function tampilkanDashboardGuru() {
       bukaModalLeaderboard();
       gantiTabLeaderboard('semua');
     }
+
+function tampilkanDetailBiodataSantri(santriId) {
+  const s = (typeof currentSantriList !== 'undefined' ? currentSantriList : []).find(item => item.id === santriId);
+  if (!s) return;
+
+  const modal = document.getElementById('modal-detail-biodata');
+  const container = document.getElementById('modal-detail-biodata-content');
+  if (!modal || !container) return;
+
+  container.innerHTML = `
+    <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 8px; padding: 10px 14px; margin-bottom: 14px;">
+      <div style="font-weight: 700; font-size: 14px; color: #166534;">${s.nama} (${s.id})</div>
+      <div style="font-size: 12px; color: #15803d; margin-top: 2px;">Kelas: ${typeof formatNamaKelas === 'function' ? formatNamaKelas(s.kelas) : s.kelas} | Total XP: ${s.total_xp || 0} XP</div>
+    </div>
+
+    <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+        <span style="color: #64748b; font-weight: 600;">1. Nama Perangkat:</span>
+        <strong style="color: #1e40af; font-family: monospace; font-size: 13.5px;">${s.nama_perangkat || '(Belum diisi)'}</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+        <span style="color: #64748b; font-weight: 600;">2. Otak (Prosesor / CPU):</span>
+        <strong style="color: #1e40af;">${s.prosesor || '(Belum diisi)'}</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+        <span style="color: #64748b; font-weight: 600;">3. Meja Kerja (RAM):</span>
+        <strong style="color: #1e40af;">${s.ram || '(Belum diisi)'}</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px;">
+        <span style="color: #64748b; font-weight: 600;">4. Sistem Operasi (OS):</span>
+        <strong style="color: #1e40af;">${s.sistem_operasi || '(Belum diisi)'}</strong>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding-bottom: 2px;">
+        <span style="color: #64748b; font-weight: 600;">5. Lemari Simpan (Drive C:):</span>
+        <strong style="color: #1e40af;">${s.penyimpanan || '(Belum diisi)'}</strong>
+      </div>
+    </div>
+  `;
+
+  modal.style.display = 'flex';
+}
+
+function tutupModalDetailBiodata() {
+  const modal = document.getElementById('modal-detail-biodata');
+  if (modal) modal.style.display = 'none';
+}

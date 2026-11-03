@@ -125,10 +125,12 @@ async function handleGuruRoutes(req, res, pathname, method, urlObj, clientIp) {
       SELECT s.id, s.kelas, s.nama, s.kode_aktivasi, s.pin_aktif, s.dibuat,
              sb.total_xp, sb.level, sb.gelar, sb.pertemuan_terakhir,
              hk.skor_terbaik as skor_evaluasi,
-             (SELECT COUNT(*) FROM checklist_praktik cp WHERE cp.santri_id = s.id AND cp.status != 'belum') as checklist_selesai
+             (SELECT COUNT(*) FROM checklist_praktik cp WHERE cp.santri_id = s.id AND cp.status != 'belum') as checklist_selesai,
+             bk.nama_perangkat, bk.prosesor, bk.ram, bk.sistem_operasi, bk.penyimpanan
       FROM santri s
       LEFT JOIN status_belajar sb ON s.id = sb.santri_id
       LEFT JOIN hasil_kuis hk ON s.id = hk.santri_id AND hk.modul = 1 AND hk.pertemuan = 4
+      LEFT JOIN biodata_komputer bk ON s.id = bk.santri_id
       WHERE 1 = 1
     `;
     const params = [];
@@ -322,18 +324,20 @@ async function handleGuruRoutes(req, res, pathname, method, urlObj, clientIp) {
              hk2.skor_terbaik as kuis_p2,
              hk3.skor_terbaik as kuis_p3,
              hk4.skor_terbaik as kuis_evaluasi,
-             (SELECT COUNT(*) FROM checklist_praktik cp WHERE cp.santri_id = s.id AND cp.status = 'diverifikasi_guru') as checklist_diverifikasi
+             (SELECT COUNT(*) FROM checklist_praktik cp WHERE cp.santri_id = s.id AND cp.status = 'diverifikasi_guru') as checklist_diverifikasi,
+             bk.nama_perangkat, bk.prosesor, bk.ram, bk.sistem_operasi, bk.penyimpanan
       FROM santri s
       LEFT JOIN status_belajar sb ON s.id = sb.santri_id
       LEFT JOIN hasil_kuis hk1 ON s.id = hk1.santri_id AND hk1.pertemuan = 1
       LEFT JOIN hasil_kuis hk2 ON s.id = hk2.santri_id AND hk2.pertemuan = 2
       LEFT JOIN hasil_kuis hk3 ON s.id = hk3.santri_id AND hk3.pertemuan = 3
       LEFT JOIN hasil_kuis hk4 ON s.id = hk4.santri_id AND hk4.pertemuan = 4
+      LEFT JOIN biodata_komputer bk ON s.id = bk.santri_id
       ORDER BY s.kelas ASC, s.nama ASC
     `).all();
 
     let csvText = '\uFEFF';
-    csvText += 'ID Santri,Kelas,Nama Santri,Status Akun,Total XP,Level,Gelar,Pertemuan Terakhir,Kuis P1,Kuis P2,Kuis P3,Kuis Evaluasi P4,Checklist Terverifikasi\n';
+    csvText += 'ID Santri,Kelas,Nama Santri,Status Akun,Total XP,Level,Gelar,Nama PC,Prosesor,RAM,OS,Penyimpanan,Pertemuan Terakhir,Kuis P1,Kuis P2,Kuis P3,Kuis Evaluasi P4,Checklist Terverifikasi\n';
 
     for (const row of data) {
       const line = [
@@ -344,6 +348,11 @@ async function handleGuruRoutes(req, res, pathname, method, urlObj, clientIp) {
         amankanCsv(row.total_xp || 0),
         amankanCsv(row.level || 1),
         amankanCsv(row.gelar || 'Pemula Komputer'),
+        amankanCsv(row.nama_perangkat || '-'),
+        amankanCsv(row.prosesor || '-'),
+        amankanCsv(row.ram || '-'),
+        amankanCsv(row.sistem_operasi || '-'),
+        amankanCsv(row.penyimpanan || '-'),
         amankanCsv(row.pertemuan_terakhir || 1),
         amankanCsv(row.kuis_p1 ?? '-'),
         amankanCsv(row.kuis_p2 ?? '-'),

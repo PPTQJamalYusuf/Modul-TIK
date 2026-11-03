@@ -50,8 +50,8 @@ runTest('Bank Soal Mini Sesi 1-3 tersedia dan valid', () => {
   }
 });
 
-runTest('Bank Soal Evaluasi Akhir Sesi 4 (10 soal skenario) valid', () => {
-  assert(Array.isArray(BANK_SOAL_EVALUASI) && BANK_SOAL_EVALUASI.length === 10, 'Evaluasi akhir harus memiliki 10 soal');
+runTest('Bank Soal Evaluasi Akhir Sesi 4 (minimal 10 soal skenario) valid', () => {
+  assert(Array.isArray(BANK_SOAL_EVALUASI) && BANK_SOAL_EVALUASI.length >= 10, 'Evaluasi akhir harus memiliki minimal 10 soal');
   BANK_SOAL_EVALUASI.forEach((soal, idx) => {
     assert(soal.id, `Evaluasi soal ${idx} harus punya ID`);
     assert(soal.pilihan.length >= 4, `Evaluasi soal ${idx} harus punya >= 4 pilihan`);
@@ -143,6 +143,28 @@ runTest('File mouse_typing.js memuat data komponen akurat & latihan bertahap', (
   assert(mouseTypingJs.includes('storage:'), 'Harus ada komponen storage');
   assert(mouseTypingJs.includes('asdf jkl;'), 'Harus ada teks latihan Home Row');
   assert(mouseTypingJs.includes('cadangan'), 'Harus ada teks latihan tugas TIK & backup');
+});
+
+// ----------------------------------------------------------------------------
+// 4. PENGUJIAN FITUR INTERAKTIF BIODATA KOMPUTERKU
+// ----------------------------------------------------------------------------
+console.log('\n--- 4. Pengujian Fitur Interaktif Biodata Komputerku ---');
+
+runTest('Formulir dan modul Biodata Komputerku terpasang lengkap', () => {
+  const biodataJsPath = path.join(ROOT_DIR, 'public', 'js', 'biodata.js');
+  assert(fs.existsSync(biodataJsPath), 'public/js/biodata.js harus ada');
+  const biodataJs = fs.readFileSync(biodataJsPath, 'utf8');
+  assert(biodataJs.includes('simpanBiodataKomputer'), 'Harus ada fungsi simpanBiodataKomputer');
+  assert(biodataJs.includes('unduhBiodataTxt'), 'Harus ada fungsi unduhBiodataTxt');
+
+  assert(htmlContent.includes('data-biodata="nama_perangkat"'), 'HTML harus memuat input nama_perangkat');
+  assert(htmlContent.includes('data-biodata="prosesor"'), 'HTML harus memuat input prosesor');
+  assert(htmlContent.includes('data-biodata="ram"'), 'HTML harus memuat input ram');
+  assert(htmlContent.includes('data-biodata="sistem_operasi"'), 'HTML harus memuat input sistem_operasi');
+  assert(htmlContent.includes('/js/biodata.js'), 'HTML harus memuat tag script biodata.js');
+
+  const santriJs = fs.readFileSync(path.join(ROOT_DIR, 'src', 'routes', 'santri.js'), 'utf8');
+  assert(santriJs.includes('/api/santri/biodata-komputer'), 'santri.js harus memuat rute API biodata komputer');
 });
 
 // ----------------------------------------------------------------------------

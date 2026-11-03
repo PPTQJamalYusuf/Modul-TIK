@@ -122,6 +122,18 @@ function initDatabaseSchema() {
       FOREIGN KEY (santri_id) REFERENCES santri(id) ON DELETE CASCADE
     );
 
+    -- Tabel Biodata Komputer Santri (Misi Modul 1)
+    CREATE TABLE IF NOT EXISTS biodata_komputer (
+      santri_id TEXT PRIMARY KEY,
+      nama_perangkat TEXT,
+      prosesor TEXT,
+      ram TEXT,
+      sistem_operasi TEXT,
+      penyimpanan TEXT,
+      diperbarui INTEGER NOT NULL,
+      FOREIGN KEY (santri_id) REFERENCES santri(id) ON DELETE CASCADE
+    );
+
     -- Tabel Konfigurasi Guru dan Pengaturan Internal
     CREATE TABLE IF NOT EXISTS konfigurasi_guru (
       kunci TEXT PRIMARY KEY,
