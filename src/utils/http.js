@@ -2,7 +2,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
-const { PUBLIC_DIR, DOCS_DIR } = require('../config');
+const { PUBLIC_DIR } = require('../config');
 const { hashToken } = require('./security');
 const { db } = require('../database');
 
@@ -17,8 +17,7 @@ const MIME_TYPES = {
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon',
-  '.txt': 'text/plain; charset=utf-8',
-  '.pdf': 'application/pdf'
+  '.txt': 'text/plain; charset=utf-8'
 };
 
 function parseCookies(req) {
@@ -149,18 +148,11 @@ function amankanCsv(val) {
 
 // Penyajian Berkas Statis (Public Directory) dengan Proteksi Path Traversal
 function serveStaticFile(req, res, pathname) {
-  let basePath = PUBLIC_DIR;
   let relativePath = pathname === '/' || pathname === '/guru' ? 'index.html' : pathname.replace(/^\/+/, '');
+  const filePath = path.normalize(path.join(PUBLIC_DIR, relativePath));
 
-  if (pathname.startsWith('/docs/')) {
-    basePath = DOCS_DIR;
-    relativePath = pathname.slice(6);
-  }
-
-  const filePath = path.normalize(path.join(basePath, relativePath));
-
-  // Pastikan path tetap berada di dalam direktori yang diizinkan (Cegah Path Traversal)
-  if (!filePath.startsWith(basePath)) {
+  // Pastikan path tetap berada di dalam PUBLIC_DIR (Cegah Path Traversal)
+  if (!filePath.startsWith(PUBLIC_DIR)) {
     return sendError(res, 403, 'Akses direktori ditolak');
   }
 
@@ -175,51 +167,14 @@ function serveStaticFile(req, res, pathname) {
 
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';
-  const isHtml = ext === '.html';
-
-  // Cache header: HTML selalu revalidate, asset statis (PDF/CSS/JS/Gambar) di-cache browser lokal
-  const cacheControl = isHtml
-    ? 'no-cache, no-store, must-revalidate'
-    : 'public, max-age=86400';
-
-  // Dukungan HTTP Range Requests (sangat krusial untuk streaming berkas besar seperti PDF 17MB)
-  const range = req.headers.range;
-  if (range) {
-    const parts = range.replace(/bytes=/, '').split('-');
-    const start = parseInt(parts[0], 10);
-    const end = parts[1] ? parseInt(parts[1], 10) : stat.size - 1;
-
-    if (isNaN(start) || isNaN(end) || start >= stat.size || end >= stat.size || start > end) {
-      res.writeHead(416, {
-        'Content-Range': `bytes */${stat.size}`,
-        'Content-Type': contentType
-      });
-      res.end();
-      return true;
-    }
-
-    const chunksize = (end - start) + 1;
-    res.writeHead(206, {
-      'Content-Range': `bytes ${start}-${end}/${stat.size}`,
-      'Accept-Ranges': 'bytes',
-      'Content-Length': chunksize,
-      'Content-Type': contentType,
-      'X-Content-Type-Options': 'nosniff',
-      'X-Frame-Options': 'SAMEORIGIN',
-      'Cache-Control': cacheControl
-    });
-
-    fs.createReadStream(filePath, { start, end }).pipe(res);
-    return true;
-  }
+  const isCode = ext === '.html' || ext === '.js' || ext === '.css';
 
   res.writeHead(200, {
     'Content-Type': contentType,
     'Content-Length': stat.size,
-    'Accept-Ranges': 'bytes',
     'X-Content-Type-Options': 'nosniff',
-    'X-Frame-Options': 'SAMEORIGIN',
-    'Cache-Control': cacheControl
+    'X-Frame-Options': 'DENY',
+    'Cache-Control': 'no-cache, no-store, must-revalidate'
   });
 
   fs.createReadStream(filePath).pipe(res);
