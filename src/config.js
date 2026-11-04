@@ -8,6 +8,7 @@ const DATABASE_DIR = path.join(ROOT_DIR, 'database');
 const DB_PATH = path.join(DATABASE_DIR, 'lab.db');
 const BACKUP_DIR = path.join(DATABASE_DIR, 'backups');
 const PUBLIC_DIR = path.join(ROOT_DIR, 'public');
+const DOCS_DIR = path.join(ROOT_DIR, 'docs');
 const CSV_DEFAULT_PATH = path.join(DATABASE_DIR, 'santri.csv');
 const PID_FILE = path.join(DATABASE_DIR, 'server.pid');
 
@@ -70,6 +71,7 @@ module.exports = {
   DB_PATH,
   BACKUP_DIR,
   PUBLIC_DIR,
+  DOCS_DIR,
   CSV_DEFAULT_PATH,
   PID_FILE,
   ATURAN_XP,
