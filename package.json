@@ -1,0 +1,19 @@
+{
+  "name": "modul-tik-smp",
+  "version": "1.0.0",
+  "description": "Server Pembelajaran Lab Komputer TIK SMP - PPTQ Jamal Yusuf",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "test": "node scripts/test_modul1.js"
+  },
+  "keywords": [
+    "tik",
+    "modul",
+    "lab-komputer"
+  ],
+  "author": "Pak Jamal",
+  "license": "ISC"
+}
+
