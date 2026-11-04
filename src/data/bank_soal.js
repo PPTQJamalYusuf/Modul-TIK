@@ -129,7 +129,7 @@ const BANK_SOAL_MINI = {
     }
   ],
 
-  // Pertemuan 2: Jari Sakti dan Mouse (Kendali Mouse, Touchpad, Home Row, Ergonomi)
+  // Pertemuan 2: Keterampilan Antarmuka (Kendali Mouse, Touchpad, Home Row, Ergonomi)
   2: [
     {
       id: 'p2_q1',

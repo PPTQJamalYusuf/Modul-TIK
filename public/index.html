@@ -119,7 +119,7 @@
         </button>
 
         <button id="nav-p2" class="menu-item locked" onclick="bukaPertemuan(2)">
-          <span>2. Jari Sakti & Mouse</span>
+          <span>2. Keterampilan Antarmuka</span>
           <span id="status-p2" class="item-meta">🔒 Dikunci</span>
         </button>
 
@@ -129,7 +129,7 @@
         </button>
 
         <button id="nav-p4" class="menu-item locked" onclick="bukaPertemuan(4)">
-          <span>4. Operasi & Ujian</span>
+          <span>4. Operasi Berkas & Proyek</span>
           <span id="status-p4" class="item-meta">🔒 Dikunci</span>
         </button>
 
@@ -357,7 +357,7 @@
               </div>
             </div>
 
-            <!-- Card 2: Typing Jungle: Jari Sakti -->
+            <!-- Card 2: Keterampilan Antarmuka -->
             <div class="course-card" onclick="bukaPertemuan(2)">
               <div class="course-thumb-wrap">
                 <img src="/img/thumbnail-sesi2-smp.jpg?v=20261028" alt="Sesi 2: Keterampilan Mouse & Mengetik" class="course-thumb">
@@ -391,7 +391,7 @@
               </div>
             </div>
 
-            <!-- Card 4: Ekspedisi File Explorer (Boss Level) -->
+            <!-- Card 4: Operasi Berkas & Proyek Mandiri -->
             <div class="course-card" onclick="bukaPertemuan(4)">
               <div class="course-thumb-wrap">
                 <img src="/img/thumbnail-sesi4-smp.jpg?v=20261028" alt="Sesi 4: Operasi Berkas & Proyek Mandiri" class="course-thumb">
@@ -399,7 +399,7 @@
               </div>
               <div class="course-body">
                 <div class="course-meta-row">
-                  <span>🏆 Ujian Master</span>
+                  <span>🏆 Evaluasi Akhir</span>
                   <span>⭐ 250 XP</span>
                 </div>
                 <h4 class="course-name">Operasi File &amp; Proyek Mandiri</h4>
@@ -508,7 +508,7 @@
         <!-- ==================================================================
              VIEW 1: PERTEMUAN 1 — KENAL SAHABAT KOMPUTER (MICRO-MISSIONS)
              ================================================================== -->
-        <section id="view-p1" class="card" style="display: none;">
+                <section id="view-p1" class="card" style="display: none;">
           <div class="card-header">
             <div>
               <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
@@ -518,123 +518,130 @@
                 </button>
                 <span class="course-badge-overlay" style="position: static;">Level 1</span>
               </div>
-              <h2 class="card-title">💻 Sesi 1: Pengenalan Perangkat Keras dan Sistem Komputer</h2>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Tujuan: Memahami 4 pilar sistem komputer, alur input-proses-output-storage, membedakan casing vs CPU, RAM vs SSD/HDD, navigasi Windows, dan adab laboratorium.
+              <h2 class="card-title">💻 Bab 1: Pengenalan Sistem Komputer dan Perangkat Keras</h2>
+              <p style="font-size: 13.5px; color: #475569; margin-top: 4px; line-height: 1.6;">
+                <strong>Tujuan:</strong> Memahami hakikat komputer, 3 elemen pembentuk sistem (Hardware, Software, Brainware), 4 tahap siklus pengolahan data, pengelompokan perangkat keras (Input, CPU [CU &amp; ALU], Storage [RAM vs SSD], Output [Monitor &amp; Printer]), navigasi antarmuka Windows, serta etika kerja laboratorium.
               </p>
             </div>
-            <span class="time-badge">⏱ 45 Menit • 6 Misi Bertahap</span>
+            <span class="time-badge">⏱ 45 Menit • 6 Bagian Materi</span>
           </div>
 
-          <!-- Petunjuk & Tata Tertib Nyata Lab Komputer -->
-          <div class="callout-box callout-adab">
-            <div style="font-size: 24px;">💡</div>
-            <div>
-              <strong>Petunjuk &amp; Kondisi Nyata di Lab Komputer Sekolah:</strong><br>
-              Komputer lab sekolah adalah fasilitas bersama yang digunakan bergantian oleh banyak kelas. <em>Kondisi nyata:</em> keyboard sering bermasalah karena remah makanan atau ketumpahan air minum. <strong>Aturan emas praktikum:</strong> Jauhkan botol minum dan makanan dari meja komputer, serta pastikan selalu memeriksa kerapian kabel monitor dan mouse sebelum dan sesudah digunakan.
-            </div>
+          <!-- Pengantar Buku -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 22px; font-size: 13.5px; color: #334155; line-height: 1.7;">
+            Komputer kini menjadi sarana utama dalam kegiatan belajar, bekerja, dan berkomunikasi. Namun, komputer bukan sekadar sebuah mesin tunggal, melainkan sebuah sistem terpadu yang memadukan perangkat fisik, instruksi program, dan pengguna manusia. Bab ini membahas fondasi dasar sistem komputer agar Anda dapat mengenali fungsi setiap komponen dan mengoperasikannya secara bertanggung jawab di laboratorium sekolah.
           </div>
 
-          <!-- Misi 1: 4 Pilar Sistem & Alur Kerja Komputer -->
+          <!-- Bagian A: Hakikat dan Elemen Pembentuk Sistem Komputer -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🎯 Misi 1: Empat Pilar Sistem & Alur Kerja Komputer</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Komputer bukan hanya benda mati, melainkan sebuah sistem yang terdiri dari 4 unsur yang saling bekerja sama:
+            <h3 class="materi-sub-title">A. Hakikat dan Elemen Pembentuk Sistem Komputer (Misi 1)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Secara etimologis, istilah <em>komputer</em> berasal dari bahasa Latin <em>computare</em> yang bermakna menghitung. Dalam pengertian modern, <strong>komputer</strong> adalah serangkaian perangkat elektronik terpadu yang mampu menerima data masukan, mengolahnya berdasarkan program instruksi yang tersimpan, menyimpan hasil olahan, serta menyajikan keluaran berupa informasi yang bermanfaat bagi manusia.
             </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin: 12px 0;">
-              <div style="background: white; border: 1.5px solid #fed7aa; padding: 12px; border-radius: 12px;">
-                <strong>1. Perangkat Keras (Hardware)</strong>
-                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Bagian fisik yang dapat dilihat dan disentuh (monitor, keyboard, mouse, chip prosesor, SSD).</p>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7; margin-top: 8px;">
+              Sebuah komputer hanya dapat berfungsi jika ketiga elemen pembentuk sistem berikut saling terhubung dan bekerja sama:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #0f172a; font-size: 14px; display: block; margin-bottom: 6px;">1. Perangkat Keras (Hardware)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.6;">
+                  Komponen fisik elektronik yang berwujud nyata, dapat dilihat, dan diraba langsung. Contohnya monitor, papan ketik, mouse, casing unit sistem, prosesor, dan media penyimpanan.
+                </p>
               </div>
-              <div style="background: white; border: 1.5px solid #bfdbfe; padding: 12px; border-radius: 12px;">
-                <strong>2. Perangkat Lunak (Software)</strong>
-                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Program dan instruksi yang mengendalikan kerja komputer (sistem operasi Windows, peramban, pengolah kata).</p>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #0f172a; font-size: 14px; display: block; margin-bottom: 6px;">2. Perangkat Lunak (Software)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.6;">
+                  Kumpulan instruksi, program, atau prosedur terstruktur yang mengendalikan kerja perangkat keras. Terdiri dari sistem operasi (Windows, Linux, macOS) dan program aplikasi (pengolah kata, browser).
+                </p>
               </div>
-              <div style="background: white; border: 1.5px solid #bbf7d0; padding: 12px; border-radius: 12px;">
-                <strong>3. Data & Informasi</strong>
-                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Informasi yang diolah atau disimpan (naskah tugas sekolah, rekaman suara tugas, foto praktikum, dokumen tugas PDF).</p>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #0f172a; font-size: 14px; display: block; margin-bottom: 6px;">3. Pengguna (Brainware)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.6;">
+                  Manusia yang mengoperasikan, memberi instruksi, dan memprogram komputer. Meliputi siswa, guru, operator data, teknisi, maupun perancang sistem.
+                </p>
               </div>
-              <div style="background: white; border: 1.5px solid #e9d5ff; padding: 12px; border-radius: 12px;">
-                <strong>4. Pengguna (User / Brainware)</strong>
-                <p style="font-size: 12px; color: #475569; margin-top: 4px;">Manusia (siswa, siswi, dan bapak/ibu guru) yang memberi instruksi dan mengoperasikan komputer.</p>
+            </div>
+            <div style="background: #f1f5f9; border-left: 4px solid #64748b; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 12.5px; color: #334155;">
+              <strong>Catatan Data &amp; Informasi:</strong> Data adalah fakta atau catatan mentah (teks, angka, gambar). Setelah data diolah oleh komputer melalui program aplikasi, data berubah menjadi <em>informasi</em> yang terstruktur dan bermakna bagi pengguna.
+            </div>
+          </div>
+
+          <!-- Bagian B: Siklus Pengolahan Data dan Karakteristik Memori -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">B. Siklus Pengolahan Data dan Karakteristik Memori (Misi 2)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Cara kerja komputer berlangsung dalam <strong>siklus pengolahan data empat tahap</strong> yang berkesinambungan:
+            </p>
+
+            <div class="mission-flow-grid" style="margin: 14px 0;">
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #0284c7;">
+                <div style="font-weight: 700; color: #0369a1; font-size: 13.5px; margin-bottom: 4px;">1. Input (Pemasukan)</div>
+                <div class="mission-step-desc">Pengguna memasukkan data atau perintah instruksi melalui peranti masukan seperti keyboard atau mouse.</div>
+              </div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #16a34a;">
+                <div style="font-weight: 700; color: #15803d; font-size: 13.5px; margin-bottom: 4px;">2. Processing (Pemrosesan)</div>
+                <div class="mission-step-desc">Prosesor (CPU) mengolah instruksi secepat kilat. Didukung oleh <strong>Control Unit (CU)</strong> untuk pengatur lalu lintas instruksi dan <strong>Arithmetic Logic Unit (ALU)</strong> untuk perhitungan matematika serta logika.</div>
+              </div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #eab308;">
+                <div style="font-weight: 700; color: #a16207; font-size: 13.5px; margin-bottom: 4px;">3. Storage (Penyimpanan)</div>
+                <div class="mission-step-desc">Data disimpan sementara pada memori utama (RAM) selama diproses, atau disimpan permanen ke media penyimpanan (SSD/HDD) agar tidak hilang.</div>
+              </div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #8b5cf6;">
+                <div style="font-weight: 700; color: #6d28d9; font-size: 13.5px; margin-bottom: 4px;">4. Output (Pengeluaran)</div>
+                <div class="mission-step-desc">Hasil pengolahan disajikan dalam bentuk teks di layar monitor, cetakan kertas di printer, atau suara melalui speaker.</div>
               </div>
             </div>
 
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 14px;">Alur kerja pemrosesan data selalu berputar dalam 4 tahap berkesinambungan:</p>
-            <div class="mission-flow-grid">
-              <div class="mission-step-card">
-                <div class="mission-step-icon">📥</div>
-                <div class="mission-step-title">1. Input (Masukan)</div>
-                <div class="mission-step-desc">Jari menekan keyboard atau menggerakkan mouse untuk memberikan instruksi data masuk.</div>
-              </div>
-              <div class="mission-step-card">
-                <div class="mission-step-icon">⚙️</div>
-                <div class="mission-step-title">2. Process (Pemrosesan)</div>
-                <div class="mission-step-desc">Chip Processor (CPU) mengolah instruksi tombol secepat kilat (miliaran kalkulasi per detik).</div>
-              </div>
-              <div class="mission-step-card">
-                <div class="mission-step-icon">📺</div>
-                <div class="mission-step-title">3. Output (Keluaran)</div>
-                <div class="mission-step-desc">Hasil teks langsung tampil di layar monitor atau bersuara melalui speaker.</div>
-              </div>
-              <div class="mission-step-card">
-                <div class="mission-step-icon">💾</div>
-                <div class="mission-step-title">4. Storage (Penyimpanan)</div>
-                <div class="mission-step-desc">SSD/HDD menyimpan berkas secara non-volatile agar bisa dibuka kembali saat komputer dimatikan.</div>
+            <!-- Komparasi RAM vs SSD -->
+            <div style="margin-top: 18px;">
+              <strong style="color: #0f172a; font-size: 14px;">Komparasi Penting: Memori Kerja (RAM) vs Penyimpanan Tetap (SSD/HDD)</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 10px;">
+                <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                  <strong style="color: #0369a1; font-size: 13.5px;">RAM (Random Access Memory) — Meja Kerja</strong>
+                  <ul style="font-size: 12.5px; color: #475569; margin: 8px 0 0 16px; line-height: 1.6; padding: 0;">
+                    <li><strong>Sifat:</strong> Memori sementara (<em>Volatile</em>). Data akan langsung terhapus saat komputer dimatikan atau listrik terputus.</li>
+                    <li><strong>Fungsi:</strong> Menampung program aplikasi dan dokumen yang sedang aktif dibuka agar dapat diakses oleh prosesor dengan sangat cepat.</li>
+                    <li><strong>Analogi:</strong> Seperti buku catatan yang sedang terbuka di atas meja belajar Anda.</li>
+                  </ul>
+                </div>
+                <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                  <strong style="color: #7c2d12; font-size: 13.5px;">SSD / Harddisk — Lemari Arsip Berkas</strong>
+                  <ul style="font-size: 12.5px; color: #475569; margin: 8px 0 0 16px; line-height: 1.6; padding: 0;">
+                    <li><strong>Sifat:</strong> Penyimpanan permanen (<em>Non-Volatile</em>). Berkas tetap tersimpan dengan aman meskipun komputer dalam kondisi mati.</li>
+                    <li><strong>Fungsi:</strong> Menyimpan sistem operasi Windows, seluruh perangkat lunak aplikasi, serta dokumen tugas sekolah siswa.</li>
+                    <li><strong>Catatan Keandalan:</strong> Media SSD/HDD tetap memiliki batas usia pakai dan risiko aus fisik. Karena itu, penyimpanan di SSD <em>tidak menjamin aman selamanya</em> dan pembuatan salinan berkala (backup) tetap wajib dilakukan.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Misi 2: Duel Konsep: RAM vs SSD -->
+          <!-- Bagian C: Eksplorasi Struktur Komponen Perangkat Keras -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚔️ Misi 2: Duel Konsep: RAM (Meja Kerja) vs SSD (Lemari Arsip)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Jangan samakan RAM dengan SSD/Harddisk! Pahami fungsinya lewat analogi kontekstual:</p>
-            <div class="duel-grid">
-              <div class="duel-card duel-ram">
-                <div class="duel-header">
-                  <span class="duel-emoji">📖</span>
-                  <div>
-                    <h4>RAM: Meja Belajar</h4>
-                    <span class="duel-tag">Memori Sementara (Volatile)</span>
-                  </div>
-                </div>
-                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Seperti kitab dan buku catatan yang <strong>sedang dibuka di atas meja belajar saat ini</strong>. Bekerja sangat cepat membantu aplikasi yang sedang aktif. Namun begitu laptop dimatikan atau listrik padam, meja otomatis bersih kembali!
-                </p>
-              </div>
-              <div class="duel-card duel-ssd">
-                <div class="duel-header">
-                  <span class="duel-emoji">🗄️</span>
-                  <div>
-                    <h4>SSD / HDD: Lemari Arsip</h4>
-                    <span class="duel-tag">Penyimpanan Tetap (Non-Volatile)</span>
-                  </div>
-                </div>
-                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Seperti lemari arsip tempat menyimpan berkas tugas agar tidak hilang saat komputer dimatikan. <strong>Catatan Penting:</strong> SSD/HDD tetap bisa aus atau rusak secara fisik; karena itu menyimpan di SSD <em>tidak menjamin aman selamanya</em> dan backup berkala tetap wajib!
-                </p>
-              </div>
-            </div>
-          </div>
+            <h3 class="materi-sub-title">C. Eksplorasi Struktur Komponen Perangkat Keras (Misi 3)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Sering kali terjadi kekeliruan pemahaman antara kotak komputer dengan prosesor. Perlu ditegaskan:
+            </p>
+            <ul style="font-size: 13px; color: #334155; margin: 6px 0 12px 20px; line-height: 1.6;">
+              <li><strong>Casing (System Unit):</strong> Kotak pelindung luar yang membungkus komponen-komponen internal komputer (seperti motherboard, kipas pendingin, catu daya). Kotak ini <em>bukan</em> CPU.</li>
+              <li><strong>Processor (CPU — Central Processing Unit):</strong> Chip silikon mikro berukuran kecil yang terpasang di atas papan induk (motherboard) dan bertindak sebagai pusat pemrosesan komputasi utama.</li>
+            </ul>
 
-          <!-- Misi 3: Sentuh Hardware Interaktif & Pembeda Casing vs CPU -->
-          <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🔍 Misi 3: Eksplorasi Hardware & Koreksi "Casing vs CPU"</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Klik komponen pada bagan komputer berikut untuk membedakan fungsi perangkat masukan, keluaran, unit sistem (casing), prosesor (CPU), dan memori:
+            <p style="font-size: 13px; color: #475569; margin-bottom: 8px;">
+              Gunakan diagram interaktif di bawah ini untuk mempelajari letak dan deskripsi teknis komponen komputer:
             </p>
 
             <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px;">
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('monitor')">📺 Layar Monitor</button>
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('casing')">🔲 Casing (Unit Sistem)</button>
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('cpu')">🧠 Processor (CPU Inti)</button>
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('ram')">⚡ RAM (Memori Sementara)</button>
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('storage')">💾 Storage (SSD/HDD)</button>
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('keyboard')">⌨️ Keyboard</button>
-              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('mouse')">🖱️ Mouse</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('monitor')">Monitor</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('casing')">Casing (Unit Sistem)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('cpu')">Chip Prosesor (CPU)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('ram')">RAM</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('storage')">Penyimpanan (SSD/HDD)</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('keyboard')">Papan Ketik</button>
+              <button class="btn btn-outline btn-sm" onclick="klikKomponenPc('mouse')">Mouse</button>
             </div>
 
-            <div class="pc-visualizer-container">
+            <div class="pc-visualizer-container" style="background: #f8fafc; border: 1px solid #cbd5e1;">
               <svg class="interactive-svg-pc" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="background: #0f172a; border-radius: 12px; cursor: pointer;">
                 <!-- Monitor -->
                 <g id="svg-monitor" class="svg-part" onclick="klikKomponenPc('monitor')">
@@ -686,357 +693,293 @@
               </svg>
 
               <!-- Box Keterangan Komponen Interaktif -->
-              <div id="pc-detail-box" class="part-detail-box" style="margin-top: 12px;">
-                <strong id="pc-detail-nama" style="color: var(--primary); font-size: 16px;">Klik salah satu perangkat di atas</strong>
-                <p id="pc-detail-fungsi" style="font-size: 13px; color: var(--dark); margin-top: 4px;">Pilih Monitor, Casing, Chip CPU, RAM, SSD, Keyboard, atau Mouse untuk melihat ulasan teknisnya.</p>
+              <div id="pc-detail-box" class="part-detail-box" style="margin-top: 12px; background: white; border: 1px solid #e2e8f0;">
+                <strong id="pc-detail-nama" style="color: #0f172a; font-size: 15px;">Klik salah satu komponen pada bagan di atas</strong>
+                <p id="pc-detail-fungsi" style="font-size: 13px; color: #475569; margin-top: 4px;">Pilih Monitor, Casing, Chip CPU, RAM, SSD, Keyboard, atau Mouse untuk melihat ulasan teknisnya.</p>
                 <div id="pc-detail-analogi" class="callout-box callout-analogi" style="display: none; margin-top: 8px; padding: 10px 14px;"></div>
               </div>
             </div>
           </div>
 
-          <!-- Misi 4: Mengenal Perangkat Pendukung (Peripheral) Komputer di Dunia Kerja -->
+          <!-- Bagian D: Perangkat Tambahan (Peripheral) dalam Lingkungan Kerja -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🏢 Misi 4: Mengenal Perangkat Pendukung (Peripheral) Komputer di Dunia Kerja</h3>
-            <p style="font-size: 14px; color: #334155; line-height: 1.7;">
-              Di dunia nyata perkantoran dan sekolah, komputer jarang bekerja sendirian. Komputer dihubungkan dengan <strong>perangkat pendukung (peripheral)</strong> untuk mencetak surat, memindai arsip, menayangkan presentasi, hingga menghubungkan jaringan komunikasi:
+            <h3 class="materi-sub-title">D. Perangkat Tambahan (Peripheral) dalam Lingkungan Kerja (Misi 4)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Di lingkungan sekolah dan perkantoran, komputer bekerja bersama <strong>perangkat periferal</strong> untuk melengkapi tugas pengolahan informasi:
             </p>
 
-            <!-- Alur Kerja Kantor Nyata -->
-            <div style="background: #f0f9ff; border: 1.5px solid #bae6fd; border-radius: 14px; padding: 16px; margin: 14px 0;">
-              <strong style="color: #0369a1; font-size: 14px;">Contoh Alur Kerja Nyata di Sekolah &amp; Kantor:</strong>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 10px; font-size: 12.5px; color: #0c4a6e;">
-                <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #e0f2fe;">
-                  <strong>1. Penulisan Laporan</strong><br>Guru atau siswa mengetik naskah laporan di aplikasi pengolah kata.
-                </div>
-                <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #e0f2fe;">
-                  <strong>2. Cetak Fisik</strong><br><strong>Printer</strong> mencetak surat ke lembaran kertas.
-                </div>
-                <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #e0f2fe;">
-                  <strong>3. Pindai Digital</strong><br>Surat bertanda tangan dipindai dengan <strong>Scanner</strong> jadi PDF.
-                </div>
-                <div style="background: white; padding: 10px; border-radius: 8px; border: 1px solid #e0f2fe;">
-                  <strong>4. Presentasi Rapat</strong><br>File ditampilkan ke layar besar memakai <strong>Proyektor</strong>.
-                </div>
+            <!-- 4 Kategori Perangkat -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px;">
+                <strong style="color: #0369a1; font-size: 13.5px; display: block; margin-bottom: 4px;">1. Perangkat Masukan (Input)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.5;">Memasukkan data teks, suara, atau visual ke komputer.</p>
+                <div style="font-size: 12px; color: #0284c7; margin-top: 6px; font-weight: 600;">Keyboard, Mouse, Scanner, Mikrofon, Webcam</div>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px;">
+                <strong style="color: #15803d; font-size: 13.5px; display: block; margin-bottom: 4px;">2. Perangkat Keluaran (Output)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.5;">Menampilkan atau memproduksi hasil olahan komputer.</p>
+                <div style="font-size: 12px; color: #16a34a; margin-top: 6px; font-weight: 600;">Monitor, Printer, Proyektor, Speaker</div>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px;">
+                <strong style="color: #b45309; font-size: 13.5px; display: block; margin-bottom: 4px;">3. Penyimpanan Eksternal</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.5;">Menyimpan berkas portabel di luar media utama.</p>
+                <div style="font-size: 12px; color: #d97706; margin-top: 6px; font-weight: 600;">Flashdisk USB, Harddisk Eksternal</div>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px;">
+                <strong style="color: #6d28d9; font-size: 13.5px; display: block; margin-bottom: 4px;">4. Jaringan &amp; Penunjang Daya</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.5;">Koneksi komunikasi data dan perlindungan pasokan listrik.</p>
+                <div style="font-size: 12px; color: #7c3aed; margin-top: 6px; font-weight: 600;">Router Wi-Fi, Switch LAN, UPS (Baterai Darurat)</div>
               </div>
             </div>
 
-            <!-- 5 Kategori Perangkat Kerja -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 16px 0;">
-              <div style="background: #ffffff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px;">
-                <div style="font-size: 20px; margin-bottom: 4px;">📥</div>
-                <strong style="color: #1e40af; font-size: 14px;">1. Input (Masukan)</strong>
-                <p style="font-size: 12.5px; color: #475569; margin-top: 4px;">Memasukkan data, suara, atau gambar ke komputer.</p>
-                <div style="font-size: 11.5px; color: #1e3a8a; font-weight: 600; background: #eff6ff; padding: 4px 8px; border-radius: 6px; margin-top: 6px;">
-                  Keyboard, Mouse, Scanner, Mikrofon, Webcam
-                </div>
-              </div>
-
-              <div style="background: #ffffff; border: 1.5px solid #bbf7d0; border-radius: 12px; padding: 14px;">
-                <div style="font-size: 20px; margin-bottom: 4px;">📤</div>
-                <strong style="color: #166534; font-size: 14px;">2. Output (Keluaran)</strong>
-                <p style="font-size: 12.5px; color: #475569; margin-top: 4px;">Menyajikan hasil olahan komputer ke dunia luar.</p>
-                <div style="font-size: 11.5px; color: #14532d; font-weight: 600; background: #f0fdf4; padding: 4px 8px; border-radius: 6px; margin-top: 6px;">
-                  Monitor, Printer, Proyektor, Speaker, Headphone
-                </div>
-              </div>
-
-              <div style="background: #ffffff; border: 1.5px solid #fed7aa; border-radius: 12px; padding: 14px;">
-                <div style="font-size: 20px; margin-bottom: 4px;">💾</div>
-                <strong style="color: #9a3412; font-size: 14px;">3. Storage (Penyimpanan)</strong>
-                <p style="font-size: 12.5px; color: #475569; margin-top: 4px;">Menyimpan file portabel di luar memori utama.</p>
-                <div style="font-size: 11.5px; color: #7c2d12; font-weight: 600; background: #fff7ed; padding: 4px 8px; border-radius: 6px; margin-top: 6px;">
-                  Flashdisk USB, Harddisk Eksternal, Kartu SD
-                </div>
-              </div>
-
-              <div style="background: #ffffff; border: 1.5px solid #ddd6fe; border-radius: 12px; padding: 14px;">
-                <div style="font-size: 20px; margin-bottom: 4px;">🌐</div>
-                <strong style="color: #5b21b6; font-size: 14px;">4. Communication (Jaringan)</strong>
-                <p style="font-size: 12.5px; color: #475569; margin-top: 4px;">Menghubungkan komputer untuk bertukar data.</p>
-                <div style="font-size: 11.5px; color: #4c1d95; font-weight: 600; background: #f5f3ff; padding: 4px 8px; border-radius: 6px; margin-top: 6px;">
-                  Router Wi-Fi, Switch LAN, Access Point (AP)
-                </div>
-              </div>
-            </div>
-
-            <!-- Modul Detail Alat Kantor Populer -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 16px 0;">
-              <!-- Printer -->
-              <div style="background: #ffffff; border: 1.5px solid var(--border); border-radius: 14px; padding: 16px;">
-                <strong style="color: var(--dark); font-size: 15px;">🖨️ A. Printer: Cetak Dokumen</strong>
-                <p style="font-size: 13px; color: #475569; margin: 6px 0; line-height: 1.6;">
-                  Mengubah file digital menjadi salinan kertas (<em>hard copy</em>).
-                </p>
-                <ul style="font-size: 12.5px; color: #334155; padding-left: 18px; line-height: 1.6;">
-                  <li><strong>Inkjet:</strong> Tinta cair, sangat baik untuk gambar/foto warna.</li>
-                  <li><strong>Laserjet:</strong> Serbuk toner magnetik, cetak dokumen massal secara super cepat.</li>
-                  <li><strong>Printer Multifungsi (All-in-one):</strong> Menggabungkan cetak, scan, dan fotokopi.</li>
-                  <li><strong>SOP Kertas Macet (Paper Jam):</strong> Jangan menarik paksa kertas! Ikuti instruksi layar atau panggil petugas lab.</li>
-                </ul>
-              </div>
-
-              <!-- Scanner -->
-              <div style="background: #ffffff; border: 1.5px solid var(--border); border-radius: 14px; padding: 16px;">
-                <strong style="color: var(--dark); font-size: 15px;">📑 B. Scanner: Digitalisasi Berkas</strong>
-                <p style="font-size: 13px; color: #475569; margin: 6px 0; line-height: 1.6;">
-                  Menangkap tulisan/gambar pada kertas menjadi data digital (PDF / JPG).
-                </p>
-                <ul style="font-size: 12.5px; color: #334155; padding-left: 18px; line-height: 1.6;">
-                  <li><strong>Flatbed:</strong> Kaca datar untuk lembar tunggal atau buku berharga.</li>
-                  <li><strong>ADF (Auto Document Feeder):</strong> Baki penarik otomatis untuk memindai berkas banyak lembar.</li>
-                  <li><strong>Scan Biasa vs OCR:</strong> Scan biasa menghasilkan gambar. Agar teks bisa disalin/diedit, diperlukan fitur <strong>OCR (Optical Character Recognition)</strong>.</li>
-                </ul>
-              </div>
-
-              <!-- Proyektor -->
-              <div style="background: #ffffff; border: 1.5px solid var(--border); border-radius: 14px; padding: 16px;">
-                <strong style="color: var(--dark); font-size: 15px;">📽️ C. Proyektor: Presentasi Layar Besar</strong>
-                <p style="font-size: 13px; color: #475569; margin: 6px 0; line-height: 1.6;">
-                  Memancarkan layar komputer ke layar putih aula melalui kabel HDMI / VGA.
-                </p>
-                <ul style="font-size: 12.5px; color: #334155; padding-left: 18px; line-height: 1.6;">
-                  <li><strong>Pintasan Windows <kbd>Win + P</kbd>:</strong> Membuka panel Project proyektor.</li>
-                  <li><strong>Duplicate:</strong> Layar laptop dan proyektor menampilkan gambar yang persis sama (terbaik untuk pemula).</li>
-                  <li><strong>Extend:</strong> Layar proyektor menjadi ruang kerja tambahan kedua di kanan.</li>
-                  <li><strong>Solusi "No Signal":</strong> Cek kabel HDMI rapat, periksa tombol Source proyektor, dan tekan <kbd>Win + P</kbd> ➔ Duplicate.</li>
-                </ul>
-              </div>
-
-              <!-- Jaringan & UPS -->
-              <div style="background: #ffffff; border: 1.5px solid var(--border); border-radius: 14px; padding: 16px;">
-                <strong style="color: var(--dark); font-size: 15px;">🛡️ D. Jaringan Komunikasi &amp; UPS</strong>
-                <p style="font-size: 13px; color: #475569; margin: 6px 0; line-height: 1.6;">
-                  Penjaga kelancaran data dan keselamatan hardware:
-                </p>
-                <ul style="font-size: 12.5px; color: #334155; padding-left: 18px; line-height: 1.6;">
-                  <li><strong>Router &amp; Access Point:</strong> Mengelola koneksi data internet/Wi-Fi (bukan tempat menyimpan berkas tugas).</li>
-                  <li><strong>UPS (Uninterruptible Power Supply):</strong> Baterai cadangan darurat yang menjaga komputer tetap hidup beberapa menit saat listrik padam mendadak agar sempat menyimpan tugas.</li>
-                </ul>
+            <!-- Tabel Komparasi Teknis Alat -->
+            <div style="margin-top: 14px;">
+              <strong style="color: #0f172a; font-size: 13.5px;">Rincian Karakteristik Alat Periferal Esensial:</strong>
+              <div style="overflow-x: auto; margin-top: 8px;">
+                <table class="file-table" style="font-size: 12.5px;">
+                  <thead>
+                    <tr>
+                      <th style="width: 22%;">Perangkat</th>
+                      <th style="width: 38%;">Karakteristik &amp; Varian Teknologi</th>
+                      <th style="width: 40%;">Catatan Prosedural Operasional</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Printer</strong></td>
+                      <td>
+                        <strong>Inkjet:</strong> Menggunakan tinta cair, sangat baik untuk dokumen berwarna dan foto grafis.<br>
+                        <strong>Laserjet:</strong> Menggunakan serbuk toner magnetik kering (seperti mesin fotokopi), mencetak teks massal dalam kecepatan tinggi.
+                      </td>
+                      <td>Jika terjadi kertas macet (<em>paper jam</em>), hindari menarik kertas secara paksa ke arah berlawanan untuk mencegah kerusakan roda penarik roller.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Scanner (Pemindai)</strong></td>
+                      <td>
+                        <strong>Flatbed:</strong> Kaca datar untuk memindai satu per satu lembar atau buku fisik berharga.<br>
+                        <strong>ADF (Auto Document Feeder):</strong> Penarik kertas otomatis untuk memindai naskah bertumpuk.
+                      </td>
+                      <td>Pindai standar menghasilkan format gambar. Agar teks dapat dicari atau diedit, gunakan teknologi <strong>OCR (Optical Character Recognition)</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Proyektor</strong></td>
+                      <td>Menayangkan tampilan layar monitor ke layar kain berukuran besar melalui kabel penghubung HDMI atau VGA.</td>
+                      <td>Gunakan kombinasi tombol <kbd>Win + P</kbd>. Mode <strong>Duplicate</strong> menampilkan layar yang sama di kedua peranti; mode <strong>Extend</strong> memperluas desktop ke samping.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>UPS</strong></td>
+                      <td>Peranti baterai penyangga daya listrik cadangan (<em>Uninterruptible Power Supply</em>).</td>
+                      <td>Memberikan cadangan daya selama 5–15 menit saat listrik PLN padam mendadak, sehingga berkas tugas sempat disimpan dan komputer dimatikan secara aman.</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
 
-            <!-- Interaktif: 6 Skenario Pemecahan Masalah Dunia Kerja -->
-            <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 14px; padding: 18px; margin-top: 14px;">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
-                <span style="font-size: 22px;">💼</span>
-                <strong style="color: #92400e; font-size: 15px;">Studi Kasus Nyata: Latihan Pemecahan Masalah di Kantor Lab</strong>
-              </div>
-              <p style="font-size: 13px; color: #78350f; margin-bottom: 12px;">
-                Pahami skenario kerja berikut dan perhatikan tindakan terbaiknya:
-              </p>
-
-              <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
-                <div style="background: white; border: 1px solid #fed7aa; padding: 12px; border-radius: 10px;">
-                  <strong style="color: #b45309;">Situasi 1: Surat harus diserahkan fisik dan digital</strong>
-                  <p style="color: #475569; margin-top: 4px;">Ketik surat ➔ Cetak fisik via <strong>Printer</strong> ➔ Minta tanda tangan basah pimpinan ➔ Pindai via <strong>Scanner</strong> menjadi file <code>.pdf</code> resmi.</p>
+            <!-- Studi Kasus Penanganan Masalah Nyata -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px 18px; margin-top: 16px;">
+              <strong style="color: #0f172a; font-size: 13.5px;">Prosedur Penanganan Masalah Lapangan (Troubleshooting Dasar):</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 10px; font-size: 12.5px; color: #334155;">
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px;">
+                  <strong style="color: #0369a1;">1. Proyektor Menampilkan "No Signal"</strong>
+                  <p style="margin: 4px 0 0; line-height: 1.5;">Periksa sambungan kabel HDMI/VGA hingga terpasang rapat, pastikan sumber input proyektor (Source) sesuai, lalu tekan <kbd>Win + P</kbd> dan pilih opsi <strong>Duplicate</strong>.</p>
                 </div>
-
-                <div style="background: white; border: 1px solid #fed7aa; padding: 12px; border-radius: 10px;">
-                  <strong style="color: #b45309;">Situasi 2: Layar proyektor menampilkan "No Signal"</strong>
-                  <p style="color: #475569; margin-top: 4px;">Lakukan 3 cek aman: (1) Periksa kabel HDMI/VGA tertancap rapat, (2) Cek sumber input proyektor (Source: HDMI 1 / 2), (3) Tekan <kbd>Win + P</kbd> di keyboard lalu pilih <strong>Duplicate</strong>.</p>
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px;">
+                  <strong style="color: #0369a1;">2. Suara Media Tidak Terdengar</strong>
+                  <p style="margin: 4px 0 0; line-height: 1.5;">Periksa volume pada aplikasi pemutar, periksa ikon speaker pada taskbar Windows (pastikan tidak mute), dan pastikan speaker terpilih sebagai output audio aktif.</p>
                 </div>
-
-                <div style="background: white; border: 1px solid #fed7aa; padding: 12px; border-radius: 10px;">
-                  <strong style="color: #b45309;">Situasi 3: Video pembelajaran tidak ada suaranya</strong>
-                  <p style="color: #475569; margin-top: 4px;">Periksa 4 hal: (1) Volume aplikasi pemutar, (2) Ikon speaker taskbar Windows (jangan kondisi mute), (3) Pastikan speaker terpilih sebagai output audio utama, (4) Periksa kabel jack daya speaker.</p>
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px;">
+                  <strong style="color: #0369a1;">3. Suara Pengguna Tidak Terdengar di Aplikasi</strong>
+                  <p style="margin: 4px 0 0; line-height: 1.5;">Periksa perangkat <strong>Mikrofon</strong> (bukan speaker). Pastikan mikrofon terhubung, izin mikrofon diaktifkan pada sistem, dan tidak berada pada status mute.</p>
                 </div>
-
-                <div style="background: white; border: 1px solid #fed7aa; padding: 12px; border-radius: 10px;">
-                  <strong style="color: #b45309;">Situasi 4: Rapat daring orang lain tidak mendengar suara Anda</strong>
-                  <p style="color: #475569; margin-top: 4px;">Periksa <strong>Mikrofon</strong> (bukan speaker). Pastikan mikrofon terpasang, izin mikrofon aktif di aplikasi rapat, dan tombol mute mikrofon tidak sedang menyala merah.</p>
-                </div>
-
-                <div style="background: white; border: 1px solid #fed7aa; padding: 12px; border-radius: 10px;">
-                  <strong style="color: #b45309;">Situasi 5: Sebelum mencetak 40 lembar laporan tugas</strong>
-                  <p style="color: #475569; margin-top: 4px;">Buka Print Preview, periksa ukuran kertas A4, pilih opsi cetak bolak-balik (duplex) jika memungkinkan, dan <strong>cetak 1 lembar percobaan terlebih dahulu</strong> sebelum mencetak seluruh 40 lembar.</p>
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px;">
+                  <strong style="color: #0369a1;">4. Menghindari Pemborosan Kertas Cetak</strong>
+                  <p style="margin: 4px 0 0; line-height: 1.5;">Selalu periksa pratinjau cetak (<em>Print Preview</em>), pastikan ukuran kertas diatur A4, dan cetak 1 lembar sampel terlebih dahulu sebelum mencetak seluruh dokumen dalam jumlah besar.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Misi 5: Navigasi Antarmuka Windows & Pintasan Sakti -->
+          <!-- Bagian E: Pengenalan Antarmuka Sistem Operasi Windows -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚡ Misi 5: Navigasi Antarmuka Windows & Pintasan Sakti</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Sistem operasi (seperti Windows) adalah pengelola lingkungan komputer. Kenali bagian penting antarmukanya:
+            <h3 class="materi-sub-title">E. Pengenalan Antarmuka Sistem Operasi Windows (Misi 5)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Sistem operasi bertindak sebagai jembatan yang menghubungkan pengguna dengan perangkat keras. Elemen dasar antarmuka grafis sistem operasi Windows mencakup:
             </p>
-            <ul style="font-size: 13px; color: #475569; padding-left: 20px; line-height: 1.6; margin: 8px 0;">
-              <li><strong>Desktop:</strong> Ruang kerja utama yang muncul setelah login.</li>
-              <li><strong>Tombol Start:</strong> Pintu gerbang mencari aplikasi dan menu pengaturan.</li>
-              <li><strong>Taskbar:</strong> Bilah bawah layar untuk memantau dan berpindah aplikasi yang sedang aktif.</li>
-              <li><strong>Kontrol Jendela:</strong> Tombol <em>Minimize</em> (sembunyikan jendela tanpa menutup), <em>Maximize/Restore</em> (perbesar layar penuh), dan <em>Close</em> (tutup program).</li>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; line-height: 1.6; margin: 8px 0;">
+              <li><strong>Desktop:</strong> Bidang layar kerja utama yang memuat pintasan ikon aplikasi dan latar belakang visual.</li>
+              <li><strong>Taskbar:</strong> Bilah navigasi horizontal di bagian bawah layar untuk memantau aplikasi yang sedang aktif berjalan.</li>
+              <li><strong>Tombol Start:</strong> Pintu gerbang utama untuk mencari perangkat lunak, membuka berkas, dan mengakses menu pengaturan sistem.</li>
+              <li><strong>Tombol Pengontrol Jendela:</strong> Terdiri dari <em>Minimize</em> (menyembunyikan jendela ke taskbar tanpa menutupnya), <em>Maximize/Restore</em> (menyesuaikan ukuran jendela menjadi layar penuh atau sebaliknya), dan <em>Close</em> (menutup program aplikasi).</li>
             </ul>
 
-            <p style="font-size: 13px; color: var(--text-muted); margin-top: 10px;">Gunakan 4 kombinasi tombol sakti ini untuk bergerak cepat dan sigap di lab:</p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 8px;">
-              <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Win + D</kbd> : Tampilkan Desktop Instan
+            <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-top: 12px;">Kombinasi Tombol Navigasi Cepat di Laboratorium:</strong>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; margin-top: 8px;">
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px;">
+                <kbd>Win + D</kbd> : Menampilkan Layar Desktop
               </div>
-              <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Win + E</kbd> : Buka File Explorer
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px;">
+                <kbd>Win + E</kbd> : Membuka File Explorer
               </div>
-              <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Alt + Tab</kbd> : Pindah Antarjendela Cepat
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px;">
+                <kbd>Alt + Tab</kbd> : Berpindah Antarjendela Cepat
               </div>
-              <div style="background: #ffffff; border: 1.5px solid #fce8e4; padding: 10px 14px; border-radius: 12px; font-size: 13px;">
-                <kbd>Win + L</kbd> : Kunci Layar saat Izin Keluar
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px;">
+                <kbd>Win + L</kbd> : Mengunci Layar saat Meninggalkan Meja
               </div>
             </div>
+
+            <!-- Tabel Komparasi Windows 10 vs 11 -->
+            <details style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px 16px; margin-top: 14px;">
+              <summary style="font-weight: 700; color: #1e293b; cursor: pointer; font-size: 13px; user-select: none;">
+                Rujukan Komparasi: Perbedaan Tampilan &amp; Tata Letak Windows 10 vs Windows 11 (Klik untuk Membuka)
+              </summary>
+              <div style="overflow-x: auto; margin-top: 10px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 12px; background: white; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1;">
+                  <thead>
+                    <tr style="background: #f1f5f9; color: #0f172a; text-align: left;">
+                      <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Fungsi Operasional</th>
+                      <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Windows 10</th>
+                      <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Windows 11</th>
+                      <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Pintasan Universal</th>
+                    </tr>
+                  </thead>
+                  <tbody style="color: #334155;">
+                    <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Melihat Spesifikasi</strong></td><td style="padding: 6px 10px;">Settings &gt; System &gt; About</td><td style="padding: 6px 10px;">Settings &gt; System &gt; About</td><td style="padding: 6px 10px;"><kbd>Win + I</kbd></td></tr>
+                    <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;"><td style="padding: 6px 10px;"><strong>Membuat Folder Baru</strong></td><td style="padding: 6px 10px;">Tab Home &gt; New folder</td><td style="padding: 6px 10px;">Tombol New &gt; Folder</td><td style="padding: 6px 10px;"><kbd>Ctrl+Shift+N</kbd></td></tr>
+                    <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Mengganti Nama</strong></td><td style="padding: 6px 10px;">Tab Home &gt; Rename</td><td style="padding: 6px 10px;">Ikon Rename di bilah atas</td><td style="padding: 6px 10px;"><kbd>F2</kbd></td></tr>
+                    <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;"><td style="padding: 6px 10px;"><strong>Menyalin / Menempel</strong></td><td style="padding: 6px 10px;">Tombol Copy/Paste berlabel teks</td><td style="padding: 6px 10px;">Ikon Copy/Paste di bilah atas</td><td style="padding: 6px 10px;"><kbd>Ctrl+C</kbd> / <kbd>Ctrl+V</kbd></td></tr>
+                    <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Menghapus Berkas</strong></td><td style="padding: 6px 10px;">Tab Home &gt; Delete</td><td style="padding: 6px 10px;">Ikon Tempat Sampah di bilah atas</td><td style="padding: 6px 10px;"><kbd>Delete</kbd></td></tr>
+                    <tr><td style="padding: 6px 10px;"><strong>Menu Klik Kanan</strong></td><td style="padding: 6px 10px;">Menu lengkap langsung muncul</td><td style="padding: 6px 10px;">Tampilan ringkas (klik <em>Show more options</em> untuk menu penuh)</td><td style="padding: 6px 10px;"><kbd>Shift + F10</kbd></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </details>
           </div>
 
-          <!-- Misi 6: Koreksi Miskonsepsi Kritis & SOP Adab Lab -->
+          <!-- Bagian F: Lembar Kerja Praktik: Formulir Identifikasi Komputer -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🛡️ Misi 6: Koreksi Miskonsepsi Kritis & SOP Adab Lab</h3>
-            
-            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a; margin-bottom: 14px;">
-              <div style="font-size: 24px;">⚠️</div>
-              <div>
-                <strong style="color: #92400e;">Koreksi Miskonsepsi Umum Sesi 1:</strong>
-                <ul style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
-                  <li><strong>Casing komputer BUKAN CPU:</strong> Casing adalah wadah unit sistem; CPU adalah chip pemroses inti di dalamnya.</li>
-                  <li><strong>SSD tidak menjamin data aman selamanya:</strong> Media elektronik bisa rusak fisik atau korup; cadangan (backup) ke media lain tetap penting.</li>
-                  <li><strong>Tutup aplikasi tanpa simpan = data hilang:</strong> Program yang belum disimpan hanya berada di RAM; simpan berkas sebelum menutup aplikasi.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="rules-grid">
-              <div class="rule-card">
-                <span class="rule-num">1</span>
-                <div>
-                  <strong>Tangan Bersih & Meja Kering</strong>
-                  <p>Dilarang membawa makanan dan minuman di meja lab agar keyboard tidak lengket dan terhindar dari korsleting.</p>
-                </div>
-              </div>
-              <div class="rule-card">
-                <span class="rule-num">2</span>
-                <div>
-                  <strong>Matikan Lewat Shut Down Resmi</strong>
-                  <p>Klik menu Start -> Power -> Shut Down. Dilarang mencabut kabel listrik atau mematikan paksa saat komputer sedang menulis data.</p>
-                </div>
-              </div>
-              <div class="rule-card">
-                <span class="rule-num">3</span>
-                <div>
-                  <strong>Tutup Rapi & Jaga Privasi</strong>
-                  <p>Tutup layar laptop perlahan dengan memegang tengah atas. Jangan membuka atau mengubah file tugas milik teman sekelas tanpa izin.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-                    <!-- Panduan Komparasi: Windows 10 vs Windows 11 di Lab -->
-          <details style="background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 12px 16px; margin: 16px 0;">
-            <summary style="font-weight: 700; color: #1e293b; cursor: pointer; font-size: 13.5px; user-select: none;">
-              🖥️ Tips Praktik: Perbedaan Tampilan &amp; Tombol Windows 10 vs Windows 11 (Klik Buka/Tutup)
-            </summary>
-            <p style="font-size: 12.5px; color: #475569; margin: 8px 0 10px 0;">
-              Komputer di lab sekolah sering bercampur antara Windows 10 dan 11. Jangan bingung jika tombol di layarmu berbeda dengan temanmu:
+            <h3 class="materi-sub-title">F. Lembar Kerja Praktik: Formulir Identifikasi Komputer (Misi 6)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Untuk mengenali perangkat yang sedang Anda gunakan di laboratorium sekolah, buka menu pengaturan sistem melalui langkah berikut:
             </p>
-            <div style="overflow-x: auto;">
-              <table style="width: 100%; border-collapse: collapse; font-size: 12px; background: white; border-radius: 8px; overflow: hidden;">
-                <thead>
-                  <tr style="background: #e2e8f0; color: #0f172a; text-align: left;">
-                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Aksi Kerja</th>
-                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Windows 10</th>
-                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Windows 11</th>
-                    <th style="padding: 8px 10px; border-bottom: 1px solid #cbd5e1;">Pintasan Sama</th>
-                  </tr>
-                </thead>
-                <tbody style="color: #334155;">
-                  <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Lihat Spesifikasi</strong></td><td style="padding: 6px 10px;">Settings &gt; System &gt; About</td><td style="padding: 6px 10px;">Settings &gt; System &gt; About</td><td style="padding: 6px 10px;"><kbd>Win + I</kbd></td></tr>
-                  <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;"><td style="padding: 6px 10px;"><strong>Folder Baru</strong></td><td style="padding: 6px 10px;">Tab Home &gt; New folder</td><td style="padding: 6px 10px;">Tombol New &gt; Folder</td><td style="padding: 6px 10px;"><kbd>Ctrl+Shift+N</kbd></td></tr>
-                  <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Ganti Nama (Rename)</strong></td><td style="padding: 6px 10px;">Tab Home &gt; Rename</td><td style="padding: 6px 10px;">Ikon Rename di bilah atas</td><td style="padding: 6px 10px;"><kbd>F2</kbd></td></tr>
-                  <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;"><td style="padding: 6px 10px;"><strong>Copy / Paste</strong></td><td style="padding: 6px 10px;">Tombol Copy/Paste bertulis teks</td><td style="padding: 6px 10px;">Ikon dua kertas di atas</td><td style="padding: 6px 10px;"><kbd>Ctrl+C</kbd> / <kbd>Ctrl+V</kbd></td></tr>
-                  <tr style="border-bottom: 1px solid #f1f5f9;"><td style="padding: 6px 10px;"><strong>Hapus Berkas</strong></td><td style="padding: 6px 10px;">Tab Home &gt; Delete</td><td style="padding: 6px 10px;">Ikon tempat sampah</td><td style="padding: 6px 10px;"><kbd>Delete</kbd></td></tr>
-                  <tr><td style="padding: 6px 10px;"><strong>Menu Klik Kanan</strong></td><td style="padding: 6px 10px;">Menu lengkap langsung muncul</td><td style="padding: 6px 10px;">Pilih <em>Show more options</em></td><td style="padding: 6px 10px;"><kbd>Shift + F10</kbd></td></tr>
-                </tbody>
-              </table>
-            </div>
-            <p style="font-size: 11.5px; color: #64748b; margin-top: 8px;"><em>Tips: Pintasan keyboard (<kbd>Ctrl+C</kbd>, <kbd>F2</kbd>, <kbd>Ctrl+Shift+N</kbd>) bekerja persis sama di semua versi Windows!</em></p>
-          </details>
+            <ol style="font-size: 13px; color: #334155; padding-left: 20px; line-height: 1.6; margin: 6px 0 12px;">
+              <li>Klik tombol <strong>Start</strong> di sudut kiri bawah (atau tengah), lalu klik ikon <strong>Settings</strong> (atau tekan pintasan <kbd>Win + I</kbd>).</li>
+              <li>Pilih menu <strong>System</strong>, kemudian gulir ke bawah dan klik submenu <strong>About</strong>.</li>
+              <li>Catat spesifikasi teknis komputer Anda ke dalam formulir di bawah ini:</li>
+            </ol>
 
-          <!-- Benang Merah: Biodata Komputerku - Bagian 1 -->
-          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-              <span style="font-size: 20px;">📋</span>
-              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 1: Detektif Hardware)</strong>
-            </div>
-            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
-              Jangan cuma dengar teori! Buka menu <strong>Settings &gt; System &gt; About</strong> (atau klik kanan tombol Start lalu pilih <strong>System</strong>). Catat 4 data identitas komputermu di buku/kertas:
-            </p>
             <!-- FORMULIR INTERAKTIF BIODATA KOMPUTERKU -->
-            <div id="form-biodata-container" style="background: white; border: 1.5px solid #dbeafe; border-radius: 10px; padding: 14px; margin-top: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05);">
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px;">
+            <div id="form-biodata-container" style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 16px; margin-top: 10px;">
+              <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 12px;">Formulir Spesifikasi Perangkat Komputer Santri:</strong>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
                 <div>
-                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">1. Nama Perangkat (Device Name):</label>
-                  <input type="text" data-biodata="nama_perangkat" placeholder="Misal: LAB-PC-01" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                  <label style="font-size: 12px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">1. Nama Perangkat (Device Name):</label>
+                  <input type="text" data-biodata="nama_perangkat" placeholder="Contoh: LAB-PC-01" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
                 </div>
                 <div>
-                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">2. Otak (Prosesor / CPU):</label>
-                  <input type="text" data-biodata="prosesor" placeholder="Misal: Intel Core i3 / Ryzen 3" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                  <label style="font-size: 12px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">2. Otak Komputer (Prosesor / CPU):</label>
+                  <input type="text" data-biodata="prosesor" placeholder="Contoh: Intel Core i3 / AMD Ryzen 3" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
                 </div>
                 <div>
-                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">3. Meja Kerja (RAM):</label>
-                  <input type="text" data-biodata="ram" placeholder="Misal: 8.00 GB" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                  <label style="font-size: 12px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">3. Meja Kerja Memori (RAM):</label>
+                  <input type="text" data-biodata="ram" placeholder="Contoh: 8.00 GB" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
                 </div>
                 <div>
-                  <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">4. Sistem Operasi (OS):</label>
-                  <input type="text" data-biodata="sistem_operasi" placeholder="Misal: Windows 10 Pro / Windows 11" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                  <label style="font-size: 12px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">4. Sistem Operasi (OS):</label>
+                  <input type="text" data-biodata="sistem_operasi" placeholder="Contoh: Windows 10 Pro / Windows 11" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
                 </div>
               </div>
 
-              <div style="margin-top: 10px;">
-                <label style="font-size: 12px; font-weight: 700; color: #1e40af; display: block; margin-bottom: 4px;">
-                  5. Lemari Simpan (Drive C: File Explorer): <span style="font-size: 11px; font-weight: normal; color: #64748b;">(Boleh dilengkapi sekarang atau di Sesi 3)</span>
+              <div style="margin-top: 12px;">
+                <label style="font-size: 12px; font-weight: 700; color: #334155; display: block; margin-bottom: 4px;">
+                  5. Kapasitas Penyimpanan (Drive C: File Explorer): <span style="font-size: 11px; font-weight: normal; color: #64748b;">(Dapat dilengkapi sekarang atau saat Sesi 3)</span>
                 </label>
-                <input type="text" data-biodata="penyimpanan" placeholder="Misal: Total 120 GB (Sisa Bebas 45 GB)" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1.5px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
+                <input type="text" data-biodata="penyimpanan" placeholder="Contoh: Total 120 GB (Tersedia Bebas 45 GB)" style="width: 100%; padding: 7px 10px; font-size: 13px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box;">
               </div>
 
-              <div style="display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap;">
-                <button type="button" class="btn btn-primary btn-sm" onclick="simpanBiodataKomputer()" style="display: inline-flex; align-items: center; gap: 6px;">
+              <div style="display: flex; gap: 10px; align-items: center; margin-top: 14px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-primary btn-sm" onclick="simpanBiodataKomputer()">
                   <span>💾</span> Simpan Biodata (+15 XP)
                 </button>
-                <button type="button" class="btn btn-outline btn-sm" onclick="unduhBiodataTxt()" style="display: inline-flex; align-items: center; gap: 6px;">
+                <button type="button" class="btn btn-outline btn-sm" onclick="unduhBiodataTxt()">
                   <span>📥</span> Unduh Berkas .txt
                 </button>
                 <span class="biodata-status-label" style="font-size: 12px; font-weight: 600; color: #15803d; margin-left: 4px;"></span>
               </div>
             </div>
-            <p style="font-size: 12px; color: #3b82f6; margin-top: 6px; font-style: italic;">
-              👉 Jembatan Sesi 2: "Datamu sudah terkumpul. Di Sesi 2, kita akan melatih kelincahan jari mengetik data ini di Notepad!"
-            </p>
           </div>
 
-<!-- Ringkasan Inti Sesi 1 -->
-          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 1:</strong>
-            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
-              <li>Komputer adalah sistem yang menghubungkan Hardware, Software, Data, dan User dalam siklus Input-Proses-Output-Penyimpanan.</li>
-              <li>Casing adalah wadah pelindung, sedangkan CPU adalah chip pemroses inti.</li>
-              <li>RAM adalah memori kerja sementara (volatile); SSD adalah penyimpanan permanen (non-volatile) yang tetap memerlukan cadangan data berkala.</li>
-              <li>Pintasan keyboard (<kbd>Win+D</kbd>, <kbd>Win+E</kbd>, <kbd>Alt+Tab</kbd>) membantu navigasi Windows secara sigap dan percaya diri.</li>
+          <!-- Bagian G: Koreksi Miskonsepsi dan Tata Tertib Laboratorium -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">G. Koreksi Miskonsepsi dan Tata Tertib Laboratorium</h3>
+            
+            <div class="callout-box" style="background: #fffbeb; border: 1px solid #fde68a; margin-bottom: 16px;">
+              <div style="font-size: 20px;">⚠️</div>
+              <div>
+                <strong style="color: #92400e; font-size: 13.5px;">Koreksi Miskonsepsi Umum Sesi 1:</strong>
+                <ul style="font-size: 12.5px; color: #78350f; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                  <li><strong>Casing komputer bukan CPU:</strong> Casing adalah wadah unit sistem pelindung luar; CPU adalah chip pemroses inti di dalamnya.</li>
+                  <li><strong>SSD tidak menjamin data aman selamanya:</strong> Komponen elektronik dapat mengalami gangguan teknis atau aus fisik seiring waktu; pencadangan data ke media lain tetap wajib.</li>
+                  <li><strong>Menutup aplikasi tanpa menyimpan menyebabkan data hilang:</strong> Naskah yang belum disimpan hanya berada di memori RAM yang bersifat sementara.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rules-grid">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
+                <span class="rule-num">1</span>
+                <div>
+                  <strong>Menjaga Kebersihan &amp; Kerapian Meja</strong>
+                  <p>Dilarang meletakkan makanan dan minuman di dekat perangkat komputer untuk mencegah risiko tumpahan cairan dan korsleting listrik.</p>
+                </div>
+              </div>
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
+                <span class="rule-num">2</span>
+                <div>
+                  <strong>Prosedur Mematikan Melalui Menu Resmi</strong>
+                  <p>Gunakan menu Start &gt; Power &gt; Shut Down. Dilarang mencabut kabel daya listrik secara paksa saat komputer sedang beroperasi.</p>
+                </div>
+              </div>
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
+                <span class="rule-num">3</span>
+                <div>
+                  <strong>Menghormati Privasi Data Pengguna Lain</strong>
+                  <p>Komputer lab adalah fasilitas bersama. Dilarang membuka, mengubah, atau menghapus berkas pekerjaan milik siswa lain tanpa izin.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ringkasan Inti Sesi 1 -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px 20px; margin: 18px 0;">
+            <strong style="color: #0f172a; font-size: 14px;">📌 Ringkasan Inti Sesi 1:</strong>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; margin-top: 6px; line-height: 1.6;">
+              <li>Sistem komputer tersusun atas tiga pilar utama: Hardware (perangkat fisik), Software (program pengendali), dan Brainware (pengguna manusia).</li>
+              <li>Alur pemrosesan data berlangsung melalui empat tahap: Masukan (Input) &rarr; Pemrosesan (CPU: CU &amp; ALU) &rarr; Penyimpanan (RAM &amp; SSD/HDD) &rarr; Keluaran (Output).</li>
+              <li>RAM adalah memori kerja sementara yang bersifat <em>volatile</em>, sedangkan SSD/HDD adalah penyimpanan permanen <em>non-volatile</em> yang tetap memerlukan pencadangan berkala.</li>
+              <li>Kombinasi tombol pintasan sistem (<kbd>Win+D</kbd>, <kbd>Win+E</kbd>, <kbd>Alt+Tab</kbd>) mempermudah navigasi antarmuka secara efisien dan percaya diri.</li>
             </ul>
           </div>
 
           <!-- Tombol Penyelesaian Materi P1 -->
-          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px 22px; border-radius: 18px; border: 1.5px solid #ffdcd4;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 18px 22px; border-radius: 14px; border: 1px solid #cbd5e1;">
             <div>
-              <strong style="color: var(--primary); font-size: 16px;">Tuntaskan Sesi 1 & Klaim Poin!</strong>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klik tombol di samping untuk mencatatkan poin XP resmi Anda ke server.</p>
+              <strong style="color: #0f172a; font-size: 15px;">Konfirmasi Penyelesaian Pembacaan Materi</strong>
+              <p style="font-size: 13px; color: #64748b; margin-top: 2px;">Tandai materi Sesi 1 sebagai selesai dan catatkan poin XP Anda ke sistem.</p>
             </div>
             <button id="btn-selesai-baca-p1" class="btn btn-primary" onclick="catatAktivitasBaca(1)">
               ✓ Klaim XP Sesi 1 (+25 XP)
             </button>
-            <span id="p1-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
+            <span id="p1-baca-badge" style="font-size: 13px; font-weight: 700; color: #16a34a; display: none;">✓ Materi Sesi 1 Tercatat Selesai</span>
           </div>
 
-          <!-- Mini Kuis Pertemuan 1 -->
-          <div style="margin-top: 24px; border-top: 2px solid #FFF5F3; padding-top: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <!-- Mini Kuis Sesi 1 -->
+          <div style="margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Sesi 1 (Penalaran Konsep)</h3>
-                <p style="font-size: 13px; color: var(--text-muted);">Kerjakan 4 soal skenario penalaran berikut untuk menguji pemahaman konsep komputer Anda:</p>
+                <h3 style="font-family: var(--font-heading); font-size: 18px; color: #0f172a;">Latihan Pemahaman Konsep: Kuis Sesi 1</h3>
+                <p style="font-size: 13px; color: #64748b;">Selesaikan 4 butir soal penalaran berikut untuk menguji pemahaman Anda mengenai dasar sistem komputer:</p>
               </div>
               <button id="btn-muat-kuis-p1" class="btn btn-secondary" onclick="muatKuisPertemuan(1)">
                 Mulai Kuis Sesi 1 ▶
@@ -1045,24 +988,18 @@
             
             <div id="kuis-container-p1" style="margin-top: 16px;"></div>
 
-            <!-- Bilah Navigasi Antar Sesi: Sesi 1 -->
+            <!-- Bilah Navigasi Antar Sesi -->
             <div class="session-nav-bar">
               <button class="btn btn-outline session-nav-btn" onclick="bukaDashboard()" title="Kembali ke Halaman Beranda">
                 <span>🏠</span> Beranda
               </button>
               <button class="btn btn-primary session-nav-btn" onclick="bukaPertemuan(2)" title="Lanjut ke Sesi 2">
-                Lanjut ke Sesi 2: Jari Sakti & Mouse <span>➔</span>
+                Lanjut ke Bab 2: Keterampilan Antarmuka <span>➔</span>
               </button>
             </div>
           </div>
         </section>
 
-        <!-- ==================================================================
-             VIEW 2: PERTEMUAN 2 — TYPING JUNGLE & JARI SAKTI (MICRO-MISSIONS)
-             ================================================================== -->
-        <!-- ==================================================================
-             VIEW 2: PERTEMUAN 2 — JARI SAKTI DAN MOUSE (MICRO-MISSIONS)
-             ================================================================== -->
         <section id="view-p2" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -1073,125 +1010,141 @@
                 </button>
                 <span class="course-badge-overlay" style="position: static; background: var(--secondary);">Level 2</span>
               </div>
-              <h2 class="card-title">🖱️ Sesi 2: Keterampilan Antarmuka: Mouse, Touchpad, dan Keyboard</h2>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Tujuan: Menguasai kendali mouse & gestur touchpad, mengenali tombol penting keyboard, posisi istirahat Home Row (ASDF JKL;), ergonomi postur, dan melatih akurasi sebelum kecepatan.
+              <h2 class="card-title">🖱️ Bab 2: Keterampilan Antarmuka — Mouse, Touchpad, dan Papan Ketik</h2>
+              <p style="font-size: 13.5px; color: #475569; margin-top: 4px; line-height: 1.6;">
+                <strong>Tujuan:</strong> Menguasai fungsi kendali mouse dan gestur touchpad; mengidentifikasi struktur tombol papan ketik (keyboard); menerapkan penempatan jari pada baris pangkal (Home Row: ASDF JKL;); menerapkan posisi duduk ergonomis; serta melatih akurasi pengetikan secara bertahap.
               </p>
             </div>
-            <span class="time-badge">⏱ 45 Menit • 5 Misi Bertahap</span>
+            <span class="time-badge">⏱ 45 Menit • 5 Bagian Materi</span>
           </div>
 
-          <!-- Petunjuk & Hint Nyata Mengetik 10 Jari -->
-          <div class="callout-box callout-adab">
-            <div style="font-size: 24px;">💡</div>
-            <div>
-              <strong>Petunjuk Siswa: Hindari Kebiasaan Mengetik "Sebelas Jari" (Dua Telunjuk Saja)!</strong><br>
-              <em>Kondisi nyata siswa:</em> Banyak siswa terbiasa mengetik tugas makalah hanya dengan dua jari telunjuk sambil mata terus menunduk menatap papan tuts. Akibatnya, leher cepat pegal dan pengetikan menjadi lambat. Latihlah <strong>10 jari di Home Row (ASDF JKL;)</strong>. Biarkan jemari meraba tonjolan taktil di tombol <strong>F</strong> dan <strong>J</strong>. Utamakan <strong>akurasi ketukan</strong> daripada mengetik terburu-buru tetapi bolak-balik menekan Backspace!
-            </div>
+          <!-- Pengantar Buku -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 22px; font-size: 13.5px; color: #334155; line-height: 1.7;">
+            Papan ketik dan mouse merupakan dua peranti masukan primer yang paling sering digunakan saat berinteraksi dengan komputer. Penguasaan teknik pengetikan sepuluh jari dan pengendalian kursor yang akurat akan melipatgandakan kecepatan kerja Anda serta mencegah kelelahan fisik saat mengerjakan laporan atau tugas sekolah.
           </div>
 
-          <!-- Misi 1: Tiga Aksi Sakti Mouse & Touchpad Laptop -->
+          <!-- Bagian A: Pengoperasian Mouse dan Touchpad Laptop -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🖱️ Misi 1: Operasi Mouse, Touchpad, & Efek Konteks Seret-Lepas</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Kendalikan panah kursor di layar dengan jari-jari tanganmu:</p>
-            <div class="mission-flow-grid">
-              <div class="mission-step-card">
-                <div class="mission-step-icon">👆</div>
-                <div class="mission-step-title">Klik Kiri (Pilih & Buka)</div>
-                <div class="mission-step-desc">Tekan 1x untuk memilih tombol/ikon, atau 2x cepat untuk membuka folder dan aplikasi.</div>
+            <h3 class="materi-sub-title">A. Pengoperasian Mouse dan Touchpad Laptop (Misi 1)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Mouse digunakan untuk mengarahkan kursor penunjuk (pointer) di layar monitor. Terdapat empat aksi dasar pengoperasian mouse:
+            </p>
+
+            <div class="mission-flow-grid" style="margin: 14px 0;">
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1;">
+                <div style="font-weight: 700; color: #0f172a; font-size: 13.5px; margin-bottom: 4px;">1. Klik Kiri (Single Click &amp; Double Click)</div>
+                <div class="mission-step-desc">Tekan 1 kali untuk memilih suatu ikon, menu, atau tombol. Tekan 2 kali secara cepat (<em>Double Click</em>) untuk mengeksekusi program atau membuka folder.</div>
               </div>
-              <div class="mission-step-card">
-                <div class="mission-step-icon">✌️</div>
-                <div class="mission-step-title">Klik Kanan (Menu Konteks)</div>
-                <div class="mission-step-desc">Membuka menu pilihan aksi tersembunyi (Buka, Salin, Ganti Nama, Hapus). <em>Bukan otomatis menghapus!</em></div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1;">
+                <div style="font-weight: 700; color: #0f172a; font-size: 13.5px; margin-bottom: 4px;">2. Klik Kanan (Menu Konteks)</div>
+                <div class="mission-step-desc">Membuka daftar opsi atau perintah kerja yang berlaku khusus pada objek yang diklik. <em>Perhatian: Klik kanan bukan untuk menghapus berkas.</em></div>
               </div>
-              <div class="mission-step-card">
-                <div class="mission-step-icon">🎡</div>
-                <div class="mission-step-title">Scroll Wheel (Meluncur)</div>
-                <div class="mission-step-desc">Putar roda tengah ke depan/belakang untuk meluncur di dokumen panjang & lembar PDF.</div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1;">
+                <div style="font-weight: 700; color: #0f172a; font-size: 13.5px; margin-bottom: 4px;">3. Roda Gulir (Scroll Wheel)</div>
+                <div class="mission-step-desc">Putar roda tengah ke depan atau belakang untuk menelusuri halaman dokumen naskah dan lembar web vertikal secara halus.</div>
               </div>
-              <div class="mission-step-card">
-                <div class="mission-step-icon">✊</div>
-                <div class="mission-step-title">Drag & Drop (Seret-Lepas)</div>
-                <div class="mission-step-desc">Klik tahan objek, geser kursor ke tujuan, lalu lepas. <em>Efeknya tergantung konteks: dalam drive sama = memindahkan, beda drive = menyalin.</em></div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1;">
+                <div style="font-weight: 700; color: #0f172a; font-size: 13.5px; margin-bottom: 4px;">4. Seret dan Lepas (Drag &amp; Drop)</div>
+                <div class="mission-step-desc">Klik tahan tombol kiri pada objek, geser kursor ke tujuan, lalu lepas tombol. Efek tindakan bergantung konteks: dalam drive sama = memindahkan (Move), antar-drive berbeda = menyalin (Copy).</div>
               </div>
             </div>
 
-            <!-- Touchpad Tips -->
-            <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; margin-top: 12px; font-size: 13px;">
-              <strong>💡 Khusus Pengguna Touchpad Laptop:</strong>
-              Ketuk 1 jari = Klik Kiri • Ketuk 2 jari bersamaan = Klik Kanan (Menu Konteks) • Geser 2 jari naik-turun = Scroll Layar.
+            <!-- Panduan Touchpad Laptop -->
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 12px 16px; margin-top: 12px; font-size: 13px; color: #334155;">
+              <strong style="color: #0f172a;">Penggunaan Touchpad pada Komputer Jinjing (Laptop):</strong><br>
+              <span style="color: #475569;">
+                Ketuk satu jari = Klik Kiri &bull; Ketuk dua jari secara bersamaan = Klik Kanan (Menu Konteks) &bull; Usap dua jari naik-turun = Menggulung (Scroll) Layar.
+              </span>
             </div>
           </div>
 
-          <!-- Misi 2: Mini Game Mouse Interaktif (Aksesibilitas) -->
+          <!-- Bagian B: Latihan Ketangkasan dan Refleks Kendali Mouse -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🎮 Misi 2: Arena Balon Mouse (Tangkas, Refleks & Aksesibilitas)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Pilih tingkat kecepatan, klik "Mulai Latihan Mouse", lalu tangkap balon target oranye secepat mungkin sebelum waktu habis!
+            <h3 class="materi-sub-title">B. Latihan Ketangkasan dan Refleks Kendali Mouse (Misi 2)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Untuk melatih koordinasi motorik mata dan tangan dalam mengarahkan kursor secara presisi, gunakan media latihan interaktif di bawah ini:
             </p>
 
             <div style="display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; align-items: center;">
-              <select id="mouse-game-diff" style="padding: 8px 12px; font-size: 13px;">
-                <option value="easy">Level 1: Target Santai (45 Detik, +20 XP)</option>
-                <option value="medium">Level 2: Target Cepat (35 Detik, +30 XP)</option>
-                <option value="hard">Level 3: Target Gesit (25 Detik, +40 XP)</option>
+              <select id="mouse-game-diff" style="padding: 8px 12px; font-size: 13px; border: 1px solid #cbd5e1; border-radius: 6px;">
+                <option value="easy">Tingkat 1: Kecepatan Santai (45 Detik, +20 XP)</option>
+                <option value="medium">Tingkat 2: Kecepatan Sedang (35 Detik, +30 XP)</option>
+                <option value="hard">Tingkat 3: Kecepatan Gesit (25 Detik, +40 XP)</option>
               </select>
               <button id="btn-start-mouse" class="btn btn-primary btn-sm" onclick="mulaiMiniGameMouse()">
                 ▶ Mulai Latihan Mouse
               </button>
-              <span id="mouse-timer-display" style="font-weight: 700; margin-left: auto;">⏱ Waktu: 45s</span>
+              <span id="mouse-timer-display" style="font-weight: 700; margin-left: auto; color: #334155;">⏱ Waktu: 45s</span>
               <span id="mouse-score-display" style="font-weight: 700; color: var(--primary);">⭐ Skor: 0</span>
             </div>
 
-            <div id="mouse-arena" class="mouse-game-arena">
-              <div style="padding: 40px 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
-                🎈 Tekan tombol <strong>"Mulai Latihan Mouse"</strong> di atas untuk memunculkan balon target!
-                <div style="font-size: 12px; color: #94a3b8; margin-top: 6px;">(Mendukung klik mouse, klik kanan, double click, dan seret-lepas dengan alternatif klik untuk kemudahan touchpad laptop)</div>
+            <div id="mouse-arena" class="mouse-game-arena" style="border: 1px solid #cbd5e1; background: #f8fafc;">
+              <div style="padding: 40px 20px; text-align: center; color: #64748b; font-size: 13.5px;">
+                Klik tombol <strong>"Mulai Latihan Mouse"</strong> di atas untuk memunculkan target latihan!
+                <div style="font-size: 12px; color: #94a3b8; margin-top: 6px;">(Mendukung klik tunggal, klik ganda, dan seret-lepas yang ramah touchpad laptop)</div>
               </div>
             </div>
           </div>
 
-          <!-- Misi 3: Home Row Keyboard & Garis Sakti F & J -->
+          <!-- Bagian C: Struktur Papan Ketik dan Tata Letak Tombol QWERTY -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⌨️ Misi 3: Rahasia 10 Jari: Baris Beranda (Home Row) & Tombol Penting</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Letakkan 10 jarimu di baris pangkal (Home Row) agar bisa mengetik tanpa melirik keyboard:
+            <h3 class="materi-sub-title">C. Struktur Papan Ketik dan Tata Letak Tombol QWERTY (Misi 3)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Papan ketik komputer umumnya mengadopsi susunan <strong>QWERTY</strong> yang dirancang oleh Christopher Sholes pada tahun 1873. Tombol-tombol pada keyboard dikelompokkan ke dalam beberapa fungsi utama:
             </p>
 
-            <div class="duel-grid">
-              <div class="duel-card duel-ram">
-                <div class="duel-header">
-                  <span class="duel-emoji">👈</span>
-                  <div>
-                    <h4>Tangan Kiri: ASDF</h4>
-                    <span class="duel-tag">Kelingking s/d Telunjuk</span>
-                  </div>
-                </div>
-                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Kelingking di <kbd>A</kbd>, Manis di <kbd>S</kbd>, Tengah di <kbd>D</kbd>, dan Telunjuk bersandar tepat di tonjolan raba <kbd class="bump">F</kbd>!
-                </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 12px 0;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+                <strong style="color: #0f172a; font-size: 13px;">1. Tombol Ketik (Alphanumeric)</strong>
+                <p style="font-size: 12px; color: #475569; margin: 4px 0 0; line-height: 1.5;">Memuat huruf alfabet (A–Z), angka (0–9), dan tanda baca penulisan.</p>
               </div>
-              <div class="duel-card duel-ssd">
-                <div class="duel-header">
-                  <span class="duel-emoji">👉</span>
-                  <div>
-                    <h4>Tangan Kanan: JKL;</h4>
-                    <span class="duel-tag">Telunjuk s/d Kelingking</span>
-                  </div>
-                </div>
-                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Telunjuk bersandar di tonjolan raba <kbd class="bump">J</kbd>, Tengah di <kbd>K</kbd>, Manis di <kbd>L</kbd>, dan Kelingking di <kbd>;</kbd>!
-                </p>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+                <strong style="color: #0f172a; font-size: 13px;">2. Tombol Fungsi (F1 – F12)</strong>
+                <p style="font-size: 12px; color: #475569; margin: 4px 0 0; line-height: 1.5;">Perintah khusus program (misal <kbd>F1</kbd> untuk bantuan, <kbd>F2</kbd> untuk mengganti nama berkas).</p>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+                <strong style="color: #0f172a; font-size: 13px;">3. Tombol Pengubah (Modifier)</strong>
+                <p style="font-size: 12px; color: #475569; margin: 4px 0 0; line-height: 1.5;">Digunakan bersama tombol lain: <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>Shift</kbd>, dan <kbd>Win</kbd>.</p>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px;">
+                <strong style="color: #0f172a; font-size: 13px;">4. Tombol Koreksi &amp; Arah</strong>
+                <p style="font-size: 12px; color: #475569; margin: 4px 0 0; line-height: 1.5;"><kbd>Backspace</kbd> menghapus ke kiri kursor, sedangkan <kbd>Delete</kbd> menghapus ke kanan kursor.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bagian D: Metode Pengetikan 10 Jari dan Baris Pangkal (Home Row) -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">D. Metode Pengetikan 10 Jari dan Baris Pangkal (Home Row) (Misi 4)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Kebiasaan mengetik dengan hanya mengandalkan dua jari telunjuk ("mengetik sebelas jari") memaksa mata terus-menerus menunduk ke papan tuts, menyebabkan leher cepat pegal dan memperlambat laju kerja. Melalui metode pengetikan sepuluh jari, jemari Anda dilatih bersandar pada <strong>Baris Pangkal (Home Row)</strong>:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 12px 0;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #0369a1; font-size: 13.5px; display: block; margin-bottom: 6px;">Posisi Jari Tangan Kiri: ASDF</strong>
+                <ul style="font-size: 12.5px; color: #475569; margin: 0 0 0 16px; padding: 0; line-height: 1.6;">
+                  <li>Jari Kelingking bersandar di tombol <kbd>A</kbd></li>
+                  <li>Jari Manis bersandar di tombol <kbd>S</kbd></li>
+                  <li>Jari Tengah bersandar di tombol <kbd>D</kbd></li>
+                  <li>Jari Telunjuk bersandar di tombol <kbd class="bump">F</kbd> (memiliki tonjolan raba)</li>
+                </ul>
+              </div>
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #15803d; font-size: 13.5px; display: block; margin-bottom: 6px;">Posisi Jari Tangan Kanan: JKL;</strong>
+                <ul style="font-size: 12.5px; color: #475569; margin: 0 0 0 16px; padding: 0; line-height: 1.6;">
+                  <li>Jari Telunjuk bersandar di tombol <kbd class="bump">J</kbd> (memiliki tonjolan raba)</li>
+                  <li>Jari Tengah bersandar di tombol <kbd>K</kbd></li>
+                  <li>Jari Manis bersandar di tombol <kbd>L</kbd></li>
+                  <li>Jari Kelingking bersandar di tombol <kbd>;</kbd></li>
+                </ul>
               </div>
             </div>
 
-            <div class="callout-box callout-istilah" style="margin: 14px 0;">
-              <div style="font-size: 24px;">💡</div>
-              <div>
-                <strong>Rahasia Tonjolan Taktil di Tombol F & J:</strong><br>
-                Di tombol <strong>F</strong> dan <strong>J</strong> ada garis timbul kecil. Rasakan tonjolan tersebut dengan kedua ujung jari telunjukmu, maka seluruh jemari otomatis berada di posisi Home Row tanpa mata perlu menunduk melirik ke bawah!
-              </div>
+            <!-- Tonjolan Taktil Info -->
+            <div style="background: #f8fafc; border-left: 4px solid #0284c7; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 12.5px; color: #334155; margin-bottom: 14px;">
+              <strong>Tonjolan Sensorik Taktil pada Tombol F dan J:</strong><br>
+              Pada tombol <strong>F</strong> dan <strong>J</strong> terdapat garis timbul kecil. Raba garis tersebut dengan kedua ujung telunjuk Anda. Dengan merasakan tanda ini, jemari Anda akan langsung menempati posisi Home Row secara mandiri tanpa mata perlu melirik ke papan tuts. Kedua ibu jari bertugas menekan tombol <strong>Spasi (Spacebar)</strong>.
             </div>
 
             <!-- Virtual Keyboard -->
@@ -1219,130 +1172,129 @@
 
             <!-- Postur Ergonomis -->
             <div class="rules-grid" style="margin-top: 16px;">
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">🪑</span>
-                <h4>Punggung Tegak & Rileks</h4>
-                <p>Bersandar nyaman pada kursi lab; hindari membungkuk agar tidak cepat lelah.</p>
+                <h4>Punggung Tegak &amp; Bersandar Nyaman</h4>
+                <p>Pertahankan postur tubuh tegak menyandar pada sandaran kursi; hindari posisi membungkuk agar terhindar dari ketegangan punggung.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">📐</span>
-                <h4>Siku 90 Derajat</h4>
-                <p>Lengan membentuk sudut 90° sejajar dengan tinggi meja komputer.</p>
+                <h4>Posisi Lengan &amp; Siku 90 Derajat</h4>
+                <p>Lengan bawah dan meja kerja membentuk sudut sekitar 90 derajat dengan pergelangan tangan rileks sejajar.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">👀</span>
-                <h4>Jarak Pandang Aman</h4>
-                <p>Mata berjarak 45-60 cm dari monitor (sepanjang jangkauan satu lengan santri).</p>
+                <h4>Jarak Pandang Aman Monitor</h4>
+                <p>Mata berjarak 45–60 cm dari layar kaca (kurang lebih sepanjang jangkauan satu lengan siswa).</p>
               </div>
             </div>
           </div>
 
-          <!-- Misi 4: Arena Latihan Mengetik Bertahap -->
+          <!-- Bagian E: Latihan Pengetikan Terstruktur -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚡ Misi 4: Latihan Mengetik Bertahap (Akurasi & WPM)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Latihan dirancang bertahap: pola Home Row pendek $
-ightarrow$ kata-kata pendek $
-ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> sebelum memacu <strong>WPM</strong>!
+            <h3 class="materi-sub-title">E. Latihan Pengetikan Terstruktur (Misi 5)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Prinsip terpenting dalam pengetikan sepuluh jari adalah <strong>mengutamakan akurasi ketukan (%) di atas kecepatan kata per menit (WPM)</strong>. Mengetik cepat dengan banyak kesalahan ketik akan membuang waktu untuk menekan tombol penghapus.
             </p>
 
-            <div class="typing-box-container" style="margin-top: 14px;">
+            <div class="typing-box-container" style="margin-top: 14px; border: 1px solid #cbd5e1; background: white;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
-                <strong style="font-size: 13px; color: var(--primary-dark);">Tahap Latihan:</strong>
-                <select id="typing-diff-select" class="btn-outline" style="padding: 6px 12px; border-radius: 20px; font-weight: 600;" onchange="gantiTeksLatihanMengetik()">
-                  <option value="easy">Tahap 1: Pola Pangkal Home Row (asdf jkl;)</option>
+                <strong style="font-size: 13px; color: #0f172a;">Pilih Tahapan Pengetikan:</strong>
+                <select id="typing-diff-select" class="btn-outline" style="padding: 6px 12px; border-radius: 6px; font-weight: 600; font-size: 12.5px;" onchange="gantiTeksLatihanMengetik()">
+                  <option value="easy">Tahap 1: Pola Baris Pangkal (asdf jkl;)</option>
                   <option value="medium">Tahap 2: Kata Pendek Teratur (buku file data rapi...)</option>
-                  <option value="hard">Tahap 3: Kalimat Bermakna Tugas Lab TIK</option>
+                  <option value="hard">Tahap 3: Kalimat Bermakna Praktik TIK &amp; Cadangan Data</option>
                 </select>
               </div>
 
               <div id="typing-target" class="typing-target-text">asdf jkl; asdf jkl; fasa jala lada faja sakal salak alas jada laka</div>
-              <input type="text" id="typing-input" class="typing-input" placeholder="Letakkan 10 jari di Home Row lalu ketik teks di atas di sini..." autocomplete="off">
+              <input type="text" id="typing-input" class="typing-input" placeholder="Tempatkan jemari pada posisi Home Row, lalu ketikkan naskah di atas di sini..." autocomplete="off">
 
               <div class="typing-stats">
                 <span id="stat-wpm" style="color: var(--secondary); font-weight: 800;">WPM: 0</span>
                 <span id="stat-accuracy" style="color: var(--primary); font-weight: 800;">Akurasi: 100%</span>
-                <span id="typing-feedback" style="margin-left: auto; color: var(--text-muted); font-size: 13px; font-weight: 600;">Siap mengetik</span>
+                <span id="typing-feedback" style="margin-left: auto; color: #64748b; font-size: 13px; font-weight: 600;">Siap mengetik</span>
               </div>
             </div>
           </div>
 
-          <!-- Misi 5: Miskonsepsi Kritis Sesi 2 -->
+          <!-- Bagian F: Lembar Kerja Praktik: Pengetikan Dokumen Biodata di Notepad -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🛡️ Misi 5: Miskonsepsi Kritis Sesi 2 yang Harus Dihindari</h3>
-            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a;">
-              <div style="font-size: 24px;">⚠️</div>
+            <h3 class="materi-sub-title">F. Lembar Kerja Praktik: Pengetikan Dokumen Biodata di Notepad</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Terapkan keterampilan mengetik yang telah Anda pelajari dengan menyusun dokumen identitas perangkat komputer Anda:
+            </p>
+            <ol style="font-size: 13px; color: #334155; padding-left: 20px; line-height: 1.6; margin: 6px 0 10px;">
+              <li>Buka aplikasi <strong>Notepad</strong> (klik tombol Start &gt; ketik <em>Notepad</em> &gt; tekan Enter).</li>
+              <li>Ketikkan naskah identitas berikut dengan posisi jemari di Home Row. Gunakan tombol <kbd>Shift</kbd> untuk menghasilkan huruf kapital:</li>
+            </ol>
+
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 13px; color: #1e293b;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 8px;">
+                <div><strong>1. Nama Perangkat:</strong> <span id="review-biodata-nama">-</span></div>
+                <div><strong>2. Otak Komputer (Prosesor):</strong> <span id="review-biodata-cpu">-</span></div>
+                <div><strong>3. Memori Kerja (RAM):</strong> <span id="review-biodata-ram">-</span></div>
+                <div><strong>4. Sistem Operasi:</strong> <span id="review-biodata-os">-</span></div>
+              </div>
+            </div>
+
+            <p style="font-size: 13px; color: #334155; line-height: 1.6; margin-top: 8px;">
+              Simpan dokumen tersebut dengan menekan kombinasi tombol <kbd>Ctrl + S</kbd>, letakkan sementara di <strong>Desktop</strong> dengan nama berkas: <code>biodata_komputer.txt</code>.
+            </p>
+
+            <div style="display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap;">
+              <button type="button" class="btn btn-outline btn-sm" onclick="unduhBiodataTxt()">
+                <span>📥</span> Unduh Berkas Salinan <code>biodata_komputer.txt</code>
+              </button>
+              <span class="biodata-status-label" style="font-size: 12px; font-weight: 600; color: #15803d;"></span>
+            </div>
+          </div>
+
+          <!-- Bagian G: Koreksi Miskonsepsi Pengendalian Komputer -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">G. Koreksi Miskonsepsi Pengendalian Komputer</h3>
+            <div class="callout-box" style="background: #fffbeb; border: 1px solid #fde68a;">
+              <div style="font-size: 20px;">⚠️</div>
               <div>
-                <strong style="color: #92400e;">Catatan Kritis Pengendalian Komputer:</strong>
-                <ul style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
-                  <li><strong>Mengetik cepat belum tentu mahir:</strong> Mengetik terburu-buru dengan banyak salah ketik membuang waktu menghapus; itqan (ketelitian) jauh lebih utama.</li>
-                  <li><strong>Klik kanan BUKAN jalan pintas menghapus:</strong> Klik kanan membuka menu pilihan perintah (konteks).</li>
-                  <li><strong>Seret-lepas (drag-drop) tidak selalu memindahkan:</strong> Jika menyeret antar-drive (misal laptop ke flashdisk), berkas disalin (Copy), bukan dipindah (Move).</li>
+                <strong style="color: #92400e; font-size: 13.5px;">Tiga Miskonsepsi Umum Sesi 2 yang Perlu Dihindari:</strong>
+                <ul style="font-size: 12.5px; color: #78350f; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                  <li><strong>Mengetik terburu-buru belum tentu efisien:</strong> Mengetik cepat tetapi banyak salah ketik membuang waktu untuk memperbaiki; ketelitian (akurasi) memori otot jauh lebih utama.</li>
+                  <li><strong>Klik kanan bukan jalan pintas menghapus:</strong> Klik kanan berfungsi membuka daftar opsi tindakan (menu konteks).</li>
+                  <li><strong>Aksi seret-lepas (drag-drop) tidak selalu memindahkan berkas:</strong> Jika menyeret berkas ke drive yang berbeda (misalnya dari laptop ke flashdisk USB), sistem melakukan penyalinan (Copy), bukan pemindahan (Move).</li>
                 </ul>
               </div>
             </div>
           </div>
 
-                    <!-- Benang Merah: Biodata Komputerku - Bagian 2 -->
-          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-              <span style="font-size: 20px;">📋</span>
-              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 2: Mengetik di Notepad)</strong>
-            </div>
-            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
-              Buka aplikasi <strong>Notepad</strong> (klik Start ➔ ketik <em>Notepad</em> ➔ Enter). Ketik data yang kemarin kamu catat dengan posisi jari Home Row. Gunakan tombol Shift untuk huruf kapital:
-            </p>
-            <div style="background: white; border: 1px solid #dbeafe; border-radius: 8px; padding: 10px 14px; margin-top: 8px; font-size: 12.5px; color: #1e293b;">
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px;">
-                <div><strong>1. Nama Perangkat:</strong> <span id="review-biodata-nama">-</span></div>
-                <div><strong>2. Otak (Prosesor):</strong> <span id="review-biodata-cpu">-</span></div>
-                <div><strong>3. Meja Kerja (RAM):</strong> <span id="review-biodata-ram">-</span></div>
-                <div><strong>4. Sistem Operasi:</strong> <span id="review-biodata-os">-</span></div>
-              </div>
-            </div>
-            <div style="display: flex; gap: 8px; align-items: center; margin-top: 10px; flex-wrap: wrap;">
-              <button type="button" class="btn btn-outline btn-sm" onclick="unduhBiodataTxt()" style="display: inline-flex; align-items: center; gap: 5px;">
-                <span>📥</span> Unduh Berkas <code>biodata_komputer.txt</code>
-              </button>
-              <span class="biodata-status-label" style="font-size: 12px; font-weight: 600; color: #15803d;"></span>
-            </div>
-            <p style="font-size: 12.5px; color: #1e40af; margin-top: 6px;">
-              Tekan <kbd>Ctrl + S</kbd>, simpan sementara di <strong>Desktop</strong> dengan nama: <code>biodata_komputer.txt</code>.
-            </p>
-            <p style="font-size: 12px; color: #3b82f6; margin-top: 4px; font-style: italic;">
-              👉 Jembatan Sesi 3: "Berkasmu sudah jadi di Desktop. Di Sesi 3, kita akan membuatkan 'rumah folder' yang rapi agar tidak tercecer!"
-            </p>
-          </div>
-
-<!-- Ringkasan Inti Sesi 2 -->
-          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 2:</strong>
-            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
-              <li>Klik kiri memilih/membuka; klik kanan memunculkan menu konteks; seret-lepas efeknya bergantung konteks lokasi.</li>
-              <li>Home Row (ASDF JKL;) adalah baris pangkal acuan jari dengan tonjolan taktil di F dan J.</li>
-              <li>Posisi duduk ergonomis menjaga stamina tubuh dan kesehatan leher selama praktikum di lab komputer sekolah.</li>
-              <li>Latihan mengetik 10 jari mengutamakan ketepatan memori otot sebelum memacu kecepatan kata per menit (WPM).</li>
+          <!-- Ringkasan Inti Sesi 2 -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px 20px; margin: 18px 0;">
+            <strong style="color: #0f172a; font-size: 14px;">📌 Ringkasan Inti Sesi 2:</strong>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; margin-top: 6px; line-height: 1.6;">
+              <li>Klik kiri berfungsi memilih dan mengeksekusi objek; klik kanan memunculkan menu konteks perintah kerja; aksi seret-lepas bergantung pada lokasi tujuan drive.</li>
+              <li>Baris Pangkal (Home Row: ASDF JKL;) menjadi jangkar posisi sepuluh jari dengan panduan sensorik tonjolan taktil pada tombol F dan J.</li>
+              <li>Postur duduk ergonomis menjaga daya tahan tubuh dan kesehatan leher selama bekerja dengan komputer.</li>
+              <li>Latihan mengetik bertahap memprioritaskan ketepatan ketukan sebelum memacu kecepatan kata per menit (WPM).</li>
             </ul>
           </div>
 
           <!-- Tombol Penyelesaian Materi P2 -->
-          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 18px 22px; border-radius: 14px; border: 1px solid #cbd5e1;">
             <div>
-              <strong style="color: var(--primary-dark); font-size: 16px;">Tuntaskan Sesi 2 & Klaim Poin!</strong>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim poin XP membaca materi ini ke akun santrimu sekarang!</p>
+              <strong style="color: #0f172a; font-size: 15px;">Konfirmasi Penyelesaian Pembacaan Materi</strong>
+              <p style="font-size: 13px; color: #64748b; margin-top: 2px;">Tandai materi Sesi 2 sebagai selesai dan catatkan poin XP Anda ke sistem.</p>
             </div>
             <button id="btn-selesai-baca-p2" class="btn btn-primary" onclick="catatAktivitasBaca(2)">
               ✓ Klaim XP Sesi 2 (+25 XP)
             </button>
-            <span id="p2-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
+            <span id="p2-baca-badge" style="font-size: 13px; font-weight: 700; color: #16a34a; display: none;">✓ Materi Sesi 2 Tercatat Selesai</span>
           </div>
 
-          <!-- Mini Kuis Pertemuan 2 -->
-          <div style="margin-top: 24px; border-top: 2px solid #FFF5F3; padding-top: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <!-- Mini Kuis Sesi 2 -->
+          <div style="margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Sesi 2 (Penalaran Praktik)</h3>
-                <p style="font-size: 13px; color: var(--text-muted);">Uji kemampuan mouse, gestur touchpad, dan baris Home Row keyboard:</p>
+                <h3 style="font-family: var(--font-heading); font-size: 18px; color: #0f172a;">Latihan Pemahaman Praktik: Kuis Sesi 2</h3>
+                <p style="font-size: 13px; color: #64748b;">Selesaikan soal penalaran berikut mengenai operasi mouse, gestur touchpad, dan baris Home Row keyboard:</p>
               </div>
               <button id="btn-muat-kuis-p2" class="btn btn-secondary" onclick="muatKuisPertemuan(2)">
                 Mulai Kuis Sesi 2 ▶
@@ -1351,24 +1303,18 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
             
             <div id="kuis-container-p2" style="margin-top: 16px;"></div>
 
-            <!-- Bilah Navigasi Antar Sesi: Sesi 2 -->
+            <!-- Bilah Navigasi Antar Sesi -->
             <div class="session-nav-bar">
               <button class="btn btn-outline session-nav-btn" onclick="bukaPertemuan(1)" title="Kembali ke Sesi 1">
-                <span>⬅</span> Sesi 1: Pengenalan Perangkat Keras
+                <span>⬅</span> Bab 1: Pengenalan Komputer
               </button>
               <button class="btn btn-primary session-nav-btn" onclick="bukaPertemuan(3)" title="Lanjut ke Sesi 3">
-                Lanjut ke Sesi 3: Manajemen Berkas <span>➔</span>
+                Lanjut ke Bab 3: Manajemen Berkas <span>➔</span>
               </button>
             </div>
           </div>
         </section>
 
-        <!-- ==================================================================
-             VIEW 3: PERTEMUAN 3 — FOLDER, PATH & RAGAM FORMAT FILE (MICRO-MISSIONS)
-             ================================================================== -->
-        <!-- ==================================================================
-             VIEW 3: PERTEMUAN 3 — RUMAH BERKAS (MICRO-MISSIONS)
-             ================================================================== -->
         <section id="view-p3" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -1379,69 +1325,62 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
                 </button>
                 <span class="course-badge-overlay" style="position: static; background: #3b82f6;">Level 3</span>
               </div>
-              <h2 class="card-title">📁 Sesi 3: Manajemen Berkas dan Struktur Direktori Komputer</h2>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Tujuan: Memahami perbedaan file, folder, drive, dan path direktori; mengenali ekstensi berkas; aturan penamaan tertib santri; prosedur simpan (Save vs Save As); pencarian dan pengurutan berkas.
+              <h2 class="card-title">📁 Bab 3: Manajemen Berkas dan Struktur Direktori Komputer</h2>
+              <p style="font-size: 13.5px; color: #475569; margin-top: 4px; line-height: 1.6;">
+                <strong>Tujuan:</strong> Memahami perbedaan partisi drive, folder, dan berkas (file); membaca struktur direktori bertingkat (folder tree) dan jalur alamat (path); mengidentifikasi ekstensi dan format berkas umum; menerapkan kaidah penamaan berkas tertib; serta memahami prosedur penyimpanan (Save vs Save As), pencarian, dan pengurutan berkas.
               </p>
             </div>
-            <span class="time-badge">⏱ 45 Menit • 5 Misi Bertahap</span>
+            <span class="time-badge">⏱ 45 Menit • 5 Bagian Materi</span>
           </div>
 
-          <!-- Petunjuk & Hint Nyata Manajemen File Siswa -->
-          <div class="callout-box callout-adab">
-            <div style="font-size: 24px;">💡</div>
-            <div>
-              <strong>Petunjuk Siswa: Menghindari Tragedi "File Tugas Hilang Saat Mau Dikumpulkan"!</strong><br>
-              <em>Kondisi nyata siswa:</em> Sering kali siswa panik saat guru meminta mengumpulkan tugas karena file tersimpan acak di folder <em>Downloads</em> atau tertimpa file lain. Menata folder khusus per mata pelajaran (contoh: <code>Documents\TIK_Kelas7</code>) dan menamai file secara tertib menghemat waktu belajarmu, mencegah dokumen hilang, dan memudahkan guru saat menilai tugas.
-            </div>
+          <!-- Pengantar Buku -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 22px; font-size: 13.5px; color: #334155; line-height: 1.7;">
+            Menata berkas di komputer pada hakikatnya sama dengan menyusun buku-buku di rak perpustakaan. Berkas digital yang diletakkan secara sembarangan di folder unduhan (Downloads) atau layar Desktop akan menyulitkan pencarian dan memperbesar risiko berkas terhapus. Pengelolaan direktori yang tertib adalah tanda kecakapan kerja profesional.
           </div>
 
-          <!-- Misi 1: Tiga Kamar Penyimpanan Komputer yang Akurat -->
+          <!-- Bagian A: Media dan Partisi Penyimpanan Data -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🚪 Misi 1: Kenali Tiga Kamar Penyimpanan (Drive C, D, & Flashdisk USB)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Di dalam komputer atau laptop, ruang penyimpanan dibagi menjadi beberapa kamar dengan fungsi yang berbeda:
+            <h3 class="materi-sub-title">A. Media dan Partisi Penyimpanan Data (Misi 1)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Di dalam sistem komputer, ruang penyimpanan fisik dibagi menjadi partisi logis dengan huruf pengenal (*drive letter*):
             </p>
 
-            <div class="mission-flow-grid">
-              <div class="mission-step-card" style="border-top-color: #ef4444;">
-                <div class="mission-step-icon">⚙️</div>
-                <div class="mission-step-title">Drive C: (Sistem & Dokumen Pengguna)</div>
-                <div class="mission-step-desc">Rumah sistem Windows dan folder kerja pengguna (Documents). <em>Lokasi kerja yang sah; yang dilarang adalah mengutak-atik folder sistem C:\Windows.</em></div>
+            <div class="mission-flow-grid" style="margin: 14px 0;">
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #0284c7;">
+                <div style="font-weight: 700; color: #0369a1; font-size: 13.5px; margin-bottom: 4px;">1. Drive C: (Sistem &amp; Profil Pengguna)</div>
+                <div class="mission-step-desc">Tempat instalasi sistem operasi Windows, program aplikasi, serta folder dokumen profil pengguna (Documents, Pictures). Menyimpan di Documents pada Drive C: adalah lokasi yang sah dan aman; yang dilarang adalah mengutak-atik folder sistem <code>C:\Windows</code>.</div>
               </div>
-              <div class="mission-step-card" style="border-top-color: var(--primary);">
-                <div class="mission-step-icon">📚</div>
-                <div class="mission-step-title">Drive D: (Partisi Data Tambahan)</div>
-                <div class="mission-step-desc">Kamar khusus data santri jika tersedia. <em>Perhatian: Drive D: TIDAK selalu tersedia di semua laptop atau komputer lab!</em></div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #16a34a;">
+                <div style="font-weight: 700; color: #15803d; font-size: 13.5px; margin-bottom: 4px;">2. Drive D: (Partisi Data Tambahan)</div>
+                <div class="mission-step-desc">Partisi penyimpanan sekunder khusus data pengguna jika tersedia. <em>Catatan: Drive D: tidak selalu tersedia di semua laptop atau komputer laboratorium sekolah.</em></div>
               </div>
-              <div class="mission-step-card" style="border-top-color: var(--secondary);">
-                <div class="mission-step-icon">🎒</div>
-                <div class="mission-step-title">Flashdisk USB (Media Portabel)</div>
-                <div class="mission-step-desc">Media penyimpanan jinjing untuk membawa file antar-laptop lab. <em>Wajib gunakan fitur Safely Remove / Eject sebelum dicabut!</em></div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #eab308;">
+                <div style="font-weight: 700; color: #a16207; font-size: 13.5px; margin-bottom: 4px;">3. Flashdisk USB (Media Portabel)</div>
+                <div class="mission-step-desc">Penyimpanan eksternal jinjing untuk membawa berkas antar-komputer. Selalu terapkan prosedur pelepasan aman sebelum mencabut peranti dari porta USB.</div>
               </div>
             </div>
 
-            <div class="callout-box callout-istilah" style="margin-top: 14px;">
-              <div style="font-size: 24px;">⚠️</div>
-              <div>
-                <strong>Aturan Emas: Wajib "Safely Remove / Eject" Flashdisk!</strong><br>
-                Jangan langsung mencabut flashdisk begitu saja! Windows memakai fitur <em>Write Caching</em>. Jika dicabut mendadak saat lampu masih berkedip, data di dalam flashdisk bisa rusak (*corrupt*).<br>
-                <strong>Cara aman:</strong> Klik ikon panah (^) di pojok kanan taskbar ➔ Klik ikon USB ➔ Pilih <strong>"Eject Mass Storage"</strong> hingga muncul notifikasi aman dicabut.
-              </div>
+            <!-- Prosedur Safely Remove -->
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px 18px; margin-top: 14px;">
+              <strong style="color: #0f172a; font-size: 13.5px;">Prosedur Baku Pelepasan Aman (Safely Remove / Eject USB):</strong>
+              <p style="font-size: 12.5px; color: #475569; margin: 6px 0 0; line-height: 1.6;">
+                Sistem operasi Windows menggunakan memori tembolok penulisan (<em>Write Caching</em>). Jika peranti flashdisk dicabut secara mendadak saat lampu indikator masih berkedip, berkas data di dalamnya dapat mengalami kerusakan struktur (<em>corrupt</em>).<br>
+                <strong>Langkah aman:</strong> Klik ikon panah atas (^) di area notifikasi taskbar kanan bawah &gt; Klik ikon peranti USB &gt; Pilih <strong>"Eject Mass Storage Device"</strong> hingga muncul pemberitahuan aman untuk dicabut.
+              </p>
             </div>
           </div>
 
-          <!-- Misi 2: Pohon Direktori (Folder Tree Simulator) -->
+          <!-- Bagian B: Struktur Pohon Direktori dan Jalur Alamat (Path) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🌳 Misi 2: Pohon Direktori & Peta Alamat File (Path)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Folder komputer tersusun seperti cabang-cabang pohon rindang. Klik folder di bawah untuk membuka dan menutup isinya:
+            <h3 class="materi-sub-title">B. Struktur Pohon Direktori dan Jalur Alamat (Path) (Misi 2)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Folder diatur dalam struktur hierarki bertingkat menyerupai cabang pohon (<em>Folder Tree</em>). Sebuah folder induk dapat memuat banyak subfolder dan berkas dokumen di dalamnya.
             </p>
 
-            <div class="folder-tree" style="margin: 14px 0;">
+            <div class="folder-tree" style="margin: 14px 0; border: 1px solid #cbd5e1; background: white;">
               <div class="tree-node">
                 <div class="tree-header" onclick="toggleTreeNode('c-drive')">
-                  <span>💻</span> <strong>Drive C:\ (Sistem Windows & Profil Santri)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
+                  <span>💻</span> <strong>Drive C:\ (Sistem Windows &amp; Profil Pengguna)</strong> <small style="color:#64748b; font-size:12px;">(Klik untuk membuka/menutup)</small>
                 </div>
                 <div id="c-drive" style="display: block; padding-left: 20px;">
                   <div class="tree-node">
@@ -1465,182 +1404,191 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
 
               <div class="tree-node" style="margin-top: 8px;">
                 <div class="tree-header" onclick="toggleTreeNode('d-drive')">
-                  <span>📂</span> <strong>Drive D:\ (Data Tambahan — Jika Tersedia di Komputer)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
+                  <span>📂</span> <strong>Drive D:\ (Partisi Data Tambahan — Jika Tersedia)</strong> <small style="color:#64748b; font-size:12px;">(Klik untuk membuka/menutup)</small>
                 </div>
                 <div id="d-drive" style="display: none; padding-left: 20px;">
                   <div class="tree-header"><span>📁</span> Tugas_Sekolah/</div>
-                  <div class="tree-header"><span>📁</span> Tugas_Presentasi/</div>
+                  <div class="tree-header"><span>📁</span> Bahan_Presentasi/</div>
                 </div>
               </div>
 
               <div class="tree-node" style="margin-top: 8px;">
                 <div class="tree-header" onclick="toggleTreeNode('usb-drive')">
-                  <span>💾</span> <strong>Flashdisk USB (E:)</strong> <small style="color:var(--text-muted); font-size:12px;">(Klik untuk buka/tutup)</small>
+                  <span>💾</span> <strong>Flashdisk USB (E:)</strong> <small style="color:#64748b; font-size:12px;">(Klik untuk membuka/menutup)</small>
                 </div>
                 <div id="usb-drive" style="display: none; padding-left: 20px;">
-                  <div class="tree-header"><span>📄</span> Laporan_IPA.pdf</div>
+                  <div class="tree-header"><span>📄</span> Salinan_Tugas_IPA.pdf</div>
                 </div>
               </div>
             </div>
 
-            <!-- Kartu Analogi Path -->
-            <div class="callout-box callout-analogi" style="margin-top: 14px;">
-              <div style="font-size: 24px;">📬</div>
-              <div>
-                <strong>Apa itu "Path" (Jalur Alamat File)?</strong><br>
-                <code>C:\Users\Fatimah\Documents\Tugas_TIK\Modul_1.docx</code><br>
-                Analogi surat pos: <code>C:\</code> adalah Gedung Utama, <code>Users\Fatimah</code> adalah Kamar Santri, <code>Documents</code> adalah Meja Belajar, <code>Tugas_TIK</code> adalah Map Binder, dan <code>Modul_1.docx</code> adalah Surat Tugasnya!
-              </div>
+            <!-- Penjelasan Path -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; font-size: 13px; color: #334155;">
+              <strong style="color: #0f172a;">Memahami Jalur Alamat Berkas (Path):</strong><br>
+              <code>C:\Users\Santri\Documents\TIK\Laporan_Praktikum.docx</code><br>
+              <span style="font-size: 12px; color: #64748b; margin-top: 4px; display: inline-block;">
+                Path menunjukkan letak pasti berkas: Drive <code>C:\</code> &gt; Folder <code>Users</code> &gt; Subfolder <code>Santri</code> &gt; Subfolder <code>Documents</code> &gt; Folder <code>TIK</code> &gt; Nama Berkas <code>Laporan_Praktikum.docx</code>.
+              </span>
             </div>
           </div>
 
-          <!-- Misi 3: Mengenal Ekstensi Berkas Populer -->
+          <!-- Bagian C: Ekstensi dan Format Berkas Digital -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🏷️ Misi 3: Mengenal Ekstensi Berkas & Peringatan Format</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Ekstensi adalah 3-4 huruf di ujung nama file setelah tanda titik yang membantu mengenali format berkas:
+            <h3 class="materi-sub-title">C. Ekstensi dan Format Berkas Digital (Misi 3)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              <strong>Ekstensi berkas</strong> adalah rangkaian 3 hingga 4 karakter huruf di ujung nama berkas setelah tanda titik (contoh: <code>.docx</code>). Ekstensi memberitahukan sistem operasi program aplikasi apa yang tepat untuk membuka isi berkas tersebut:
             </p>
 
-            <div class="rules-grid" style="margin: 14px 0;">
-              <div class="rule-card">
+            <div class="rules-grid" style="margin: 12px 0;">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">📝</span>
-                <h4>.docx (Dokumen Word)</h4>
-                <p>Naskah ketikan makalah, surat tugas, dan esai dengan warna, tabel & gambar.</p>
+                <h4>.docx (Dokumen Microsoft Word)</h4>
+                <p>Naskah olah kata untuk makalah, surat resmi, laporan dengan tata letak paragraf dan tabel.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">📊</span>
-                <h4>.xlsx (Tabel Excel)</h4>
-                <p>Lembar olah angka, rumus matematika, rekap nilai santri & grafik data otomatis.</p>
+                <h4>.xlsx (Buku Kerja Excel)</h4>
+                <p>Lembar sebar olah angka, rumus perhitungan matematis, rekapitulasi nilai, dan grafik data.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">📑</span>
-                <h4>.pdf (Portable Document)</h4>
-                <p>Buku digital dan materi resmi siap cetak; tata letak huruf terkunci rapi di gawai apa pun.</p>
+                <h4>.pdf (Portable Document Format)</h4>
+                <p>Dokumen portabel baku siap cetak; susunan huruf, gambar, dan tata letak terkunci rapi di semua perangkat.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">🖼️</span>
-                <h4>.jpg & .png (Gambar Grafis)</h4>
-                <p>Foto digital kamera (.jpg) atau stiker dan logo tajam tanpa latar belakang (.png).</p>
+                <h4>.jpg &amp; .png (Format Grafis Gambar)</h4>
+                <p>Format <code>.jpg</code> untuk foto kompresi; format <code>.png</code> untuk diagram tajam dan latar transparan.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">🎵</span>
-                <h4>.mp3 & .mp4 (Audio Video)</h4>
-                <p>Rekaman suara wawancara tugas (.mp3) dan video presentasi proyek kelompok (.mp4).</p>
+                <h4>.mp3 &amp; .mp4 (Audio dan Video)</h4>
+                <p>Format <code>.mp3</code> untuk rekaman suara; format <code>.mp4</code> untuk video rekaman dan animasi tugas.</p>
               </div>
-              <div class="rule-card">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
                 <span class="rule-icon">📦</span>
-                <h4>.zip (Koper Kompresi)</h4>
-                <p>Membungkus puluhan berkas menjadi satu paket hemat ukuran agar mudah dikirim.</p>
+                <h4>.zip (Arsip Kompresi)</h4>
+                <p>Mengemas beberapa berkas menjadi satu paket terkompresi berukuran lebih hemat untuk mempermudah pengiriman.</p>
               </div>
             </div>
 
-            <!-- Callout PENTING Ekstensi -->
-            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a; margin-top: 14px;">
-              <div style="font-size: 24px;">🛡️</div>
+            <!-- Peringatan Kritis Ekstensi -->
+            <div class="callout-box" style="background: #fffbeb; border: 1px solid #fde68a; margin-top: 14px;">
+              <div style="font-size: 20px;">🛡️</div>
               <div>
-                <strong style="color: #92400e;">Dua Peringatan Kritis tentang Ekstensi Berkas:</strong>
-                <ol style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
-                  <li><strong>Ekstensi BUKAN jaminan keamanan:</strong> Nama berkas bisa disamarkan oleh orang yang tidak bertanggung jawab; jangan membuka berkas tak dikenal hanya karena namanya meyakinkan.</li>
-                  <li><strong>Mengganti ekstensi BUKAN mengonversi format:</strong> Mengubah nama dari <code>laporan.docx</code> menjadi <code>laporan.pdf</code> tidak membuat file menjadi PDF asli, melainkan hanya merusak asosiasi aplikasi sehingga berkas gagal dibuka! Konversi resmi harus lewat <em>Save As</em> atau <em>Ekspor</em>.</li>
+                <strong style="color: #92400e; font-size: 13.5px;">Dua Kaidah Penting Mengenai Ekstensi Berkas:</strong>
+                <ol style="font-size: 12.5px; color: #78350f; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                  <li><strong>Mengubah ekstensi bukan mengonversi format berkas:</strong> Mengganti nama berkas secara manual dari <code>laporan.docx</code> menjadi <code>laporan.pdf</code> tidak mengubah susunan kode biner di dalamnya, melainkan justru menyebabkan berkas gagal dibuka! Konversi berkas resmi harus dilakukan melalui menu <em>File &gt; Save As</em> atau fitur <em>Export</em>.</li>
+                  <li><strong>Ekstensi bukan jaminan keamanan mutlak:</strong> Jangan pernah membuka berkas mencurigakan dari sumber asing meskipun ekstensinya tampak lazim.</li>
                 </ol>
               </div>
             </div>
 
-            <div class="callout-box callout-adab" style="margin-top: 12px;">
-              <div style="font-size: 24px;">👀</div>
-              <div>
-                <strong>Cara Menampilkan Ekstensi File yang Tersembunyi di Windows:</strong><br>
-                Buka File Explorer (<kbd>Win + E</kbd>) ➔ Klik menu <strong>View</strong> di toolbar atas ➔ Arahkan ke <strong>Show</strong> ➔ Beri tanda centang pada <strong>"File name extensions"</strong>. Sekarang semua jenis file terlihat jelas!
-              </div>
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: #334155; margin-top: 10px;">
+              <strong>Cara Menampilkan Ekstensi Berkas di File Explorer:</strong><br>
+              Buka File Explorer (<kbd>Win + E</kbd>) &gt; Klik menu <strong>View</strong> pada bilah menu atas &gt; Arahkan ke menu <strong>Show</strong> &gt; Beri tanda centang pada opsi <strong>"File name extensions"</strong>.
             </div>
           </div>
 
-          <!-- Misi 4: Aturan Emas Penamaan & 9 Karakter Terlarang -->
+          <!-- Bagian D: Kaidah Penamaan Berkas Tertib dan Karakter Terlarang -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">✨ Misi 4: Kaidah Penamaan File & Karakter Terlarang</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Jangan menamai file dengan sembarangan seperti <code>fixbanget.docx</code> atau <code>tugas111.docx</code>. Gunakan formula penamaan tertib standar sekolah:
+            <h3 class="materi-sub-title">D. Kaidah Penamaan Berkas Tertib dan Karakter Terlarang (Misi 4)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Hindari menamai dokumen tugas secara asal-asalan seperti <code>tugas_fix.docx</code> atau <code>data_baru_banget.docx</code>. Terapkan format baku penamaan berkas sekolah:
             </p>
 
-            <div style="background: #FFF5F3; border: 2px dashed var(--primary); padding: 14px 18px; border-radius: var(--radius-sm); margin: 12px 0; text-align: center;">
-              <div style="font-size: 13px; font-weight: 700; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.5px;">Rumus Penamaan Berkas Tertib:</div>
-              <code style="display: inline-block; font-size: 15px; font-weight: 800; color: var(--primary); margin-top: 6px; background: white; padding: 6px 14px; border-radius: 8px;">[NamaTugas]_[NamaSantri]_[Kelas]_[TanggalYYYY-MM-DD].docx</code>
-              <div style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">Contoh: <code>Tugas1_TIK_AisyahHumaira_Kelas7_2026-10-28.docx</code></div>
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 14px 18px; border-radius: 8px; margin: 10px 0; text-align: center;">
+              <div style="font-size: 12px; font-weight: 700; color: #475569; text-transform: uppercase;">Formula Standar Penamaan Berkas:</div>
+              <code style="display: inline-block; font-size: 14px; font-weight: 700; color: #0f172a; margin-top: 6px; background: white; padding: 6px 14px; border-radius: 6px; border: 1px solid #cbd5e1;">[NamaTugas]_[NamaSiswa]_[Kelas]_[TanggalYYYY-MM-DD].[ekstensi]</code>
+              <div style="font-size: 12px; color: #64748b; margin-top: 6px;">Contoh: <code>Tugas1_TIK_AisyahHumaira_Kelas7_2026-10-28.docx</code></div>
             </div>
 
-            <div class="callout-box callout-istilah" style="margin-top: 14px;">
-              <div style="font-size: 24px;">🚫</div>
-              <div>
-                <strong style="color: #b91c1c;">9 Karakter Terlarang di Windows:</strong><br>
-                Sistem Windows melarang 9 simbol ini dipakai di dalam nama file maupun folder:<br>
-                <div style="font-family: monospace; font-size: 20px; font-weight: 800; margin: 8px 0; color: #b91c1c; letter-spacing: 4px;">
-                  \  /  :  *  ?  "  &lt;  &gt;  |
-                </div>
-                <em>Sebabnya:</em> Simbol-simbol tersebut sudah dipesan oleh komputer untuk tanda drive (:), jalur direktori (/ \), dan pencarian rahasia (* ?).
+            <!-- Karakter Terlarang -->
+            <div style="background: white; border: 1px solid #fca5a5; border-radius: 8px; padding: 12px 16px; margin-top: 12px;">
+              <strong style="color: #991b1b; font-size: 13px;">Sembilan Karakter Terlarang pada Sistem Operasi Windows:</strong>
+              <p style="font-size: 12.5px; color: #7f1d1d; margin: 4px 0 6px;">Sistem operasi Windows melarang sembilan simbol berikut dipakai dalam penamaan berkas maupun folder:</p>
+              <div style="font-family: monospace; font-size: 18px; font-weight: 700; color: #b91c1c; letter-spacing: 6px; text-align: center; background: #fff1f2; padding: 6px; border-radius: 6px;">
+                \ / : * ? " &lt; &gt; |
               </div>
+              <p style="font-size: 11.5px; color: #64748b; margin: 6px 0 0;">
+                <em>Alasan Teknis:</em> Simbol-simbol tersebut telah dipesan oleh sistem Windows untuk menandai partisi drive (:), pemisah jalur folder (/ \), dan operator pencarian (* ?).
+              </p>
             </div>
           </div>
 
-          <!-- Misi 5: Prosedur Simpan, Cari, dan Mengurutkan -->
+          <!-- Bagian E: Prosedur Penyimpanan, Pencarian, dan Pengurutan Berkas -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🔍 Misi 5: Prosedur Simpan (Save vs Save As), Pencarian & Pengurutan Berkas</h3>
-            <ul style="font-size: 13px; color: #475569; padding-left: 20px; line-height: 1.6; margin: 8px 0;">
-              <li><strong>Save As (Simpan Sebagai):</strong> Digunakan pertama kali saat membuat file untuk menentukan nama dan lokasi folder yang dituju.</li>
-              <li><strong>Save (Simpan / <kbd>Ctrl+S</kbd>):</strong> Memperbarui perubahan pada berkas yang sudah memiliki lokasi.</li>
-              <li><strong>Pencarian Pintar:</strong> Jika berkas lupa disimpan di mana, gunakan kotak cari di pojok kanan atas File Explorer dengan mengetikkan bagian kata atau ekstensinya (contoh: <code>.docx</code>).</li>
-              <li><strong>Koreksi Miskonsepsi Pengurutan (Sorting):</strong> Mengurutkan berkas berdasarkan tanggal atau nama hanya mengubah susunan tampilan di layar; <em>lokasi fisik berkas sama sekali tidak berpindah!</em></li>
+            <h3 class="materi-sub-title">E. Prosedur Penyimpanan, Pencarian, dan Pengurutan Berkas (Misi 5)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Pahami prosedur baku berikut dalam mengelola dokumen kerja di sistem operasi:
+            </p>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; line-height: 1.6; margin: 6px 0;">
+              <li><strong>Save As (Simpan Sebagai):</strong> Digunakan pertama kali saat membuat dokumen baru untuk menentukan lokasi folder dan nama berkas, atau untuk menyimpan salinan naskah dengan nama/format berbeda.</li>
+              <li><strong>Save (Simpan / <kbd>Ctrl+S</kbd>):</strong> Memperbarui perubahan terbaru pada dokumen yang sudah memiliki lokasi dan nama berkas tersimpan.</li>
+              <li><strong>Pencarian Berkas:</strong> Jika lupa meletakkan suatu dokumen, gunakan bilah pencarian di sudut kanan atas File Explorer dengan mengetikkan nama sebagian kata atau format ekstensinya (misal: <code>.docx</code>).</li>
+              <li><strong>Pengurutan Berkas (Sorting):</strong> Mengurutkan berkas berdasarkan Nama (<em>Name</em>), Tanggal Modifikasi (<em>Date modified</em>), atau Ukuran (<em>Size</em>) hanya mengubah susunan tampilan di layar. <em>Lokasi fisik berkas sama sekali tidak berpindah.</em></li>
             </ul>
           </div>
 
-                    <!-- Benang Merah: Biodata Komputerku - Bagian 3 -->
-          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-              <span style="font-size: 20px;">📋</span>
-              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 3: Memberi Rumah Berkas)</strong>
-            </div>
-            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
-              Ayo pindahkan berkasmu ke rumah yang benar!
+          <!-- Bagian F: Lembar Kerja Praktik: Penataan Berkas Biodata Komputer -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">F. Lembar Kerja Praktik: Penataan Berkas Biodata Komputer</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Tata berkas <code>biodata_komputer.txt</code> yang telah Anda buat ke dalam struktur direktori yang teratur:
             </p>
-            <ol style="font-size: 12.5px; color: #1e293b; padding-left: 18px; margin: 6px 0; line-height: 1.6;">
-              <li>Buat folder baru bernama <code>TIK</code>, lalu di dalamnya buat subfolder <code>Modul_1</code> (<kbd>Ctrl+Shift+N</kbd>).</li>
-              <li>Buka berkas <code>biodata_komputer.txt</code> dari Desktop, pilih menu <strong>File ➔ Save As</strong>.</li>
-              <li>Arahkan ke folder <code>TIK\Modul_1</code>, simpan dengan nama rapi: <code>Biodata_Komputer_[Nama]_[Kelas].txt</code>.</li>
-              <li>Buka <strong>This PC</strong> di File Explorer, cek kapasitas Drive C:, lalu tambahkan baris baru di berkasmu: <em>Lemari Simpan (C:) : [Kapasitas GB]</em>.</li>
+            <ol style="font-size: 13px; color: #334155; padding-left: 20px; line-height: 1.6; margin: 6px 0 10px;">
+              <li>Buka File Explorer (<kbd>Win + E</kbd>), masuk ke folder <strong>Documents</strong>.</li>
+              <li>Buat folder baru bernama <code>TIK</code>, lalu di dalamnya buat subfolder bernama <code>Modul_1</code> (gunakan pintasan <kbd>Ctrl+Shift+N</kbd>).</li>
+              <li>Buka berkas <code>biodata_komputer.txt</code> dari Desktop, pilih menu <strong>File &gt; Save As</strong>, lalu arahkan penyimpanannya ke dalam folder <code>Documents\TIK\Modul_1</code>.</li>
+              <li>Buka menu <strong>This PC</strong> di File Explorer, periksa sisa kapasitas Drive C: komputer Anda, lalu lengkapi baris kapasitas penyimpanan pada berkas teks tersebut.</li>
             </ol>
-            <p style="font-size: 12px; color: #3b82f6; margin-top: 4px; font-style: italic;">
-              👉 Jembatan Sesi 4: "Berkasmu sudah punya alamat path yang rapi. Di Sesi 4, kita akan belajar menyalin dan merawatnya!"
-            </p>
           </div>
 
-<!-- Ringkasan Inti Sesi 3 -->
-          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 3:</strong>
-            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
-              <li>Drive C: memuat sistem dan folder Documents; Drive D: tidak selalu ada di semua komputer; flashdisk USB wajib di-eject dengan aman.</li>
-              <li>Ekstensi menandai jenis berkas, bukan jaminan keamanan; mengganti ekstensi bukan mengonversi format file.</li>
-              <li>Hindari 9 karakter terlarang Windows saat menamai file.</li>
-              <li>Struktur folder yang rapi memudahkan pencarian dan mencegah kepanikan saat mengumpulkan tugas.</li>
+          <!-- Bagian G: Koreksi Miskonsepsi Manajemen Berkas -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">G. Koreksi Miskonsepsi Manajemen Berkas</h3>
+            <div class="callout-box" style="background: #fffbeb; border: 1px solid #fde68a;">
+              <div style="font-size: 20px;">⚠️</div>
+              <div>
+                <strong style="color: #92400e; font-size: 13.5px;">Tiga Miskonsepsi Manajemen Berkas yang Wajib Dihindari:</strong>
+                <ul style="font-size: 12.5px; color: #78350f; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                  <li><strong>Drive D tidak selalu ada di semua komputer:</strong> Menyimpan berkas di folder Documents pada Drive C: adalah praktik baku yang sah; yang dilarang adalah mengubah folder sistem Windows.</li>
+                  <li><strong>Mengganti ekstensi nama berkas bukan mengonversi format:</strong> Mengubah tulisan <code>.docx</code> menjadi <code>.pdf</code> merusak asosiasi program sehingga dokumen gagal dibaca.</li>
+                  <li><strong>Pengurutan berkas (Sort) tidak memindahkan lokasi berkas:</strong> Mengurutkan daftar berkas hanya menyusun ulang tata tampilan visual pada jendela antarmuka pengguna.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ringkasan Inti Sesi 3 -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px 20px; margin: 18px 0;">
+            <strong style="color: #0f172a; font-size: 14px;">📌 Ringkasan Inti Sesi 3:</strong>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; margin-top: 6px; line-height: 1.6;">
+              <li>Drive C: memuat berkas sistem Windows dan folder Documents pengguna; Drive D: merupakan partisi tambahan yang opsional; flashdisk USB wajib dilepas melalui prosedur Eject aman.</li>
+              <li>Struktur direktori bertingkat memudahkan pengelompokan berkas dan menghasilkan jalur alamat (path) yang jelas.</li>
+              <li>Ekstensi berkas menentukan peranti lunak pembuka format; konversi berkas resmi harus melalui ekspor atau Save As.</li>
+              <li>Penerapan formula nama berkas terstandar dan penghindaran 9 karakter terlarang menjaga kerapian arsip tugas digital.</li>
             </ul>
           </div>
 
           <!-- Tombol Penyelesaian Materi P3 -->
-          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 18px 22px; border-radius: 14px; border: 1px solid #cbd5e1;">
             <div>
-              <strong style="color: var(--primary-dark); font-size: 16px;">Tuntaskan Sesi 3 & Klaim Poin!</strong>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim poin XP membaca materi ini ke akun santrimu sekarang!</p>
+              <strong style="color: #0f172a; font-size: 15px;">Konfirmasi Penyelesaian Pembacaan Materi</strong>
+              <p style="font-size: 13px; color: #64748b; margin-top: 2px;">Tandai materi Sesi 3 sebagai selesai dan catatkan poin XP Anda ke sistem.</p>
             </div>
             <button id="btn-selesai-baca-p3" class="btn btn-primary" onclick="catatAktivitasBaca(3)">
               ✓ Klaim XP Sesi 3 (+25 XP)
             </button>
-            <span id="p3-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
+            <span id="p3-baca-badge" style="font-size: 13px; font-weight: 700; color: #16a34a; display: none;">✓ Materi Sesi 3 Tercatat Selesai</span>
           </div>
 
-          <!-- Mini Kuis Pertemuan 3 -->
-          <div style="margin-top: 24px; border-top: 2px solid #FFF5F3; padding-top: 20px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <!-- Mini Kuis Sesi 3 -->
+          <div style="margin-top: 24px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 20px; color: var(--dark);">🎯 Mini Kuis Sesi 3 (Penalaran Manajemen Berkas)</h3>
-                <p style="font-size: 13px; color: var(--text-muted);">Uji pemahaman tentang partisi drive, format ekstensi, dan aturan path:</p>
+                <h3 style="font-family: var(--font-heading); font-size: 18px; color: #0f172a;">Latihan Pemahaman Konsep: Kuis Sesi 3</h3>
+                <p style="font-size: 13px; color: #64748b;">Selesaikan soal penalaran berikut mengenai partisi drive, format ekstensi, dan struktur direktori:</p>
               </div>
               <button id="btn-muat-kuis-p3" class="btn btn-secondary" onclick="muatKuisPertemuan(3)">
                 Mulai Kuis Sesi 3 ▶
@@ -1649,27 +1597,18 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
             
             <div id="kuis-container-p3" style="margin-top: 16px;"></div>
 
-            <!-- Bilah Navigasi Antar Sesi: Sesi 3 -->
+            <!-- Bilah Navigasi Antar Sesi -->
             <div class="session-nav-bar">
               <button class="btn btn-outline session-nav-btn" onclick="bukaPertemuan(2)" title="Kembali ke Sesi 2">
-                <span>⬅</span> Sesi 2: Jari Sakti & Mouse
+                <span>⬅</span> Bab 2: Keterampilan Antarmuka
               </button>
               <button class="btn btn-primary session-nav-btn" onclick="bukaPertemuan(4)" title="Lanjut ke Sesi 4">
-                Lanjut ke Sesi 4: Operasi Berkas & Proyek Akhir <span>➔</span>
+                Lanjut ke Bab 4: Operasi Berkas &amp; Proyek <span>➔</span>
               </button>
             </div>
           </div>
         </section>
 
-        <!-- ==================================================================
-             VIEW 4: PERTEMUAN 4 — OPERASI BERKAS & BOSS LEVEL (MICRO-MISSIONS)
-             ================================================================== -->
-        <!-- ==================================================================
-             VIEW 4: PERTEMUAN 4 — OPERASI BERKAS & PROYEK AKHIR "TUGAS TIK RAPI"
-             ================================================================== -->
-        <!-- ==================================================================
-             VIEW 4: PERTEMUAN 4 — OPERASI BERKAS & PROYEK AKHIR "TUGAS TIK RAPI"
-             ================================================================== -->
         <section id="view-p4" class="card" style="display: none;">
           <div class="card-header">
             <div>
@@ -1680,152 +1619,154 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
                 </button>
                 <span class="course-badge-overlay" style="position: static; background: #8b5cf6;">Level 4</span>
               </div>
-              <h2 class="card-title">⚡ Sesi 4: Operasi Berkas & Proyek Akhir "Tugas TIK Rapi"</h2>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
-                Tujuan: Menguasai operasi Copy, Cut, Paste, Rename, Delete, dan pemulihan Recycle Bin; memahami batas Ctrl+Z dan konflik file; menuntaskan Proyek Akhir terpadu berbasis data dummy; dan evaluasi akhir modul.
+              <h2 class="card-title">⚡ Bab 4: Operasi Pengelolaan Berkas dan Proyek Mandiri</h2>
+              <p style="font-size: 13.5px; color: #475569; margin-top: 4px; line-height: 1.6;">
+                <strong>Tujuan:</strong> Menguasai operasi penggandaan (Copy), pemindahan (Cut), penempelan (Paste), penggantian nama (Rename), penghapusan berkas (Delete), serta pemulihan dari Recycle Bin; memahami batasan perintah pembatalan (Undo / Ctrl+Z) dan resolusi konflik duplikasi berkas; menuntaskan Proyek Mandiri "Tugas TIK Rapi"; serta menyelesaikan Evaluasi Akhir Modul 1.
               </p>
             </div>
-            <span class="time-badge">⏱ 50 Menit • Boss Level & Proyek</span>
+            <span class="time-badge">⏱ 50 Menit • Proyek &amp; Evaluasi Akhir</span>
           </div>
 
-          <!-- Petunjuk & Hint Nyata Etika Digital & Anti-Plagiarisme -->
-          <div class="callout-box callout-adab">
-            <div style="font-size: 24px;">💡</div>
-            <div>
-              <strong>Petunjuk Siswa: Etika Digital &amp; Bahaya Asal Copy-Paste Tugas!</strong><br>
-              <em>Kondisi nyata siswa:</em> Tombol Copy-Paste (<kbd>Ctrl+C</kbd> dan <kbd>Ctrl+V</kbd>) memang praktis. Namun ingat: jangan pernah menyalin file tugas teman sekelas atau artikel internet bulat-bulat lalu mengakuinya sebagai karyamu sendiri. Guru dapat dengan mudah mengenali plagiarisme! Gunakan Copy-Paste secara bijak untuk menyusun bahan referensi, lalu rangkumlah dengan pemahaman bahasamu sendiri.
-            </div>
+          <!-- Pengantar Buku -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 22px; font-size: 13.5px; color: #334155; line-height: 1.7;">
+            Kecakapan mengelola berkas secara rapi merupakan fondasi utama literasi digital. Bab penutup ini menggabungkan seluruh keterampilan yang telah Anda pelajari: operasi manipulasi berkas di memori sementara (Clipboard), penguasaan pintasan keyboard, strategi pencadangan data, serta penyelesaian proyek penataan dokumen mandiri.
           </div>
 
-          <!-- Misi 1: Tiga Jurus Utama (Copy vs Cut vs Paste) -->
+          <!-- Bagian A: Operasi Dasar Pengelolaan Berkas di Memori Sementara (Clipboard) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">✂️ Misi 1: Duel Tiga Jurus: Copy vs Cut vs Paste di Clipboard</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">Pahami cara kerja pemindahan berkas di memori sementara (Clipboard):</p>
+            <h3 class="materi-sub-title">A. Operasi Dasar Pengelolaan Berkas di Memori Sementara (Clipboard) (Misi 1)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Ketika Anda menyalin atau memotong berkas, sistem operasi menampung data tersebut ke dalam memori kerja sementara yang disebut <strong>Clipboard</strong>. Terdapat perbedaan mendasar antara operasi salin dan potong:
+            </p>
 
-            <div class="mission-flow-grid">
-              <div class="mission-step-card" style="border-top-color: var(--primary);">
-                <div class="mission-step-icon">📋</div>
-                <div class="mission-step-title">Copy (<kbd>Ctrl+C</kbd>) — Gandakan</div>
-                <div class="mission-step-desc">Menduplikasi file. File di tempat asli <strong>tetap ada</strong>, dan salinan baru tercipta di tempat tujuan.</div>
+            <div class="mission-flow-grid" style="margin: 14px 0;">
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #0284c7;">
+                <div style="font-weight: 700; color: #0369a1; font-size: 13.5px; margin-bottom: 4px;">1. Salin (Copy / <kbd>Ctrl+C</kbd>)</div>
+                <div class="mission-step-desc">Menduplikasi berkas terpilih. Berkas di lokasi sumber <strong>tetap ada</strong>, dan salinan persisnya akan ditaruh di folder tujuan.</div>
               </div>
-              <div class="mission-step-card" style="border-top-color: #ef4444;">
-                <div class="mission-step-icon">✂️</div>
-                <div class="mission-step-title">Cut (<kbd>Ctrl+X</kbd>) — Pindahkan</div>
-                <div class="mission-step-desc">Menyiapkan pemindahan. File di tempat asli akan <strong>dipindahkan seutuhnya</strong> ke tempat tujuan.</div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #dc2626;">
+                <div style="font-weight: 700; color: #b91c1c; font-size: 13.5px; margin-bottom: 4px;">2. Potong (Cut / <kbd>Ctrl+X</kbd>)</div>
+                <div class="mission-step-desc">Menyiapkan pemindahan berkas. Berkas asli di lokasi sumber akan <strong>dipindahkan seutuhnya</strong> ke folder tujuan saat ditempel.</div>
               </div>
-              <div class="mission-step-card" style="border-top-color: var(--secondary);">
-                <div class="mission-step-icon">📥</div>
-                <div class="mission-step-title">Paste (<kbd>Ctrl+V</kbd>) — Tempelkan</div>
-                <div class="mission-step-desc">Mengambil berkas dari nampan memori sementara (<em>Clipboard</em>) dan menaruhnya di folder aktif.</div>
+              <div class="mission-step-card" style="border: 1px solid #cbd5e1; border-top: 3px solid #16a34a;">
+                <div style="font-weight: 700; color: #15803d; font-size: 13.5px; margin-bottom: 4px;">3. Tempel (Paste / <kbd>Ctrl+V</kbd>)</div>
+                <div class="mission-step-desc">Mengambil berkas yang ada di memori Clipboard dan menuliskannya ke dalam folder aktif yang sedang dibuka.</div>
               </div>
             </div>
 
-            <!-- Kartu Rename & Recycle Bin -->
-            <div class="duel-grid" style="margin-top: 16px;">
-              <div class="duel-card duel-ram">
-                <div class="duel-header">
-                  <span class="duel-emoji">✏️</span>
-                  <div>
-                    <h4>Rename: Tombol <kbd>F2</kbd></h4>
-                    <span class="duel-tag">Ubah Nama Instan</span>
-                  </div>
-                </div>
-                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Pilih berkas, tekan tombol <kbd>F2</kbd>, ketik nama baru lalu tekan <kbd>Enter</kbd>. <strong>Ingat:</strong> jangan hapus tanda titik dan ekstensinya agar format berkas tidak rusak!
+            <!-- Komparasi Rename & Delete -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 14px;">
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">Mengganti Nama Berkas (Rename / <kbd>F2</kbd>)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.6;">
+                  Pilih berkas yang dituju, tekan tombol <kbd>F2</kbd>, ketik nama baru, lalu tekan <kbd>Enter</kbd>. <strong>Penting:</strong> Jangan mengubah atau menghapus tanda titik dan ekstensi di belakang nama berkas agar program pembukanya tidak rusak.
                 </p>
               </div>
-              <div class="duel-card duel-ssd">
-                <div class="duel-header">
-                  <span class="duel-emoji">♻️</span>
-                  <div>
-                    <h4>Recycle Bin: Tombol <kbd>Del</kbd></h4>
-                    <span class="duel-tag">Penyelamat Berkas</span>
-                  </div>
-                </div>
-                <p style="font-size: 13px; color: #475569; line-height: 1.5;">
-                  Menekan tombol <kbd>Delete</kbd> pada drive laptop akan memindahkan file ke tong sampah sementara. Buka Recycle Bin, klik kanan file, lalu klik <strong>Restore</strong> untuk menyelamatkannya!
+              <div style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px;">
+                <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 6px;">Menghapus &amp; Memulihkan (Delete &amp; Recycle Bin)</strong>
+                <p style="font-size: 12.5px; color: #475569; margin: 0; line-height: 1.6;">
+                  Menekan tombol <kbd>Delete</kbd> pada drive komputer lokal akan memindahkan berkas ke tong penampungan sementara (<em>Recycle Bin</em>). Berkas yang tidak sengaja terhapus dapat diselamatkan dengan membuka Recycle Bin, klik kanan berkas, lalu pilih <strong>Restore</strong>.
                 </p>
               </div>
             </div>
 
             <!-- Peringatan Kritis Recycle Bin Flashdisk -->
-            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a; margin-top: 14px;">
-              <div style="font-size: 24px;">⚠️</div>
+            <div class="callout-box" style="background: #fffbeb; border: 1px solid #fde68a; margin-top: 14px;">
+              <div style="font-size: 20px;">⚠️</div>
               <div>
-                <strong style="color: #92400e;">Peringatan Kritis Penghapusan Berkas:</strong>
-                <p style="font-size: 12px; color: #78350f; margin-top: 4px; line-height: 1.5;">
-                  Recycle Bin <strong>TIDAK menjamin semua berkas bisa dipulihkan!</strong> Berkas yang dihapus dari media flashdisk USB atau dihapus dengan pintasan <kbd>Shift + Delete</kbd> akan dihapus permanen seketika tanpa masuk tong sampah Recycle Bin.
+                <strong style="color: #92400e; font-size: 13.5px;">Peringatan Penting Mengenai Penghapusan Berkas:</strong>
+                <p style="font-size: 12.5px; color: #78350f; margin-top: 4px; line-height: 1.6;">
+                  Recycle Bin <strong>tidak menampung seluruh berkas yang dihapus!</strong> Berkas yang dihapus dari media penyimpanan lepas-pasang (seperti flashdisk USB) atau berkas yang dihapus menggunakan kombinasi tombol <kbd>Shift + Delete</kbd> akan langsung dihapus secara permanen dari komputer tanpa masuk ke Recycle Bin.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Misi 2: Kumpulan Shortcut Sakti & Batas Ctrl+Z -->
+          <!-- Bagian B: Pintasan Keyboard dan Batasan Perintah Batal (Undo / Ctrl+Z) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">⚡ Misi 2: Pintasan Keyboard Sakti & Batasan Batal (<kbd>Ctrl+Z</kbd>)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Kombinasi sakti keyboard mempercepat pengelolaan file di File Explorer:
+            <h3 class="materi-sub-title">B. Pintasan Keyboard dan Batasan Perintah Batal (Undo / Ctrl+Z) (Misi 2)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Daftar kombinasi tombol keyboard esensial untuk memanipulasi berkas di File Explorer secara cepat:
             </p>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 12px 0;">
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
                 <kbd>Ctrl+C</kbd> <span>Salin (Copy)</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
                 <kbd>Ctrl+X</kbd> <span>Potong (Cut)</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
                 <kbd>Ctrl+V</kbd> <span>Tempel (Paste)</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
                 <kbd>Ctrl+Z</kbd> <span>Batal (Undo)</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
                 <kbd>Ctrl+A</kbd> <span>Pilih Semua Berkas</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
-                <kbd>F2</kbd> <span>Ubah Nama (Rename)</span>
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+                <kbd>F2</kbd> <span>Ganti Nama (Rename)</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
-                <kbd>Ctrl+Shift+N</kbd> <span>Folder Baru Instan</span>
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+                <kbd>Ctrl+Shift+N</kbd> <span>Buat Folder Baru</span>
               </div>
-              <div style="background: white; border: 1.5px solid #F2DCD6; padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; display: flex; align-items: center; gap: 8px;">
-                <kbd>Delete</kbd> <span>Hapus ke Sampah</span>
+              <div style="background: white; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px;">
+                <kbd>Delete</kbd> <span>Hapus ke Recycle Bin</span>
               </div>
             </div>
 
-            <div class="callout-box callout-istilah" style="margin-top: 12px;">
-              <div style="font-size: 24px;">🛡️</div>
-              <div>
-                <strong>Batas Perlindungan <kbd>Ctrl + Z</kbd> & Konflik Nama File:</strong><br>
-                1. <em>Ctrl + Z tidak membatalkan semua hal:</em> Aksi pembatalan sangat bergantung pada aplikasi yang sedang aktif dan tidak bisa membatalkan berkas yang sudah ditutup atau dihapus permanen.<br>
-                2. <em>Peringatan Replace (File Kembar):</em> Jika muncul pesan <em>"The destination already has a file named..."</em>, jangan langsung tekan Replace! Teliti tanggal dan isinya agar karya sebelumnya tidak tertimpa tanpa sengaja.
-              </div>
+            <!-- Batas Ctrl+Z & Konflik File -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 18px; margin-top: 14px; font-size: 12.5px; color: #334155;">
+              <strong style="color: #0f172a; font-size: 13px;">Dua Catatan Teknis Pengoperasian:</strong>
+              <ol style="margin: 6px 0 0; padding-left: 18px; line-height: 1.6;">
+                <li><strong>Batasan Perintah Batal (<kbd>Ctrl + Z</kbd>):</strong> Perintah Undo hanya dapat membatalkan tindakan pengoperasian terakhir pada jendela yang masih aktif terbuka. Perintah ini tidak dapat membatalkan berkas yang telah dihapus permanen atau setelah komputer dimatikan.</li>
+                <li><strong>Konflik Duplikasi Berkas (Replace Warning):</strong> Apabila muncul kotak dialog peringatan <em>"The destination already has a file named..."</em>, jangan terburu-buru menekan tombol <em>Replace</em>. Periksa terlebih dahulu tanggal dan ukuran berkas agar dokumen versi sebelumnya tidak tertimpa tanpa sengaja.</li>
+              </ol>
             </div>
           </div>
 
-          <!-- Misi 3: PROYEK AKHIR TERPADU "TUGAS TIK RAPI" (SIMULATOR VIRTUAL DUMMY) -->
+          <!-- Bagian C: Strategi Pencadangan Berkas (Backup) 3-2-1 dan Integritas Digital -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🏆 Misi 3: Proyek Akhir Terpadu: "Tugas TIK Rapi" (Data Dummy Aman)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Selesaikan proyek autentik ini menggunakan data dummy virtual di bawah. Jangan khawatir, latihan ini 100% aman dan tidak menyentuh dokumen asli laptopmu!
+            <h3 class="materi-sub-title">C. Strategi Pencadangan Berkas (Backup) 3-2-1 dan Integritas Digital (Misi 3)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Untuk melindungi dokumen tugas akhir dan data penting sekolah dari risiko kehilangan, terapkan kaidah baku <strong>Strategi Pencadangan 3-2-1</strong>:
+            </p>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; line-height: 1.6; margin: 8px 0;">
+              <li><strong>3 Salinan Berkas:</strong> Memiliki minimal 3 salinan data (1 berkas utama yang sedang dikerjakan dan 2 berkas cadangan).</li>
+              <li><strong>2 Jenis Media Berbeda:</strong> Menyimpan salinan pada sekurang-kurangnya 2 jenis peranti fisik yang berlainan (contoh: di SSD komputer laptop dan di media flashdisk USB).</li>
+              <li><strong>1 Salinan Terpisah (Off-site):</strong> Menyimpan sekurang-kurangnya 1 salinan di lokasi atau perangkat terpisah (misalnya penyimpanan awan Google Drive atau flashdisk cadangan di rumah).</li>
+            </ul>
+
+            <div style="background: white; border: 1px solid #cbd5e1; border-radius: 8px; padding: 12px 16px; margin-top: 12px; font-size: 12.5px; color: #334155;">
+              <strong style="color: #0f172a;">Etika Penggunaan Perintah Salin-Tempel (Anti-Plagiarisme):</strong><br>
+              <span style="color: #475569; line-height: 1.6; display: inline-block; margin-top: 4px;">
+                Fitur Copy-Paste (<kbd>Ctrl+C</kbd> dan <kbd>Ctrl+V</kbd>) ditujukan untuk mempermudah perakitan data dan penataan referensi. Menyalin naskah tugas milik rekan sekelas atau artikel web secara utuh lalu mengakuinya sebagai karya pribadi adalah pelanggaran etika akademis. Biasakan merangkum sumber rujukan menggunakan kalimat pemahaman Anda sendiri.
+              </span>
+            </div>
+          </div>
+
+          <!-- Bagian D: Proyek Akhir Terpadu: "Tugas TIK Rapi" -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">D. Proyek Akhir Terpadu: "Tugas TIK Rapi" (Misi 4)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Selesaikan proyek penataan arsip berkas secara mandiri pada simulator virtual di bawah ini. Latihan ini menggunakan data percontohan (dummy) yang aman dan tidak menyentuh dokumen asli laptop Anda:
             </p>
 
-            <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 12px; padding: 14px 18px; margin: 12px 0;">
-              <strong style="color: #166534; font-size: 14px;">🎯 Skenario Tugas Proyek Akhir:</strong>
-              <p style="font-size: 12px; color: #15803d; margin: 4px 0 10px;">Anda menerima berkas tugas praktikum yang berserakan. Susunlah menjadi arsip teratur dengan langkah berikut:</p>
-              <ol style="font-size: 12px; color: #14532d; padding-left: 20px; line-height: 1.6;">
-                <li>Klik tombol <strong>"📁 Folder Baru"</strong>, buat folder induk proyek bernama <code>Kelas7_Nama_Modul1</code> (contoh: <code>Kelas7_Aisyah_Modul1</code>).</li>
+            <div style="background: #f0fdf4; border: 1px solid #86efac; border-radius: 10px; padding: 14px 18px; margin: 12px 0;">
+              <strong style="color: #166534; font-size: 13.5px;">Instruksi Tugas Proyek Penataan Berkas:</strong>
+              <ol style="font-size: 12.5px; color: #14532d; padding-left: 20px; line-height: 1.6; margin-top: 6px;">
+                <li>Klik tombol <strong>"📁 Folder Baru"</strong>, buat folder utama proyek dengan nama: <code>Kelas7_Nama_Modul1</code> (contoh: <code>Kelas7_Aisyah_Modul1</code>).</li>
                 <li>Klik ganda folder tersebut untuk membukanya, lalu buat 3 subfolder: <code>Dokumen</code>, <code>Bacaan</code>, dan <code>Gambar</code>.</li>
-                <li>Pindahkan berkas dummy sesuai jenisnya: <code>Laporan_Praktikum.docx</code> & <code>Catatan_Tambahan.txt</code> ke folder <code>Dokumen</code>, <code>Panduan_Lab.pdf</code> ke folder <code>Bacaan</code>, dan <code>Bagan_Komputer.png</code> ke folder <code>Gambar</code>.</li>
-                <li>Pilih berkas dummy sampah <code>File_Sampah_Latihan.tmp</code> lalu klik tombol <strong>"🗑️ Delete"</strong> untuk memindahkannya ke Recycle Bin virtual.</li>
-                <li>Setelah selesai, klik tombol besar hijau <strong>"🔍 Periksa Hasil Pekerjaan Proyek Akhir"</strong> di bawah simulator untuk dinilai otomatis!</li>
+                <li>Pindahkan berkas sesuai kategorinya: berkas <code>Laporan_Praktikum.docx</code> dan <code>Catatan_Tambahan.txt</code> ke folder <code>Dokumen</code>; berkas <code>Panduan_Lab.pdf</code> ke folder <code>Bacaan</code>; dan berkas <code>Bagan_Komputer.png</code> ke folder <code>Gambar</code>.</li>
+                <li>Pilih berkas sampah <code>File_Sampah_Latihan.tmp</code> lalu klik tombol <strong>"🗑️ Delete"</strong> untuk memindahkannya ke Recycle Bin virtual.</li>
+                <li>Setelah seluruh berkas tertata rapi, klik tombol <strong>"🔍 Periksa Hasil Pekerjaan Proyek Akhir"</strong> di bawah simulator untuk menjalankan verifikasi otomatis.</li>
               </ol>
             </div>
 
             <!-- Simulator File Explorer Virtual -->
-            <div class="explorer-window" style="margin-top: 14px; border-radius: var(--radius-md); overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.06); border: 1.5px solid var(--border);">
-              <div class="explorer-toolbar" style="background: #FFF5F3; padding: 10px 12px; gap: 6px; display: flex; flex-wrap: wrap; align-items: center;">
+            <div class="explorer-window" style="margin-top: 14px; border-radius: 12px; overflow: hidden; border: 1px solid #cbd5e1;">
+              <div class="explorer-toolbar" style="background: #f8fafc; padding: 10px 12px; gap: 6px; display: flex; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #cbd5e1;">
                 <button id="btn-sim-up" class="btn btn-outline btn-sm" style="display: none; font-weight: bold;" onclick="simulasiKembaliKeFolderAtas()">⬆ Folder Atas</button>
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerBuatFolder()">📁 Folder Baru</button>
                 <button class="btn btn-outline btn-sm" onclick="simulasiExplorerBuatFile()">📄 File Baru</button>
@@ -1838,9 +1779,9 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
                 <button class="btn btn-outline btn-sm" style="margin-left: auto;" onclick="resetSimulasiExplorer()">🔄 Ulangi dari Awal</button>
               </div>
 
-              <div class="explorer-path-bar" style="background: #fafaf9; border-bottom: 1px solid var(--border); padding: 8px 14px; display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 12px; color: var(--text-muted);">Alamat Direktori Aktif:</span>
-                <strong id="sim-path-text" style="color: var(--primary-dark); font-family: monospace; font-size: 13px;">C:\Users\Santri\Documents</strong>
+              <div class="explorer-path-bar" style="background: #fafaf9; border-bottom: 1px solid #e2e8f0; padding: 8px 14px; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 12px; color: #64748b;">Alamat Direktori Aktif:</span>
+                <strong id="sim-path-text" style="color: #0f172a; font-family: monospace; font-size: 13px;">C:\Users\Santri\Documents</strong>
               </div>
 
               <div id="sim-explorer-grid" class="explorer-grid" style="min-height: 200px; padding: 16px; background: white;">
@@ -1848,169 +1789,145 @@ ightarrow$ kalimat bermakna tugas TIK. Utamakan <strong>Akurasi (%)</strong> seb
               </div>
             </div>
 
-            <!-- Tombol Verifikasi Mandiri Hasil Proyek -->
-                        <!-- Rubrik Evaluasi Mandiri Proyek Akhir (Bab 8.3) -->
-            <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 14px; padding: 18px; margin: 16px 0;">
-              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-                <span style="font-size: 20px;">📋</span>
-                <strong style="color: var(--dark); font-size: 15px;">Rubrik Evaluasi Mandiri Siswa (Self-Assessment Checklist)</strong>
-              </div>
-              <p style="font-size: 13px; color: #475569; margin-bottom: 10px;">
-                Sebelum menekan tombol pemeriksaan hasil, centang 5 indikator kelengkapan berikut untuk memastikan kerapian tugas Anda:
-              </p>
-              <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #334155;">
+            <!-- Rubrik Evaluasi Mandiri -->
+            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; padding: 16px; margin: 16px 0;">
+              <strong style="color: #0f172a; font-size: 13.5px; display: block; margin-bottom: 8px;">Daftar Periksa Mandiri Siswa (Self-Assessment Checklist):</strong>
+              <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12.5px; color: #334155;">
                 <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>1. Folder utama proyek telah dibuat dengan nama yang rapi.</span>
+                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>1. Folder induk proyek telah dibuat dengan nama yang rapi.</span>
                 </label>
                 <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>2. Subfolder <code>Dokumen</code>, <code>Bacaan</code>, dan <code>Gambar</code> telah dibuat di dalam folder utama.</span>
+                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>2. Tiga subfolder (<code>Dokumen</code>, <code>Bacaan</code>, <code>Gambar</code>) telah tersusun di dalam folder induk.</span>
                 </label>
                 <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>3. File dokumen (.docx &amp; .txt) telah dipindahkan seutuhnya ke folder <code>Dokumen</code>.</span>
+                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>3. Seluruh berkas naskah (.docx dan .txt) telah dipindahkan ke folder <code>Dokumen</code>.</span>
                 </label>
                 <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>4. File gambar (.png) dan panduan (.pdf) telah dipindahkan ke folder yang sesuai.</span>
+                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>4. Berkas grafis (.png) dan panduan (.pdf) telah dipindahkan ke folder yang sesuai.</span>
                 </label>
                 <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
-                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>5. File sampah sementara (.tmp) telah dihapus ke Recycle Bin.</span>
+                  <input type="checkbox" style="width: 16px; height: 16px;"> <span>5. Berkas sementara (.tmp) telah dihapus ke Recycle Bin.</span>
                 </label>
               </div>
             </div>
 
             <div style="margin-top: 14px; text-align: center;">
-              <button class="btn btn-primary" style="padding: 12px 28px; font-size: 15px; font-weight: 700; border-radius: 30px; box-shadow: 0 4px 10px rgba(5,150,105,0.25);" onclick="verifikasiProyekAkhirTugasRapi()">
+              <button class="btn btn-primary" style="padding: 11px 26px; font-size: 14px; font-weight: 700; border-radius: 30px;" onclick="verifikasiProyekAkhirTugasRapi()">
                 🔍 Periksa Hasil Pekerjaan Proyek Akhir
               </button>
             </div>
 
-            <!-- Kotak Feedback Verifikasi Otomatis -->
+            <!-- Feedback Verifikasi Proyek -->
             <div id="proyek-verifikasi-feedback" style="display: none; margin-top: 16px;"></div>
           </div>
 
-          <!-- Misi 4: Checklist Praktik di Laptop Asli -->
+          <!-- Bagian E: Lembar Checklist Praktik Mandiri di Komputer Asli -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">💻 Misi 4: Checklist Praktik di Laptop Asli Santri (8 Tugas Verifikasi Guru)</h3>
-            <p style="font-size: 13px; color: var(--text-muted);">
-              Lakukan 8 tantangan terstruktur ini langsung di Windows laptopmu, beri tanda centang, lalu tunjukkan pada Bapak/Ibu Guru untuk diverifikasi langsung di panel guru:
+            <h3 class="materi-sub-title">E. Lembar Checklist Praktik Mandiri di Komputer Asli (Misi 5)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Terapkan delapan butir tugas praktikum berikut langsung pada komputer laptop Anda, beri tanda centang setelah selesai, lalu laporkan kepada Guru Pengampu untuk diverifikasi melalui panel guru:
             </p>
 
-            <div id="checklist-container" style="background: white; border: 1.5px solid #F2DCD6; border-radius: var(--radius-sm); margin: 14px 0;">
-              <!-- Render oleh JS -->
+            <div id="checklist-container" style="background: white; border: 1px solid #cbd5e1; border-radius: 10px; margin: 14px 0;">
+              <!-- Render otomatis oleh JS -->
             </div>
           </div>
 
-          <!-- Misi 5: Koreksi Miskonsepsi Kritis Operasi Berkas -->
+          <!-- Bagian F: Prosedur Pengakhiran Sesi Komputer (Shut Down) -->
           <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🛡️ Misi 5: Koreksi Miskonsepsi Kritis Operasi Berkas</h3>
-            <div class="callout-box" style="background: #fffbeb; border-color: #fde68a;">
-              <div style="font-size: 24px;">⚠️</div>
+            <h3 class="materi-sub-title">F. Prosedur Pengakhiran Sesi Komputer (Shut Down) (Misi 6)</h3>
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.7;">
+              Setelah seluruh kegiatan praktikum di laboratorium selesai, terapkan prosedur penutupan baku berikut:
+            </p>
+
+            <div class="rules-grid">
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
+                <span class="rule-num">1</span>
+                <div>
+                  <strong>Menyimpan Pekerjaan Aktif</strong>
+                  <p>Tekan <kbd>Ctrl + S</kbd> pada seluruh dokumen yang sedang terbuka, lalu tutup program aplikasi secara berurutan.</p>
+                </div>
+              </div>
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
+                <span class="rule-num">2</span>
+                <div>
+                  <strong>Pelepasan Aman Media USB</strong>
+                  <p>Jalankan fungsi Safely Remove Hardware sebelum mencabut peranti flashdisk dari porta komputer.</p>
+                </div>
+              </div>
+              <div class="rule-card" style="border: 1px solid #cbd5e1;">
+                <span class="rule-num">3</span>
+                <div>
+                  <strong>Mematikan Sistem Resmi</strong>
+                  <p>Klik tombol Start &gt; Power &gt; Shut Down. Tunggu hingga lampu indikator perangkat padam sempurna sebelum meninggalkan meja kerja.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bagian G: Koreksi Miskonsepsi Operasi Berkas -->
+          <div class="materi-sub-card">
+            <h3 class="materi-sub-title">G. Koreksi Miskonsepsi Operasi Berkas</h3>
+            <div class="callout-box" style="background: #fffbeb; border: 1px solid #fde68a;">
+              <div style="font-size: 20px;">⚠️</div>
               <div>
-                <strong style="color: #92400e;">Lima Miskonsepsi Operasi Berkas yang Wajib Dihindari:</strong>
-                <ul style="font-size: 12px; color: #78350f; padding-left: 18px; margin-top: 4px; line-height: 1.5;">
-                  <li><strong>Copy dan Cut BUKAN hal yang sama:</strong> Copy membuat salinan baru (asli tetap utuh); Cut menyiapkan pemindahan berkas asli.</li>
-                  <li><strong>Mengubah ekstensi BUKAN mengonversi format:</strong> Mengganti akhiran .docx menjadi .pdf tidak mengubah format dokumen Word menjadi PDF asli.</li>
-                  <li><strong>Delete TIDAK selalu bisa dipulihkan:</strong> Berkas dari flashdisk USB atau berkas yang dihapus lewat Shift+Delete langsung musnah tanpa masuk Recycle Bin.</li>
-                  <li><strong>Ctrl + Z TIDAK membatalkan semua kesalahan:</strong> Tindakan Undo terbatas pada aplikasi aktif tertentu dan tidak membatalkan semua operasi sistem.</li>
-                  <li><strong>Jangan asal klik Replace:</strong> Memilih Replace akan menimpa file tujuan; selalu periksa apakah file lama masih dibutuhkan.</li>
+                <strong style="color: #92400e; font-size: 13.5px;">Koreksi Miskonsepsi Operasi Berkas yang Wajib Dihindari:</strong>
+                <ul style="font-size: 12.5px; color: #78350f; padding-left: 18px; margin-top: 6px; line-height: 1.6;">
+                  <li><strong>Operasi Copy dan Cut tidak sama:</strong> Copy menghasilkan salinan baru (asli tetap utuh); Cut memindahkan berkas fisik asli ke lokasi baru.</li>
+                  <li><strong>Penghapusan berkas tidak selalu dapat dipulihkan:</strong> Berkas pada flashdisk USB atau berkas yang dihapus lewat Shift+Delete langsung dihapus tanpa ditampung di Recycle Bin.</li>
+                  <li><strong>Perintah Ctrl + Z tidak membatalkan seluruh kesalahan:</strong> Batas aksi Undo bergantung pada kondisi aplikasi aktif dan tidak dapat membatalkan berkas yang telah dihapus permanen.</li>
+                  <li><strong>Teliti sebelum menekan opsi Replace:</strong> Menimpa berkas (Replace) akan menghapus berkas versi terdahulu secara permanen.</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- Misi 6: SOP Mematikan Komputer (Shut Down) -->
-          <div class="materi-sub-card">
-            <h3 class="materi-sub-title">🚪 Misi 6: SOP Mematikan Komputer & Adab Mengakhiri Sesi Lab</h3>
-            <div class="rules-grid">
-              <div class="rule-card">
-                <span class="rule-num">1</span>
-                <div>
-                  <strong>Simpan Semua Dokumen</strong>
-                  <p>Tekan <kbd>Ctrl + S</kbd> pada dokumen yang sedang dikerjakan dan tutup jendela aplikasi sebelum keluar.</p>
-                </div>
-              </div>
-              <div class="rule-card">
-                <span class="rule-num">2</span>
-                <div>
-                  <strong>Eject Flashdisk USB</strong>
-                  <p>Lakukan prosedur Safely Remove sebelum mencabut media USB penyimpanan santri.</p>
-                </div>
-              </div>
-              <div class="rule-card">
-                <span class="rule-num">3</span>
-                <div>
-                  <strong>Shut Down Resmi</strong>
-                  <p>Klik tombol Start ➔ Power ➔ Shut Down. Tunggu hingga layar dan lampu indikator padam sempurna. Rapikan kursi sebelum meninggalkan lab.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-                    <!-- Benang Merah: Biodata Komputerku - Bagian 4 -->
-          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-              <span style="font-size: 20px;">📋</span>
-              <strong style="color: #1e40af; font-size: 14px;">Misi Praktik Nyata: "Biodata Komputerku" (Bagian 4: Mengamankan &amp; Merawat Berkas)</strong>
-            </div>
-            <p style="font-size: 13px; color: #1e3a8a; line-height: 1.6; margin: 0;">
-              Lengkapi proyek "Tugas TIK Rapi" dengan merawat berkas Biodata Komputermu:
-            </p>
-            <ul style="font-size: 12.5px; color: #1e293b; padding-left: 18px; margin: 6px 0; line-height: 1.6;">
-              <li><strong>Salin untuk Cadangan:</strong> Salin (<kbd>Ctrl+C</kbd> ➔ <kbd>Ctrl+V</kbd>) berkas Biodata Komputer ke subfolder <code>Dokumen</code>.</li>
-              <li><strong>Cari Berkas:</strong> Coba cari berkasmu lewat kotak pencarian File Explorer dengan hanya mengetik kata <em>"Biodata"</em>.</li>
-              <li><strong>Simulasi Restore:</strong> Buat satu salinan percobaan bernama <code>hapus_biodata_dummy.txt</code>, tekan <kbd>Delete</kbd>, lalu buka <strong>Recycle Bin</strong> dan klik kanan ➔ <strong>Restore</strong> untuk mengembalikannya!</li>
-            </ul>
-            <div style="background: white; border: 1px solid #dbeafe; border-radius: 8px; padding: 8px 12px; margin-top: 8px; font-size: 12px; color: #1e40af;">
-              🎉 <strong>Alhamdulillah!</strong> Kamu telah menuntaskan seluruh siklus: mengenali hardware, mengetik data, menata folder, hingga mengamankan berkas seperti Admin Lab sejati!
-            </div>
-          </div>
-
-<!-- Ringkasan Inti Sesi 4 -->
-          <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 14px 18px; margin: 16px 0;">
-            <strong style="color: var(--dark); font-size: 14px;">📌 Ringkasan Inti Sesi 4:</strong>
-            <ul style="font-size: 13px; color: #475569; padding-left: 20px; margin-top: 6px; line-height: 1.5;">
-              <li>Copy menggandakan file, Cut menyiapkan pemindahan; keduanya menggunakan Paste untuk menaruh file di tujuan.</li>
-              <li>Rename (<kbd>F2</kbd>) harus mempertahankan ekstensi; Delete memindahkan ke Recycle Bin laptop.</li>
-              <li>Berkas flashdisk USB yang dihapus tidak ditampung di Recycle Bin; hapus dengan hati-hati.</li>
-              <li>Ctrl+Z tidak membatalkan semua kesalahan; periksa kembali folder dan berkas sebelum mengakhiri pekerjaan.</li>
+          <!-- Ringkasan Inti Sesi 4 -->
+          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px 20px; margin: 18px 0;">
+            <strong style="color: #0f172a; font-size: 14px;">📌 Ringkasan Inti Sesi 4:</strong>
+            <ul style="font-size: 13px; color: #334155; padding-left: 20px; margin-top: 6px; line-height: 1.6;">
+              <li>Operasi Copy menduplikasi objek di memori Clipboard, sedangkan Cut menyiapkan pemindahan berkas asli ke folder tujuan.</li>
+              <li>Tombol F2 mempermudah penggantian nama berkas dengan tetap mempertahankan keutuhan format ekstensi.</li>
+              <li>Perlindungan data optimal menerapkan strategi pencadangan 3-2-1 pada media yang berbeda secara berkala.</li>
+              <li>Prosedur Shut Down resmi melalui menu sistem menjaga keutuhan berkas dan keawetan komponen perangkat keras komputer.</li>
             </ul>
           </div>
 
           <!-- Tombol Penyelesaian Materi P4 -->
-          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #FFF5F3; padding: 18px; border-radius: var(--radius-md); border: 2px solid #fed7aa;">
+          <div style="margin: 20px 0; display: flex; justify-content: space-between; align-items: center; background: #f8fafc; padding: 18px 22px; border-radius: 14px; border: 1px solid #cbd5e1;">
             <div>
-              <strong style="color: var(--primary-dark); font-size: 16px;">Tuntaskan Sesi 4 & Siap Evaluasi?</strong>
-              <p style="font-size: 13px; color: var(--text-muted); margin-top: 2px;">Klaim XP materi Sesi 4 sebelum menempuh Boss Quiz Evaluasi Akhir Modul 1!</p>
+              <strong style="color: #0f172a; font-size: 15px;">Konfirmasi Penyelesaian Pembacaan Materi</strong>
+              <p style="font-size: 13px; color: #64748b; margin-top: 2px;">Tandai materi Sesi 4 sebagai selesai sebelum melanjutkan ke Evaluasi Akhir Modul 1.</p>
             </div>
             <button id="btn-selesai-baca-p4" class="btn btn-primary" onclick="catatAktivitasBaca(4)">
               ✓ Klaim XP Sesi 4 (+25 XP)
             </button>
-            <span id="p4-baca-badge" style="font-size: 13px; font-weight: 700; color: var(--primary); display: none;">✓ Materi Tercatat Selesai</span>
+            <span id="p4-baca-badge" style="font-size: 13px; font-weight: 700; color: #16a34a; display: none;">✓ Materi Sesi 4 Tercatat Selesai</span>
           </div>
 
-          <!-- Boss Quiz: Evaluasi Akhir Modul 1 -->
-          <div style="margin-top: 28px; border-top: 2px solid #FFF5F3; padding-top: 22px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <!-- Evaluasi Akhir Modul 1 -->
+          <div style="margin-top: 28px; border-top: 1px solid #e2e8f0; padding-top: 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
               <div>
-                <h3 style="font-family: var(--font-heading); font-size: 22px; color: var(--dark);">🏆 Boss Quiz: Evaluasi Akhir Modul 1</h3>
-                <p style="font-size: 13px; color: var(--text-muted);">
-                  Tuntaskan 5 soal evaluasi penalaran acak untuk menguji pemahaman menyeluruh dan membuka Sertifikat Emas Santri TIK!
+                <h3 style="font-family: var(--font-heading); font-size: 20px; color: #0f172a;">Evaluasi Akhir Modul 1: Uji Kompetensi Komprehensif</h3>
+                <p style="font-size: 13px; color: #64748b;">
+                  Selesaikan butir soal evaluasi penalaran acak untuk menguji pemahaman menyeluruh dan membuka penerbitan Sertifikat Kompetensi TIK:
                 </p>
               </div>
               <button id="btn-muat-evaluasi" class="btn btn-primary" onclick="muatKuisPertemuan(4)">
                 Ambil Soal Evaluasi Akhir 📝
               </button>
             </div>
-
             
             <div id="kuis-container-p4" style="margin-top: 16px;"></div>
 
-            <!-- Bilah Navigasi Antar Sesi: Sesi 4 -->
+            <!-- Bilah Navigasi Antar Sesi -->
             <div class="session-nav-bar">
               <button class="btn btn-outline session-nav-btn" onclick="bukaPertemuan(3)" title="Kembali ke Sesi 3">
-                <span>⬅</span> Sesi 3: Manajemen Berkas
+                <span>⬅</span> Bab 3: Manajemen Berkas
               </button>
               <button class="btn btn-secondary session-nav-btn" onclick="bukaDashboard()" title="Selesai dan Kembali ke Beranda">
-                <span>🏆</span> Selesai Modul 1 & Beranda
+                <span>🏠</span> Selesai Modul 1 &amp; Beranda
               </button>
             </div>
           </div>
